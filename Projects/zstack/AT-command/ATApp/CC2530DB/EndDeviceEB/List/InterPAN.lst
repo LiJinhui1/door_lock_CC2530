@@ -1,0 +1,478 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               23/Feb/2022  09:34:59
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\UserAPI\InterPAN.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW3723.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\UserAPI\InterPAN.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\InterPAN.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\InterPAN.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\UserAPI\InterPAN.c
+      1          /******************************************************************************
+      2            Filename:       InterPAN.c
+      3          
+      4            Description:    Inter-PAN message Process
+      5            Author:         Yasin Zhang
+      6          *******************************************************************************/
+      7          
+      8          /*********************************************************************
+      9           * INCLUDES
+     10           */
+     11          #include "string.h"
+     12          #include "ZComDef.h"
+     13          #include "AF.h"
+     14          #include "OnBoard.h"
+     15          
+     16          #if defined ( INTER_PAN )
+     17            #include "stub_aps.h"
+     18          #endif
+     19          
+     20          #include "AT_printf.h"
+     21          #include "ATApp.h"
+     22          
+     23          #include "InterPAN.h"
+     24          
+     25          /*********************************************************************
+     26           * LOCAL VARIABLES
+     27           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     28          byte InterPAN_TransID;  // This is the InterPAN message counter
+   \                     InterPAN_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     29          
+     30          /*********************************************************************
+     31          * PUBLIC FUNCTIONS
+     32          */
+     33          
+     34          /*****************************************************************************
+     35          * @fn      InterPAN_Send
+     36          *
+     37          * @brief   Send Inter-PAN message
+     38          *          INTERPAN:<DstAddress>,<DstChannel>,<DstPANID>,<ClusterID>,<Data>
+     39          *
+     40          * @param   uint8 *dstAddr   - remote device's NodeID
+     41          * @param   uint8 *dstCH   - remote device's channel
+     42          * @param   uint8 *dstPan  - remote device's PANID
+     43          * @param   uint8 *clusterId - message's Cluster ID
+     44          * @param   uint8 *rawData - Inter-PAN message
+     45          *
+     46          * @return  status
+     47          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     48          uint8 InterPAN_Send( afAddrType_t *dstAddr, uint8 ch, uint16 cId, uint8 dataLen, uint8 *rawData )
+   \                     InterPAN_Send:
+     49          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV       A,#-0x1
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+   \   00000E   89..         MOV       ?V2,R1
+   \   000010   8C..         MOV       ?V4,R4
+   \   000012   8D..         MOV       ?V5,R5
+     50            uint8 currChannel;
+     51            uint8 rtrn = FAILURE;
+     52            endPointDesc_t *pEP = NULL;
+     53          
+     54            if ((pEP = afFindEndPointDesc(ATApp_ENDPOINT)) != NULL)
+   \   000014                ; Setup parameters for call to function afFindEndPointDesc
+   \   000014   7996         MOV       R1,#-0x6a
+   \   000016   12....       LCALL     `??afFindEndPointDesc::?relay`; Banked call to: afFindEndPointDesc
+   \   000019   8A..         MOV       ?V0,R2
+   \   00001B   8B..         MOV       ?V1,R3
+   \   00001D   EA           MOV       A,R2
+   \   00001E   4B           ORL       A,R3
+   \   00001F   606B         JZ        ??InterPAN_Send_0
+     55            {
+     56              // StubAPS_RegisterApp(pEP);
+     57              if (!StubAPS_SetInterPanChannel(ch)) { // Set channel for inter-pan communication.
+   \   000021                ; Setup parameters for call to function StubAPS_SetInterPanChannel
+   \   000021   A9..         MOV       R1,?V2
+   \   000023   12....       LCALL     `??StubAPS_SetInterPanChannel::?relay`; Banked call to: StubAPS_SetInterPanChannel
+   \   000026   E9           MOV       A,R1
+   \   000027   705D         JNZ       ??InterPAN_Send_1
+     58                ZMacGetReq( ZMacChannel, &currChannel );
+   \   000029                ; Setup parameters for call to function ZMacGetReq
+   \   000029   AA..         MOV       R2,?XSP + 0
+   \   00002B   AB..         MOV       R3,?XSP + 1
+   \   00002D   79E1         MOV       R1,#-0x1f
+   \   00002F   12....       LCALL     `??ZMacGetReq::?relay`; Banked call to: ZMacGetReq
+     59                rtrn = AF_DataRequest( dstAddr,
+     60                                       pEP,
+     61                                       cId,
+     62                                       (byte)dataLen,
+     63                                       (byte *)rawData,
+     64                                       &InterPAN_TransID,
+     65                                       AF_DISCV_ROUTE,
+     66                                       AF_DEFAULT_RADIUS
+     67                                     );
+   \   000032                ; Setup parameters for call to function AF_DataRequest
+   \   000032   75..1E       MOV       ?V3,#0x1e
+   \   000035   78..         MOV       R0,#?V3
+   \   000037   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00003A   75....       MOV       ?V6,#InterPAN_TransID & 0xff
+   \   00003D   75....       MOV       ?V7,#(InterPAN_TransID >> 8) & 0xff
+   \   000040   78..         MOV       R0,#?V6
+   \   000042   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000045   7415         MOV       A,#0x15
+   \   000047   12....       LCALL     ?XSTACK_DISP0_8
+   \   00004A   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   00004D   7416         MOV       A,#0x16
+   \   00004F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000052   E0           MOVX      A,@DPTR
+   \   000053   F5..         MOV       ?V6,A
+   \   000055   75..00       MOV       ?V7,#0x0
+   \   000058   78..         MOV       R0,#?V6
+   \   00005A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00005D   78..         MOV       R0,#?V4
+   \   00005F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000062   7900         MOV       R1,#0x0
+   \   000064   AC..         MOV       R4,?V0
+   \   000066   AD..         MOV       R5,?V1
+   \   000068   EE           MOV       A,R6
+   \   000069   FA           MOV       R2,A
+   \   00006A   EF           MOV       A,R7
+   \   00006B   FB           MOV       R3,A
+   \   00006C   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   00006F   7409         MOV       A,#0x9
+   \   000071   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000074   E9           MOV       A,R1
+   \   000075   FE           MOV       R6,A
+     68                if (StubAPS_SetIntraPanChannel()) { // Switch channel back to the NIB channel
+   \   000076                ; Setup parameters for call to function StubAPS_SetIntraPanChannel
+   \   000076   12....       LCALL     `??StubAPS_SetIntraPanChannel::?relay`; Banked call to: StubAPS_SetIntraPanChannel
+   \   000079   E9           MOV       A,R1
+   \   00007A   6006         JZ        ??InterPAN_Send_2
+     69                  printf("Switch back channel failed!\r\n");
+   \   00007C                ; Setup parameters for call to function printf
+   \   00007C   7A..         MOV       R2,#`?<Constant "Switch back channel f...">` & 0xff
+   \   00007E   7B..         MOV       R3,#(`?<Constant "Switch back channel f...">` >> 8) & 0xff
+   \   000080   800E         SJMP      ??InterPAN_Send_3
+     70                  return FAILURE;
+     71                }
+     72              } else {
+     73                printf("Change InterPAN channel failed!\r\n");
+     74                return FAILURE;
+     75              }
+     76            }
+     77            else
+     78            {
+     79              printf("No such endpoint!\r\n");
+     80              return FAILURE;
+     81            }
+     82          
+     83            return rtrn;
+   \                     ??InterPAN_Send_2:
+   \   000082   EE           MOV       A,R6
+   \   000083   F9           MOV       R1,A
+   \   000084   800F         SJMP      ??InterPAN_Send_4
+   \                     ??InterPAN_Send_1:
+   \   000086                ; Setup parameters for call to function printf
+   \   000086   7A..         MOV       R2,#`?<Constant "Change InterPAN chann...">` & 0xff
+   \   000088   7B..         MOV       R3,#(`?<Constant "Change InterPAN chann...">` >> 8) & 0xff
+   \   00008A   8004         SJMP      ??InterPAN_Send_3
+   \                     ??InterPAN_Send_0:
+   \   00008C                ; Setup parameters for call to function printf
+   \   00008C   7A..         MOV       R2,#`?<Constant "No such endpoint!\\r\\n">` & 0xff
+   \   00008E   7B..         MOV       R3,#(`?<Constant "No such endpoint!\\r\\n">` >> 8) & 0xff
+   \                     ??InterPAN_Send_3:
+   \   000090   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   000093   7901         MOV       R1,#0x1
+   \                     ??InterPAN_Send_4:
+   \   000095   7401         MOV       A,#0x1
+   \   000097   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00009A   7F08         MOV       R7,#0x8
+   \   00009C   02....       LJMP      ?BANKED_LEAVE_XDATA
+     84          }
+     85          
+     86          /*****************************************************************************
+     87          * @fn      InterPAN_ProcessMSGCB
+     88          *
+     89          * @brief   Process Inter-PAN message
+     90          *
+     91          * @param   afIncomingMSGPacket_t *pkt
+     92          *
+     93          * @return  status
+     94          ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     95          void InterPAN_ProcessMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     InterPAN_ProcessMSGCB:
+     96          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+     97            switch ( pkt->clusterId )
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   F583         MOV       DPH,A
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   A3           INC       DPTR
+   \   000011   E0           MOVX      A,@DPTR
+   \   000012   7004         JNZ       ??InterPAN_ProcessMSGCB_0
+   \   000014   A3           INC       DPTR
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   6420         XRL       A,#0x20
+   \                     ??InterPAN_ProcessMSGCB_0:
+   \   000018   702F         JNZ       ??InterPAN_ProcessMSGCB_1
+     98            {
+     99              case ATApp_GENERIC_CLUSTER:
+    100                printf("INTERPAN: \r\n");
+   \   00001A                ; Setup parameters for call to function printf
+   \   00001A   7A..         MOV       R2,#`?<Constant "INTERPAN: \\r\\n">` & 0xff
+   \   00001C   7B..         MOV       R3,#(`?<Constant "INTERPAN: \\r\\n">` >> 8) & 0xff
+   \   00001E   12....       LCALL     `??printf::?relay`; Banked call to: printf
+    101                HalUARTWrite(HAL_UART_PORT_0, pkt->cmd.Data, pkt->cmd.DataLength);
+   \   000021                ; Setup parameters for call to function HalUARTWrite
+   \   000021   EE           MOV       A,R6
+   \   000022   2420         ADD       A,#0x20
+   \   000024   F582         MOV       DPL,A
+   \   000026   E4           CLR       A
+   \   000027   3F           ADDC      A,R7
+   \   000028   F583         MOV       DPH,A
+   \   00002A   E0           MOVX      A,@DPTR
+   \   00002B   FC           MOV       R4,A
+   \   00002C   A3           INC       DPTR
+   \   00002D   E0           MOVX      A,@DPTR
+   \   00002E   FD           MOV       R5,A
+   \   00002F   EE           MOV       A,R6
+   \   000030   2422         ADD       A,#0x22
+   \   000032   F582         MOV       DPL,A
+   \   000034   E4           CLR       A
+   \   000035   3F           ADDC      A,R7
+   \   000036   F583         MOV       DPH,A
+   \   000038   E0           MOVX      A,@DPTR
+   \   000039   FA           MOV       R2,A
+   \   00003A   A3           INC       DPTR
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   FB           MOV       R3,A
+   \   00003D   7900         MOV       R1,#0x0
+   \   00003F   12....       LCALL     `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    102                printf("\r\n");
+   \   000042                ; Setup parameters for call to function printf
+   \   000042   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000044   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000046   12....       LCALL     `??printf::?relay`; Banked call to: printf
+    103                break;
+    104            }
+    105          }
+   \                     ??InterPAN_ProcessMSGCB_1:
+   \   000049   7F01         MOV       R7,#0x1
+   \   00004B   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Switch back channel f...">`:
+   \   000000   53776974     DB "Switch back channel failed!\015\012"
+   \            63682062
+   \            61636B20
+   \            6368616E
+   \            6E656C20
+   \            6661696C
+   \            6564210D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Change InterPAN chann...">`:
+   \   000000   4368616E     DB "Change InterPAN channel failed!\015\012"
+   \            67652049
+   \            6E746572
+   \            50414E20
+   \            6368616E
+   \            6E656C20
+   \            6661696C
+   \            6564210D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "No such endpoint!\\r\\n">`:
+   \   000000   4E6F2073     DB "No such endpoint!\015\012"
+   \            75636820
+   \            656E6470
+   \            6F696E74
+   \            210D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "INTERPAN: \\r\\n">`:
+   \   000000   494E5445     DB "INTERPAN: \015\012"
+   \            5250414E
+   \            3A200D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\n">`:
+   \   000000   0D0A00       DB "\015\012"
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+      9   InterPAN_ProcessMSGCB
+        9   -> HalUARTWrite
+        9   -> printf
+     29   InterPAN_Send
+       26   -> AF_DataRequest
+       17   -> StubAPS_SetInterPanChannel
+       17   -> StubAPS_SetIntraPanChannel
+       17   -> ZMacGetReq
+       17   -> afFindEndPointDesc
+       17   -> printf
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      34  ?<Constant "Change InterPAN chann...">
+      13  ?<Constant "INTERPAN: \r\n">
+      20  ?<Constant "No such endpoint!\r\n">
+      30  ?<Constant "Switch back channel f...">
+       3  ?<Constant "\r\n">
+      78  InterPAN_ProcessMSGCB
+     159  InterPAN_Send
+       1  InterPAN_TransID
+      12  -- Other
+
+ 
+ 237 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+ 100 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+  12 bytes of CODE     memory
+ 100 bytes of CONST    memory
+ 237 bytes of HUGECODE memory
+   1 byte  of XDATA    memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1214 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               24/Feb/2022  09:44:41
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_pwr_single_bus.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW66E1.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_pwr_single_bus.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\AT_pwr_single_bus.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\AT_pwr_single_bus.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_pwr_single_bus.c
+      1          /******************************************************************************
+      2            Filename:       AT_pwr_single_bus.c
+      3            Author:         Jinhui Li
+      4          ******************************************************************************/
+      5          #include "AT_pwr_single_bus.h"
+
+   \                                 In  segment SFR_AN, at 0x8b
+   \   unsigned char volatile __sfr P2IFG
+   \                     P2IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa9
+   \   unsigned char volatile __sfr IP0
+   \                     IP0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xac
+   \   unsigned char volatile __sfr P2IEN
+   \                     P2IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb9
+   \   unsigned char volatile __sfr IP1
+   \                     IP1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc0
+   \   union <unnamed> volatile __sfr _A_IRCON
+   \                     _A_IRCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      6          #include "AT_doorlock.h"
+      7          #include "AT_timer1.h"
+      8          #include "zcl_doorlock.h"
+      9          #include "OnBoard.h"
+     10          #include "AT_printf.h"
+     11          #include "AF.h"
+     12          #include "zcl_closures.h"
+     13          #include "hal_defs.h"
+     14          #include "bdb.h"
+     15          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     16          uint8 pwr_single_bus_rcv_buf[PWR_SINGLE_BUS_RCV_MAX] = {0x00};
+   \                     pwr_single_bus_rcv_buf:
+   \   000000                DS 100
+   \   000064                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     17          uint8 pwr_single_bus_rcv_len = 0;
+   \                     pwr_single_bus_rcv_len:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     18          uint8 pwr_single_bus_rcv_bit = 0;
+   \                     pwr_single_bus_rcv_bit:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     19          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     20          uint16 pwr_single_bus_rcv_total = 0;
+   \                     pwr_single_bus_rcv_total:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     21          uint16 pwr_single_bus_rcv_high = 0;
+   \                     pwr_single_bus_rcv_high:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     22          uint16 pwr_single_bus_rcv_low = 0;
+   \                     pwr_single_bus_rcv_low:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     23          
+     24          
+     25          static ZStatus_t AT_DoorLock_SendOperationEventNotification_pwr(uint8 *buf);
+                                  ^
+Warning[Pe177]: function "AT_DoorLock_SendOperationEventNotification_pwr" was
+          declared but never referenced
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     26          void AT_pwr_single_bus_input(void)
+   \                     AT_pwr_single_bus_input:
+     27          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     28            PWR_SINGLE_BUS_SEL &= ~PWR_SINGLE_BUS_BV;
+   \   000000   53F5FE       ANL       0xf5,#0xfe
+     29            PWR_SINGLE_BUS_DIR &= ~PWR_SINGLE_BUS_BV;
+   \   000003   53FFFE       ANL       0xff,#0xfe
+     30            PWR_SINGLE_BUS_INP &= ~PWR_SINGLE_BUS_BV;
+   \   000006   53F7FE       ANL       0xf7,#0xfe
+     31          
+     32            P2IFG = 0x00;
+   \   000009   758B00       MOV       0x8b,#0x0
+     33            P2IF  = 0x00;
+   \   00000C   C2E8         CLR       0xe8.0
+     34          
+     35            
+     36            IEN2  |= BV(1); // enable port interrupt
+   \   00000E   439A02       ORL       0x9a,#0x2
+     37            P2IEN |= PWR_SINGLE_BUS_BV; // enable pin interrupt
+   \   000011   43AC01       ORL       0xac,#0x1
+     38          
+     39            P2INP &= ~BV(7); // pull up
+   \   000014   53F77F       ANL       0xf7,#0x7f
+     40            PICTL |=  PWR_SINGLE_BUS_EDGE_BV; // falling edge
+   \   000017   438C08       ORL       0x8c,#0x8
+     41          }
+   \   00001A   02....       LJMP      ?BRET
+   \   00001D                REQUIRE P2SEL
+   \   00001D                REQUIRE P2DIR
+   \   00001D                REQUIRE P2INP
+   \   00001D                REQUIRE P2IFG
+   \   00001D                REQUIRE _A_IRCON2
+   \   00001D                REQUIRE IEN2
+   \   00001D                REQUIRE P2IEN
+   \   00001D                REQUIRE PICTL
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     42          void AT_pwr_single_bus_output(void)
+   \                     AT_pwr_single_bus_output:
+     43          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     44            PWR_SINGLE_BUS_SEL &= ~PWR_SINGLE_BUS_BV;
+   \   000000   53F5FE       ANL       0xf5,#0xfe
+     45            PWR_SINGLE_BUS_DIR |=  PWR_SINGLE_BUS_BV;
+   \   000003   43FF01       ORL       0xff,#0x1
+     46          
+     47            IEN2  &= ~BV(1); // disable port interrupt
+   \   000006   539AFD       ANL       0x9a,#0xfd
+     48            P2IEN &= ~PWR_SINGLE_BUS_BV; // disable pin interrupt
+   \   000009   53ACFE       ANL       0xac,#0xfe
+     49          }
+   \   00000C   02....       LJMP      ?BRET
+   \   00000F                REQUIRE P2SEL
+   \   00000F                REQUIRE P2DIR
+   \   00000F                REQUIRE IEN2
+   \   00000F                REQUIRE P2IEN
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     50          void AT_pwr_single_bus_init(void)
+   \                     AT_pwr_single_bus_init:
+     51          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     52            AT_pwr_single_bus_input();
+   \   000004                ; Setup parameters for call to function AT_pwr_single_bus_input
+   \   000004   12....       LCALL     `??AT_pwr_single_bus_input::?relay`; Banked call to: AT_pwr_single_bus_input
+     53          
+     54            // set IPG1(ADC/T1/P2INT) to the highest priority
+     55            IP0 |= BV(1);
+   \   000007   43A902       ORL       0xa9,#0x2
+     56            IP1 |= BV(1);
+   \   00000A   43B902       ORL       0xb9,#0x2
+     57          }
+   \   00000D   D083         POP       DPH
+   \   00000F   D082         POP       DPL
+   \   000011   02....       LJMP      ?BRET
+   \   000014                REQUIRE IP0
+   \   000014                REQUIRE IP1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     58          void AT_pwr_single_bus_send_byte(uint8 dataByte)
+   \                     AT_pwr_single_bus_send_byte:
+     59          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FF           MOV       R7,A
+     60            uint8 i;
+     61          
+     62            for(i=0; i<8; i++)
+   \   000007   7E08         MOV       R6,#0x8
+     63            {
+     64              if(dataByte & 0x01)
+   \                     ??AT_pwr_single_bus_send_byte_0:
+   \   000009   EF           MOV       A,R7
+   \   00000A   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00000C   D2A0         SETB      0xa0.0
+   \   00000E   500D         JNC       ??AT_pwr_single_bus_send_byte_1
+     65              {
+     66                PWR_SINGLE_BUS_PIN = PWR_SINGLE_BUS_HIGH;
+     67                MicroWait(191); // more close to 160 us
+   \   000010                ; Setup parameters for call to function Onboard_wait
+   \   000010   7ABF         MOV       R2,#-0x41
+   \   000012   7B00         MOV       R3,#0x0
+   \   000014   12....       LCALL     `??Onboard_wait::?relay`; Banked call to: Onboard_wait
+     68          
+     69                PWR_SINGLE_BUS_PIN = PWR_SINGLE_BUS_LOW;
+   \   000017   C2A0         CLR       0xa0.0
+     70                MicroWait(92); // more close to 80 us
+   \   000019                ; Setup parameters for call to function Onboard_wait
+   \   000019   7A5C         MOV       R2,#0x5c
+   \   00001B   800B         SJMP      ??AT_pwr_single_bus_send_byte_2
+     71              }
+     72              else
+     73              {
+     74                PWR_SINGLE_BUS_PIN = PWR_SINGLE_BUS_HIGH;
+     75                MicroWait(92); // more close to 80 us
+   \                     ??AT_pwr_single_bus_send_byte_1:
+   \   00001D                ; Setup parameters for call to function Onboard_wait
+   \   00001D   7A5C         MOV       R2,#0x5c
+   \   00001F   7B00         MOV       R3,#0x0
+   \   000021   12....       LCALL     `??Onboard_wait::?relay`; Banked call to: Onboard_wait
+     76          
+     77                PWR_SINGLE_BUS_PIN = PWR_SINGLE_BUS_LOW;
+   \   000024   C2A0         CLR       0xa0.0
+     78                MicroWait(191); // more close to 160 us
+   \   000026                ; Setup parameters for call to function Onboard_wait
+   \   000026   7ABF         MOV       R2,#-0x41
+   \                     ??AT_pwr_single_bus_send_byte_2:
+   \   000028   7B00         MOV       R3,#0x0
+   \   00002A   12....       LCALL     `??Onboard_wait::?relay`; Banked call to: Onboard_wait
+     79              }
+     80          
+     81              dataByte >>= 1;
+   \   00002D   EF           MOV       A,R7
+   \   00002E   C3           CLR       C
+   \   00002F   13           RRC       A
+   \   000030   FF           MOV       R7,A
+     82            }
+   \   000031   1E           DEC       R6
+   \   000032   EE           MOV       A,R6
+   \   000033   70D4         JNZ       ??AT_pwr_single_bus_send_byte_0
+     83          }
+   \   000035   7F01         MOV       R7,#0x1
+   \   000037   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   00003A                REQUIRE _A_P2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     84          void AT_pwr_single_bus_send_buf(uint8 *buf, uint8 len)
+   \                     AT_pwr_single_bus_send_buf:
+     85          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+   \   000009   89..         MOV       ?V1,R1
+     86            uint8 i;
+     87          
+     88            printf("|down|-----|%02d bytes|: ", len);
+   \   00000B                ; Setup parameters for call to function printf
+   \   00000B   E9           MOV       A,R1
+   \   00000C   F5..         MOV       ?V2,A
+   \   00000E   75..00       MOV       ?V3,#0x0
+   \   000011   78..         MOV       R0,#?V2
+   \   000013   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000016   7A..         MOV       R2,#`?<Constant "|down|-----|%02d byte...">` & 0xff
+   \   000018   7B..         MOV       R3,#(`?<Constant "|down|-----|%02d byte...">` >> 8) & 0xff
+   \   00001A   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   00001D   7402         MOV       A,#0x2
+   \   00001F   12....       LCALL     ?DEALLOC_XSTACK8
+     89            for(i=0; i<len; i++)
+   \   000022   75..00       MOV       ?V0,#0x0
+   \   000025   8018         SJMP      ??AT_pwr_single_bus_send_buf_0
+     90            {
+     91              printf("%02X ", buf[i]);
+   \                     ??AT_pwr_single_bus_send_buf_1:
+   \   000027                ; Setup parameters for call to function printf
+   \   000027   12....       LCALL     ?Subroutine0 & 0xFFFF
+     92            }
+   \                     ??CrossCallReturnLabel_0:
+   \   00002A   F5..         MOV       ?V2,A
+   \   00002C   78..         MOV       R0,#?V2
+   \   00002E   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000031   7A..         MOV       R2,#`?<Constant "%02X ">` & 0xff
+   \   000033   7B..         MOV       R3,#(`?<Constant "%02X ">` >> 8) & 0xff
+   \   000035   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   000038   7402         MOV       A,#0x2
+   \   00003A   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00003D   05..         INC       ?V0
+   \                     ??AT_pwr_single_bus_send_buf_0:
+   \   00003F   E5..         MOV       A,?V0
+   \   000041   C3           CLR       C
+   \   000042   95..         SUBB      A,?V1
+   \   000044   40E1         JC        ??AT_pwr_single_bus_send_buf_1
+     93            printf("\r\n");
+   \   000046                ; Setup parameters for call to function printf
+   \   000046   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000048   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   00004A   12....       LCALL     `??printf::?relay`; Banked call to: printf
+     94          
+     95            AT_pwr_single_bus_output();
+   \   00004D                ; Setup parameters for call to function AT_pwr_single_bus_output
+   \   00004D   12....       LCALL     `??AT_pwr_single_bus_output::?relay`; Banked call to: AT_pwr_single_bus_output
+     96          
+     97            PWR_SINGLE_BUS_PIN = PWR_SINGLE_BUS_LOW;
+   \   000050   C2A0         CLR       0xa0.0
+     98            MicroWait(4900); // more close to 4 ms
+   \   000052                ; Setup parameters for call to function Onboard_wait
+   \   000052   7A24         MOV       R2,#0x24
+   \   000054   7B13         MOV       R3,#0x13
+   \   000056   12....       LCALL     `??Onboard_wait::?relay`; Banked call to: Onboard_wait
+     99          
+    100            for(i=0; i<len; i++)
+   \   000059   75..00       MOV       ?V0,#0x0
+   \   00005C   8009         SJMP      ??AT_pwr_single_bus_send_buf_2
+    101            {
+    102              AT_pwr_single_bus_send_byte(buf[i]);
+   \                     ??AT_pwr_single_bus_send_buf_3:
+   \   00005E                ; Setup parameters for call to function AT_pwr_single_bus_send_byte
+   \   00005E   12....       LCALL     ?Subroutine0 & 0xFFFF
+    103            }
+   \                     ??CrossCallReturnLabel_1:
+   \   000061   F9           MOV       R1,A
+   \   000062   12....       LCALL     `??AT_pwr_single_bus_send_byte::?relay`; Banked call to: AT_pwr_single_bus_send_byte
+   \   000065   05..         INC       ?V0
+   \                     ??AT_pwr_single_bus_send_buf_2:
+   \   000067   E5..         MOV       A,?V0
+   \   000069   C3           CLR       C
+   \   00006A   95..         SUBB      A,?V1
+   \   00006C   40F0         JC        ??AT_pwr_single_bus_send_buf_3
+    104          
+    105            PWR_SINGLE_BUS_PIN = PWR_SINGLE_BUS_HIGH;
+   \   00006E   D2A0         SETB      0xa0.0
+    106          
+    107            AT_pwr_single_bus_input();
+   \   000070                ; Setup parameters for call to function AT_pwr_single_bus_input
+   \   000070   12....       LCALL     `??AT_pwr_single_bus_input::?relay`; Banked call to: AT_pwr_single_bus_input
+    108          }
+   \   000073   7F04         MOV       R7,#0x4
+   \   000075   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   000078                REQUIRE _A_P2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   A8..         MOV       R0,?V0
+   \   000002   EE           MOV       A,R6
+   \   000003   28           ADD       A,R0
+   \   000004   F582         MOV       DPL,A
+   \   000006   E4           CLR       A
+   \   000007   3F           ADDC      A,R7
+   \   000008   F583         MOV       DPH,A
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    109          static ZStatus_t AT_DoorLock_SendOperationEventNotification(uint8 *buf)
+   \                     AT_DoorLock_SendOperationEventNotification:
+    110          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 23
+   \   000005   74E9         MOV       A,#-0x17
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    111              ZStatus_t status;
+    112          
+    113            // build destination address
+    114            afAddrType_t dstAddr;
+    115            dstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00000A   7413         MOV       A,#0x13
+   \   00000C   12....       LCALL     ?XSTACK_DISP0_8
+   \   00000F   7402         MOV       A,#0x2
+   \   000011   F0           MOVX      @DPTR,A
+    116            dstAddr.addr.shortAddr = NWK_PAN_COORD_ADDR;// default send to Coordinator
+   \   000012   740B         MOV       A,#0xb
+   \   000014   12....       LCALL     ?XSTACK_DISP0_8
+   \   000017   E4           CLR       A
+   \   000018   F0           MOVX      @DPTR,A
+   \   000019   A3           INC       DPTR
+   \   00001A   F0           MOVX      @DPTR,A
+    117            dstAddr.endPoint = 0x0B;//GENERIC_ENDPOINT on Coordinator
+   \   00001B   7414         MOV       A,#0x14
+   \   00001D   12....       LCALL     ?XSTACK_DISP0_8
+   \   000020   740B         MOV       A,#0xb
+   \   000022   F0           MOVX      @DPTR,A
+    118          
+    119            //build DoorLock Operation Event Notification
+    120            zclDoorLockOperationEventNotification_t pPayload;
+    121            pPayload.operationEventSource = 0xFE;
+   \   000023   85..82       MOV       DPL,?XSP + 0
+   \   000026   85..83       MOV       DPH,?XSP + 1
+   \   000029   74FE         MOV       A,#-0x2
+   \   00002B   12....       LCALL     ?Subroutine2 & 0xFFFF
+    122            pPayload.operationEventCode = buf[0];
+   \                     ??CrossCallReturnLabel_4:
+   \   00002E   E0           MOVX      A,@DPTR
+   \   00002F   C0E0         PUSH      A
+   \   000031   7401         MOV       A,#0x1
+   \   000033   12....       LCALL     ?XSTACK_DISP0_8
+   \   000036   D0E0         POP       A
+   \   000038   12....       LCALL     ?Subroutine2 & 0xFFFF
+    123            pPayload.userID = BUILD_UINT16(buf[1],buf[2]);
+   \                     ??CrossCallReturnLabel_5:
+   \   00003B   A3           INC       DPTR
+   \   00003C   E0           MOVX      A,@DPTR
+   \   00003D   FC           MOV       R4,A
+   \   00003E   8A82         MOV       DPL,R2
+   \   000040   8B83         MOV       DPH,R3
+   \   000042   A3           INC       DPTR
+   \   000043   A3           INC       DPTR
+   \   000044   E0           MOVX      A,@DPTR
+   \   000045   F9           MOV       R1,A
+   \   000046   7402         MOV       A,#0x2
+   \   000048   12....       LCALL     ?XSTACK_DISP0_8
+   \   00004B   EC           MOV       A,R4
+   \   00004C   F0           MOVX      @DPTR,A
+   \   00004D   A3           INC       DPTR
+   \   00004E   E9           MOV       A,R1
+   \   00004F   12....       LCALL     ?Subroutine1 & 0xFFFF
+    124            pPayload.pin = buf[3]; // it is battery level actually
+   \                     ??CrossCallReturnLabel_2:
+   \   000052   E0           MOVX      A,@DPTR
+   \   000053   C0E0         PUSH      A
+   \   000055   7404         MOV       A,#0x4
+   \   000057   12....       LCALL     ?XSTACK_DISP0_8
+   \   00005A   D0E0         POP       A
+   \   00005C   12....       LCALL     ?Subroutine1 & 0xFFFF
+    125            pPayload.zigBeeLocalTime = BUILD_UINT32(buf[4],buf[5],buf[6],buf[7]);
+   \                     ??CrossCallReturnLabel_3:
+   \   00005F   A3           INC       DPTR
+   \   000060   E0           MOVX      A,@DPTR
+   \   000061   F5..         MOV       ?V0,A
+   \   000063   E4           CLR       A
+   \   000064   F5..         MOV       ?V1,A
+   \   000066   F5..         MOV       ?V2,A
+   \   000068   F5..         MOV       ?V3,A
+   \   00006A   8A82         MOV       DPL,R2
+   \   00006C   8B83         MOV       DPH,R3
+   \   00006E   A3           INC       DPTR
+   \   00006F   A3           INC       DPTR
+   \   000070   A3           INC       DPTR
+   \   000071   A3           INC       DPTR
+   \   000072   A3           INC       DPTR
+   \   000073   E0           MOVX      A,@DPTR
+   \   000074   F5..         MOV       ?V4,A
+   \   000076   E4           CLR       A
+   \   000077   F5..         MOV       ?V5,A
+   \   000079   F5..         MOV       ?V6,A
+   \   00007B   F5..         MOV       ?V7,A
+   \   00007D   7408         MOV       A,#0x8
+   \   00007F   78..         MOV       R0,#?V4
+   \   000081   12....       LCALL     ?L_SHL
+   \   000084   78..         MOV       R0,#?V0
+   \   000086   79..         MOV       R1,#?V4
+   \   000088   12....       LCALL     ?L_ADD
+   \   00008B   8A82         MOV       DPL,R2
+   \   00008D   8B83         MOV       DPH,R3
+   \   00008F   A3           INC       DPTR
+   \   000090   A3           INC       DPTR
+   \   000091   A3           INC       DPTR
+   \   000092   A3           INC       DPTR
+   \   000093   A3           INC       DPTR
+   \   000094   A3           INC       DPTR
+   \   000095   E0           MOVX      A,@DPTR
+   \   000096   F5..         MOV       ?V4,A
+   \   000098   E4           CLR       A
+   \   000099   F5..         MOV       ?V5,A
+   \   00009B   7410         MOV       A,#0x10
+   \   00009D   78..         MOV       R0,#?V4
+   \   00009F   12....       LCALL     ?L_SHL
+   \   0000A2   78..         MOV       R0,#?V0
+   \   0000A4   79..         MOV       R1,#?V4
+   \   0000A6   12....       LCALL     ?L_ADD
+   \   0000A9   8A82         MOV       DPL,R2
+   \   0000AB   8B83         MOV       DPH,R3
+   \   0000AD   A3           INC       DPTR
+   \   0000AE   A3           INC       DPTR
+   \   0000AF   A3           INC       DPTR
+   \   0000B0   A3           INC       DPTR
+   \   0000B1   A3           INC       DPTR
+   \   0000B2   A3           INC       DPTR
+   \   0000B3   A3           INC       DPTR
+   \   0000B4   E0           MOVX      A,@DPTR
+   \   0000B5   F5..         MOV       ?V4,A
+   \   0000B7   E4           CLR       A
+   \   0000B8   F5..         MOV       ?V6,A
+   \   0000BA   7418         MOV       A,#0x18
+   \   0000BC   78..         MOV       R0,#?V4
+   \   0000BE   12....       LCALL     ?L_SHL
+   \   0000C1   78..         MOV       R0,#?V0
+   \   0000C3   79..         MOV       R1,#?V4
+   \   0000C5   12....       LCALL     ?L_ADD
+   \   0000C8   7405         MOV       A,#0x5
+   \   0000CA   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000CD   78..         MOV       R0,#?V0
+   \   0000CF   12....       LCALL     ?L_MOV_TO_X
+    126          
+    127            pPayload.pData = (uint8 *)osal_mem_alloc(1);
+   \   0000D2                ; Setup parameters for call to function osal_mem_alloc
+   \   0000D2   7A01         MOV       R2,#0x1
+   \   0000D4   7B00         MOV       R3,#0x0
+   \   0000D6   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   0000D9   7409         MOV       A,#0x9
+   \   0000DB   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000DE   EA           MOV       A,R2
+   \   0000DF   F0           MOVX      @DPTR,A
+   \   0000E0   A3           INC       DPTR
+   \   0000E1   EB           MOV       A,R3
+   \   0000E2   12....       LCALL     ?Subroutine2 & 0xFFFF
+    128            pPayload.pData[0] = 0;
+   \                     ??CrossCallReturnLabel_6:
+   \   0000E5   E4           CLR       A
+   \   0000E6   F0           MOVX      @DPTR,A
+    129          
+    130            status = zclClosures_SendDoorLockOperationEventNotification( DOORLOCK_ENDPOINT,//uint8 srcEP,
+    131                                                                         &dstAddr,//afAddrType_t *dstAddr,
+    132                                                                         &pPayload,//zclDoorLockOperationEventNotification_t *pPayload,
+    133                                                                         TRUE,//uint8 disableDefaultRsp,
+    134                                                                         bdb_ZclTransactionSequenceNumber++);//uint8 seqNum
+   \   0000E7   90....       MOV       DPTR,#bdb_ZclTransactionSequenceNumber
+   \   0000EA   E0           MOVX      A,@DPTR
+   \   0000EB   F8           MOV       R0,A
+   \   0000EC   7401         MOV       A,#0x1
+   \   0000EE   28           ADD       A,R0
+   \   0000EF   F0           MOVX      @DPTR,A
+   \   0000F0                ; Setup parameters for call to function zclClosures_SendDoorLockOperationEventNotification
+   \   0000F0   E8           MOV       A,R0
+   \   0000F1   F5..         MOV       ?V0,A
+   \   0000F3   78..         MOV       R0,#?V0
+   \   0000F5   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000F8   75..01       MOV       ?V0,#0x1
+   \   0000FB   78..         MOV       R0,#?V0
+   \   0000FD   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000100   7402         MOV       A,#0x2
+   \   000102   12....       LCALL     ?XSTACK_DISP102_8
+   \   000105   740D         MOV       A,#0xd
+   \   000107   12....       LCALL     ?XSTACK_DISP101_8
+   \   00010A   790A         MOV       R1,#0xa
+   \   00010C   12....       LCALL     ??zclClosures_SendDoorLockOperationEventNotific; Banked call to: zclClosures_SendDoorLockOperationEventNotification
+   \   00010F   7402         MOV       A,#0x2
+   \   000111   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000114   E9           MOV       A,R1
+   \   000115   FE           MOV       R6,A
+    135          
+    136            osal_mem_free( pPayload.pData );
+   \   000116                ; Setup parameters for call to function osal_mem_free
+   \   000116   7409         MOV       A,#0x9
+   \   000118   12....       LCALL     ?XSTACK_DISP0_8
+   \   00011B   E0           MOVX      A,@DPTR
+   \   00011C   FA           MOV       R2,A
+   \   00011D   A3           INC       DPTR
+   \   00011E   E0           MOVX      A,@DPTR
+   \   00011F   FB           MOV       R3,A
+   \   000120   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    137          
+    138            return status;
+   \   000123   EE           MOV       A,R6
+   \   000124   F9           MOV       R1,A
+   \   000125   7417         MOV       A,#0x17
+   \   000127   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00012A   7F08         MOV       R7,#0x8
+   \   00012C   02....       LJMP      ?BANKED_LEAVE_XDATA
+    139          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    140          HAL_ISR_FUNCTION( pwr_single_bus_Isr, P2INT_VECTOR )
+   \                     pwr_single_bus_Isr:
+    141          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   C0E0         PUSH      A
+   \   000002   74F1         MOV       A,#-0xf
+   \   000004   12....       LCALL     ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 15
+   \   000007                ; Auto size: 0
+    142            HAL_ENTER_ISR();
+   \   000007   A2AF         MOV       C,0xa8.7
+   \   000009   E4           CLR       A
+   \   00000A   33           RLC       A
+   \   00000B   FE           MOV       R6,A
+   \   00000C   D2AF         SETB      0xa8.7
+    143          
+    144            IEN2  &= ~BV(1); // disable port interrupt
+   \   00000E   539AFD       ANL       0x9a,#0xfd
+    145            P2IEN &= ~PWR_SINGLE_BUS_BV; // disable pin interrupt
+   \   000011   53ACFE       ANL       0xac,#0xfe
+    146          
+    147            if(PWR_SINGLE_BUS_PIN)
+   \   000014   A2A0         MOV       C,0xa0.0
+   \   000016   5003         JNC       $+5
+   \   000018   02....       LJMP      ??pwr_single_bus_Isr_0
+    148            {
+    149              goto isr_exit;
+    150            }
+    151          
+    152            // start to capture the head (4 ms)
+    153            AT_Timer1_Set_Clear_Start_US(7000); 
+   \   00001B                ; Setup parameters for call to function AT_Timer1_Set_Clear_Start_US
+   \   00001B   7A58         MOV       R2,#0x58
+   \   00001D   7B1B         MOV       R3,#0x1b
+   \   00001F   12....       LCALL     `??AT_Timer1_Set_Clear_Start_US::?relay`; Banked call to: AT_Timer1_Set_Clear_Start_US
+    154            while(1)
+    155            {
+    156          #ifdef WDT_IN_PM1
+    157              WatchDogClear();
+   \                     ??pwr_single_bus_Isr_1:
+   \   000022   12....       LCALL     ?Subroutine3
+    158          #endif
+    159              if(T1IF)
+   \                     ??CrossCallReturnLabel_8:
+   \   000025   A2C1         MOV       C,0xc0.1
+   \   000027   5003         JNC       $+5
+   \   000029   02....       LJMP      ??pwr_single_bus_Isr_2
+    160              {
+    161                T1IF = 0;
+    162                goto isr_exit;
+    163              }
+    164              if(PWR_SINGLE_BUS_PIN)
+   \   00002C   A2A0         MOV       C,0xa0.0
+   \   00002E   50F2         JNC       ??pwr_single_bus_Isr_1
+    165                break;
+    166            }
+    167            pwr_single_bus_rcv_low = AT_Timer1_Stop_Get();
+   \   000030                ; Setup parameters for call to function AT_Timer1_Stop_Get
+   \   000030   12....       LCALL     ?Subroutine4
+    168            if(pwr_single_bus_rcv_low < 2000)
+   \                     ??CrossCallReturnLabel_10:
+   \   000033   90....       MOV       DPTR,#pwr_single_bus_rcv_low
+   \   000036   C3           CLR       C
+   \   000037   E0           MOVX      A,@DPTR
+   \   000038   94D0         SUBB      A,#-0x30
+   \   00003A   A3           INC       DPTR
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   9407         SUBB      A,#0x7
+   \   00003E   4062         JC        ??pwr_single_bus_Isr_0
+    169            {
+    170              goto isr_exit;
+    171            }
+    172          
+    173            pwr_single_bus_rcv_len = 0;
+   \   000040   90....       MOV       DPTR,#pwr_single_bus_rcv_len
+   \   000043   E4           CLR       A
+   \   000044   F0           MOVX      @DPTR,A
+    174            pwr_single_bus_rcv_bit = 0;
+   \   000045   90....       MOV       DPTR,#pwr_single_bus_rcv_bit
+   \   000048   801C         SJMP      ??pwr_single_bus_Isr_3
+    175          
+    176            // start to capture data
+    177            while(1)
+    178            {
+    179          #ifdef WDT_IN_PM1
+    180              WatchDogClear();
+    181          #endif
+    182          
+    183              // get high level time
+    184              AT_Timer1_Set_Clear_Start_US(400);
+    185              while(PWR_SINGLE_BUS_PIN)
+    186              {
+    187                if(T1IF)
+    188                {
+    189                  T1IF = 0;
+    190          
+    191                  if((pwr_single_bus_rcv_len > 0) && (pwr_single_bus_rcv_bit == 0))
+    192                  {
+    193                    if(pwr_single_bus_rcv_len==8)
+    194                    AT_DoorLock_SendOperationEventNotification(pwr_single_bus_rcv_buf);
+    195                    osal_set_event(zclDoorLock_TaskID, DOORLOCK_HANDLE_RSP_EVT);
+    196                    goto isr_exit;
+    197                  }
+    198          
+    199                  goto isr_exit;
+    200                }
+    201              }
+    202              pwr_single_bus_rcv_high = AT_Timer1_Stop_Get();
+    203          
+    204              // get low level time
+    205              AT_Timer1_Set_Clear_Start_US(400);
+    206              while(!PWR_SINGLE_BUS_PIN)
+    207              {
+    208                if(T1IF)
+    209                {
+    210                  T1IF = 0;
+    211                  goto isr_exit;
+    212                }
+    213              }
+    214              pwr_single_bus_rcv_low = AT_Timer1_Stop_Get();
+    215          
+    216              // check the total time
+    217              pwr_single_bus_rcv_total = pwr_single_bus_rcv_high + pwr_single_bus_rcv_low;
+    218              if ((pwr_single_bus_rcv_total < 120) || (pwr_single_bus_rcv_total > 350)) //120/4|350/4
+    219                goto isr_exit; // tolerance of 30%
+    220          
+    221              // save the data bit
+    222              if(pwr_single_bus_rcv_high > pwr_single_bus_rcv_low)
+    223                pwr_single_bus_rcv_buf[pwr_single_bus_rcv_len] |= BV(pwr_single_bus_rcv_bit++);
+    224              else
+    225                pwr_single_bus_rcv_buf[pwr_single_bus_rcv_len] &= ~BV(pwr_single_bus_rcv_bit++);
+   \                     ??pwr_single_bus_Isr_4:
+   \   00004A   EC           MOV       A,R4
+   \   00004B   F4           CPL       A
+   \   00004C   FA           MOV       R2,A
+   \   00004D   8882         MOV       DPL,R0
+   \   00004F   8983         MOV       DPH,R1
+   \   000051   E0           MOVX      A,@DPTR
+   \   000052   5A           ANL       A,R2
+   \                     ??pwr_single_bus_Isr_5:
+   \   000053   F0           MOVX      @DPTR,A
+   \   000054   90....       MOV       DPTR,#pwr_single_bus_rcv_bit
+   \   000057   E0           MOVX      A,@DPTR
+   \   000058   04           INC       A
+   \   000059   F0           MOVX      @DPTR,A
+    226          
+    227              // increase the index
+    228              if(pwr_single_bus_rcv_bit == 8) // get a whole byte (8 bits)
+   \   00005A   E0           MOVX      A,@DPTR
+   \   00005B   6408         XRL       A,#0x8
+   \   00005D   7008         JNZ       ??pwr_single_bus_Isr_6
+    229              {
+    230                pwr_single_bus_rcv_bit = 0;
+   \   00005F   E4           CLR       A
+   \   000060   F0           MOVX      @DPTR,A
+    231                pwr_single_bus_rcv_len++;
+   \   000061   90....       MOV       DPTR,#pwr_single_bus_rcv_len
+   \   000064   E0           MOVX      A,@DPTR
+   \   000065   04           INC       A
+   \                     ??pwr_single_bus_Isr_3:
+   \   000066   F0           MOVX      @DPTR,A
+    232              }
+   \                     ??pwr_single_bus_Isr_6:
+   \   000067   12....       LCALL     ?Subroutine3
+   \                     ??CrossCallReturnLabel_9:
+   \   00006A                ; Setup parameters for call to function AT_Timer1_Set_Clear_Start_US
+   \   00006A   7A90         MOV       R2,#-0x70
+   \   00006C   7B01         MOV       R3,#0x1
+   \   00006E   12....       LCALL     `??AT_Timer1_Set_Clear_Start_US::?relay`; Banked call to: AT_Timer1_Set_Clear_Start_US
+   \                     ??pwr_single_bus_Isr_7:
+   \   000071   A2A0         MOV       C,0xa0.0
+   \   000073   5045         JNC       ??pwr_single_bus_Isr_8
+   \   000075   A2C1         MOV       C,0xc0.1
+   \   000077   50F8         JNC       ??pwr_single_bus_Isr_7
+   \   000079   C2C1         CLR       0xc0.1
+   \   00007B   90....       MOV       DPTR,#pwr_single_bus_rcv_len
+   \   00007E   E0           MOVX      A,@DPTR
+   \   00007F   6021         JZ        ??pwr_single_bus_Isr_0
+   \   000081   90....       MOV       DPTR,#pwr_single_bus_rcv_bit
+   \   000084   E0           MOVX      A,@DPTR
+   \   000085   701B         JNZ       ??pwr_single_bus_Isr_0
+   \   000087   90....       MOV       DPTR,#pwr_single_bus_rcv_len
+   \   00008A   E0           MOVX      A,@DPTR
+   \   00008B   6408         XRL       A,#0x8
+   \   00008D   7007         JNZ       ??pwr_single_bus_Isr_9
+   \   00008F                ; Setup parameters for call to function AT_DoorLock_SendOperationEventNotification
+   \   00008F   7A..         MOV       R2,#pwr_single_bus_rcv_buf & 0xff
+   \   000091   7B..         MOV       R3,#(pwr_single_bus_rcv_buf >> 8) & 0xff
+   \   000093   12....       LCALL     `??AT_DoorLock_SendOperationEventNotification::?`; Banked call to: AT_DoorLock_SendOperationEventNotification
+   \                     ??pwr_single_bus_Isr_9:
+   \   000096                ; Setup parameters for call to function osal_set_event
+   \   000096   7A20         MOV       R2,#0x20
+   \   000098   7B00         MOV       R3,#0x0
+   \   00009A   90....       MOV       DPTR,#zclDoorLock_TaskID
+   \   00009D   E0           MOVX      A,@DPTR
+   \   00009E   F9           MOV       R1,A
+   \   00009F   12....       LCALL     `??osal_set_event::?relay`; Banked call to: osal_set_event
+    233            }
+    234          
+    235          isr_exit:
+    236            IEN2  |= BV(1); // enable port interrupt
+   \                     ??pwr_single_bus_Isr_0:
+   \   0000A2   439A02       ORL       0x9a,#0x2
+    237            P2IEN |= PWR_SINGLE_BUS_BV; // enable pin interrupt
+   \   0000A5   43AC01       ORL       0xac,#0x1
+    238            P2IFG = 0x00;
+   \   0000A8   758B00       MOV       0x8b,#0x0
+    239            P2IF  = 0x00;
+   \   0000AB   C2E8         CLR       0xe8.0
+    240          
+    241            CLEAR_SLEEP_MODE();
+   \   0000AD   75..00       MOV       halSleepPconValue,#0x0
+    242            HAL_EXIT_ISR();
+   \   0000B0   EE           MOV       A,R6
+   \   0000B1   A2E0         MOV       C,0xE0 /* A   */.0
+   \   0000B3   92AF         MOV       0xa8.7,C
+    243          }
+   \   0000B5   7F02         MOV       R7,#0x2
+   \   0000B7   02....       LJMP      ?INTERRUPT_LEAVE_XSP
+   \                     ??pwr_single_bus_Isr_8:
+   \   0000BA                ; Setup parameters for call to function AT_Timer1_Stop_Get
+   \   0000BA   12....       LCALL     `??AT_Timer1_Stop_Get::?relay`; Banked call to: AT_Timer1_Stop_Get
+   \   0000BD   90....       MOV       DPTR,#pwr_single_bus_rcv_high
+   \   0000C0   EA           MOV       A,R2
+   \   0000C1   F0           MOVX      @DPTR,A
+   \   0000C2   A3           INC       DPTR
+   \   0000C3   EB           MOV       A,R3
+   \   0000C4   F0           MOVX      @DPTR,A
+   \   0000C5                ; Setup parameters for call to function AT_Timer1_Set_Clear_Start_US
+   \   0000C5   7A90         MOV       R2,#-0x70
+   \   0000C7   7B01         MOV       R3,#0x1
+   \   0000C9   12....       LCALL     `??AT_Timer1_Set_Clear_Start_US::?relay`; Banked call to: AT_Timer1_Set_Clear_Start_US
+   \                     ??pwr_single_bus_Isr_10:
+   \   0000CC   A2A0         MOV       C,0xa0.0
+   \   0000CE   4008         JC        ??pwr_single_bus_Isr_11
+   \   0000D0   A2C1         MOV       C,0xc0.1
+   \   0000D2   50F8         JNC       ??pwr_single_bus_Isr_10
+   \                     ??pwr_single_bus_Isr_2:
+   \   0000D4   C2C1         CLR       0xc0.1
+   \   0000D6   80CA         SJMP      ??pwr_single_bus_Isr_0
+   \                     ??pwr_single_bus_Isr_11:
+   \   0000D8                ; Setup parameters for call to function AT_Timer1_Stop_Get
+   \   0000D8   12....       LCALL     ?Subroutine4
+   \                     ??CrossCallReturnLabel_11:
+   \   0000DB   90....       MOV       DPTR,#pwr_single_bus_rcv_high
+   \   0000DE   E0           MOVX      A,@DPTR
+   \   0000DF   F8           MOV       R0,A
+   \   0000E0   A3           INC       DPTR
+   \   0000E1   E0           MOVX      A,@DPTR
+   \   0000E2   F9           MOV       R1,A
+   \   0000E3   90....       MOV       DPTR,#pwr_single_bus_rcv_low
+   \   0000E6   E0           MOVX      A,@DPTR
+   \   0000E7   28           ADD       A,R0
+   \   0000E8   F8           MOV       R0,A
+   \   0000E9   A3           INC       DPTR
+   \   0000EA   E0           MOVX      A,@DPTR
+   \   0000EB   39           ADDC      A,R1
+   \   0000EC   F9           MOV       R1,A
+   \   0000ED   90....       MOV       DPTR,#pwr_single_bus_rcv_total
+   \   0000F0   E8           MOV       A,R0
+   \   0000F1   F0           MOVX      @DPTR,A
+   \   0000F2   A3           INC       DPTR
+   \   0000F3   E9           MOV       A,R1
+   \   0000F4   F0           MOVX      @DPTR,A
+   \   0000F5   90....       MOV       DPTR,#pwr_single_bus_rcv_total
+   \   0000F8   E0           MOVX      A,@DPTR
+   \   0000F9   2488         ADD       A,#-0x78
+   \   0000FB   F8           MOV       R0,A
+   \   0000FC   A3           INC       DPTR
+   \   0000FD   E0           MOVX      A,@DPTR
+   \   0000FE   34FF         ADDC      A,#-0x1
+   \   000100   F9           MOV       R1,A
+   \   000101   C3           CLR       C
+   \   000102   E8           MOV       A,R0
+   \   000103   94E7         SUBB      A,#-0x19
+   \   000105   E9           MOV       A,R1
+   \   000106   9400         SUBB      A,#0x0
+   \   000108   5098         JNC       ??pwr_single_bus_Isr_0
+   \   00010A   75..01       MOV       ?V0,#0x1
+   \   00010D   75..00       MOV       ?V1,#0x0
+   \   000110   90....       MOV       DPTR,#pwr_single_bus_rcv_bit
+   \   000113   E0           MOVX      A,@DPTR
+   \   000114   78..         MOV       R0,#?V0
+   \   000116   12....       LCALL     ?S_SHL
+   \   000119   E5..         MOV       A,?V0
+   \   00011B   FC           MOV       R4,A
+   \   00011C   90....       MOV       DPTR,#pwr_single_bus_rcv_len
+   \   00011F   E0           MOVX      A,@DPTR
+   \   000120   F8           MOV       R0,A
+   \   000121   74..         MOV       A,#pwr_single_bus_rcv_buf & 0xff
+   \   000123   28           ADD       A,R0
+   \   000124   F8           MOV       R0,A
+   \   000125   E4           CLR       A
+   \   000126   34..         ADDC      A,#(pwr_single_bus_rcv_buf >> 8) & 0xff
+   \   000128   F9           MOV       R1,A
+   \   000129   90....       MOV       DPTR,#pwr_single_bus_rcv_low
+   \   00012C   C082         PUSH      DPL
+   \   00012E   90....       MOV       DPTR,#pwr_single_bus_rcv_high
+   \   000131   E0           MOVX      A,@DPTR
+   \   000132   FA           MOV       R2,A
+   \   000133   A3           INC       DPTR
+   \   000134   E0           MOVX      A,@DPTR
+   \   000135   FB           MOV       R3,A
+   \   000136   7583..       MOV       DPH,#(pwr_single_bus_rcv_low >> 8) & 0xff
+   \   000139   D082         POP       DPL
+   \   00013B   C3           CLR       C
+   \   00013C   E0           MOVX      A,@DPTR
+   \   00013D   9A           SUBB      A,R2
+   \   00013E   A3           INC       DPTR
+   \   00013F   E0           MOVX      A,@DPTR
+   \   000140   9B           SUBB      A,R3
+   \   000141   4003         JC        $+5
+   \   000143   02....       LJMP      ??pwr_single_bus_Isr_4
+   \   000146   8882         MOV       DPL,R0
+   \   000148   8983         MOV       DPH,R1
+   \   00014A   E0           MOVX      A,@DPTR
+   \   00014B   4C           ORL       A,R4
+   \   00014C   02....       LJMP      ??pwr_single_bus_Isr_5
+   \   00014F                REQUIRE _A_IEN0
+   \   00014F                REQUIRE IEN2
+   \   00014F                REQUIRE P2IEN
+   \   00014F                REQUIRE _A_P2
+   \   00014F                REQUIRE WDCTL
+   \   00014F                REQUIRE _A_IRCON
+   \   00014F                REQUIRE P2IFG
+   \   00014F                REQUIRE _A_IRCON2
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL     `??AT_Timer1_Stop_Get::?relay`; Banked call to: AT_Timer1_Stop_Get
+   \   000003   90....       MOV       DPTR,#pwr_single_bus_rcv_low
+   \   000006   EA           MOV       A,R2
+   \   000007   F0           MOVX      @DPTR,A
+   \   000008   A3           INC       DPTR
+   \   000009   EB           MOV       A,R3
+   \   00000A   F0           MOVX      @DPTR,A
+   \   00000B   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E5C9         MOV       A,0xc9
+   \   000002   540F         ANL       A,#0xf
+   \   000004   44A0         ORL       A,#0xa0
+   \   000006   F5C9         MOV       0xc9,A
+   \   000008   E5C9         MOV       A,0xc9
+   \   00000A   540F         ANL       A,#0xf
+   \   00000C   4450         ORL       A,#0x50
+   \   00000E   F5C9         MOV       0xc9,A
+   \   000010   22           RET
+
+   \                                 In  segment INTVEC, offset 0x33, root
+   \                     `??pwr_single_bus_Isr::??INTVEC 51`:
+   \   000033   02....       LJMP       (pwr_single_bus_Isr)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "|down|-----|%02d byte...">`:
+   \   000000   7C646F77     DB "|down|-----|%02d bytes|: "
+   \            6E7C2D2D
+   \            2D2D2D7C
+   \            25303264
+   \            20627974
+   \            65737C3A
+   \            2000    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "%02X ">`:
+   \   000000   25303258     DB "%02X "
+   \            2000    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\n">`:
+   \   000000   0D0A00       DB "\015\012"
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      1     56   AT_DoorLock_SendOperationEventNotification
+        0     39   -> osal_mem_alloc
+        0     39   -> osal_mem_free
+        0     41   -> zclClosures_SendDoorLockOperationEventNotification
+      2      0   AT_pwr_single_bus_init
+        2      0   -> AT_pwr_single_bus_input
+      0     12   AT_pwr_single_bus_input
+      0     12   AT_pwr_single_bus_output
+      0     14   AT_pwr_single_bus_send_buf
+        0     12   -> AT_pwr_single_bus_input
+        0     12   -> AT_pwr_single_bus_output
+        0     12   -> AT_pwr_single_bus_send_byte
+        0     12   -> Onboard_wait
+        0     12   -> printf
+        0     14   -> printf
+      0     21   AT_pwr_single_bus_send_byte
+        0      9   -> Onboard_wait
+      2     15   pwr_single_bus_Isr
+        0     15   -> AT_DoorLock_SendOperationEventNotification
+        0     15   -> AT_Timer1_Set_Clear_Start_US
+        0     15   -> AT_Timer1_Stop_Get
+        0     15   -> osal_set_event
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ?<Constant "%02X ">
+       3  ?<Constant "\r\n">
+      26  ?<Constant "|down|-----|%02d byte...">
+      12  ?Subroutine0
+       7  ?Subroutine1
+       6  ?Subroutine2
+      17  ?Subroutine3
+      12  ?Subroutine4
+     303  AT_DoorLock_SendOperationEventNotification
+      20  AT_pwr_single_bus_init
+      29  AT_pwr_single_bus_input
+      15  AT_pwr_single_bus_output
+     120  AT_pwr_single_bus_send_buf
+      58  AT_pwr_single_bus_send_byte
+       1  IEN2
+       1  IP0
+       1  IP1
+       1  P2DIR
+       1  P2IEN
+       1  P2IFG
+       1  P2INP
+       1  P2SEL
+       1  PICTL
+       1  WDCTL
+       1  _A_IEN0
+       1  _A_IRCON
+       1  _A_IRCON2
+       1  _A_P2
+     335  pwr_single_bus_Isr
+       3  pwr_single_bus_Isr::??INTVEC 51
+       1  pwr_single_bus_rcv_bit
+     100  pwr_single_bus_rcv_buf
+       2  pwr_single_bus_rcv_high
+       1  pwr_single_bus_rcv_len
+       2  pwr_single_bus_rcv_low
+       2  pwr_single_bus_rcv_total
+      36  -- Other
+
+ 
+ 570 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+ 364 bytes in segment NEAR_CODE
+  14 bytes in segment SFR_AN
+  35 bytes in segment XDATA_ROM_C
+ 108 bytes in segment XDATA_Z
+ 
+ 400 bytes of CODE     memory (+  3 bytes shared)
+  35 bytes of CONST    memory
+   0 bytes of DATA     memory (+ 14 bytes shared)
+ 570 bytes of HUGECODE memory
+ 108 bytes of XDATA    memory
+
+Errors: none
+Warnings: 1

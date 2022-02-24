@@ -1,0 +1,491 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               23/Feb/2022  09:34:57
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ATApp_data.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW30A3.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ATApp_data.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\ATApp_data.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\ATApp_data.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ATApp_data.c
+      1          /**************************************************************************************************
+      2            Filename:       ATApp_data.c
+      3          
+      4            Description:    Zigbee Cluster Library - sample device application.
+      5          
+      6          
+      7            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+      8          
+      9            IMPORTANT: Your use of this Software is limited to those specific rights
+     10            granted under the terms of a software license agreement between the user
+     11            who downloaded the software, his/her employer (which must be your employer)
+     12            and Texas Instruments Incorporated (the "License").  You may not use this
+     13            Software unless you agree to abide by the terms of the License. The License
+     14            limits your use, and you acknowledge, that the Software may not be modified,
+     15            copied or distributed unless embedded on a Texas Instruments microcontroller
+     16            or used solely and exclusively in conjunction with a Texas Instruments radio
+     17            frequency transceiver, which is integrated into your product.  Other than for
+     18            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     19            works of, modify, distribute, perform, display or sell this Software and/or
+     20            its documentation for any purpose.
+     21          
+     22            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     23            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     24            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     25            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     26            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     27            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     28            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     29            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     30            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     31            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     32            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     33          
+     34            Should you have any questions regarding your right to use this Software,
+     35            contact Texas Instruments Incorporated at www.TI.com.
+     36          **************************************************************************************************/
+     37          
+     38          /*********************************************************************
+     39           * INCLUDES
+     40           */
+     41          #include "ZComDef.h"
+     42          #include "OSAL.h"
+     43          #include "AF.h"
+     44          #include "ZDConfig.h"
+     45          
+     46          #include "zcl.h"
+     47          // #include "zcl_general.h"
+     48          #include "zcl_ha.h"
+     49          
+     50          /* ATAPP_TODO: Include any of the header files below to access specific cluster data
+     51          #include "zcl_poll_control.h"
+     52          #include "zcl_electrical_measurement.h"
+     53          #include "zcl_diagnostic.h"
+     54          #include "zcl_meter_identification.h"
+     55          #include "zcl_appliance_identification.h"
+     56          #include "zcl_appliance_events_alerts.h"
+     57          #include "zcl_power_profile.h"
+     58          #include "zcl_appliance_control.h"
+     59          #include "zcl_appliance_statistics.h"
+     60          #include "zcl_hvac.h"
+     61          */
+     62          
+     63          #include "ATApp.h"
+     64          
+     65          /*********************************************************************
+     66           * CONSTANTS
+     67           */
+     68          
+     69          #define ATApp_DEVICE_VERSION     0
+     70          #define ATApp_FLAGS              0
+     71          
+     72          // #define ATAPP_HWVERSION          1
+     73          // #define ATAPP_ZCLVERSION         1
+     74          
+     75          /*********************************************************************
+     76           * TYPEDEFS
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * MACROS
+     81           */
+     82          
+     83          /*********************************************************************
+     84           * GLOBAL VARIABLES
+     85           */
+     86          
+     87          // // Global attributes
+     88          // const uint16 zclATApp_clusterRevision_all = 0x0001;
+     89          //
+     90          // // Basic Cluster
+     91          // const uint8 zclATApp_HWRevision = ATAPP_HWVERSION;
+     92          // const uint8 zclATApp_ZCLVersion = ATAPP_ZCLVERSION;
+     93          // const uint8 zclATApp_ManufacturerName[] = { 16, 'T','e','x','a','s','I','n','s','t','r','u','m','e','n','t','s' };
+     94          // const uint8 zclATApp_ModelId[] = { 16, 'T','I','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+     95          // const uint8 zclATApp_DateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+     96          // const uint8 zclATApp_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+     97          //
+     98          // uint8 zclATApp_LocationDescription[17] = { 16, ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+     99          // uint8 zclATApp_PhysicalEnvironment = 0;
+    100          // uint8 zclATApp_DeviceEnable = DEVICE_ENABLED;
+    101          //
+    102          // // Identify Cluster
+    103          // uint16 zclATApp_IdentifyTime;
+    104          
+    105          /* ATAPP_TODO: declare attribute variables here. If its value can change,
+    106           * initialize it in zclATApp_ResetAttributesToDefaultValues. If its
+    107           * value will not change, initialize it here.
+    108           */
+    109          
+    110          // #if ZCL_DISCOVER
+    111          // CONST zclCommandRec_t zclATApp_Cmds[] =
+    112          // {
+    113          //   {
+    114          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    115          //     COMMAND_BASIC_RESET_FACT_DEFAULT,
+    116          //     CMD_DIR_SERVER_RECEIVED
+    117          //   },
+    118          //
+    119          // };
+    120          //
+    121          // CONST uint8 zclCmdsArraySize = ( sizeof(zclATApp_Cmds) / sizeof(zclATApp_Cmds[0]) );
+    122          // #endif // ZCL_DISCOVER
+    123          
+    124          /*********************************************************************
+    125           * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+    126           */
+    127          // CONST zclAttrRec_t zclATApp_Attrs[] =
+    128          // {
+    129          //   // *** General Basic Cluster Attributes ***
+    130          //   {
+    131          //     ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+    132          //     {  // Attribute record
+    133          //       ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    134          //       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+    135          //       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+    136          //       (void *)&zclATApp_HWRevision  // Pointer to attribute variable
+    137          //     }
+    138          //   },
+    139          //   {
+    140          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    141          //     { // Attribute record
+    142          //       ATTRID_BASIC_ZCL_VERSION,
+    143          //       ZCL_DATATYPE_UINT8,
+    144          //       ACCESS_CONTROL_READ,
+    145          //       (void *)&zclATApp_ZCLVersion
+    146          //     }
+    147          //   },
+    148          //   {
+    149          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    150          //     { // Attribute record
+    151          //       ATTRID_BASIC_MANUFACTURER_NAME,
+    152          //       ZCL_DATATYPE_CHAR_STR,
+    153          //       ACCESS_CONTROL_READ,
+    154          //       (void *)zclATApp_ManufacturerName
+    155          //     }
+    156          //   },
+    157          //   {
+    158          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    159          //     { // Attribute record
+    160          //       ATTRID_BASIC_MODEL_ID,
+    161          //       ZCL_DATATYPE_CHAR_STR,
+    162          //       ACCESS_CONTROL_READ,
+    163          //       (void *)zclATApp_ModelId
+    164          //     }
+    165          //   },
+    166          //   {
+    167          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    168          //     { // Attribute record
+    169          //       ATTRID_BASIC_DATE_CODE,
+    170          //       ZCL_DATATYPE_CHAR_STR,
+    171          //       ACCESS_CONTROL_READ,
+    172          //       (void *)zclATApp_DateCode
+    173          //     }
+    174          //   },
+    175          //   {
+    176          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    177          //     { // Attribute record
+    178          //       ATTRID_BASIC_POWER_SOURCE,
+    179          //       ZCL_DATATYPE_ENUM8,
+    180          //       ACCESS_CONTROL_READ,
+    181          //       (void *)&zclATApp_PowerSource
+    182          //     }
+    183          //   },
+    184          //   {
+    185          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    186          //     { // Attribute record
+    187          //       ATTRID_BASIC_LOCATION_DESC,
+    188          //       ZCL_DATATYPE_CHAR_STR,
+    189          //       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    190          //       (void *)zclATApp_LocationDescription
+    191          //     }
+    192          //   },
+    193          //   {
+    194          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    195          //     { // Attribute record
+    196          //       ATTRID_BASIC_PHYSICAL_ENV,
+    197          //       ZCL_DATATYPE_ENUM8,
+    198          //       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    199          //       (void *)&zclATApp_PhysicalEnvironment
+    200          //     }
+    201          //   },
+    202          //   {
+    203          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    204          //     { // Attribute record
+    205          //       ATTRID_BASIC_DEVICE_ENABLED,
+    206          //       ZCL_DATATYPE_BOOLEAN,
+    207          //       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    208          //       (void *)&zclATApp_DeviceEnable
+    209          //     }
+    210          //   },
+    211          //
+    212          // #ifdef ZCL_IDENTIFY
+    213          //   // *** Identify Cluster Attribute ***
+    214          //   {
+    215          //     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    216          //     { // Attribute record
+    217          //       ATTRID_IDENTIFY_TIME,
+    218          //       ZCL_DATATYPE_UINT16,
+    219          //       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    220          //       (void *)&zclATApp_IdentifyTime
+    221          //     }
+    222          //   },
+    223          // #endif
+    224          //   {
+    225          //     ZCL_CLUSTER_ID_GEN_BASIC,
+    226          //     {  // Attribute record
+    227          //       ATTRID_CLUSTER_REVISION,
+    228          //       ZCL_DATATYPE_UINT16,
+    229          //       ACCESS_CONTROL_READ,
+    230          //       (void *)&zclATApp_clusterRevision_all
+    231          //     }
+    232          //   },
+    233          //   {
+    234          //     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    235          //     {  // Attribute record
+    236          //       ATTRID_CLUSTER_REVISION,
+    237          //       ZCL_DATATYPE_UINT16,
+    238          //       ACCESS_CONTROL_READ,
+    239          //       (void *)&zclATApp_clusterRevision_all
+    240          //     }
+    241          //   },
+    242          // };
+    243          //
+    244          // uint8 CONST zclATApp_NumAttributes = ( sizeof(zclATApp_Attrs) / sizeof(zclATApp_Attrs[0]) );
+    245          
+    246          /*********************************************************************
+    247           * SIMPLE DESCRIPTOR
+    248           */
+    249          // This is the Cluster ID List and should be filled with Application
+    250          // specific cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    251          const cId_t ATApp_InClusterList[] =
+   \                     ATApp_InClusterList:
+   \   000000   0020         DW 8192
+   \   000002   0120         DW 8193
+    252          {
+    253            ATApp_GENERIC_CLUSTER,
+    254            RESET_FACTORY_DEFAULT_CLUSTER
+    255            // ATApp_TODO: Add application specific Input Clusters Here.
+    256          };
+    257          #define ATApp_MAX_INCLUSTERS   (sizeof(ATApp_InClusterList) / sizeof(ATApp_InClusterList[0]))
+    258          
+    259          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    260          const cId_t ATApp_OutClusterList[] =
+   \                     ATApp_OutClusterList:
+   \   000000   0020         DW 8192
+   \   000002   0120         DW 8193
+    261          {
+    262            ATApp_GENERIC_CLUSTER,
+    263            RESET_FACTORY_DEFAULT_CLUSTER
+    264            // ATApp_TODO: Add application specific Output Clusters Here.
+    265          };
+    266          #define ATApp_MAX_OUTCLUSTERS  (sizeof(ATApp_OutClusterList) / sizeof(ATApp_OutClusterList[0]))
+    267          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    268          SimpleDescriptionFormat_t ATApp_SimpleDesc =
+   \                     ATApp_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for ATApp_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for ATApp_SimpleDesc>`:
+   \   000000   96           DB 150
+   \   000001   11F0         DW 61457
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   02           DB 2
+   \   000007   ....         DW ATApp_InClusterList
+   \   000009   02           DB 2
+   \   00000A   ....         DW ATApp_OutClusterList
+    269          {
+    270            ATApp_ENDPOINT,                      //  int Endpoint;
+    271            ATApp_PROFILE_ID,                    //  uint16 AppProfId[2];
+    272            ATApp_DEVICEID_REMOTE_CONTROL,       //  uint16 AppDeviceId[2];
+    273            ATApp_DEVICE_VERSION,                //  int   AppDevVer:4;
+    274            ATApp_FLAGS,                         //  int   AppFlags:4;
+    275            ATApp_MAX_INCLUSTERS,                //  byte  AppNumInClusters;
+    276            (cId_t *)ATApp_InClusterList,        //  byte *pAppInClusterList;
+    277            ATApp_MAX_OUTCLUSTERS,               //  byte  AppNumInClusters;
+    278            (cId_t *)ATApp_OutClusterList        //  byte *pAppInClusterList;
+    279          };
+    280          
+    281          // Added to include ZLL Target functionality
+    282          #if defined ( BDB_TL_INITIATOR ) || defined ( BDB_TL_TARGET )
+    283          bdbTLDeviceInfo_t tlATApp_DeviceInfo =
+    284          {
+    285            ATApp_ENDPOINT,                  //uint8 endpoint;
+    286            ZCL_HA_PROFILE_ID,                        //uint16 profileID;
+    287            // ATAPP_TODO: Replace ZCL_HA_DEVICEID_ON_OFF_LIGHT with application specific device ID
+    288            ZCL_HA_DEVICEID_ON_OFF_LIGHT,          //uint16 deviceID;
+    289            ATApp_DEVICE_VERSION,                    //uint8 version;
+    290            ATAPP_NUM_GRPS                   //uint8 grpIdCnt;
+    291          };
+    292          #endif
+    293          
+    294          /*********************************************************************
+    295           * GLOBAL FUNCTIONS
+    296           */
+    297          
+    298          /*********************************************************************
+    299           * LOCAL FUNCTIONS
+    300           */
+    301          
+    302          // void zclATApp_ResetAttributesToDefaultValues(void)
+    303          // {
+    304          //   int i;
+    305          //
+    306          //   zclATApp_LocationDescription[0] = 16;
+    307          //   for (i = 1; i <= 16; i++)
+    308          //   {
+    309          //     zclATApp_LocationDescription[i] = ' ';
+    310          //   }
+    311          //
+    312          //   zclATApp_PhysicalEnvironment = PHY_UNSPECIFIED_ENV;
+    313          //   zclATApp_DeviceEnable = DEVICE_ENABLED;
+    314          //
+    315          // #ifdef ZCL_IDENTIFY
+    316          //   zclATApp_IdentifyTime = 0;
+    317          // #endif
+    318          //
+    319          //   /* ATAPP_TODO: initialize cluster attribute variables. */
+    320          // }
+    321          
+    322          /****************************************************************************
+    323          ****************************************************************************/
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?<Initializer for ATApp_SimpleDesc>
+       4  ATApp_InClusterList
+       4  ATApp_OutClusterList
+      12  ATApp_SimpleDesc
+
+ 
+ 12 bytes in segment XDATA_I
+ 12 bytes in segment XDATA_ID
+  8 bytes in segment XDATA_ROM_C
+ 
+ 12 bytes of CODE  memory
+  8 bytes of CONST memory
+ 12 bytes of XDATA memory
+
+Errors: none
+Warnings: none

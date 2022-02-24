@@ -1,0 +1,1585 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               23/Feb/2022  09:34:57
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ATApp.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW3054.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ATApp.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\ATApp.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\ATApp.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ATApp.c
+      1          /**************************************************************************************************
+      2            Filename:       ATApp.c
+      3          
+      4            Description:    Zigbee Cluster Library - sample device application.
+      5          
+      6          
+      7            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+      8          
+      9            IMPORTANT: Your use of this Software is limited to those specific rights
+     10            granted under the terms of a software license agreement between the user
+     11            who downloaded the software, his/her employer (which must be your employer)
+     12            and Texas Instruments Incorporated (the "License").  You may not use this
+     13            Software unless you agree to abide by the terms of the License. The License
+     14            limits your use, and you acknowledge, that the Software may not be modified,
+     15            copied or distributed unless embedded on a Texas Instruments microcontroller
+     16            or used solely and exclusively in conjunction with a Texas Instruments radio
+     17            frequency transceiver, which is integrated into your product.  Other than for
+     18            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     19            works of, modify, distribute, perform, display or sell this Software and/or
+     20            its documentation for any purpose.
+     21          
+     22            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     23            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     24            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     25            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     26            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     27            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     28            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     29            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     30            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     31            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     32            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     33          
+     34            Should you have any questions regarding your right to use this Software,
+     35            contact Texas Instruments Incorporated at www.TI.com.
+     36          **************************************************************************************************/
+     37          
+     38          /*********************************************************************
+     39            This application is a template to get started writing an application
+     40            from scratch.
+     41          
+     42            Look for the sections marked with "ATAPP_TODO" to add application
+     43            specific code.
+     44          
+     45            Note: if you would like your application to support automatic attribute
+     46            reporting, include the BDB_REPORTING compile flag.
+     47          *********************************************************************/
+     48          
+     49          /*********************************************************************
+     50           * INCLUDES
+     51           */
+     52          #include "ZComDef.h"
+     53          #include "OSAL.h"
+     54          #include "AF.h"
+     55          #include "ZDApp.h"
+     56          #include "ZDObject.h"
+     57          #include "ZDNwkMgr.h"
+     58          //#include "MT_SYS.h"
+     59          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+     60          
+     61          #include "nwk_util.h"
+     62          
+     63          #include "zcl.h"
+     64          #include "zcl_general.h"
+     65          #include "zcl_ha.h"
+     66          #include "zcl_diagnostic.h"
+     67          #include "ATApp.h"
+     68          
+     69          #include "bdb.h"
+     70          #include "bdb_interface.h"
+     71          
+     72          #if defined ( INTER_PAN )
+     73          #if defined ( BDB_TL_INITIATOR )
+     74            #include "bdb_touchlink_initiator.h"
+     75          #endif // BDB_TL_INITIATOR
+     76          #if defined ( BDB_TL_TARGET )
+     77            #include "bdb_touchlink_target.h"
+     78          #endif // BDB_TL_TARGET
+     79          #endif // INTER_PAN
+     80          
+     81          #if defined ( BDB_TL_INITIATOR ) || defined ( BDB_TL_TARGET )
+     82            #include "bdb_touchlink.h"
+     83          #endif
+     84          
+     85          #include "onboard.h"
+     86          
+     87          /* HAL */
+     88          #include "hal_lcd.h"
+     89          #include "hal_led.h"
+     90          #include "hal_key.h"
+     91          
+     92          /* User defiene */
+     93          #include "AT_controller.h"
+     94          #include "AT_uart.h"
+     95          #include "AT_printf.h"
+     96          #include "AT_cmd.h"
+     97          #if defined ( INTER_PAN )
+     98          #include "InterPAN.h"
+     99          #include "stub_aps.h"
+    100          #endif
+    101          
+    102          #include "AT_uart0.h"
+    103          #include "zcl_doorlock.h"
+    104          
+    105          /*********************************************************************
+    106           * MACROS
+    107           */
+    108          
+    109          
+    110          /*********************************************************************
+    111           * CONSTANTS
+    112           */
+    113          
+    114          
+    115          /*********************************************************************
+    116           * TYPEDEFS
+    117           */
+    118          
+    119          /*********************************************************************
+    120           * GLOBAL VARIABLES
+    121           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    122          byte zclATApp_TaskID;
+   \                     zclATApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    123          uint8 gChannel;
+   \                     gChannel:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    124          uint8 gNwkUpdateId;
+   \                     gNwkUpdateId:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    125          bool getNewAddr = false;
+   \                     getNewAddr:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    126          
+    127          /*********************************************************************
+    128           * GLOBAL FUNCTIONS
+    129           */
+    130          
+    131          /*********************************************************************
+    132           * LOCAL VARIABLES
+    133           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    134          uint8 gPermitDuration = 0;    // permit joining default to disabled
+   \                     gPermitDuration:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    135          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    136          uint8 gNwkUpdateTime = 0;
+   \                     gNwkUpdateTime:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    137          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    138          uint32 NwkSteeringTime = 3000;
+   \                     NwkSteeringTime:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for NwkSteeringTime>`
+   \   000004                REQUIRE __INIT_XDATA_I
+    139          
+    140          /*********************************************************************
+    141           * LOCAL FUNCTIONS
+    142           */
+    143          static void AT_RegisterSimpleDescriptor( SimpleDescriptionFormat_t *simpleDesc );
+    144          static void zclATApp_HandleKeys( byte shift, byte keys );
+    145          static void zclATApp_HandleStateChange( uint8 state );
+    146          static void zclATApp_BindNotification( bdbBindNotificationData_t *data );
+    147          static void zclATApp_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg);
+    148          
+    149          /*********************************************************************
+    150           * @fn          zclATApp_Init
+    151           *
+    152           * @brief       Initialization function for the zclGeneral layer.
+    153           *
+    154           * @param       none
+    155           *
+    156           * @return      none
+    157           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    158          void zclATApp_Init( byte task_id )
+   \                     zclATApp_Init:
+    159          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    160            zclATApp_TaskID = task_id;
+   \   000005   E9           MOV       A,R1
+   \   000006   90....       MOV       DPTR,#zclATApp_TaskID
+   \   000009   F0           MOVX      @DPTR,A
+    161          
+    162            // This app is part of the User defined Profile
+    163            AT_RegisterSimpleDescriptor( &ATApp_SimpleDesc );
+   \   00000A                ; Setup parameters for call to function osal_mem_alloc
+   \   00000A   7A07         MOV       R2,#0x7
+   \   00000C   7B00         MOV       R3,#0x0
+   \   00000E   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000011   8A..         MOV       ?V2,R2
+   \   000013   8B..         MOV       ?V3,R3
+   \   000015   AF..         MOV       R7,?V3
+   \   000017   EA           MOV       A,R2
+   \   000018   4F           ORL       A,R7
+   \   000019   6029         JZ        ??zclATApp_Init_0
+   \   00001B   90....       MOV       DPTR,#ATApp_SimpleDesc
+   \   00001E   E0           MOVX      A,@DPTR
+   \   00001F   8A82         MOV       DPL,R2
+   \   000021   8B83         MOV       DPH,R3
+   \   000023   F0           MOVX      @DPTR,A
+   \   000024   A3           INC       DPTR
+   \   000025   A3           INC       DPTR
+   \   000026   74..         MOV       A,#zclATApp_TaskID & 0xff
+   \   000028   F0           MOVX      @DPTR,A
+   \   000029   A3           INC       DPTR
+   \   00002A   74..         MOV       A,#(zclATApp_TaskID >> 8) & 0xff
+   \   00002C   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   00002F   74..         MOV       A,#ATApp_SimpleDesc & 0xff
+   \   000031   F0           MOVX      @DPTR,A
+   \   000032   A3           INC       DPTR
+   \   000033   74..         MOV       A,#(ATApp_SimpleDesc >> 8) & 0xff
+   \   000035   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000038   E4           CLR       A
+   \   000039   F0           MOVX      @DPTR,A
+   \   00003A                ; Setup parameters for call to function afRegister
+   \   00003A   12....       LCALL     `??afRegister::?relay`; Banked call to: afRegister
+   \   00003D                ; Setup parameters for call to function StubAPS_RegisterApp
+   \   00003D   AA..         MOV       R2,?V2
+   \   00003F   EF           MOV       A,R7
+   \   000040   FB           MOV       R3,A
+   \   000041   12....       LCALL     `??StubAPS_RegisterApp::?relay`; Banked call to: StubAPS_RegisterApp
+    164          
+    165            // Register the ZCL controller
+    166            AT_zclController_Init( &zclATApp_TaskID );
+   \                     ??zclATApp_Init_0:
+   \   000044                ; Setup parameters for call to function AT_zclController_Init
+   \   000044   7A..         MOV       R2,#zclATApp_TaskID & 0xff
+   \   000046   7B..         MOV       R3,#(zclATApp_TaskID >> 8) & 0xff
+   \   000048   12....       LCALL     `??AT_zclController_Init::?relay`; Banked call to: AT_zclController_Init
+    167          
+    168            // Initialise UART
+    169          //  AT_UART_Init( zclATApp_TaskID );
+    170            AT_Uart0_Init();
+   \   00004B                ; Setup parameters for call to function AT_Uart0_Init
+   \   00004B   12....       LCALL     `??AT_Uart0_Init::?relay`; Banked call to: AT_Uart0_Init
+    171            printf("System starting...\r\n\r\n");
+   \   00004E                ; Setup parameters for call to function printf
+   \   00004E   7A..         MOV       R2,#`?<Constant "System starting...\\r\\n\\r\\n">` & 0xff
+   \   000050   7B..         MOV       R3,#(`?<Constant "System starting...\\r\\n\\r\\n">` >> 8) & 0xff
+   \   000052   12....       LCALL     `??printf::?relay`; Banked call to: printf
+    172          
+    173            // Register ZDO messages
+    174            AT_ZDO_Register( &zclATApp_TaskID );
+   \   000055                ; Setup parameters for call to function AT_ZDO_Register
+   \   000055   7A..         MOV       R2,#zclATApp_TaskID & 0xff
+   \   000057   7B..         MOV       R3,#(zclATApp_TaskID >> 8) & 0xff
+   \   000059   12....       LCALL     `??AT_ZDO_Register::?relay`; Banked call to: AT_ZDO_Register
+    175          
+    176            // Register for all key events - This app will handle all key events
+    177            RegisterForKeys( zclATApp_TaskID );
+   \   00005C                ; Setup parameters for call to function RegisterForKeys
+   \   00005C   90....       MOV       DPTR,#zclATApp_TaskID
+   \   00005F   E0           MOVX      A,@DPTR
+   \   000060   F9           MOV       R1,A
+   \   000061   12....       LCALL     `??RegisterForKeys::?relay`; Banked call to: RegisterForKeys
+    178          
+    179            bdb_RegisterCommissioningStatusCB( zclATApp_ProcessCommissioningStatus );
+   \   000064                ; Setup parameters for call to function bdb_RegisterCommissioningStatusCB
+   \   000064   7A..         MOV       R2,#`??zclATApp_ProcessCommissioningStatus::?relay` & 0xff
+   \   000066   7B..         MOV       R3,#(`??zclATApp_ProcessCommissioningStatus::?relay` >> 8) & 0xff
+   \   000068   12....       LCALL     `??bdb_RegisterCommissioningStatusCB::?relay`; Banked call to: bdb_RegisterCommissioningStatusCB
+    180            bdb_RegisterBindNotificationCB( zclATApp_BindNotification );
+   \   00006B                ; Setup parameters for call to function bdb_RegisterBindNotificationCB
+   \   00006B   7A..         MOV       R2,#`??zclATApp_BindNotification::?relay` & 0xff
+   \   00006D   7B..         MOV       R3,#(`??zclATApp_BindNotification::?relay` >> 8) & 0xff
+   \   00006F   12....       LCALL     `??bdb_RegisterBindNotificationCB::?relay`; Banked call to: bdb_RegisterBindNotificationCB
+    181          
+    182            bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_STEERING );
+   \   000072                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000072   7902         MOV       R1,#0x2
+   \   000074   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+    183          }
+   \   000077   7F04         MOV       R7,#0x4
+   \   000079   02....       LJMP      ?BANKED_LEAVE_XDATA
+    184          
+    185          /*********************************************************************
+    186           * @fn      AT_RegisterSimpleDescriptor
+    187           *
+    188           * @brief   Fill the Simple descriptor and register it with the AF
+    189           *
+    190           * @param   simpleDesc - a pointer to a valid SimpleDescriptionFormat_t, must not be NULL.
+    191           *
+    192           * @return  none
+    193           */
+    194          void AT_RegisterSimpleDescriptor( SimpleDescriptionFormat_t *simpleDesc )
+    195          {
+    196            endPointDesc_t *epDesc;
+    197          
+    198            // Register the application's endpoint descriptor
+    199            //  - This memory is allocated and never freed.
+    200            epDesc = osal_mem_alloc( sizeof ( endPointDesc_t ) );
+    201            if ( epDesc )
+    202            {
+    203              // Fill out the endpoint description.
+    204              epDesc->endPoint = simpleDesc->EndPoint;
+    205              epDesc->task_id = &zclATApp_TaskID;  // all messages send to this app
+    206              epDesc->simpleDesc = simpleDesc;
+    207              epDesc->latencyReq = noLatencyReqs;
+    208          
+    209              // Register the endpoint description with the AF
+    210              afRegister( epDesc );
+    211              #if defined (INTER_PAN)
+    212            	// Register the endpoint description for INTERPAN
+    213              StubAPS_RegisterApp( epDesc );
+    214              #endif
+    215            }
+    216          }
+    217          
+    218          /*********************************************************************
+    219           * @fn          zclSample_event_loop
+    220           *
+    221           * @brief       Event Loop Processor for zclGeneral.
+    222           *
+    223           * @param       none
+    224           *
+    225           * @return      none
+    226           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    227          uint16 zclATApp_event_loop( uint8 task_id, uint16 events )
+   \                     zclATApp_event_loop:
+    228          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV       A,#-0x2
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+    229            afIncomingMSGPacket_t *MSGpkt;
+    230          
+    231            (void)task_id;  // Intentionally unreferenced parameter
+    232          
+    233            if ( events & SYS_EVENT_MSG )
+   \   00000E   5480         ANL       A,#0x80
+   \   000010   7018         JNZ       ??zclATApp_event_loop_0
+    234            {
+    235              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclATApp_TaskID )) )
+    236              {
+    237                switch ( MSGpkt->hdr.event )
+    238                {
+    239                  case AF_INCOMING_MSG_CMD:
+    240                    switch (MSGpkt->srcAddr.endPoint)
+    241                    {
+    242                      #if defined (INTER_PAN)
+    243                      case STUBAPS_INTER_PAN_EP:
+    244                        InterPAN_ProcessMSGCB( MSGpkt );
+    245                        break;
+    246                      #endif
+    247          
+    248                      default:
+    249                        ATApp_MessageMSGCB( MSGpkt );
+    250                        break;
+    251                    }
+    252                    break;
+    253                  case ZCL_INCOMING_MSG:
+    254                    // Incoming ZCL Foundation command/response messages
+    255                    AT_zclController_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+    256                    break;
+    257          
+    258                  case KEY_CHANGE:
+    259                    zclATApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    260                    break;
+    261          
+    262                  case ZDO_STATE_CHANGE:
+    263                    zclATApp_HandleStateChange( MSGpkt->hdr.status );
+    264                    break;
+    265          
+    266                  case ZDO_CB_MSG:
+    267                    AT_ZDO_ProcessMsgCBs( (zdoIncomingMsg_t *)MSGpkt );
+    268                    break;
+    269          
+    270                  default:
+    271                    break;
+    272                }
+    273          
+    274                // Release the memory
+    275                osal_msg_deallocate( (uint8 *)MSGpkt );
+    276              }
+    277          
+    278              // return unprocessed events
+    279              return (events ^ SYS_EVENT_MSG);
+    280            }
+    281          
+    282          #if ZG_BUILD_ENDDEVICE_TYPE
+    283            if ( events & ATAPP_END_DEVICE_REJOIN_EVT )
+   \   000012   EA           MOV       A,R2
+   \   000013   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000015   5068         JNC       ??zclATApp_event_loop_1
+    284            {
+    285              bdb_ZedAttemptRecoverNwk();
+   \   000017                ; Setup parameters for call to function bdb_ZedAttemptRecoverNwk
+   \   000017   12....       LCALL     `??bdb_ZedAttemptRecoverNwk::?relay`; Banked call to: bdb_ZedAttemptRecoverNwk
+    286              return ( events ^ ATAPP_END_DEVICE_REJOIN_EVT );
+   \   00001A   EE           MOV       A,R6
+   \   00001B   6401         XRL       A,#0x1
+   \   00001D   02....       LJMP      ??zclATApp_event_loop_2 & 0xFFFF
+    287            }
+   \                     ??zclATApp_event_loop_3:
+   \   000020                ; Setup parameters for call to function AT_ZDO_ProcessMsgCBs
+   \   000020   12....       LCALL     `??AT_ZDO_ProcessMsgCBs::?relay`; Banked call to: AT_ZDO_ProcessMsgCBs
+   \                     ??zclATApp_event_loop_4:
+   \   000023                ; Setup parameters for call to function osal_msg_deallocate
+   \   000023   AA..         MOV       R2,?V0
+   \   000025   AB..         MOV       R3,?V1
+   \   000027   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \                     ??zclATApp_event_loop_0:
+   \   00002A                ; Setup parameters for call to function osal_msg_receive
+   \   00002A   90....       MOV       DPTR,#zclATApp_TaskID
+   \   00002D   E0           MOVX      A,@DPTR
+   \   00002E   F9           MOV       R1,A
+   \   00002F   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+   \   000032   8A..         MOV       ?V0,R2
+   \   000034   8B..         MOV       ?V1,R3
+   \   000036   EA           MOV       A,R2
+   \   000037   4B           ORL       A,R3
+   \   000038   603D         JZ        ??zclATApp_event_loop_5
+   \   00003A   8A82         MOV       DPL,R2
+   \   00003C   8B83         MOV       DPH,R3
+   \   00003E   E0           MOVX      A,@DPTR
+   \   00003F   24E6         ADD       A,#-0x1a
+   \   000041   600E         JZ        ??zclATApp_event_loop_6
+   \   000043   24E6         ADD       A,#-0x1a
+   \   000045   6023         JZ        ??zclATApp_event_loop_7
+   \   000047   2463         ADD       A,#0x63
+   \   000049   6024         JZ        ??zclATApp_event_loop_8
+   \   00004B   24FE         ADD       A,#-0x2
+   \   00004D   60D1         JZ        ??zclATApp_event_loop_3
+   \   00004F   80D2         SJMP      ??zclATApp_event_loop_4
+   \                     ??zclATApp_event_loop_6:
+   \   000051   EA           MOV       A,R2
+   \   000052   240F         ADD       A,#0xf
+   \   000054   F582         MOV       DPL,A
+   \   000056   E4           CLR       A
+   \   000057   35..         ADDC      A,?V1
+   \   000059   F583         MOV       DPH,A
+   \   00005B   E0           MOVX      A,@DPTR
+   \   00005C   64FE         XRL       A,#0xfe
+   \   00005E   7005         JNZ       ??zclATApp_event_loop_9
+   \   000060                ; Setup parameters for call to function InterPAN_ProcessMSGCB
+   \   000060   12....       LCALL     `??InterPAN_ProcessMSGCB::?relay`; Banked call to: InterPAN_ProcessMSGCB
+   \   000063   80BE         SJMP      ??zclATApp_event_loop_4
+   \                     ??zclATApp_event_loop_9:
+   \   000065                ; Setup parameters for call to function ATApp_MessageMSGCB
+   \   000065   12....       LCALL     `??ATApp_MessageMSGCB::?relay`; Banked call to: ATApp_MessageMSGCB
+   \   000068   80B9         SJMP      ??zclATApp_event_loop_4
+   \                     ??zclATApp_event_loop_7:
+   \   00006A                ; Setup parameters for call to function AT_zclController_ProcessIncomingMsg
+   \   00006A   12....       LCALL     `??AT_zclController_ProcessIncomingMsg::?relay`; Banked call to: AT_zclController_ProcessIncomingMsg
+   \   00006D   80B4         SJMP      ??zclATApp_event_loop_4
+   \                     ??zclATApp_event_loop_8:
+   \   00006F                ; Setup parameters for call to function zclATApp_HandleStateChange
+   \   00006F   A3           INC       DPTR
+   \   000070   E0           MOVX      A,@DPTR
+   \   000071   F9           MOV       R1,A
+   \   000072   12....       LCALL     `??zclATApp_HandleStateChange::?relay`; Banked call to: zclATApp_HandleStateChange
+   \   000075   80AC         SJMP      ??zclATApp_event_loop_4
+   \                     ??zclATApp_event_loop_5:
+   \   000077   EE           MOV       A,R6
+   \   000078   FA           MOV       R2,A
+   \   000079   EF           MOV       A,R7
+   \   00007A   6480         XRL       A,#0x80
+   \   00007C   02....       LJMP      ??zclATApp_event_loop_10 & 0xFFFF
+    288          #endif
+    289          
+    290            if( events & AT_RESET_EVENT ){
+   \                     ??zclATApp_event_loop_1:
+   \   00007F   5410         ANL       A,#0x10
+   \   000081   600C         JZ        ??zclATApp_event_loop_11
+    291              SystemReset();
+   \   000083   C2AF         CLR       0xa8.7
+   \   000085   C2AF         CLR       0xa8.7
+   \   000087   75C9AB       MOV       0xc9,#-0x55
+   \   00008A   75C95B       MOV       0xc9,#0x5b
+   \                     ??zclATApp_event_loop_12:
+   \   00008D   80FE         SJMP      ??zclATApp_event_loop_12
+    292            }
+    293          
+    294            if( events & AT_RESTORE_CMDDO_FLAG ){
+   \                     ??zclATApp_event_loop_11:
+   \   00008F   EA           MOV       A,R2
+   \   000090   5440         ANL       A,#0x40
+   \   000092   6015         JZ        ??zclATApp_event_loop_13
+    295              notdoFNCmd = TRUE;
+   \   000094   90....       MOV       DPTR,#notdoFNCmd
+   \   000097   7401         MOV       A,#0x1
+   \   000099   F0           MOVX      @DPTR,A
+    296              notdoJNCmd = TRUE;
+   \   00009A   90....       MOV       DPTR,#notdoJNCmd
+   \   00009D   F0           MOVX      @DPTR,A
+    297              notdoSCANCmd = TRUE;
+   \   00009E   90....       MOV       DPTR,#notdoSCANCmd
+   \   0000A1   F0           MOVX      @DPTR,A
+    298            	return ( events ^ AT_RESTORE_CMDDO_FLAG );
+   \   0000A2   EA           MOV       A,R2
+   \   0000A3   6440         XRL       A,#0x40
+   \   0000A5   FA           MOV       R2,A
+   \   0000A6   02....       LJMP      ??zclATApp_event_loop_14 & 0xFFFF
+    299            }
+    300          
+    301            if ( events & AT_NWKUPDATE_EVENT )
+   \                     ??zclATApp_event_loop_13:
+   \   0000A9   EA           MOV       A,R2
+   \   0000AA   5420         ANL       A,#0x20
+   \   0000AC   7003         JNZ       $+5
+   \   0000AE   02....       LJMP      ??zclATApp_event_loop_15 & 0xFFFF
+    302            {
+    303              //printf("nwkupdate\r\n");
+    304              uint8 rxOnIdle;
+    305              uint8 currChannel;
+    306              gNwkUpdateTime++;
+   \   0000B1   90....       MOV       DPTR,#gNwkUpdateTime
+   \   0000B4   E0           MOVX      A,@DPTR
+   \   0000B5   04           INC       A
+   \   0000B6   F0           MOVX      @DPTR,A
+    307              if(gNwkUpdateTime == 3)
+   \   0000B7   6403         XRL       A,#0x3
+   \   0000B9   704F         JNZ       ??zclATApp_event_loop_16
+    308              {
+    309                gNwkUpdateTime = 0;
+   \   0000BB   E4           CLR       A
+   \   0000BC   F0           MOVX      @DPTR,A
+    310                ZMacGetReq( ZMacChannel, &currChannel );
+   \   0000BD                ; Setup parameters for call to function ZMacGetReq
+   \   0000BD   04           INC       A
+   \   0000BE   12....       LCALL     ?XSTACK_DISP101_8
+   \   0000C1   79E1         MOV       R1,#-0x1f
+   \   0000C3   12....       LCALL     `??ZMacGetReq::?relay`; Banked call to: ZMacGetReq
+    311                if ( currChannel != gChannel ) {
+   \   0000C6   7401         MOV       A,#0x1
+   \   0000C8   12....       LCALL     ?XSTACK_DISP0_8
+   \   0000CB   E0           MOVX      A,@DPTR
+   \   0000CC   F8           MOV       R0,A
+   \   0000CD   90....       MOV       DPTR,#gChannel
+   \   0000D0   E0           MOVX      A,@DPTR
+   \   0000D1   68           XRL       A,R0
+   \   0000D2   6029         JZ        ??zclATApp_event_loop_17
+    312                  // turn MAC receiver off
+    313                  rxOnIdle = false;
+   \   0000D4   85..82       MOV       DPL,?XSP + 0
+   \   0000D7   85..83       MOV       DPH,?XSP + 1
+   \   0000DA   E4           CLR       A
+   \   0000DB   12....       LCALL     ?Subroutine3 & 0xFFFF
+    314                  ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+    315          
+    316                  // set the NIB channel
+    317                  ZMacSetReq( ZMacChannel, &gChannel );
+   \                     ??CrossCallReturnLabel_5:
+   \   0000DE                ; Setup parameters for call to function ZMacSetReq
+   \   0000DE   7A..         MOV       R2,#gChannel & 0xff
+   \   0000E0   7B..         MOV       R3,#(gChannel >> 8) & 0xff
+   \   0000E2   79E1         MOV       R1,#-0x1f
+   \   0000E4   12....       LCALL     `??ZMacSetReq::?relay`; Banked call to: ZMacSetReq
+    318          
+    319                  // turn MAC receiver back on
+    320                  rxOnIdle = true;
+   \   0000E7   85..82       MOV       DPL,?XSP + 0
+   \   0000EA   85..83       MOV       DPH,?XSP + 1
+   \   0000ED   7401         MOV       A,#0x1
+   \   0000EF   12....       LCALL     ?Subroutine3 & 0xFFFF
+    321                  ZMacSetReq( ZMacRxOnIdle, &rxOnIdle );
+    322                  _NIB.nwkLogicalChannel = gChannel;
+   \                     ??CrossCallReturnLabel_6:
+   \   0000F2   90....       MOV       DPTR,#gChannel
+   \   0000F5   E0           MOVX      A,@DPTR
+   \   0000F6   90....       MOV       DPTR,#_NIB + 22
+   \   0000F9   F0           MOVX      @DPTR,A
+    323                  // Our Channel has been changed -- notify to save info into NV
+    324                  ZDApp_NwkStateUpdateCB();
+   \   0000FA                ; Setup parameters for call to function ZDApp_NwkStateUpdateCB
+   \   0000FA   12....       LCALL     `??ZDApp_NwkStateUpdateCB::?relay`; Banked call to: ZDApp_NwkStateUpdateCB
+    325                }
+    326                AT_OK();
+   \                     ??zclATApp_event_loop_17:
+   \   0000FD                ; Setup parameters for call to function AT_Uart0_Send
+   \   0000FD   7C06         MOV       R4,#0x6
+   \   0000FF   7D00         MOV       R5,#0x0
+   \   000101   7A..         MOV       R2,#`?<Constant "\\r\\nOK\\r\\n">` & 0xff
+   \   000103   7B..         MOV       R3,#(`?<Constant "\\r\\nOK\\r\\n">` >> 8) & 0xff
+   \   000105   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000108   807D         SJMP      ??zclATApp_event_loop_18
+    327              } else {
+    328                // Build dstAddress
+    329                zAddrType_t *dstAddr = (zAddrType_t *)osal_mem_alloc(sizeof(zAddrType_t));
+   \                     ??zclATApp_event_loop_16:
+   \   00010A                ; Setup parameters for call to function osal_mem_alloc
+   \   00010A   7A09         MOV       R2,#0x9
+   \   00010C   7B00         MOV       R3,#0x0
+   \   00010E   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000111   8A..         MOV       ?V0,R2
+   \   000113   8B..         MOV       ?V1,R3
+    330                dstAddr->addr.shortAddr = NWK_BROADCAST_SHORTADDR_DEVALL;
+   \   000115   8A82         MOV       DPL,R2
+   \   000117   8B83         MOV       DPH,R3
+   \   000119   74FF         MOV       A,#-0x1
+   \   00011B   F0           MOVX      @DPTR,A
+   \   00011C   A3           INC       DPTR
+   \   00011D   12....       LCALL     ?Subroutine2 & 0xFFFF
+    331                dstAddr->addrMode = (afAddrMode_t)AddrBroadcast;
+   \                     ??CrossCallReturnLabel_4:
+   \   000120   A3           INC       DPTR
+   \   000121   A3           INC       DPTR
+   \   000122   740F         MOV       A,#0xf
+   \   000124   F0           MOVX      @DPTR,A
+    332          
+    333                ZDP_MgmtNwkUpdateReq(dstAddr, ((uint32)1 << gChannel), 0xFE, 0, gNwkUpdateId, 0);
+   \   000125                ; Setup parameters for call to function ZDP_MgmtNwkUpdateReq
+   \   000125   E4           CLR       A
+   \   000126   F5..         MOV       ?V2,A
+   \   000128   F5..         MOV       ?V3,A
+   \   00012A   78..         MOV       R0,#?V2
+   \   00012C   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00012F   75..01       MOV       ?V4,#0x1
+   \   000132   75..00       MOV       ?V5,#0x0
+   \   000135   75..00       MOV       ?V6,#0x0
+   \   000138   75..00       MOV       ?V7,#0x0
+   \   00013B   90....       MOV       DPTR,#gChannel
+   \   00013E   E0           MOVX      A,@DPTR
+   \   00013F   78..         MOV       R0,#?V4
+   \   000141   12....       LCALL     ?L_SHL
+   \   000144   78..         MOV       R0,#?V4
+   \   000146   12....       LCALL     ?PUSH_XSTACK_I_FOUR
+   \   000149   90....       MOV       DPTR,#gNwkUpdateId
+   \   00014C   E0           MOVX      A,@DPTR
+   \   00014D   FD           MOV       R5,A
+   \   00014E   7C00         MOV       R4,#0x0
+   \   000150   79FE         MOV       R1,#-0x2
+   \   000152   12....       LCALL     `??ZDP_MgmtNwkUpdateReq::?relay`; Banked call to: ZDP_MgmtNwkUpdateReq
+   \   000155   7406         MOV       A,#0x6
+   \   000157   12....       LCALL     ?DEALLOC_XSTACK8
+    334                osal_mem_free(dstAddr);
+   \   00015A                ; Setup parameters for call to function osal_mem_free
+   \   00015A   AA..         MOV       R2,?V0
+   \   00015C   AB..         MOV       R3,?V1
+   \   00015E   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    335          
+    336                //send three times ensure network is updated
+    337                osal_start_timerEx( zclATApp_TaskID, AT_NWKUPDATE_EVENT, ZDNWKMGR_BCAST_DELIVERY_TIME+50 );
+   \   000161                ; Setup parameters for call to function osal_start_timerEx
+   \   000161   90....       MOV       DPTR,#_NIB + 7
+   \   000164   E0           MOVX      A,@DPTR
+   \   000165   75F064       MOV       B,#0x64
+   \   000168   A4           MUL       AB
+   \   000169   A9F0         MOV       R1,B
+   \   00016B   2432         ADD       A,#0x32
+   \   00016D   F5..         MOV       ?V0,A
+   \   00016F   E4           CLR       A
+   \   000170   39           ADDC      A,R1
+   \   000171   F5..         MOV       ?V1,A
+   \   000173   33           RLC       A
+   \   000174   95E0         SUBB      A,0xE0 /* A   */
+   \   000176   F5..         MOV       ?V2,A
+   \   000178   F5..         MOV       ?V3,A
+   \   00017A   78..         MOV       R0,#?V0
+   \   00017C   12....       LCALL     ?PUSH_XSTACK_I_FOUR
+   \   00017F   7A20         MOV       R2,#0x20
+   \   000181   12....       LCALL     ?Subroutine4 & 0xFFFF
+    338              }
+   \                     ??CrossCallReturnLabel_9:
+   \   000184   12....       LCALL     ?DEALLOC_XSTACK8
+    339          
+    340              return ( events ^ AT_NWKUPDATE_EVENT );
+   \                     ??zclATApp_event_loop_18:
+   \   000187   EE           MOV       A,R6
+   \   000188   6420         XRL       A,#0x20
+   \   00018A   800D         SJMP      ??zclATApp_event_loop_2
+    341            }
+    342          
+    343            if ( events & AT_BDB_STEERING_EVT )
+   \                     ??zclATApp_event_loop_15:
+   \   00018C   EA           MOV       A,R2
+   \   00018D   5480         ANL       A,#0x80
+   \   00018F   600D         JZ        ??zclATApp_event_loop_19
+    344            {
+    345              bdb_StartCommissioning( BDB_COMMISSIONING_MODE_NWK_STEERING );
+   \   000191                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000191   7902         MOV       R1,#0x2
+   \   000193   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+    346          
+    347              return ( events ^ AT_BDB_STEERING_EVT );
+   \   000196   EE           MOV       A,R6
+   \   000197   6480         XRL       A,#0x80
+   \                     ??zclATApp_event_loop_2:
+   \   000199   FA           MOV       R2,A
+   \   00019A   EF           MOV       A,R7
+   \                     ??zclATApp_event_loop_10:
+   \   00019B   FB           MOV       R3,A
+   \   00019C   8004         SJMP      ??zclATApp_event_loop_14
+    348            }
+    349          
+    350            // Discard unknown events
+    351            return 0;
+   \                     ??zclATApp_event_loop_19:
+   \   00019E   7A00         MOV       R2,#0x0
+   \   0001A0   7B00         MOV       R3,#0x0
+   \                     ??zclATApp_event_loop_14:
+   \   0001A2   7402         MOV       A,#0x2
+   \   0001A4   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0001A7   7F08         MOV       R7,#0x8
+   \   0001A9   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   0001AC                REQUIRE _A_IEN0
+   \   0001AC                REQUIRE WDCTL
+    352          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   7B00         MOV       R3,#0x0
+   \   000002   90....       MOV       DPTR,#zclATApp_TaskID
+   \   000005                REQUIRE ??Subroutine6_0
+   \   000005                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F9           MOV       R1,A
+   \   000002   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000005   7404         MOV       A,#0x4
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001                ; Setup parameters for call to function ZMacSetReq
+   \   000001                ; Setup parameters for call to function ZMacSetReq
+   \   000001   AA..         MOV       R2,?XSP + 0
+   \   000003   AB..         MOV       R3,?XSP + 1
+   \   000005   7952         MOV       R1,#0x52
+   \   000007   12....       LCALL     `??ZMacSetReq::?relay`; Banked call to: ZMacSetReq
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   A3           INC       DPTR
+   \   000009   22           RET
+    353          
+    354          
+    355          /*********************************************************************
+    356           * @fn      zclATApp_HandleKeys
+    357           *
+    358           * @brief   Handles all key events for this device.
+    359           *
+    360           * @param   shift - true if in shift/alt.
+    361           * @param   keys - bit field for key events. Valid entries:
+    362           *                 HAL_KEY_SW_5
+    363           *                 HAL_KEY_SW_4
+    364           *                 HAL_KEY_SW_2
+    365           *                 HAL_KEY_SW_1
+    366           *
+    367           * @return  none
+    368           */
+    369          static void zclATApp_HandleKeys( byte shift, byte keys )
+    370          {
+    371            if ( keys & HAL_KEY_SW_7 )
+    372            {
+    373            }
+    374            if ( keys & HAL_KEY_SW_6 )
+    375            {
+    376            }
+    377            if ( keys & HAL_KEY_SW_5 )
+    378            {
+    379            }
+    380          }
+    381          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    382          static void zclATApp_HandleStateChange( uint8 state )
+   \                     zclATApp_HandleStateChange:
+    383          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    384            static uint8 joinCnt = 0;
+    385            static uint8 rejoinCnt = 0;
+    386          
+    387          #if AT_SHOW_STATE_CHANGE
+    388            printf("NwkState:%s\r\n",devStates_str[state]);
+   \   000007                ; Setup parameters for call to function printf
+   \   000007   29           ADD       A,R1
+   \   000008   F8           MOV       R0,A
+   \   000009   E4           CLR       A
+   \   00000A   33           RLC       A
+   \   00000B   F9           MOV       R1,A
+   \   00000C   74..         MOV       A,#devStates_str & 0xff
+   \   00000E   28           ADD       A,R0
+   \   00000F   F582         MOV       DPL,A
+   \   000011   74..         MOV       A,#(devStates_str >> 8) & 0xff
+   \   000013   39           ADDC      A,R1
+   \   000014   F583         MOV       DPH,A
+   \   000016   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   000019   7A..         MOV       R2,#`?<Constant "NwkState:%s\\r\\n">` & 0xff
+   \   00001B   7B..         MOV       R3,#(`?<Constant "NwkState:%s\\r\\n">` >> 8) & 0xff
+   \   00001D   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   000020   7402         MOV       A,#0x2
+   \   000022   12....       LCALL     ?DEALLOC_XSTACK8
+    389          #endif
+    390          
+    391            switch( (devStates_t)state )
+   \   000025   EE           MOV       A,R6
+   \   000026   600E         JZ        ??zclATApp_HandleStateChange_0
+   \   000028   24FA         ADD       A,#-0x6
+   \   00002A   6056         JZ        ??zclATApp_HandleStateChange_1
+   \   00002C   24FC         ADD       A,#-0x4
+   \   00002E   7003         JNZ       $+5
+   \   000030   02....       LJMP      ??zclATApp_HandleStateChange_2 & 0xFFFF
+   \   000033   02....       LJMP      ??zclATApp_HandleStateChange_3 & 0xFFFF
+    392            {
+    393              case DEV_HOLD:
+    394                joinCnt++;
+   \                     ??zclATApp_HandleStateChange_0:
+   \   000036   90....       MOV       DPTR,#??joinCnt
+   \   000039   E0           MOVX      A,@DPTR
+   \   00003A   04           INC       A
+   \   00003B   F0           MOVX      @DPTR,A
+    395                printf("join failure %d", joinCnt);
+   \   00003C                ; Setup parameters for call to function printf
+   \   00003C   F5..         MOV       ?V0,A
+   \   00003E   75..00       MOV       ?V1,#0x0
+   \   000041   78..         MOV       R0,#?V0
+   \   000043   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000046   7A..         MOV       R2,#`?<Constant "join failure %d">` & 0xff
+   \   000048   7B..         MOV       R3,#(`?<Constant "join failure %d">` >> 8) & 0xff
+   \   00004A   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   00004D   7402         MOV       A,#0x2
+   \   00004F   12....       LCALL     ?DEALLOC_XSTACK8
+    396                if(joinCnt < ATAPP_END_DEVICE_JOIN_TIMES)
+   \   000052   90....       MOV       DPTR,#??joinCnt
+   \   000055   E0           MOVX      A,@DPTR
+   \   000056   C3           CLR       C
+   \   000057   9406         SUBB      A,#0x6
+   \   000059   501F         JNC       ??zclATApp_HandleStateChange_4
+    397                {
+    398                  printf(", join again after %d s\r\n\r\n", ATAPP_END_DEVICE_JOIN_DELAY/1000);
+   \   00005B                ; Setup parameters for call to function printf
+   \   00005B   75..0A       MOV       ?V0,#0xa
+   \   00005E   78..         MOV       R0,#?V0
+   \   000060   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000063   7A..         MOV       R2,#`?<Constant ", join again after %d...">` & 0xff
+   \   000065   7B..         MOV       R3,#(`?<Constant ", join again after %d...">` >> 8) & 0xff
+   \   000067   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   00006A   7402         MOV       A,#0x2
+   \   00006C   12....       LCALL     ?DEALLOC_XSTACK8
+    399                  osal_start_timerEx( zclATApp_TaskID, AT_BDB_STEERING_EVT, ATAPP_END_DEVICE_JOIN_DELAY );
+   \   00006F                ; Setup parameters for call to function osal_start_timerEx
+   \   00006F   90....       MOV       DPTR,#__Constant_2710
+   \   000072   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000075   7A80         MOV       R2,#-0x80
+   \   000077   02....       LJMP      ??zclATApp_HandleStateChange_5 & 0xFFFF
+    400                }
+    401                else
+    402                {
+    403                  joinCnt = 0;
+   \                     ??zclATApp_HandleStateChange_4:
+   \   00007A   E4           CLR       A
+   \   00007B   F0           MOVX      @DPTR,A
+    404                  printf(", quit join\r\n\r\n");
+   \   00007C                ; Setup parameters for call to function printf
+   \   00007C   7A..         MOV       R2,#`?<Constant ", quit join\\r\\n\\r\\n">` & 0xff
+   \   00007E   7B..         MOV       R3,#(`?<Constant ", quit join\\r\\n\\r\\n">` >> 8) & 0xff
+   \   000080   803E         SJMP      ??zclATApp_HandleStateChange_6
+    405                }
+    406                break;
+    407          
+    408              case DEV_END_DEVICE:
+    409                osal_start_timerEx(zclDoorLock_TaskID, DOORLOCK_SET_DORMANT_EVT, DOORLOCK_KEEP_ACTIVE_TIME_START);
+   \                     ??zclATApp_HandleStateChange_1:
+   \   000082                ; Setup parameters for call to function osal_start_timerEx
+   \   000082   90....       MOV       DPTR,#__Constant_ea60
+   \   000085   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000088   7A08         MOV       R2,#0x8
+   \   00008A   7B00         MOV       R3,#0x0
+   \   00008C   90....       MOV       DPTR,#zclDoorLock_TaskID
+   \   00008F   12....       LCALL     ??Subroutine6_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000092   12....       LCALL     ?DEALLOC_XSTACK8
+    410                joinCnt = 0;
+   \   000095   90....       MOV       DPTR,#??joinCnt
+   \   000098   E4           CLR       A
+   \   000099   F0           MOVX      @DPTR,A
+    411                rejoinCnt = 0;
+   \   00009A   90....       MOV       DPTR,#??rejoinCnt
+   \   00009D   F0           MOVX      @DPTR,A
+    412                printf("join success\r\n\r\n");
+   \   00009E                ; Setup parameters for call to function printf
+   \   00009E   7A..         MOV       R2,#`?<Constant "join success\\r\\n\\r\\n">` & 0xff
+   \   0000A0   7B..         MOV       R3,#(`?<Constant "join success\\r\\n\\r\\n">` >> 8) & 0xff
+   \   0000A2   12....       LCALL     `??printf::?relay`; Banked call to: printf
+    413                osal_start_reload_timer(zclDoorLock_TaskID, DOORLOCK_KEEP_ALIVE_EVT, DOORLOCK_KEEP_ALIVE_TIMEOUT);
+   \   0000A5                ; Setup parameters for call to function osal_start_reload_timer
+   \   0000A5   90....       MOV       DPTR,#__Constant_ea60
+   \   0000A8   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   0000AB   7A10         MOV       R2,#0x10
+   \   0000AD   7B00         MOV       R3,#0x0
+   \   0000AF   90....       MOV       DPTR,#zclDoorLock_TaskID
+   \   0000B2   E0           MOVX      A,@DPTR
+   \   0000B3   F9           MOV       R1,A
+   \   0000B4   12....       LCALL     `??osal_start_reload_timer::?relay`; Banked call to: osal_start_reload_timer
+   \   0000B7   7404         MOV       A,#0x4
+   \   0000B9   12....       LCALL     ?DEALLOC_XSTACK8
+    414                printf("enable DOORLOCK_KEEP_ALIVE_EVT\r\n");
+   \   0000BC                ; Setup parameters for call to function printf
+   \   0000BC   7A..         MOV       R2,#`?<Constant "enable DOORLOCK_KEEP_...">` & 0xff
+   \   0000BE   7B..         MOV       R3,#(`?<Constant "enable DOORLOCK_KEEP_...">` >> 8) & 0xff
+   \                     ??zclATApp_HandleStateChange_6:
+   \   0000C0   12....       LCALL     `??printf::?relay`; Banked call to: printf
+    415                break;
+   \   0000C3   806C         SJMP      ??zclATApp_HandleStateChange_3
+    416          
+    417              case DEV_NWK_ORPHAN:
+    418                if(rejoinCnt < 10)
+   \                     ??zclATApp_HandleStateChange_2:
+   \   0000C5   7A..         MOV       R2,#`?<Constant "parent lost %d, rejoi...">` & 0xff
+   \   0000C7   7B..         MOV       R3,#(`?<Constant "parent lost %d, rejoi...">` >> 8) & 0xff
+   \   0000C9   90....       MOV       DPTR,#??rejoinCnt
+   \   0000CC   E0           MOVX      A,@DPTR
+   \   0000CD   C3           CLR       C
+   \   0000CE   940A         SUBB      A,#0xa
+   \   0000D0   E0           MOVX      A,@DPTR
+   \   0000D1   501B         JNC       ??zclATApp_HandleStateChange_7
+    419                {
+    420                  rejoinCnt++;
+   \   0000D3   04           INC       A
+   \   0000D4   F0           MOVX      @DPTR,A
+    421                  printf("parent lost %d, rejoin after %d s\r\n\r\n", rejoinCnt, ATAPP_END_DEVICE_REJOIN_DELAY_1/1000);
+   \   0000D5                ; Setup parameters for call to function printf
+   \   0000D5   90....       MOV       DPTR,#__Constant_3c
+   \   0000D8   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   0000DB   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   0000DE   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000E1   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   0000E4   7406         MOV       A,#0x6
+   \   0000E6   12....       LCALL     ?DEALLOC_XSTACK8
+    422                  osal_start_timerEx(zclATApp_TaskID, ATAPP_END_DEVICE_REJOIN_EVT, ATAPP_END_DEVICE_REJOIN_DELAY_1);
+   \   0000E9                ; Setup parameters for call to function osal_start_timerEx
+   \   0000E9   90....       MOV       DPTR,#__Constant_ea60
+   \   0000EC   8038         SJMP      ??zclATApp_HandleStateChange_8
+    423                }
+    424                else if(rejoinCnt < 20)
+   \                     ??zclATApp_HandleStateChange_7:
+   \   0000EE   C3           CLR       C
+   \   0000EF   9414         SUBB      A,#0x14
+   \   0000F1   501C         JNC       ??zclATApp_HandleStateChange_9
+    425                {
+    426                  rejoinCnt++;
+   \   0000F3   E0           MOVX      A,@DPTR
+   \   0000F4   04           INC       A
+   \   0000F5   F0           MOVX      @DPTR,A
+    427                  printf("parent lost %d, rejoin after %d s\r\n\r\n", rejoinCnt, ATAPP_END_DEVICE_REJOIN_DELAY_2/1000);
+   \   0000F6                ; Setup parameters for call to function printf
+   \   0000F6   90....       MOV       DPTR,#__Constant_258
+   \   0000F9   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   0000FC   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0000FF   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000102   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   000105   7406         MOV       A,#0x6
+   \   000107   12....       LCALL     ?DEALLOC_XSTACK8
+    428                  osal_start_timerEx(zclATApp_TaskID, ATAPP_END_DEVICE_REJOIN_EVT, ATAPP_END_DEVICE_REJOIN_DELAY_2);
+   \   00010A                ; Setup parameters for call to function osal_start_timerEx
+   \   00010A   90....       MOV       DPTR,#__Constant_927c0
+   \   00010D   8017         SJMP      ??zclATApp_HandleStateChange_8
+    429                }
+    430                else
+    431                {
+    432                  printf("parent lost %d, rejoin after %d s\r\n\r\n", rejoinCnt, ATAPP_END_DEVICE_REJOIN_DELAY_3/1000);
+   \                     ??zclATApp_HandleStateChange_9:
+   \   00010F                ; Setup parameters for call to function printf
+   \   00010F   90....       MOV       DPTR,#__Constant_e10
+   \   000112   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000115   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000118   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00011B   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   00011E   7406         MOV       A,#0x6
+   \   000120   12....       LCALL     ?DEALLOC_XSTACK8
+    433                  osal_start_timerEx(zclATApp_TaskID, ATAPP_END_DEVICE_REJOIN_EVT, ATAPP_END_DEVICE_REJOIN_DELAY_3);
+   \   000123                ; Setup parameters for call to function osal_start_timerEx
+   \   000123   90....       MOV       DPTR,#__Constant_36ee80
+   \                     ??zclATApp_HandleStateChange_8:
+   \   000126   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   000129   7A01         MOV       R2,#0x1
+    434                }
+    435                break;
+    436          
+    437              default:
+    438                break;
+    439            }
+   \                     ??zclATApp_HandleStateChange_5:
+   \   00012B   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00012E   12....       LCALL     ?DEALLOC_XSTACK8
+    440          }
+   \                     ??zclATApp_HandleStateChange_3:
+   \   000131                REQUIRE ?Subroutine0
+   \   000131                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV       R7,#0x2
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   90....       MOV       DPTR,#??rejoinCnt
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F5..         MOV       ?V0,A
+   \   000006   75..00       MOV       ?V1,#0x0
+   \   000009   78..         MOV       R0,#?V0
+   \   00000B   22           RET
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??joinCnt:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??rejoinCnt:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    441          
+    442          /*********************************************************************
+    443           * @fn      zclATApp_ProcessCommissioningStatus
+    444           *
+    445           * @brief   Callback in which the status of the commissioning process are reported
+    446           *
+    447           * @param   bdbCommissioningModeMsg - Context message of the status of a commissioning process
+    448           *
+    449           * @return  none
+    450           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    451          static void zclATApp_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg)
+   \                     zclATApp_ProcessCommissioningStatus:
+    452          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    453            switch(bdbCommissioningModeMsg->bdbCommissioningMode)
+   \   000005   8A82         MOV       DPL,R2
+   \   000007   8B83         MOV       DPH,R3
+   \   000009   A3           INC       DPTR
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   14           DEC       A
+   \   00000C   6015         JZ        ??zclATApp_ProcessCommissioningStatus_0
+   \   00000E   14           DEC       A
+   \   00000F   7044         JNZ       ??zclATApp_ProcessCommissioningStatus_1
+    454            {
+    455              case BDB_COMMISSIONING_FORMATION:
+    456                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+   \   000011   8A82         MOV       DPL,R2
+   \   000013   8B83         MOV       DPH,R3
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   703D         JNZ       ??zclATApp_ProcessCommissioningStatus_1
+    457                {
+    458                  //After formation, perform nwk steering again plus the remaining commissioning modes that has not been process yet
+    459                  bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
+   \   000018                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000018   A3           INC       DPTR
+   \   000019   A3           INC       DPTR
+   \   00001A   E0           MOVX      A,@DPTR
+   \   00001B   4402         ORL       A,#0x2
+   \   00001D   F9           MOV       R1,A
+   \   00001E   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+   \   000021   8032         SJMP      ??zclATApp_ProcessCommissioningStatus_1
+    460                }
+    461                else
+    462                {
+    463                  //Want to try other channels?
+    464                  //try with bdb_setChannelAttribute
+    465                }
+    466              break;
+    467              case BDB_COMMISSIONING_NWK_STEERING:
+    468                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+   \                     ??zclATApp_ProcessCommissioningStatus_0:
+   \   000023   8A82         MOV       DPL,R2
+   \   000025   8B83         MOV       DPH,R3
+   \   000027   E0           MOVX      A,@DPTR
+   \   000028   702B         JNZ       ??zclATApp_ProcessCommissioningStatus_1
+    469                {
+    470                  if (!getNewAddr)
+   \   00002A   90....       MOV       DPTR,#getNewAddr
+   \   00002D   E0           MOVX      A,@DPTR
+   \   00002E   7025         JNZ       ??zclATApp_ProcessCommissioningStatus_1
+    471                  { // if get new address, devive would has annaounced
+    472                    ZDP_DeviceAnnce( NLME_GetShortAddr(), NLME_GetExtAddr(), _NIB.CapabilityFlags, 0 );
+   \   000030                ; Setup parameters for call to function NLME_GetExtAddr
+   \   000030   12....       LCALL     `??NLME_GetExtAddr::?relay`; Banked call to: NLME_GetExtAddr
+   \   000033   8A..         MOV       ?V0,R2
+   \   000035   8B..         MOV       ?V1,R3
+   \   000037   AE..         MOV       R6,?V0
+   \   000039                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000039   12....       LCALL     `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+   \   00003C                ; Setup parameters for call to function ZDP_DeviceAnnce
+   \   00003C   75..00       MOV       ?V0,#0x0
+   \   00003F   78..         MOV       R0,#?V0
+   \   000041   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000044   90....       MOV       DPTR,#_NIB + 14
+   \   000047   E0           MOVX      A,@DPTR
+   \   000048   F9           MOV       R1,A
+   \   000049   EE           MOV       A,R6
+   \   00004A   FC           MOV       R4,A
+   \   00004B   AD..         MOV       R5,?V1
+   \   00004D   12....       LCALL     `??ZDP_DeviceAnnce::?relay`; Banked call to: ZDP_DeviceAnnce
+   \   000050   7401         MOV       A,#0x1
+   \   000052   12....       LCALL     ?DEALLOC_XSTACK8
+    473                  }  
+    474                }
+    475                else
+    476                {
+    477                  //See the possible errors for nwk steering procedure
+    478                  //No suitable networks found
+    479                  //Want to try other channels?
+    480                  //try with bdb_setChannelAttribute
+    481                }
+    482              break;
+    483              case BDB_COMMISSIONING_FINDING_BINDING:
+    484                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+    485                {
+    486                  //YOUR JOB:
+    487                }
+    488                else
+    489                {
+    490                  //YOUR JOB:
+    491                  //retry?, wait for user interaction?
+    492                }
+    493              break;
+    494              case BDB_COMMISSIONING_INITIALIZATION:
+    495                //Initialization notification can only be successful. Failure on initialization
+    496                //only happens for ZED and is notified as BDB_COMMISSIONING_PARENT_LOST notification
+    497          
+    498                //YOUR JOB:
+    499                //We are on a network, what now?
+    500          
+    501              break;
+    502          #if ZG_BUILD_ENDDEVICE_TYPE
+    503              case BDB_COMMISSIONING_PARENT_LOST:
+    504                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_NETWORK_RESTORED)
+    505                {
+    506                  //We did recover from losing parent
+    507                }
+    508                else
+    509                {
+    510                }
+    511              break;
+    512          #endif
+    513            }
+    514          }
+   \                     ??zclATApp_ProcessCommissioningStatus_1:
+   \   000055   80..         SJMP      ?Subroutine0
+    515          
+    516          /*********************************************************************
+    517           * @fn      zclATApp_BindNotification
+    518           *
+    519           * @brief   Called when a new bind is added.
+    520           *
+    521           * @param   data - pointer to new bind data
+    522           *
+    523           * @return  none
+    524           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    525          static void zclATApp_BindNotification( bdbBindNotificationData_t *data )
+   \                     zclATApp_BindNotification:
+    526          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    527            // ATAPP_TODO: process the new bind information
+    528          }
+   \   000000   02....       LJMP      ?BRET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for NwkSteeringTime>`:
+   \   000000   B80B0000     DD 3000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "System starting...\\r\\n\\r\\n">`:
+   \   000000   53797374     DB "System starting...\015\012\015\012"
+   \            656D2073
+   \            74617274
+   \            696E672E
+   \            2E2E0D0A
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\nOK\\r\\n">`:
+   \   000000   0D0A4F4B     DB "\015\012OK\015\012"
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "NwkState:%s\\r\\n">`:
+   \   000000   4E776B53     DB "NwkState:%s\015\012"
+   \            74617465
+   \            3A25730D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "join failure %d">`:
+   \   000000   6A6F696E     DB "join failure %d"
+   \            20666169
+   \            6C757265
+   \            20256400
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant ", join again after %d...">`:
+   \   000000   2C206A6F     DB ", join again after %d s\015\012\015\012"
+   \            696E2061
+   \            6761696E
+   \            20616674
+   \            65722025
+   \            6420730D
+   \            0A0D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant ", quit join\\r\\n\\r\\n">`:
+   \   000000   2C207175     DB ", quit join\015\012\015\012"
+   \            6974206A
+   \            6F696E0D
+   \            0A0D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "join success\\r\\n\\r\\n">`:
+   \   000000   6A6F696E     DB "join success\015\012\015\012"
+   \            20737563
+   \            63657373
+   \            0D0A0D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "enable DOORLOCK_KEEP_...">`:
+   \   000000   656E6162     DB "enable DOORLOCK_KEEP_ALIVE_EVT\015\012"
+   \            6C652044
+   \            4F4F524C
+   \            4F434B5F
+   \            4B454550
+   \            5F414C49
+   \            56455F45
+   \            56540D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "parent lost %d, rejoi...">`:
+   \   000000   70617265     DB "parent lost %d, rejoin after %d s\015\012\015\012"
+   \            6E74206C
+   \            6F737420
+   \            25642C20
+   \            72656A6F
+   \            696E2061
+   \            66746572
+   \            20256420
+   \            730D0A0D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_2710:
+   \   000000   10270000     DD 10000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ea60:
+   \   000000   60EA0000     DD 60000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3c:
+   \   000000   3C000000     DD 60
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_258:
+   \   000000   58020000     DD 600
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_927c0:
+   \   000000   C0270900     DD 600000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_e10:
+   \   000000   100E0000     DD 3600
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_36ee80:
+   \   000000   80EE3600     DD 3600000
+    529          
+    530          /****************************************************************************
+    531          ****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      0   zclATApp_BindNotification
+      0     34   zclATApp_HandleStateChange
+        0     14   -> osal_start_reload_timer
+        0     14   -> osal_start_timerEx
+        0     10   -> printf
+        0     12   -> printf
+        0     16   -> printf
+      1     12   zclATApp_Init
+        0     12   -> AT_Uart0_Init
+        0     12   -> AT_ZDO_Register
+        0     12   -> AT_zclController_Init
+        0     12   -> RegisterForKeys
+        0     12   -> StubAPS_RegisterApp
+        0     12   -> afRegister
+        0     12   -> bdb_RegisterBindNotificationCB
+        0     12   -> bdb_RegisterCommissioningStatusCB
+        0     12   -> bdb_StartCommissioning
+        0     12   -> osal_mem_alloc
+        0     12   -> printf
+      0     11   zclATApp_ProcessCommissioningStatus
+        0     10   -> NLME_GetExtAddr
+        0     10   -> NLME_GetShortAddr
+        0     11   -> ZDP_DeviceAnnce
+        0     10   -> bdb_StartCommissioning
+      0     24   zclATApp_event_loop
+        0     18   -> ATApp_MessageMSGCB
+        0     18   -> AT_Uart0_Send
+        0     18   -> AT_ZDO_ProcessMsgCBs
+        0     18   -> AT_zclController_ProcessIncomingMsg
+        0     18   -> InterPAN_ProcessMSGCB
+        0     18   -> ZDApp_NwkStateUpdateCB
+        0     24   -> ZDP_MgmtNwkUpdateReq
+        0     18   -> ZMacGetReq
+        0     18   -> ZMacSetReq
+        0     18   -> bdb_StartCommissioning
+        0     18   -> bdb_ZedAttemptRecoverNwk
+        0     18   -> osal_mem_alloc
+        0     18   -> osal_mem_free
+        0     18   -> osal_msg_deallocate
+        0     18   -> osal_msg_receive
+        0     22   -> osal_start_timerEx
+        0     18   -> zclATApp_HandleStateChange
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      28  ?<Constant ", join again after %d...">
+      16  ?<Constant ", quit join\r\n\r\n">
+      14  ?<Constant "NwkState:%s\r\n">
+      23  ?<Constant "System starting...\r\n\r\n">
+       7  ?<Constant "\r\nOK\r\n">
+      33  ?<Constant "enable DOORLOCK_KEEP_...">
+      16  ?<Constant "join failure %d">
+      17  ?<Constant "join success\r\n\r\n">
+      38  ?<Constant "parent lost %d, rejoi...">
+       4  ?<Initializer for NwkSteeringTime>
+       8  ??Subroutine6_0
+       5  ?Subroutine0
+      12  ?Subroutine1
+       6  ?Subroutine2
+      11  ?Subroutine3
+       5  ?Subroutine4
+      10  ?Subroutine5
+       4  NwkSteeringTime
+       1  WDCTL
+       1  _A_IEN0
+       4  __Constant_258
+       4  __Constant_2710
+       4  __Constant_36ee80
+       4  __Constant_3c
+       4  __Constant_927c0
+       4  __Constant_e10
+       4  __Constant_ea60
+       1  gChannel
+       1  gNwkUpdateId
+       1  gNwkUpdateTime
+       1  gPermitDuration
+       1  getNewAddr
+       1  joinCnt
+       1  rejoinCnt
+       3  zclATApp_BindNotification
+     305  zclATApp_HandleStateChange
+     124  zclATApp_Init
+      87  zclATApp_ProcessCommissioningStatus
+       1  zclATApp_TaskID
+     428  zclATApp_event_loop
+      30  -- Other
+
+ 
+ 1 004 bytes in segment BANKED_CODE
+    30 bytes in segment BANK_RELAYS
+     2 bytes in segment SFR_AN
+     4 bytes in segment XDATA_I
+     4 bytes in segment XDATA_ID
+   220 bytes in segment XDATA_ROM_C
+     8 bytes in segment XDATA_Z
+ 
+    34 bytes of CODE     memory
+   192 bytes of CONST    memory (+ 28 bytes shared)
+     0 bytes of DATA     memory (+  2 bytes shared)
+ 1 004 bytes of HUGECODE memory
+    12 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

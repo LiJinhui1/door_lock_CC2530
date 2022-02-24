@@ -1,0 +1,3397 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               23/Feb/2022  09:34:57
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_controller.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW2D3D.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_controller.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\AT_controller.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\AT_controller.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_controller.c
+      1          /*********************************************************************
+      2            Filename:       AT_controller.c
+      3          
+      4            Author:         Yasin Zhang
+      5          **********************************************************************/
+      6          
+      7          /*********************************************************************
+      8           * INCLUDES
+      9           */
+     10          #include "ZComDef.h"
+     11          #include "OSAL.h"
+     12          #include "ZDApp.h"
+     13          #include "bdb_interface.h"
+     14          
+     15          #include "zcl.h"
+     16          #include "zcl_ha.h"
+     17          
+     18          #include "onboard.h"
+     19          
+     20          #include "AT_controller.h"
+     21          #include "ATApp.h"
+     22          #include "AT_uart.h"
+     23          #include "AT_printf.h"
+     24          
+     25          /*********************************************************************
+     26          * MACROS
+     27          */
+     28          
+     29          /*********************************************************************
+     30          * CONSTANTS
+     31          */
+     32          
+     33          /*********************************************************************
+     34          * GLOBAL VARIABLES
+     35          */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     36          zclController_EP_List_t *zclController_EP_List = NULL;
+   \                     zclController_EP_List:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     37          
+     38          /*********************************************************************
+     39           * LOCAL VARIABLES
+     40           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          static uint8 zclCtrl_TransID = 0;  // This is the unique message ID (counter)
+   \                     zclCtrl_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     42          
+     43          /*********************************************************************
+     44           * SIMPLE DESCRIPTOR
+     45           */
+     46          
+     47          // This is the Cluster ID List and should be filled with Application
+     48          // specific cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     49          const cId_t zclCtrl_InClusterList[] =
+   \                     zclCtrl_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+     50          {
+     51           ZCL_CLUSTER_ID_GEN_BASIC,
+     52           ZCL_CLUSTER_ID_GEN_IDENTIFY,
+     53          
+     54           // ZCL_CONTROLLER_TODO: Add application specific Input Clusters Here.
+     55           //       See zcl.h for Cluster ID definitions
+     56          };
+     57          #define ZCL_CONTROLLER_MAX_INCLUSTERS   0//(sizeof(zclCtrl_InClusterList) / sizeof(zclCtrl_InClusterList[0]))
+     58          
+     59          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     60          const cId_t zclCtrl_OutClusterList[] =
+   \                     zclCtrl_OutClusterList:
+   \   000000   0000         DW 0
+     61          {
+     62           ZCL_CLUSTER_ID_GEN_BASIC,
+     63          
+     64           // ZCL_CONTROLLER_TODO: Add application specific Output Clusters Here.
+     65           //       See zcl.h for Cluster ID definitions
+     66          };
+     67          #define ZCL_CONTROLLER_MAX_OUTCLUSTERS  0//(sizeof(zclCtrl_OutClusterList) / sizeof(zclCtrl_OutClusterList[0]))
+     68          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     69          SimpleDescriptionFormat_t zclController_SimpleDesc =
+   \                     zclController_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for zclController_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+     70          {
+     71           ZCL_CONTROLLER_ENDPOINT,         //  int Endpoint;
+     72           ZCL_HA_PROFILE_ID,               //  uint16 AppProfId;
+     73           // ZCL_CONTROLLER_TODO: Replace ZCL_HA_DEVICEID_REMOTE_CONTROL with application specific device ID
+     74           ZCL_HA_DEVICEID_REMOTE_CONTROL,  //  uint16 AppDeviceId;
+     75           ZCL_DEVICE_VERSION,              //  int   AppDevVer:4;
+     76           ZCL_FLAGS,                       //  int   AppFlags:4;
+     77           ZCL_CONTROLLER_MAX_INCLUSTERS,   //  byte  AppNumInClusters;
+     78           NULL,//(cId_t *)zclCtrl_InClusterList,  //  byte *pAppInClusterList;
+     79           ZCL_CONTROLLER_MAX_OUTCLUSTERS,  //  byte  AppNumInClusters;
+     80           NULL//(cId_t *)zclCtrl_OutClusterList  //  byte *pAppInClusterList;
+     81          };
+     82          
+     83          /*********************************************************************
+     84           * LOCAL FUNCTIONS
+     85           */
+     86          static void AT_zclCtrl_REpCtrl_CB( afIncomingMSGPacket_t *pkt );
+     87          static void AT_ATF_CMD_CB( afIncomingMSGPacket_t *pkt );
+     88          static void AT_zclCtrl_REpCtrl_req( afIncomingMSGPacket_t *pkt );
+     89          static void AT_zclCtrl_REpCtrl_rsp( afIncomingMSGPacket_t *pkt );
+     90          static void AT_ATF_Cmd_req( afIncomingMSGPacket_t *pkt );
+     91          static uint8 zclCtrlCalcHdrSize( ZCLCtrlCmd_hdr *hdr );
+     92          static uint8* zclCtrlBuildHdr( ZCLCtrlCmd_hdr *hdr, uint8 *pData );
+     93          
+     94          // Functions to process ZCL Foundation incoming Command/Response messages
+     95          #ifdef ZCL_REPORT_CONFIGURING_DEVICE
+     96          static void zclController_PrintfAttrData( uint8 dataType, uint8 *attrData );
+     97          #endif
+     98          #ifdef ZCL_READ
+     99          static uint8 zclController_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+    100          #endif
+    101          #ifdef ZCL_WRITE
+    102          static uint8 zclController_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+    103          #endif
+    104          #ifdef ZCL_REPORT_CONFIGURING_DEVICE
+    105          static uint8 zclController_ProcessInReadReportCfgRspCmd( zclIncomingMsg_t *pInMsg );
+    106          static uint8 zclController_ProcessInConfigReportRspCmd( zclIncomingMsg_t *pInMsg );
+    107          #endif
+    108          #ifdef ZCL_REPORT_DESTINATION_DEVICE
+    109          static void zclController_ProcessInReportCmd( zclIncomingMsg_t *pInMsg );
+    110          #endif
+    111          static uint8 zclController_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+    112          #ifdef ZCL_DISCOVER
+    113          static uint8 zclController_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
+    114          static uint8 zclController_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
+    115          static uint8 zclController_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
+    116          #endif
+    117          
+    118          /*********************************************************************
+    119           * @fn          zclController_Init
+    120           *
+    121           * @brief       Initialize the ZCL controller
+    122           *
+    123           * @param       uint8 task_id - the application that ZCL messages send to
+    124           *
+    125           * @return      none
+    126           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    127          void AT_zclController_Init( uint8* task_id )
+   \                     AT_zclController_Init:
+    128          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+    129            // This app is part of the Home Automation Profile
+    130            bdb_RegisterSimpleDescriptor( &zclController_SimpleDesc );
+   \   000009                ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+   \   000009   7A..         MOV       R2,#zclController_SimpleDesc & 0xff
+   \   00000B   7B..         MOV       R3,#(zclController_SimpleDesc >> 8) & 0xff
+   \   00000D   12....       LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+    131          
+    132            // Register the Application to receive the unprocessed Foundation command/response messages
+    133            zcl_registerForMsg( *task_id );
+   \   000010                ; Setup parameters for call to function zcl_registerForMsg
+   \   000010   8E82         MOV       DPL,R6
+   \   000012   8F83         MOV       DPH,R7
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   F9           MOV       R1,A
+   \   000016   12....       LCALL     `??zcl_registerForMsg::?relay`; Banked call to: zcl_registerForMsg
+    134          }
+   \   000019                REQUIRE ?Subroutine0
+   \   000019                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    135          
+    136          /*********************************************************************
+    137           * @fn          zclEndpoint_Register
+    138           *
+    139           * @brief       Register the endPoint in the controller
+    140           *
+    141           * @param       uint8 endPoint           - the endPoint need to register
+    142           *              zclController_EP_CB cbFc - the endPoint's callback function
+    143           *
+    144           * @return      if register successfule, return true; otherwise return false
+    145           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    146          bool AT_Endpoint_Register( uint8 endPoint, uint8 *epStatus, zclController_EP_CB cbFc )
+   \                     AT_Endpoint_Register:
+    147          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV       ?V2,R1
+   \   000007   EA           MOV       A,R2
+   \   000008   FE           MOV       R6,A
+   \   000009   EB           MOV       A,R3
+   \   00000A   FF           MOV       R7,A
+   \   00000B   8C..         MOV       ?V0,R4
+   \   00000D   8D..         MOV       ?V1,R5
+    148            zclController_EP_List_t *pLoop;
+    149            pLoop = zclController_EP_List;
+   \   00000F   90....       MOV       DPTR,#zclController_EP_List
+   \   000012   8005         SJMP      ??AT_Endpoint_Register_0
+    150            while (pLoop) {
+    151              if (endPoint == pLoop->ep) {
+    152                break;
+    153              }
+    154              pLoop = pLoop->next;
+   \                     ??AT_Endpoint_Register_1:
+   \   000014   A3           INC       DPTR
+   \   000015   A3           INC       DPTR
+   \   000016   A3           INC       DPTR
+   \   000017   A3           INC       DPTR
+   \   000018   A3           INC       DPTR
+   \                     ??AT_Endpoint_Register_0:
+   \   000019   12....       LCALL     ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   00001C   E8           MOV       A,R0
+   \   00001D   49           ORL       A,R1
+   \   00001E   601F         JZ        ??AT_Endpoint_Register_2
+   \   000020   8882         MOV       DPL,R0
+   \   000022   8983         MOV       DPH,R1
+   \   000024   E0           MOVX      A,@DPTR
+   \   000025   65..         XRL       A,?V2
+   \   000027   70EB         JNZ       ??AT_Endpoint_Register_1
+    155            }
+    156          
+    157            // if found, update the endPoint entry
+    158            if (pLoop) {
+    159              pLoop->ep = endPoint;
+   \   000029   E5..         MOV       A,?V2
+   \   00002B   F0           MOVX      @DPTR,A
+    160              pLoop->status = epStatus;
+   \   00002C   A3           INC       DPTR
+   \   00002D   EA           MOV       A,R2
+   \   00002E   F0           MOVX      @DPTR,A
+   \   00002F   A3           INC       DPTR
+   \   000030   EB           MOV       A,R3
+   \   000031   F0           MOVX      @DPTR,A
+    161              pLoop->CB = cbFc;
+   \   000032   8882         MOV       DPL,R0
+   \   000034   8983         MOV       DPH,R1
+   \   000036   A3           INC       DPTR
+   \   000037   A3           INC       DPTR
+   \   000038   A3           INC       DPTR
+   \   000039   EC           MOV       A,R4
+   \   00003A   F0           MOVX      @DPTR,A
+   \   00003B   A3           INC       DPTR
+   \   00003C   ED           MOV       A,R5
+   \   00003D   804B         SJMP      ??AT_Endpoint_Register_3
+    162              return true;
+    163            } else {
+    164              //not found, add into the List
+    165              pLoop = osal_mem_alloc(sizeof(zclController_EP_List_t));
+   \                     ??AT_Endpoint_Register_2:
+   \   00003F                ; Setup parameters for call to function osal_mem_alloc
+   \   00003F   7A07         MOV       R2,#0x7
+   \   000041   7B00         MOV       R3,#0x0
+   \   000043   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000046   8A..         MOV       ?V4,R2
+   \   000048   8B..         MOV       ?V5,R3
+   \   00004A   A8..         MOV       R0,?V4
+   \   00004C   A9..         MOV       R1,?V5
+    166              if (pLoop) {
+   \   00004E   EA           MOV       A,R2
+   \   00004F   49           ORL       A,R1
+   \   000050   603D         JZ        ??AT_Endpoint_Register_4
+    167                pLoop->ep   = endPoint;
+   \   000052   8A82         MOV       DPL,R2
+   \   000054   8B83         MOV       DPH,R3
+   \   000056   E5..         MOV       A,?V2
+   \   000058   F0           MOVX      @DPTR,A
+    168                pLoop->status = epStatus;
+   \   000059   A3           INC       DPTR
+   \   00005A   EE           MOV       A,R6
+   \   00005B   F0           MOVX      @DPTR,A
+   \   00005C   A3           INC       DPTR
+   \   00005D   EF           MOV       A,R7
+   \   00005E   F0           MOVX      @DPTR,A
+    169                pLoop->CB   = cbFc;
+   \   00005F   8A82         MOV       DPL,R2
+   \   000061   8B83         MOV       DPH,R3
+   \   000063   A3           INC       DPTR
+   \   000064   A3           INC       DPTR
+   \   000065   A3           INC       DPTR
+   \   000066   E5..         MOV       A,?V0
+   \   000068   F0           MOVX      @DPTR,A
+   \   000069   A3           INC       DPTR
+   \   00006A   E5..         MOV       A,?V1
+   \   00006C   F0           MOVX      @DPTR,A
+    170                pLoop->next = zclController_EP_List;
+   \   00006D   90....       MOV       DPTR,#zclController_EP_List
+   \   000070   E0           MOVX      A,@DPTR
+   \   000071   FA           MOV       R2,A
+   \   000072   A3           INC       DPTR
+   \   000073   E0           MOVX      A,@DPTR
+   \   000074   FB           MOV       R3,A
+   \   000075   8882         MOV       DPL,R0
+   \   000077   8983         MOV       DPH,R1
+   \   000079   A3           INC       DPTR
+   \   00007A   A3           INC       DPTR
+   \   00007B   A3           INC       DPTR
+   \   00007C   A3           INC       DPTR
+   \   00007D   A3           INC       DPTR
+   \   00007E   EA           MOV       A,R2
+   \   00007F   F0           MOVX      @DPTR,A
+   \   000080   A3           INC       DPTR
+   \   000081   EB           MOV       A,R3
+   \   000082   F0           MOVX      @DPTR,A
+    171                zclController_EP_List = pLoop;
+   \   000083   90....       MOV       DPTR,#zclController_EP_List
+   \   000086   E8           MOV       A,R0
+   \   000087   F0           MOVX      @DPTR,A
+   \   000088   A3           INC       DPTR
+   \   000089   E9           MOV       A,R1
+   \                     ??AT_Endpoint_Register_3:
+   \   00008A   F0           MOVX      @DPTR,A
+    172                return true;
+   \   00008B   7901         MOV       R1,#0x1
+   \   00008D   8002         SJMP      ??AT_Endpoint_Register_5
+    173              } else {
+    174                return false;
+   \                     ??AT_Endpoint_Register_4:
+   \   00008F   7900         MOV       R1,#0x0
+    175              }
+    176            }
+   \                     ??AT_Endpoint_Register_5:
+   \   000091                REQUIRE ?Subroutine1
+   \   000091                ; // Fall through to label ?Subroutine1
+    177          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F06         MOV       R7,#0x6
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine25:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F9           MOV       R1,A
+   \   000005   22           RET
+    178          
+    179          /*********************************************************************
+    180           * @fn          zclEndpoint_Controller
+    181           *
+    182           * @brief       Control the ZCL endpoint
+    183           *
+    184           * @param       uint8 endPoint - the controlled endPoint
+    185           *              bool isEnable  - the status of the Endpoint
+    186           *
+    187           * @return      none
+    188           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          bool AT_Endpoint_Controller( uint8 endPoint, bool isEnable )
+   \                     AT_Endpoint_Controller:
+    190          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FF           MOV       R7,A
+    191            zclController_EP_List_t *pLoop;
+    192            pLoop = zclController_EP_List;
+   \   000007   90....       MOV       DPTR,#zclController_EP_List
+   \   00000A   8005         SJMP      ??AT_Endpoint_Controller_0
+    193            while (pLoop) {
+    194              if (endPoint == pLoop->ep) {
+    195                break;
+    196              }
+    197              pLoop = pLoop->next;
+   \                     ??AT_Endpoint_Controller_1:
+   \   00000C   A3           INC       DPTR
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   A3           INC       DPTR
+   \                     ??AT_Endpoint_Controller_0:
+   \   000011   12....       LCALL     ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000014   E582         MOV       A,DPL
+   \   000016   4583         ORL       A,DPH
+   \   000018   6013         JZ        ??AT_Endpoint_Controller_2
+   \   00001A   E0           MOVX      A,@DPTR
+   \   00001B   6F           XRL       A,R7
+   \   00001C   70EE         JNZ       ??AT_Endpoint_Controller_1
+    198            }
+    199          
+    200            // if found, call the endPoint's callback function
+    201            if (pLoop) {
+    202              pLoop->CB(isEnable);
+   \   00001E                ; Setup parameters for indirect call
+   \   00001E   EA           MOV       A,R2
+   \   00001F   F9           MOV       R1,A
+   \   000020   A3           INC       DPTR
+   \   000021   A3           INC       DPTR
+   \   000022   A3           INC       DPTR
+   \   000023   12....       LCALL     ?Subroutine26 & 0xFFFF
+    203            } else {
+   \                     ??CrossCallReturnLabel_44:
+   \   000026   12....       LCALL     ?CALL_IND
+    204              return false;
+    205            }
+    206            return true;
+   \   000029   7901         MOV       R1,#0x1
+   \   00002B   8002         SJMP      ??AT_Endpoint_Controller_3
+   \                     ??AT_Endpoint_Controller_2:
+   \   00002D   7900         MOV       R1,#0x0
+   \                     ??AT_Endpoint_Controller_3:
+   \   00002F   02....       LJMP      ?Subroutine0 & 0xFFFF
+    207          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine26:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F583         MOV       DPH,A
+   \   000006   8882         MOV       DPL,R0
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F8           MOV       R0,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   8882         MOV       DPL,R0
+   \   000006   F583         MOV       DPH,A
+   \   000008   22           RET
+    208          
+    209          /******************************************************************************
+    210           *
+    211           *  Functions for processing application control incoming Command/Response messages
+    212           *
+    213           *****************************************************************************/
+    214          /*****************************************************************************
+    215          * @fn      ATApp_MessageMSGCB
+    216          *
+    217          * @brief   processing application control incoming Command/Response messages
+    218          *
+    219          * @param   pkt - ZCL control incoming message
+    220          *
+    221          * @return  None
+    222          *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    223          void ATApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     ATApp_MessageMSGCB:
+    224          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    225          
+    226            switch ( pkt->clusterId )
+   \   000005   8A82         MOV       DPL,R2
+   \   000007   8B83         MOV       DPH,R3
+   \   000009   A3           INC       DPTR
+   \   00000A   A3           INC       DPTR
+   \   00000B   A3           INC       DPTR
+   \   00000C   A3           INC       DPTR
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   F5..         MOV       ?V0,A
+   \   000010   A3           INC       DPTR
+   \   000011   E0           MOVX      A,@DPTR
+   \   000012   F5..         MOV       ?V1,A
+   \   000014   78..         MOV       R0,#?V0
+   \   000016   12....       LCALL     ?US_SWITCH_DENSE
+   \                     `?<Jumptable for ATApp_MessageMSGCB>_0`:
+   \   000019   0020         DW        8192
+   \   00001B   01           DB        1
+   \   00001C   ....         DW        ??ATApp_MessageMSGCB_0
+   \   00001E   ....         DW        ??ATApp_MessageMSGCB_1
+   \   000020   ....         DW        ??ATApp_MessageMSGCB_2
+    227            {
+    228              case ATApp_GENERIC_CLUSTER:
+    229                AT_zclCtrl_REpCtrl_CB(pkt);
+   \                     ??ATApp_MessageMSGCB_1:
+   \   000022   12....       LCALL     ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000025   6401         XRL       A,#0x1
+   \   000027   7005         JNZ       ??ATApp_MessageMSGCB_3
+   \   000029                ; Setup parameters for call to function AT_zclCtrl_REpCtrl_req
+   \   000029   12....       LCALL     `??AT_zclCtrl_REpCtrl_req::?relay`; Banked call to: AT_zclCtrl_REpCtrl_req
+   \   00002C   800F         SJMP      ??ATApp_MessageMSGCB_0
+   \                     ??ATApp_MessageMSGCB_3:
+   \   00002E                ; Setup parameters for call to function AT_zclCtrl_REpCtrl_rsp
+   \   00002E   12....       LCALL     `??AT_zclCtrl_REpCtrl_rsp::?relay`; Banked call to: AT_zclCtrl_REpCtrl_rsp
+   \   000031   800A         SJMP      ??ATApp_MessageMSGCB_0
+    230                break;
+    231          
+    232              case RESET_FACTORY_DEFAULT_CLUSTER:
+    233                AT_ATF_CMD_CB(pkt);
+   \                     ??ATApp_MessageMSGCB_2:
+   \   000033   12....       LCALL     ?Subroutine10 & 0xFFFF
+    234                break;
+    235          
+    236              default:
+    237                break;
+    238            }
+   \                     ??CrossCallReturnLabel_43:
+   \   000036   6403         XRL       A,#0x3
+   \   000038   7003         JNZ       ??ATApp_MessageMSGCB_0
+   \   00003A                ; Setup parameters for call to function bdb_resetLocalAction
+   \   00003A   12....       LCALL     `??bdb_resetLocalAction::?relay`; Banked call to: bdb_resetLocalAction
+    239          }
+   \                     ??ATApp_MessageMSGCB_0:
+   \   00003D                REQUIRE ?Subroutine2
+   \   00003D                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F02         MOV       R7,#0x2
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   12....       LCALL     ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   000003                REQUIRE ??Subroutine31_0
+   \   000003                ; // Fall through to label ??Subroutine31_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine31_0:
+   \   000000   12....       LCALL     ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_45:
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine28:
+   \   000000   EA           MOV       A,R2
+   \   000001   2422         ADD       A,#0x22
+   \   000003   F582         MOV       DPL,A
+   \   000005   E4           CLR       A
+   \   000006   3B           ADDC      A,R3
+   \   000007   F583         MOV       DPH,A
+   \   000009   22           RET
+    240          
+    241          /*****************************************************************************
+    242          * @fn      AT_zclCtrl_REpCtrl_CB
+    243          *
+    244          * @brief   processing remote endpoint control incoming messages
+    245          *
+    246          * @param   pkt - incoming message
+    247          *
+    248          * @return  None
+    249          *****************************************************************************/
+    250          void AT_zclCtrl_REpCtrl_CB( afIncomingMSGPacket_t *pkt )
+    251          {
+    252            uint8 cmdID = pkt->cmd.Data[0];
+    253            if (cmdID == ZCL_EPCtrl_Cmd_req) {
+    254              AT_zclCtrl_REpCtrl_req(pkt);
+    255            } else {
+    256              AT_zclCtrl_REpCtrl_rsp(pkt);
+    257            }
+    258          }
+    259          
+    260          /*****************************************************************************
+    261          * @fn      AT_ATF_CMD_CB
+    262          *
+    263          * @brief   processing remote ATF command messages
+    264          *
+    265          * @param   pkt - incoming message
+    266          *
+    267          * @return  None
+    268          *****************************************************************************/
+    269          void AT_ATF_CMD_CB( afIncomingMSGPacket_t *pkt )
+    270          {
+    271            uint8 cmdID = pkt->cmd.Data[0];
+    272            if (cmdID == ATF_Cmd_req) {
+    273              AT_ATF_Cmd_req(pkt);
+    274            }
+    275          }
+    276          
+    277          /*****************************************************************************
+    278          * @fn      AT_zclCtrl_REpCtrl_req
+    279          *
+    280          * @brief   processing remote endpoint control incoming request messages
+    281          *
+    282          * @param   pkt - incoming message
+    283          *
+    284          * @return  None
+    285          *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    286          void AT_zclCtrl_REpCtrl_req( afIncomingMSGPacket_t *pkt )
+   \                     AT_zclCtrl_REpCtrl_req:
+    287          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV       A,#-0xe
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V0,R2
+   \   000007   8B..         MOV       ?V1,R3
+    288            uint8 state;
+    289            EPCtrlCmd_t *epCtrlCmd = (EPCtrlCmd_t*) &(pkt->cmd.Data[1]);
+   \   000009   EA           MOV       A,R2
+   \   00000A   2422         ADD       A,#0x22
+   \   00000C   F582         MOV       DPL,A
+   \   00000E   E4           CLR       A
+   \   00000F   35..         ADDC      A,?V1
+   \   000011   F583         MOV       DPH,A
+   \   000013   E0           MOVX      A,@DPTR
+   \   000014   2401         ADD       A,#0x1
+   \   000016   FE           MOV       R6,A
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   3400         ADDC      A,#0x0
+   \   00001B   FF           MOV       R7,A
+    290            EPCtrlCmd_rsp *epCtrlCmd_rsp = (EPCtrlCmd_rsp*) osal_mem_alloc(sizeof(EPCtrlCmd_rsp));
+   \   00001C                ; Setup parameters for call to function osal_mem_alloc
+   \   00001C   7A02         MOV       R2,#0x2
+   \   00001E   7B00         MOV       R3,#0x0
+   \   000020   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000023   8A..         MOV       ?V2,R2
+   \   000025   8B..         MOV       ?V3,R3
+    291          
+    292            uint8 endPoint = epCtrlCmd->ep;
+   \   000027   8E82         MOV       DPL,R6
+   \   000029   8F83         MOV       DPH,R7
+   \   00002B   E0           MOVX      A,@DPTR
+   \   00002C   F9           MOV       R1,A
+    293            uint8 isEnable = epCtrlCmd->isEnable;
+   \   00002D   A3           INC       DPTR
+   \   00002E   E0           MOVX      A,@DPTR
+   \   00002F   F8           MOV       R0,A
+    294            if (isEnable != 0) isEnable = 1;
+   \   000030   6002         JZ        ??AT_zclCtrl_REpCtrl_req_0
+   \   000032   7801         MOV       R0,#0x1
+    295          
+    296            epCtrlCmd_rsp->ep = endPoint;
+   \                     ??AT_zclCtrl_REpCtrl_req_0:
+   \   000034   E9           MOV       A,R1
+   \   000035   8A82         MOV       DPL,R2
+   \   000037   8B83         MOV       DPH,R3
+   \   000039   F0           MOVX      @DPTR,A
+    297            if (isEnable == 0 || isEnable == 1) {
+   \   00003A   A3           INC       DPTR
+   \   00003B   E8           MOV       A,R0
+   \   00003C   6009         JZ        ??AT_zclCtrl_REpCtrl_req_1
+   \   00003E   7401         MOV       A,#0x1
+   \   000040   68           XRL       A,R0
+   \   000041   7007         JNZ       ??AT_zclCtrl_REpCtrl_req_2
+    298              if (isEnable) {
+    299                epCtrlCmd_rsp->status = EndpointEnabled;
+   \   000043   7401         MOV       A,#0x1
+   \   000045   8005         SJMP      ??AT_zclCtrl_REpCtrl_req_3
+    300              } else {
+    301                epCtrlCmd_rsp->status = EndpointDisabled;
+   \                     ??AT_zclCtrl_REpCtrl_req_1:
+   \   000047   E4           CLR       A
+   \   000048   8002         SJMP      ??AT_zclCtrl_REpCtrl_req_3
+    302              }
+    303            } else {
+    304              epCtrlCmd_rsp->status = EndpointUnknown;
+   \                     ??AT_zclCtrl_REpCtrl_req_2:
+   \   00004A   7402         MOV       A,#0x2
+   \                     ??AT_zclCtrl_REpCtrl_req_3:
+   \   00004C   F0           MOVX      @DPTR,A
+    305            }
+    306          
+    307            state = AT_SendEPCtrl_rsp( ATApp_ENDPOINT, &(pkt->srcAddr),
+    308                                      ATApp_GENERIC_CLUSTER, epCtrlCmd_rsp );
+   \   00004D                ; Setup parameters for call to function AT_SendEPCtrl_rsp
+   \   00004D   78..         MOV       R0,#?V2
+   \   00004F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000052   7C00         MOV       R4,#0x0
+   \   000054   7D20         MOV       R5,#0x20
+   \   000056   E5..         MOV       A,?V0
+   \   000058   2406         ADD       A,#0x6
+   \   00005A   FA           MOV       R2,A
+   \   00005B   E4           CLR       A
+   \   00005C   35..         ADDC      A,?V1
+   \   00005E   FB           MOV       R3,A
+   \   00005F   7996         MOV       R1,#-0x6a
+   \   000061   12....       LCALL     `??AT_SendEPCtrl_rsp::?relay`; Banked call to: AT_SendEPCtrl_rsp
+   \   000064   7402         MOV       A,#0x2
+   \   000066   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000069   E9           MOV       A,R1
+   \   00006A   FE           MOV       R6,A
+    309            osal_mem_free ( epCtrlCmd_rsp );
+   \   00006B                ; Setup parameters for call to function osal_mem_free
+   \   00006B   AA..         MOV       R2,?V2
+   \   00006D   AB..         MOV       R3,?V3
+   \   00006F   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    310            if(state != afStatus_SUCCESS) AT_ERROR(state);
+   \   000072   EE           MOV       A,R6
+   \   000073   6006         JZ        ??AT_zclCtrl_REpCtrl_req_4
+   \   000075                ; Setup parameters for call to function AT_UARTWriteErrMsg
+   \   000075   7A01         MOV       R2,#0x1
+   \   000077   F9           MOV       R1,A
+   \   000078   12....       LCALL     `??AT_UARTWriteErrMsg::?relay`; Banked call to: AT_UARTWriteErrMsg
+    311          }
+   \                     ??AT_zclCtrl_REpCtrl_req_4:
+   \   00007B   02....       LJMP      ?Subroutine1 & 0xFFFF
+    312          
+    313          /*****************************************************************************
+    314          * @fn      AT_zclCtrl_REpCtrl_rsp
+    315          *
+    316          * @brief   processing remote endpoint control incoming response messages
+    317          *
+    318          * @param   pkt - incoming message
+    319          *
+    320          * @return  None
+    321          *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    322          void AT_zclCtrl_REpCtrl_rsp( afIncomingMSGPacket_t *pkt )
+   \                     AT_zclCtrl_REpCtrl_rsp:
+    323          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV       A,#-0x3
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+    324            EPCtrlCmd_rsp *epCtrlCmd_rsp = (EPCtrlCmd_rsp*) &(pkt->cmd.Data[1]);
+   \   00000A   12....       LCALL     ?Subroutine28 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   2401         ADD       A,#0x1
+   \   000010   F8           MOV       R0,A
+   \   000011   A3           INC       DPTR
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   3400         ADDC      A,#0x0
+   \   000015   8882         MOV       DPL,R0
+   \   000017   F583         MOV       DPH,A
+    325          
+    326            uint8 ep     = epCtrlCmd_rsp->ep;
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   F5..         MOV       ?V0,A
+    327            uint8 status = epCtrlCmd_rsp->status;
+   \   00001C   A3           INC       DPTR
+   \   00001D   E0           MOVX      A,@DPTR
+   \   00001E   F5..         MOV       ?V1,A
+    328          
+    329            uint8 str[3];
+    330            AT_NEW_LINE();
+   \   000020                ; Setup parameters for call to function AT_Uart0_Send
+   \   000020   7C02         MOV       R4,#0x2
+   \   000022   7D00         MOV       R5,#0x0
+   \   000024   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000026   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000028   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    331            AT_RESP("REMOTE RESPONSE:", 16);
+   \   00002B                ; Setup parameters for call to function AT_Uart0_Send
+   \   00002B   7C10         MOV       R4,#0x10
+   \   00002D   7D00         MOV       R5,#0x0
+   \   00002F   7A..         MOV       R2,#`?<Constant "REMOTE RESPONSE:">` & 0xff
+   \   000031   7B..         MOV       R3,#(`?<Constant "REMOTE RESPONSE:">` >> 8) & 0xff
+   \   000033   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    332            if (status == EndpointEnabled) {
+   \   000036   7401         MOV       A,#0x1
+   \   000038   65..         XRL       A,?V1
+   \   00003A   7015         JNZ       ??AT_zclCtrl_REpCtrl_rsp_0
+    333              AT_NEW_LINE();
+   \   00003C                ; Setup parameters for call to function AT_Uart0_Send
+   \   00003C   7C02         MOV       R4,#0x2
+   \   00003E   7D00         MOV       R5,#0x0
+   \   000040   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000042   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000044   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    334              AT_RESP("ENABLED:", sizeof("ENABLED:")-1);
+   \   000047                ; Setup parameters for call to function AT_Uart0_Send
+   \   000047   7C08         MOV       R4,#0x8
+   \   000049   7D00         MOV       R5,#0x0
+   \   00004B   7A..         MOV       R2,#`?<Constant "ENABLED:">` & 0xff
+   \   00004D   7B..         MOV       R3,#(`?<Constant "ENABLED:">` >> 8) & 0xff
+   \   00004F   8017         SJMP      ??AT_zclCtrl_REpCtrl_rsp_1
+    335              AT_Int8toChar(ep, str);
+    336              AT_RESP(str, 2);
+    337              AT_NEW_LINE();
+    338            } else if (status == EndpointDisabled) {
+   \                     ??AT_zclCtrl_REpCtrl_rsp_0:
+   \   000051   E5..         MOV       A,?V1
+   \   000053   701D         JNZ       ??AT_zclCtrl_REpCtrl_rsp_2
+    339              AT_NEW_LINE();
+   \   000055                ; Setup parameters for call to function AT_Uart0_Send
+   \   000055   7C02         MOV       R4,#0x2
+   \   000057   7D00         MOV       R5,#0x0
+   \   000059   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   00005B   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   00005D   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    340              AT_RESP("DISABLED:", sizeof("DISABLED:")-1);
+   \   000060                ; Setup parameters for call to function AT_Uart0_Send
+   \   000060   7C09         MOV       R4,#0x9
+   \   000062   7D00         MOV       R5,#0x0
+   \   000064   7A..         MOV       R2,#`?<Constant "DISABLED:">` & 0xff
+   \   000066   7B..         MOV       R3,#(`?<Constant "DISABLED:">` >> 8) & 0xff
+    341              AT_Int8toChar(ep, str);
+    342              AT_RESP(str, 2);
+    343              AT_NEW_LINE();
+    344            } else if (status == EndpointUnknown) {
+   \                     ??AT_zclCtrl_REpCtrl_rsp_1:
+   \   000068   12....       LCALL     ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   00006B   A9..         MOV       R1,?V0
+   \   00006D   12....       LCALL     ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_58:
+   \   000070   8019         SJMP      ??AT_zclCtrl_REpCtrl_rsp_3
+   \                     ??AT_zclCtrl_REpCtrl_rsp_2:
+   \   000072   7402         MOV       A,#0x2
+   \   000074   65..         XRL       A,?V1
+   \   000076   7016         JNZ       ??CrossCallReturnLabel_16
+    345              AT_NEW_LINE();
+   \   000078                ; Setup parameters for call to function AT_Uart0_Send
+   \   000078   7C02         MOV       R4,#0x2
+   \   00007A   7D00         MOV       R5,#0x0
+   \   00007C   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   00007E   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000080   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    346              AT_RESP("UNKNOWNEP ERROR", sizeof("UNKNOWNEP ERROR")-1);
+   \   000083                ; Setup parameters for call to function AT_Uart0_Send
+   \   000083   7C0F         MOV       R4,#0xf
+   \   000085   7D00         MOV       R5,#0x0
+   \   000087   7A..         MOV       R2,#`?<Constant "UNKNOWNEP ERROR">` & 0xff
+   \   000089   7B..         MOV       R3,#(`?<Constant "UNKNOWNEP ERROR">` >> 8) & 0xff
+    347              AT_NEW_LINE();
+    348            }
+   \                     ??AT_zclCtrl_REpCtrl_rsp_3:
+   \   00008B   12....       LCALL     ?Subroutine18 & 0xFFFF
+    349            AT_OK();
+   \                     ??CrossCallReturnLabel_16:
+   \   00008E                ; Setup parameters for call to function AT_Uart0_Send
+   \   00008E   7C06         MOV       R4,#0x6
+   \   000090   7D00         MOV       R5,#0x0
+   \   000092   7A..         MOV       R2,#`?<Constant "\\r\\nOK\\r\\n">` & 0xff
+   \   000094   7B..         MOV       R3,#(`?<Constant "\\r\\nOK\\r\\n">` >> 8) & 0xff
+   \   000096   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    350          }
+   \   000099   7403         MOV       A,#0x3
+   \   00009B   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00009E   02....       LJMP      ?Subroutine2 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Int8toChar
+   \   000003                ; Setup parameters for call to function AT_Int8toChar
+   \   000003                ; Setup parameters for call to function AT_Int8toChar
+   \   000003   AA..         MOV       R2,?XSP + 0
+   \   000005   AB..         MOV       R3,?XSP + 1
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine30:
+   \   000000   12....       LCALL     `??AT_Int8toChar::?relay`; Banked call to: AT_Int8toChar
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003   7C02         MOV       R4,#0x2
+   \   000005   7D00         MOV       R5,#0x0
+   \   000007   AA..         MOV       R2,?XSP + 0
+   \   000009   AB..         MOV       R3,?XSP + 1
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003   7C02         MOV       R4,#0x2
+   \   000005   7D00         MOV       R5,#0x0
+   \   000007   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000009   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   00000B   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   00000E   22           RET
+    351          
+    352          /*****************************************************************************
+    353          * @fn      AT_ATF_Cmd_req
+    354          *
+    355          * @brief   processing remote ATF command incoming request messages
+    356          *
+    357          * @param   pkt - incoming message
+    358          *
+    359          * @return  None
+    360          *****************************************************************************/
+    361          void AT_ATF_Cmd_req( afIncomingMSGPacket_t *pkt )
+    362          {
+    363            // AT_clear_AT_SYSTEM_NVs(); if Application use NV, we need to define this function
+    364            bdb_resetLocalAction();
+    365          }
+    366          
+    367          /*********************************************************************
+    368           * @fn      zclCtrlCalcHdrSize
+    369           *
+    370           * @brief   Calculate the number of bytes needed for an outgoing
+    371           *          ZCL header.
+    372           *
+    373           * @param   hdr - outgoing header information
+    374           *
+    375           * @return  returns the number of bytes needed
+    376           ***********************************************************************/
+    377          static uint8 zclCtrlCalcHdrSize( ZCLCtrlCmd_hdr *hdr )
+    378          {
+    379            uint8 needed = sizeof(uint8);
+    380          
+    381            return needed;
+    382          }
+    383          
+    384          /*********************************************************************
+    385           * @fn      zclCtrlBuildHdr
+    386           *
+    387           * @brief   Build header of the ZCL format
+    388           *
+    389           * @param   hdr - outgoing header information
+    390           * @param   pData - outgoing header space
+    391           *
+    392           * @return  pointer past the header
+    393           ***********************************************************************/
+    394          static uint8* zclCtrlBuildHdr( ZCLCtrlCmd_hdr *hdr, uint8 *pData )
+    395          {
+    396            // Add the command ID
+    397            *pData++ = hdr->cmd;
+    398          
+    399            // Should point to the frame payload
+    400            return ( pData );
+    401          }
+    402          
+    403          /******************************************************************************
+    404           * @fn      AT_SendCmd
+    405           *
+    406           * @brief   Used to send zcl control Command messages.
+    407           *
+    408           * @param   srcEp - source endpoint
+    409           * @param   destAddr - destination address
+    410           * @param   clusterID - cluster ID
+    411           * @param   cmd - command ID
+    412           * @param   cmdFormatLen - length of the command to be sent
+    413           * @param   cmdFormat - command to be sent
+    414           *
+    415           * @return  ZCL_CTRL_SUCCESS
+    416           ******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    417          uint8 AT_SendCmd( uint8 srcEP, afAddrType_t *destAddr,
+   \                     AT_SendCmd:
+    418                                     uint16 clusterID, uint8 cmd,
+    419                                     uint16 cmdFormatLen, uint8 *cmdFormat )
+    420          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000                REQUIRE ?V12
+   \   000000                REQUIRE ?V13
+   \   000000   74EA         MOV       A,#-0x16
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V12,R2
+   \   000007   8B..         MOV       ?V13,R3
+   \   000009   8C..         MOV       ?V2,R4
+   \   00000B   8D..         MOV       ?V3,R5
+    421            endPointDesc_t *epDesc;
+    422            ZCLCtrlCmd_hdr hdr;
+    423            uint8 *msgBuf;
+    424            uint16 msgLen;
+    425            uint8 *pBuf;
+    426            uint8 status;
+    427          
+    428            epDesc = afFindEndPointDesc( srcEP );
+   \   00000D                ; Setup parameters for call to function afFindEndPointDesc
+   \   00000D   12....       LCALL     `??afFindEndPointDesc::?relay`; Banked call to: afFindEndPointDesc
+   \   000010   8A..         MOV       ?V10,R2
+   \   000012   8B..         MOV       ?V11,R3
+    429            if ( epDesc == NULL )
+   \   000014   EA           MOV       A,R2
+   \   000015   4B           ORL       A,R3
+   \   000016   7005         JNZ       ??AT_SendCmd_0
+    430            {
+    431             return ( ZCL_CTRLCmd_ParaError ); // EMBEDDED RETURN
+   \   000018   7902         MOV       R1,#0x2
+   \   00001A   02....       LJMP      ??AT_SendCmd_1 & 0xFFFF
+    432            }
+   \                     ??AT_SendCmd_0:
+   \   00001D   7417         MOV       A,#0x17
+   \   00001F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000022   12....       LCALL     ??Subroutine33_0 & 0xFFFF
+    433          
+    434            // build hdr
+    435            hdr.cmd = cmd;
+    436          
+    437            // calculate the buffer size
+    438            msgLen = zclCtrlCalcHdrSize( &hdr );
+    439            msgLen += cmdFormatLen;
+   \                     ??CrossCallReturnLabel_50:
+   \   000025   E5..         MOV       A,?V8
+   \   000027   2401         ADD       A,#0x1
+   \   000029   FE           MOV       R6,A
+   \   00002A   E4           CLR       A
+   \   00002B   35..         ADDC      A,?V9
+   \   00002D   FF           MOV       R7,A
+    440          
+    441            // allocate the buffer needed
+    442            msgBuf = osal_mem_alloc(msgLen);
+   \   00002E                ; Setup parameters for call to function osal_mem_alloc
+   \   00002E   EE           MOV       A,R6
+   \   00002F   FA           MOV       R2,A
+   \   000030   EF           MOV       A,R7
+   \   000031   FB           MOV       R3,A
+   \   000032   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000035   8A..         MOV       ?V0,R2
+   \   000037   8B..         MOV       ?V1,R3
+    443            if ( msgBuf != NULL ) {
+   \   000039   EA           MOV       A,R2
+   \   00003A   4B           ORL       A,R3
+   \   00003B   6073         JZ        ??AT_SendCmd_2
+    444              // fill in the ZCL Header
+    445              pBuf = zclCtrlBuildHdr(&hdr, msgBuf);
+   \   00003D   7416         MOV       A,#0x16
+   \   00003F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000042   E0           MOVX      A,@DPTR
+   \   000043   8A82         MOV       DPL,R2
+   \   000045   8B83         MOV       DPH,R3
+   \   000047   F0           MOVX      @DPTR,A
+   \   000048   A3           INC       DPTR
+   \   000049   AA82         MOV       R2,DPL
+   \   00004B   AB83         MOV       R3,DPH
+    446          
+    447              // Fill in the command frame
+    448              osal_memcpy( pBuf, cmdFormat, cmdFormatLen );
+   \   00004D                ; Setup parameters for call to function osal_memcpy
+   \   00004D   7419         MOV       A,#0x19
+   \   00004F   12....       LCALL     ?XSTACK_DISP0_8
+   \   000052   E0           MOVX      A,@DPTR
+   \   000053   F5..         MOV       ?V4,A
+   \   000055   A3           INC       DPTR
+   \   000056   E0           MOVX      A,@DPTR
+   \   000057   F5..         MOV       ?V5,A
+   \   000059   75..00       MOV       ?V6,#0x0
+   \   00005C   78..         MOV       R0,#?V4
+   \   00005E   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   000061   AC..         MOV       R4,?V8
+   \   000063   AD..         MOV       R5,?V9
+   \   000065   12....       LCALL     `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000068   7403         MOV       A,#0x3
+   \   00006A   12....       LCALL     ?DEALLOC_XSTACK8
+    449          
+    450              status = AF_DataRequest( destAddr, epDesc, clusterID, msgLen, msgBuf,
+    451                                    &zclCtrl_TransID, AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   00006D                ; Setup parameters for call to function AF_DataRequest
+   \   00006D   75..1E       MOV       ?V4,#0x1e
+   \   000070   78..         MOV       R0,#?V4
+   \   000072   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000075   75....       MOV       ?V4,#zclCtrl_TransID & 0xff
+   \   000078   75....       MOV       ?V5,#(zclCtrl_TransID >> 8) & 0xff
+   \   00007B   78..         MOV       R0,#?V4
+   \   00007D   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000080   78..         MOV       R0,#?V0
+   \   000082   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000085   8E..         MOV       ?V4,R6
+   \   000087   8F..         MOV       ?V5,R7
+   \   000089   78..         MOV       R0,#?V4
+   \   00008B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00008E   78..         MOV       R0,#?V2
+   \   000090   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000093   7900         MOV       R1,#0x0
+   \   000095   AC..         MOV       R4,?V10
+   \   000097   AD..         MOV       R5,?V11
+   \   000099   AA..         MOV       R2,?V12
+   \   00009B   AB..         MOV       R3,?V13
+   \   00009D   12....       LCALL     `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   0000A0   7409         MOV       A,#0x9
+   \   0000A2   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000A5   E9           MOV       A,R1
+   \   0000A6   FE           MOV       R6,A
+    452              osal_mem_free ( msgBuf );
+   \   0000A7                ; Setup parameters for call to function osal_mem_free
+   \   0000A7   AA..         MOV       R2,?V0
+   \   0000A9   AB..         MOV       R3,?V1
+   \   0000AB   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   0000AE   8002         SJMP      ??AT_SendCmd_3
+    453            } else {
+    454              status = ZCL_CTRLCmd_MemError;
+   \                     ??AT_SendCmd_2:
+   \   0000B0   7E01         MOV       R6,#0x1
+    455            }
+    456          
+    457            return status;
+   \                     ??AT_SendCmd_3:
+   \   0000B2   EE           MOV       A,R6
+   \   0000B3   F9           MOV       R1,A
+   \                     ??AT_SendCmd_1:
+   \   0000B4   02....       LJMP      ??Subroutine34_0 & 0xFFFF
+    458          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine33_0:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F5..         MOV       ?V8,A
+   \   000003   A3           INC       DPTR
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   F5..         MOV       ?V9,A
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine34_0:
+   \   000000   7F0E         MOV       R7,#0xe
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    459          
+    460          /*****************************************************************************
+    461           * @fn      AT_SendEPCtrl
+    462           *
+    463           * @brief   Send remote endPoint control command
+    464           *
+    465           * @param   srcEP - Application's endpoint
+    466           * @param   dstAddr - destination address
+    467           * @param   clusterID - cluster ID
+    468           * @param   epCtrlCmd - endPoint control command to be sent
+    469           *
+    470           * @return  status
+    471           *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    472          uint8 AT_SendEPCtrl(uint8 srcEP, afAddrType_t *dstAddr, uint16 clusterID, EPCtrlCmd_t *epCtrlCmd)
+   \                     AT_SendEPCtrl:
+    473          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL     ?Subroutine16 & 0xFFFF
+    474            uint16 dataLen;
+    475            uint8 *buf;
+    476            uint8 *pBuf;
+    477            uint8 status;
+    478          
+    479            dataLen = sizeof(EPCtrlCmd_t);
+    480          
+    481            buf = osal_mem_alloc( dataLen );
+    482            if ( buf != NULL )
+   \                     ??CrossCallReturnLabel_12:
+   \   000008   603B         JZ        ??AT_SendEPCtrl_0
+   \   00000A   7410         MOV       A,#0x10
+   \   00000C   12....       LCALL     ?XSTACK_DISP0_8
+   \   00000F   12....       LCALL     ?Subroutine9 & 0xFFFF
+    483            {
+    484              // Load the buffer - serially
+    485              pBuf = buf;
+    486              *pBuf++ = epCtrlCmd->ep;
+    487              *pBuf   = epCtrlCmd->isEnable;
+    488          
+    489              status = AT_SendCmd( srcEP, dstAddr, clusterID,
+    490                                        ZCL_EPCtrl_Cmd_req, dataLen, buf );
+   \                     ??CrossCallReturnLabel_4:
+   \   000012   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000015   75..02       MOV       ?V6,#0x2
+   \   000018   75..00       MOV       ?V7,#0x0
+   \   00001B   78..         MOV       R0,#?V6
+   \   00001D   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000020   75..01       MOV       ?V3,#0x1
+   \   000023   78..         MOV       R0,#?V3
+   \   000025   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000028   AC..         MOV       R4,?V0
+   \   00002A   AD..         MOV       R5,?V1
+   \   00002C   EE           MOV       A,R6
+   \   00002D   FA           MOV       R2,A
+   \   00002E   EF           MOV       A,R7
+   \   00002F   FB           MOV       R3,A
+   \   000030   A9..         MOV       R1,?V2
+   \   000032   12....       LCALL     `??AT_SendCmd::?relay`; Banked call to: AT_SendCmd
+   \   000035   7405         MOV       A,#0x5
+   \   000037   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00003A   E9           MOV       A,R1
+   \   00003B   FE           MOV       R6,A
+    491              osal_mem_free( buf );
+   \   00003C                ; Setup parameters for call to function osal_mem_free
+   \   00003C   AA..         MOV       R2,?V4
+   \   00003E   AB..         MOV       R3,?V5
+   \   000040   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   000043   8002         SJMP      ??AT_SendEPCtrl_1
+    492            }
+    493            else
+    494            {
+    495              status = ZCL_CTRLCmd_MemError;
+   \                     ??AT_SendEPCtrl_0:
+   \   000045   7E01         MOV       R6,#0x1
+    496            }
+    497          
+    498            return ( status );
+   \                     ??AT_SendEPCtrl_1:
+   \   000047                REQUIRE ?Subroutine4
+   \   000047                ; // Fall through to label ?Subroutine4
+    499          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   EE           MOV       A,R6
+   \   000001   F9           MOV       R1,A
+   \   000002   7F08         MOV       R7,#0x8
+   \   000004   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   89..         MOV       ?V2,R1
+   \   000002   EA           MOV       A,R2
+   \   000003   FE           MOV       R6,A
+   \   000004   EB           MOV       A,R3
+   \   000005   FF           MOV       R7,A
+   \   000006   8C..         MOV       ?V0,R4
+   \   000008   8D..         MOV       ?V1,R5
+   \   00000A                ; Setup parameters for call to function osal_mem_alloc
+   \   00000A                ; Setup parameters for call to function osal_mem_alloc
+   \   00000A   7A02         MOV       R2,#0x2
+   \   00000C   7B00         MOV       R3,#0x0
+   \   00000E   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000011   8A..         MOV       ?V4,R2
+   \   000013   8B..         MOV       ?V5,R3
+   \   000015   EA           MOV       A,R2
+   \   000016   4B           ORL       A,R3
+   \   000017   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   12....       LCALL     ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   000003   8882         MOV       DPL,R0
+   \   000005   F583         MOV       DPH,A
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   8A82         MOV       DPL,R2
+   \   00000A   8B83         MOV       DPH,R3
+   \   00000C   F0           MOVX      @DPTR,A
+   \   00000D   8882         MOV       DPL,R0
+   \   00000F   8983         MOV       DPH,R1
+   \   000011   A3           INC       DPTR
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   8A82         MOV       DPL,R2
+   \   000015   8B83         MOV       DPH,R3
+   \   000017   A3           INC       DPTR
+   \   000018   F0           MOVX      @DPTR,A
+   \   000019                ; Setup parameters for call to function AT_SendCmd
+   \   000019                ; Setup parameters for call to function AT_SendCmd
+   \   000019   78..         MOV       R0,#?V4
+   \   00001B   22           RET
+    500          
+    501          /*****************************************************************************
+    502           * @fn      AT_SendEPCtrl_rsp
+    503           *
+    504           * @brief   Send remote endPoint control command
+    505           *
+    506           * @param   srcEP - Application's endpoint
+    507           * @param   dstAddr - destination address
+    508           * @param   clusterID - cluster ID
+    509           * @param   epCtrlCmd - endPoint control command to be sent
+    510           *
+    511           * @return  status
+    512           *****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    513          uint8 AT_SendEPCtrl_rsp( uint8 srcEP, afAddrType_t *dstAddr, uint16 clusterID, EPCtrlCmd_rsp *epCtrlCmd_rsp )
+   \                     AT_SendEPCtrl_rsp:
+    514          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL     ?Subroutine16 & 0xFFFF
+    515            uint16 dataLen;
+    516            uint8 *buf;
+    517            uint8 *pBuf;
+    518            uint8 status;
+    519          
+    520            dataLen = sizeof(EPCtrlCmd_rsp);
+    521          
+    522            buf = osal_mem_alloc( dataLen );
+    523            if ( buf != NULL )
+   \                     ??CrossCallReturnLabel_13:
+   \   000008   603B         JZ        ??AT_SendEPCtrl_rsp_0
+   \   00000A   7410         MOV       A,#0x10
+   \   00000C   12....       LCALL     ?XSTACK_DISP0_8
+   \   00000F   12....       LCALL     ?Subroutine9 & 0xFFFF
+    524            {
+    525              // Load the buffer - serially
+    526              pBuf = buf;
+    527              *pBuf++ = epCtrlCmd_rsp->ep;
+    528              *pBuf   = epCtrlCmd_rsp->status;
+    529          
+    530              status = AT_SendCmd( srcEP, dstAddr, clusterID,
+    531                                        ZCL_EPCtrl_Cmd_rsp, dataLen, buf );
+   \                     ??CrossCallReturnLabel_5:
+   \   000012   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000015   75..02       MOV       ?V6,#0x2
+   \   000018   75..00       MOV       ?V7,#0x0
+   \   00001B   78..         MOV       R0,#?V6
+   \   00001D   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000020   75..02       MOV       ?V3,#0x2
+   \   000023   78..         MOV       R0,#?V3
+   \   000025   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000028   AC..         MOV       R4,?V0
+   \   00002A   AD..         MOV       R5,?V1
+   \   00002C   EE           MOV       A,R6
+   \   00002D   FA           MOV       R2,A
+   \   00002E   EF           MOV       A,R7
+   \   00002F   FB           MOV       R3,A
+   \   000030   A9..         MOV       R1,?V2
+   \   000032   12....       LCALL     `??AT_SendCmd::?relay`; Banked call to: AT_SendCmd
+   \   000035   7405         MOV       A,#0x5
+   \   000037   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00003A   E9           MOV       A,R1
+   \   00003B   FE           MOV       R6,A
+    532              osal_mem_free( buf );
+   \   00003C                ; Setup parameters for call to function osal_mem_free
+   \   00003C   AA..         MOV       R2,?V4
+   \   00003E   AB..         MOV       R3,?V5
+   \   000040   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   000043   8002         SJMP      ??AT_SendEPCtrl_rsp_1
+    533            }
+    534            else
+    535            {
+    536              status = ZCL_CTRLCmd_MemError;
+   \                     ??AT_SendEPCtrl_rsp_0:
+   \   000045   7E01         MOV       R6,#0x1
+    537            }
+    538          
+    539            return ( status );
+   \                     ??AT_SendEPCtrl_rsp_1:
+   \   000047   80..         SJMP      ?Subroutine4
+    540          }
+    541          
+    542          /******************************************************************************
+    543           *
+    544           *  Functions for processing ZCL Foundation incoming Command/Response messages
+    545           *
+    546           *****************************************************************************/
+    547          
+    548          /*********************************************************************
+    549           * @fn      AT_zclController_ProcessIncomingMsg
+    550           *
+    551           * @brief   Process ZCL Foundation incoming message
+    552           *
+    553           * @param   pInMsg - pointer to the received message
+    554           *
+    555           * @return  none
+    556           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    557          void AT_zclController_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
+   \                     AT_zclController_ProcessIncomingMsg:
+    558          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000   74EC         MOV       A,#-0x14
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+    559            switch ( pInMsg->zclHdr.commandID )
+   \   000005   EA           MOV       A,R2
+   \   000006   2417         ADD       A,#0x17
+   \   000008   F8           MOV       R0,A
+   \   000009   E4           CLR       A
+   \   00000A   3B           ADDC      A,R3
+   \   00000B   88..         MOV       ?V0,R0
+   \   00000D   F5..         MOV       ?V1,A
+   \   00000F   8A82         MOV       DPL,R2
+   \   000011   8B83         MOV       DPH,R3
+   \   000013   A3           INC       DPTR
+   \   000014   A3           INC       DPTR
+   \   000015   A3           INC       DPTR
+   \   000016   A3           INC       DPTR
+   \   000017   A3           INC       DPTR
+   \   000018   A3           INC       DPTR
+   \   000019   A3           INC       DPTR
+   \   00001A   E0           MOVX      A,@DPTR
+   \   00001B   14           DEC       A
+   \   00001C   6027         JZ        ??AT_zclController_ProcessIncomingMsg_0
+   \   00001E   24FD         ADD       A,#-0x3
+   \   000020   6029         JZ        ??AT_zclController_ProcessIncomingMsg_1
+   \   000022   24F9         ADD       A,#-0x7
+   \   000024   602B         JZ        ??AT_zclController_ProcessIncomingMsg_2
+   \   000026   24FE         ADD       A,#-0x2
+   \   000028   7003         JNZ       $+5
+   \   00002A   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_3 & 0xFFFF
+   \   00002D   24FB         ADD       A,#-0x5
+   \   00002F   7003         JNZ       $+5
+   \   000031   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_4 & 0xFFFF
+   \   000034   24FE         ADD       A,#-0x2
+   \   000036   7003         JNZ       $+5
+   \   000038   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_4 & 0xFFFF
+   \   00003B   24FE         ADD       A,#-0x2
+   \   00003D   7003         JNZ       $+5
+   \   00003F   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_5 & 0xFFFF
+   \   000042   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_6 & 0xFFFF
+    560            {
+    561          #ifdef ZCL_READ
+    562              case ZCL_CMD_READ_RSP:
+    563                zclController_ProcessInReadRspCmd( pInMsg );
+   \                     ??AT_zclController_ProcessIncomingMsg_0:
+   \   000045                ; Setup parameters for call to function zclController_ProcessInReadRspCmd
+   \   000045   12....       LCALL     `??zclController_ProcessInReadRspCmd::?relay`; Banked call to: zclController_ProcessInReadRspCmd
+    564                break;
+   \   000048   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_6 & 0xFFFF
+    565          #endif
+    566          #ifdef ZCL_WRITE
+    567              case ZCL_CMD_WRITE_RSP:
+    568                zclController_ProcessInWriteRspCmd( pInMsg );
+   \                     ??AT_zclController_ProcessIncomingMsg_1:
+   \   00004B                ; Setup parameters for call to function zclController_ProcessInWriteRspCmd
+   \   00004B   12....       LCALL     `??zclController_ProcessInWriteRspCmd::?relay`; Banked call to: zclController_ProcessInWriteRspCmd
+    569                break;
+   \   00004E   02....       LJMP      ??AT_zclController_ProcessIncomingMsg_6 & 0xFFFF
+    570          #endif
+    571          #ifdef ZCL_REPORTING_DEVICE
+    572              case ZCL_CMD_CONFIG_REPORT:
+    573                break;
+    574          #endif
+    575          #ifdef ZCL_REPORT_CONFIGURING_DEVICE
+    576              case ZCL_CMD_CONFIG_REPORT_RSP:
+    577                zclController_ProcessInConfigReportRspCmd( pInMsg );
+    578                break;
+    579          #endif
+    580          #ifdef ZCL_REPORTING_DEVICE
+    581              case ZCL_CMD_READ_REPORT_CFG:
+    582                break;
+    583          #endif
+    584          #ifdef ZCL_REPORT_CONFIGURING_DEVICE
+    585              case ZCL_CMD_READ_REPORT_CFG_RSP:
+    586                zclController_ProcessInReadReportCfgRspCmd( pInMsg );
+    587                break;
+    588          #endif
+    589          #ifdef ZCL_REPORT_DESTINATION_DEVICE
+    590              case ZCL_CMD_REPORT:
+    591                zclController_ProcessInReportCmd( pInMsg );
+    592                break;
+    593          #endif
+    594          
+    595              case ZCL_CMD_DEFAULT_RSP:
+    596                zclController_ProcessInDefaultRspCmd( pInMsg );
+   \                     ??AT_zclController_ProcessIncomingMsg_2:
+   \   000051   8A82         MOV       DPL,R2
+   \   000053   8B83         MOV       DPH,R3
+   \   000055   A3           INC       DPTR
+   \   000056   A3           INC       DPTR
+   \   000057   A3           INC       DPTR
+   \   000058   A3           INC       DPTR
+   \   000059   A3           INC       DPTR
+   \   00005A   A3           INC       DPTR
+   \   00005B   A3           INC       DPTR
+   \   00005C   A3           INC       DPTR
+   \   00005D   A3           INC       DPTR
+   \   00005E   A3           INC       DPTR
+   \   00005F   E0           MOVX      A,@DPTR
+   \   000060   F5..         MOV       ?V6,A
+   \   000062   A3           INC       DPTR
+   \   000063   E0           MOVX      A,@DPTR
+   \   000064   F5..         MOV       ?V7,A
+   \   000066   12....       LCALL     ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_48:
+   \   000069   3B           ADDC      A,R3
+   \   00006A   F583         MOV       DPH,A
+   \   00006C   E0           MOVX      A,@DPTR
+   \   00006D   F5..         MOV       ?V4,A
+   \   00006F   8A82         MOV       DPL,R2
+   \   000071   8B83         MOV       DPH,R3
+   \   000073   12....       LCALL     ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_51:
+   \   000076   8882         MOV       DPL,R0
+   \   000078   85..83       MOV       DPH,?V1
+   \   00007B   E0           MOVX      A,@DPTR
+   \   00007C   F8           MOV       R0,A
+   \   00007D   A3           INC       DPTR
+   \   00007E   E0           MOVX      A,@DPTR
+   \   00007F   88..         MOV       ?V2,R0
+   \   000081   12....       LCALL     ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   000084   12....       LCALL     ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000087   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00008A   85..82       MOV       DPL,?V2
+   \   00008D   85..83       MOV       DPH,?V3
+   \   000090   E0           MOVX      A,@DPTR
+   \   000091   F5..         MOV       ?V2,A
+   \   000093   75..00       MOV       ?V3,#0x0
+   \   000096   78..         MOV       R0,#?V2
+   \   000098   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00009B   78..         MOV       R0,#?V8
+   \   00009D   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000A0   E5..         MOV       A,?V4
+   \   0000A2   F5..         MOV       ?V2,A
+   \   0000A4   78..         MOV       R0,#?V2
+   \   0000A6   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000A9   78..         MOV       R0,#?V6
+   \   0000AB   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000AE   7A..         MOV       R2,#`?<Constant "DFTRSP:%04X,%02X,%04X...">` & 0xff
+   \   0000B0   7B..         MOV       R3,#(`?<Constant "DFTRSP:%04X,%02X,%04X...">` >> 8) & 0xff
+   \   0000B2   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   0000B5   740A         MOV       A,#0xa
+   \   0000B7   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000BA                ; Setup parameters for call to function AT_Uart0_Send
+   \   0000BA   7C02         MOV       R4,#0x2
+   \   0000BC   7D00         MOV       R5,#0x0
+   \   0000BE   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   0000C0   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   0000C2   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    597                break;
+   \   0000C5   8023         SJMP      ??AT_zclController_ProcessIncomingMsg_6
+    598          #ifdef ZCL_DISCOVER
+    599              case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
+    600                zclController_ProcessInDiscCmdsRspCmd( pInMsg );
+   \                     ??AT_zclController_ProcessIncomingMsg_4:
+   \   0000C7                ; Setup parameters for call to function zclController_ProcessInDiscCmdsRspCmd
+    601                break;
+    602          
+    603              case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
+    604                zclController_ProcessInDiscCmdsRspCmd( pInMsg );
+   \   0000C7                ; Setup parameters for call to function zclController_ProcessInDiscCmdsRspCmd
+   \   0000C7   12....       LCALL     `??zclController_ProcessInDiscCmdsRspCmd::?relay`; Banked call to: zclController_ProcessInDiscCmdsRspCmd
+    605                break;
+   \   0000CA   801E         SJMP      ??AT_zclController_ProcessIncomingMsg_6
+    606          
+    607              case ZCL_CMD_DISCOVER_ATTRS_RSP:
+    608                zclController_ProcessInDiscAttrsRspCmd( pInMsg );
+   \                     ??AT_zclController_ProcessIncomingMsg_3:
+   \   0000CC                ; Setup parameters for call to function zclController_ProcessInDiscAttrsRspCmd
+   \   0000CC   12....       LCALL     `??zclController_ProcessInDiscAttrsRspCmd::?rela`; Banked call to: zclController_ProcessInDiscAttrsRspCmd
+    609                break;
+   \   0000CF   8019         SJMP      ??AT_zclController_ProcessIncomingMsg_6
+    610          
+    611              case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
+    612                zclController_ProcessInDiscAttrsExtRspCmd( pInMsg );
+   \                     ??AT_zclController_ProcessIncomingMsg_5:
+   \   0000D1   8882         MOV       DPL,R0
+   \   0000D3   85..83       MOV       DPH,?V1
+   \   0000D6   12....       LCALL     ?Subroutine25 & 0xFFFF
+    613                break;
+    614          #endif
+    615              default:
+    616                break;
+    617            }
+   \                     ??CrossCallReturnLabel_30:
+   \   0000D9   7A00         MOV       R2,#0x0
+   \   0000DB   8001         SJMP      ??AT_zclController_ProcessIncomingMsg_7
+   \                     ??AT_zclController_ProcessIncomingMsg_8:
+   \   0000DD   0A           INC       R2
+   \                     ??AT_zclController_ProcessIncomingMsg_7:
+   \   0000DE   8882         MOV       DPL,R0
+   \   0000E0   8983         MOV       DPH,R1
+   \   0000E2   A3           INC       DPTR
+   \   0000E3   E0           MOVX      A,@DPTR
+   \   0000E4   FB           MOV       R3,A
+   \   0000E5   EA           MOV       A,R2
+   \   0000E6   C3           CLR       C
+   \   0000E7   9B           SUBB      A,R3
+   \   0000E8   40F3         JC        ??AT_zclController_ProcessIncomingMsg_8
+    618          
+    619            if ( pInMsg->attrCmd )
+   \                     ??AT_zclController_ProcessIncomingMsg_6:
+   \   0000EA   85..82       MOV       DPL,?V0
+   \   0000ED   85..83       MOV       DPH,?V1
+   \   0000F0   E0           MOVX      A,@DPTR
+   \   0000F1   FA           MOV       R2,A
+   \   0000F2   A3           INC       DPTR
+   \   0000F3   E0           MOVX      A,@DPTR
+   \   0000F4   FB           MOV       R3,A
+   \   0000F5   EA           MOV       A,R2
+   \   0000F6   4B           ORL       A,R3
+   \   0000F7   6003         JZ        ??AT_zclController_ProcessIncomingMsg_9
+    620              osal_mem_free( pInMsg->attrCmd );
+   \   0000F9                ; Setup parameters for call to function osal_mem_free
+   \   0000F9   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    621          }
+   \                     ??AT_zclController_ProcessIncomingMsg_9:
+   \   0000FC                REQUIRE ?Subroutine5
+   \   0000FC                ; // Fall through to label ?Subroutine5
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   7F0C         MOV       R7,#0xc
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    622          
+    623          #ifdef ZCL_REPORT_CONFIGURING_DEVICE
+    624          /*********************************************************************
+    625           * @fn      zclController_PrintfAttrData
+    626           *
+    627           * @brief   Tool Function. Print different types of Attributes' Data
+    628           *
+    629           * @param   dataType - data types defined in zcl.h
+    630           * @param   attrData - pointer to the attribute data
+    631           *
+    632           * @return  none
+    633           *********************************************************************/
+    634          static void zclController_PrintfAttrData( uint8 dataType, uint8 *attrData )
+    635          {
+    636            uint8 *pStr;
+    637          //  uint16 len;
+    638          
+    639            if ( attrData == NULL )
+    640            {
+    641              return;
+    642            }
+    643          
+    644            switch ( dataType )
+    645            {
+    646              case ZCL_DATATYPE_DATA8:
+    647              case ZCL_DATATYPE_BOOLEAN:
+    648              case ZCL_DATATYPE_BITMAP8:
+    649              case ZCL_DATATYPE_INT8:
+    650              case ZCL_DATATYPE_UINT8:
+    651              case ZCL_DATATYPE_ENUM8:
+    652                pStr = zcl_mem_alloc( 2 );
+    653                AT_IntxtoChar(attrData, pStr, 8);
+    654                AT_RESP(pStr, 2);
+    655                zcl_mem_free( pStr );
+    656                break;
+    657          
+    658              case ZCL_DATATYPE_DATA16:
+    659              case ZCL_DATATYPE_BITMAP16:
+    660              case ZCL_DATATYPE_UINT16:
+    661              case ZCL_DATATYPE_INT16:
+    662              case ZCL_DATATYPE_ENUM16:
+    663              case ZCL_DATATYPE_SEMI_PREC:
+    664              case ZCL_DATATYPE_CLUSTER_ID:
+    665              case ZCL_DATATYPE_ATTR_ID:
+    666                pStr = zcl_mem_alloc( 4 );
+    667                AT_IntxtoChar(attrData, pStr, 16);
+    668                AT_RESP(pStr, 4);
+    669                zcl_mem_free( pStr );
+    670                break;
+    671          
+    672              case ZCL_DATATYPE_DATA24:
+    673              case ZCL_DATATYPE_BITMAP24:
+    674              case ZCL_DATATYPE_UINT24:
+    675              case ZCL_DATATYPE_INT24:
+    676                pStr = zcl_mem_alloc( 6 );
+    677                AT_IntxtoChar(attrData, pStr, 24);
+    678                AT_RESP(pStr, 6);
+    679                zcl_mem_free( pStr );
+    680                break;
+    681          
+    682              case ZCL_DATATYPE_DATA32:
+    683              case ZCL_DATATYPE_BITMAP32:
+    684              case ZCL_DATATYPE_UINT32:
+    685              case ZCL_DATATYPE_INT32:
+    686              case ZCL_DATATYPE_SINGLE_PREC:
+    687              case ZCL_DATATYPE_TOD:
+    688              case ZCL_DATATYPE_DATE:
+    689              case ZCL_DATATYPE_UTC:
+    690              case ZCL_DATATYPE_BAC_OID:
+    691                pStr = zcl_mem_alloc( 8 );
+    692                AT_IntxtoChar(attrData, pStr, 32);
+    693                AT_RESP(pStr, 8);
+    694                zcl_mem_free( pStr );
+    695                break;
+    696          
+    697              case ZCL_DATATYPE_UINT40:
+    698              case ZCL_DATATYPE_INT40:
+    699                pStr = zcl_mem_alloc( 10 );
+    700                AT_IntxtoChar(attrData, pStr, 40);
+    701                AT_RESP(pStr, 10);
+    702                zcl_mem_free( pStr );
+    703                break;
+    704          
+    705              case ZCL_DATATYPE_UINT48:
+    706              case ZCL_DATATYPE_INT48:
+    707                pStr = zcl_mem_alloc( 12 );
+    708                AT_IntxtoChar(attrData, pStr, 48);
+    709                AT_RESP(pStr, 12);
+    710                zcl_mem_free( pStr );
+    711                break;
+    712          
+    713              case ZCL_DATATYPE_UINT56:
+    714              case ZCL_DATATYPE_INT56:
+    715                pStr = zcl_mem_alloc( 14 );
+    716                AT_IntxtoChar(attrData, pStr, 56);
+    717                AT_RESP(pStr, 14);
+    718                zcl_mem_free( pStr );
+    719                break;
+    720          
+    721              case ZCL_DATATYPE_DOUBLE_PREC:
+    722              case ZCL_DATATYPE_IEEE_ADDR:
+    723              case ZCL_DATATYPE_UINT64:
+    724              case ZCL_DATATYPE_INT64:
+    725                pStr = zcl_mem_alloc( 16 );
+    726                AT_IntxtoChar(attrData, pStr, 64);
+    727                AT_RESP(pStr, 16);
+    728                zcl_mem_free( pStr );
+    729                break;
+    730          
+    731              case ZCL_DATATYPE_CHAR_STR:
+    732              case ZCL_DATATYPE_OCTET_STR:
+    733                pStr = (uint8*)attrData;
+    734          //      len = *pStr;
+    735          //      AT_RESP(pStr+1, len);
+    736                break;
+    737          
+    738              case ZCL_DATATYPE_LONG_CHAR_STR:
+    739              case ZCL_DATATYPE_LONG_OCTET_STR:
+    740                pStr = (uint8*)attrData;
+    741          //      len = BUILD_UINT16( pStr[0], pStr[1] );
+    742          //      AT_RESP(pStr+2, len);
+    743                break;
+    744          
+    745              case ZCL_DATATYPE_128_BIT_SEC_KEY:
+    746                pStr = zcl_mem_alloc( SEC_KEY_LEN*2 );
+    747                AT_IntxtoChar(attrData, pStr, SEC_KEY_LEN);
+    748                AT_RESP(pStr, SEC_KEY_LEN*2);
+    749                zcl_mem_free( pStr );
+    750                break;
+    751          
+    752              case ZCL_DATATYPE_NO_DATA:
+    753              case ZCL_DATATYPE_UNKNOWN:
+    754                // Fall through
+    755          
+    756              default:
+    757                break;
+    758            }
+    759          }
+    760          #endif
+    761          
+    762          #ifdef ZCL_READ
+    763          /*********************************************************************
+    764           * @fn      zclController_ProcessInReadRspCmd
+    765           *
+    766           * @brief   Process the "Profile" Read Response Command
+    767           *
+    768           * @param   pInMsg - incoming message to process
+    769           *
+    770           * @return  none
+    771           *********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine32_0:
+   \   000000   2413         ADD       A,#0x13
+   \   000002   F582         MOV       DPL,A
+   \   000004   E4           CLR       A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    772          static uint8 zclController_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+   \                     zclController_ProcessInReadRspCmd:
+    773          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000                REQUIRE ?V12
+   \   000000                REQUIRE ?V13
+   \   000000   74EA         MOV       A,#-0x16
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 17
+   \   000005   74EF         MOV       A,#-0x11
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV       ?V6,R2
+   \   00000C   8B..         MOV       ?V7,R3
+    774            zclReadRspCmd_t *readRspCmd;
+    775            uint8 i;
+    776          
+    777            readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+   \   00000E   12....       LCALL     ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   000011   35..         ADDC      A,?V7
+   \   000013   F583         MOV       DPH,A
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   F5..         MOV       ?V12,A
+   \   000018   A3           INC       DPTR
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   F5..         MOV       ?V13,A
+    778            uint8 str[17];
+    779            AT_NEW_LINE();
+   \   00001C   75....       MOV       ?V8,#`?<Constant "\\r\\n">` & 0xff
+   \   00001F   75....       MOV       ?V9,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000022                ; Setup parameters for call to function AT_Uart0_Send
+   \   000022   7C02         MOV       R4,#0x2
+   \   000024   7D00         MOV       R5,#0x0
+   \   000026   AA..         MOV       R2,?V8
+   \   000028   AB..         MOV       R3,?V9
+   \   00002A   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    780            AT_RESP("---------ADDR,EP,C_ID,A_ID,ST,DT,DV", 35);
+   \   00002D                ; Setup parameters for call to function AT_Uart0_Send
+   \   00002D   7C23         MOV       R4,#0x23
+   \   00002F   7D00         MOV       R5,#0x0
+   \   000031   7A..         MOV       R2,#`?<Constant "---------ADDR,EP,C_ID...">` & 0xff
+   \   000033   7B..         MOV       R3,#(`?<Constant "---------ADDR,EP,C_ID...">` >> 8) & 0xff
+   \   000035   12....       LCALL     ?Subroutine17 & 0xFFFF
+    781            AT_NEW_LINE();
+    782            for (i = 0; i < readRspCmd->numAttr; i++)
+   \                     ??CrossCallReturnLabel_14:
+   \   000038   E5..         MOV       A,?V6
+   \   00003A   240A         ADD       A,#0xa
+   \   00003C   F5..         MOV       ?V10,A
+   \   00003E   E4           CLR       A
+   \   00003F   35..         ADDC      A,?V7
+   \   000041   F5..         MOV       ?V11,A
+   \   000043   8018         SJMP      ??zclController_ProcessInReadRspCmd_0
+    783            {
+    784              AT_RESP("ReadAttr:", 9);
+    785              // Node Address
+    786              if (pInMsg->srcAddr.addrMode == (afAddrMode_t)Addr16Bit) {
+    787                AT_Int16toChar(pInMsg->srcAddr.addr.shortAddr, str);
+    788                AT_RESP(str, 4);
+    789              } else {
+    790                AT_GetIEEEAddrStr(pInMsg->srcAddr.addr.extAddr, str);
+    791                AT_RESP(str, 16);
+    792              }
+    793              AT_RESP(",", 1);
+    794          
+    795              // Endpoint
+    796              AT_Int8toChar(pInMsg->srcAddr.endPoint, str);
+    797              AT_RESP(str, 2);
+    798              AT_RESP(",", 1);
+    799          
+    800              // Cluster ID
+    801              AT_Int16toChar(pInMsg->clusterId, str);
+    802              AT_RESP(str, 4);
+    803              AT_RESP(",", 1);
+    804          
+    805              // Attribute ID
+    806              AT_Int16toChar(readRspCmd->attrList[i].attrID, str);
+    807              AT_RESP(str, 4);
+    808              AT_RESP(",", 1);
+    809          
+    810              // Status
+    811              AT_Int8toChar(readRspCmd->attrList[i].status, str);
+    812              AT_RESP(str,2);
+    813              AT_RESP(",",1);
+    814          
+    815              // Data type
+    816              AT_Int8toChar(readRspCmd->attrList[i].dataType, str);
+    817              AT_RESP(str,2);
+    818              AT_RESP(",",1);
+    819          
+    820              // Attribute value
+    821              if (readRspCmd->attrList[i].dataType == ZCL_DATATYPE_CHAR_STR) {
+    822                AT_RESP(readRspCmd->attrList[i].data+1, readRspCmd->attrList[i].data[0]);
+    823              } else if (readRspCmd->attrList[i].dataType == ZCL_DATATYPE_DATA16||
+    824                         readRspCmd->attrList[i].dataType == ZCL_DATATYPE_UINT16||
+    825                         readRspCmd->attrList[i].dataType == ZCL_DATATYPE_INT16) {
+    826                AT_Int16toChar(*((uint16*)readRspCmd->attrList[i].data),str);
+    827                AT_RESP(str, 4);
+    828              } else {
+    829                AT_Int8toChar((uint8)readRspCmd->attrList[i].data[0],str);
+   \                     ??zclController_ProcessInReadRspCmd_1:
+   \   000045                ; Setup parameters for call to function AT_Int8toChar
+   \   000045   AA..         MOV       R2,?XSP + 0
+   \   000047   AB..         MOV       R3,?XSP + 1
+   \   000049   12....       LCALL     ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_40:
+   \   00004C   F9           MOV       R1,A
+   \   00004D   12....       LCALL     `??AT_Int8toChar::?relay`; Banked call to: AT_Int8toChar
+    830                AT_RESP(str,2);
+   \   000050                ; Setup parameters for call to function AT_Uart0_Send
+   \   000050   7C02         MOV       R4,#0x2
+   \                     ??zclController_ProcessInReadRspCmd_2:
+   \   000052   7D00         MOV       R5,#0x0
+   \   000054   AA..         MOV       R2,?XSP + 0
+   \   000056   AB..         MOV       R3,?XSP + 1
+    831              }
+   \                     ??zclController_ProcessInReadRspCmd_3:
+   \   000058   12....       LCALL     ?Subroutine27 & 0xFFFF
+    832          
+    833              AT_NEW_LINE();
+   \                     ??CrossCallReturnLabel_33:
+   \   00005B   05..         INC       ?V2
+   \                     ??zclController_ProcessInReadRspCmd_0:
+   \   00005D   85..82       MOV       DPL,?V12
+   \   000060   85..83       MOV       DPH,?V13
+   \   000063   E0           MOVX      A,@DPTR
+   \   000064   F8           MOV       R0,A
+   \   000065   E5..         MOV       A,?V2
+   \   000067   C3           CLR       C
+   \   000068   98           SUBB      A,R0
+   \   000069   4003         JC        $+5
+   \   00006B   02....       LJMP      ??zclController_ProcessInReadRspCmd_4 & 0xFFFF
+   \   00006E                ; Setup parameters for call to function AT_Uart0_Send
+   \   00006E   7C09         MOV       R4,#0x9
+   \   000070   7D00         MOV       R5,#0x0
+   \   000072   7A..         MOV       R2,#`?<Constant "ReadAttr:">` & 0xff
+   \   000074   7B..         MOV       R3,#(`?<Constant "ReadAttr:">` >> 8) & 0xff
+   \   000076   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000079   E5..         MOV       A,?V6
+   \   00007B   2412         ADD       A,#0x12
+   \   00007D   F582         MOV       DPL,A
+   \   00007F   E4           CLR       A
+   \   000080   35..         ADDC      A,?V7
+   \   000082   F583         MOV       DPH,A
+   \   000084   E0           MOVX      A,@DPTR
+   \   000085   6402         XRL       A,#0x2
+   \   000087   AC..         MOV       R4,?XSP + 0
+   \   000089   AD..         MOV       R5,?XSP + 1
+   \   00008B   700B         JNZ       ??zclController_ProcessInReadRspCmd_5
+   \   00008D                ; Setup parameters for call to function AT_Int16toChar
+   \   00008D   85..82       MOV       DPL,?V10
+   \   000090   85..83       MOV       DPH,?V11
+   \   000093   12....       LCALL     ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_60:
+   \   000096   8009         SJMP      ??zclController_ProcessInReadRspCmd_6
+   \                     ??zclController_ProcessInReadRspCmd_5:
+   \   000098                ; Setup parameters for call to function AT_GetIEEEAddrStr
+   \   000098   AA..         MOV       R2,?V10
+   \   00009A   AB..         MOV       R3,?V11
+   \   00009C   12....       LCALL     `??AT_GetIEEEAddrStr::?relay`; Banked call to: AT_GetIEEEAddrStr
+   \   00009F                ; Setup parameters for call to function AT_Uart0_Send
+   \   00009F   7C10         MOV       R4,#0x10
+   \                     ??zclController_ProcessInReadRspCmd_6:
+   \   0000A1   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   0000A4   7A..         MOV       R2,#`?<Constant ",">` & 0xff
+   \   0000A6   7B..         MOV       R3,#(`?<Constant ",">` >> 8) & 0xff
+   \   0000A8   12....       LCALL     ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   0000AB   E5..         MOV       A,?V6
+   \   0000AD   12....       LCALL     ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_46:
+   \   0000B0   35..         ADDC      A,?V7
+   \   0000B2   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_53:
+   \   0000B5                ; Setup parameters for call to function AT_Int16toChar
+   \   0000B5   AC..         MOV       R4,?XSP + 0
+   \   0000B7   AD..         MOV       R5,?XSP + 1
+   \   0000B9   85..82       MOV       DPL,?V6
+   \   0000BC   85..83       MOV       DPH,?V7
+   \   0000BF   A3           INC       DPTR
+   \   0000C0   A3           INC       DPTR
+   \   0000C1   A3           INC       DPTR
+   \   0000C2   A3           INC       DPTR
+   \   0000C3   A3           INC       DPTR
+   \   0000C4   A3           INC       DPTR
+   \   0000C5   A3           INC       DPTR
+   \   0000C6   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   0000C9   E5..         MOV       A,?V2
+   \   0000CB   75F006       MOV       B,#0x6
+   \   0000CE   A4           MUL       AB
+   \   0000CF   F8           MOV       R0,A
+   \   0000D0   A9F0         MOV       R1,B
+   \   0000D2   E5..         MOV       A,?V12
+   \   0000D4   28           ADD       A,R0
+   \   0000D5   F5..         MOV       ?V0,A
+   \   0000D7   E5..         MOV       A,?V13
+   \   0000D9   39           ADDC      A,R1
+   \   0000DA   F5..         MOV       ?V1,A
+   \   0000DC                ; Setup parameters for call to function AT_Int16toChar
+   \   0000DC   AC..         MOV       R4,?XSP + 0
+   \   0000DE   AD..         MOV       R5,?XSP + 1
+   \   0000E0   85..82       MOV       DPL,?V0
+   \   0000E3   F583         MOV       DPH,A
+   \   0000E5   12....       LCALL     ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0000E8                ; Setup parameters for call to function AT_Int8toChar
+   \   0000E8   AA..         MOV       R2,?XSP + 0
+   \   0000EA   AB..         MOV       R3,?XSP + 1
+   \   0000EC   85..82       MOV       DPL,?V0
+   \   0000EF   85..83       MOV       DPH,?V1
+   \   0000F2   A3           INC       DPTR
+   \   0000F3   A3           INC       DPTR
+   \   0000F4   A3           INC       DPTR
+   \   0000F5   12....       LCALL     ??Subroutine35_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   0000F8   E5..         MOV       A,?V0
+   \   0000FA   2404         ADD       A,#0x4
+   \   0000FC   F5..         MOV       ?V4,A
+   \   0000FE   E4           CLR       A
+   \   0000FF   35..         ADDC      A,?V1
+   \   000101   F5..         MOV       ?V5,A
+   \   000103                ; Setup parameters for call to function AT_Int8toChar
+   \   000103   AA..         MOV       R2,?XSP + 0
+   \   000105   AB..         MOV       R3,?XSP + 1
+   \   000107   85..82       MOV       DPL,?V4
+   \   00010A   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_54:
+   \   00010D   85..82       MOV       DPL,?V4
+   \   000110   85..83       MOV       DPH,?V5
+   \   000113   E0           MOVX      A,@DPTR
+   \   000114   F8           MOV       R0,A
+   \   000115   E5..         MOV       A,?V0
+   \   000117   2405         ADD       A,#0x5
+   \   000119   F582         MOV       DPL,A
+   \   00011B   E4           CLR       A
+   \   00011C   35..         ADDC      A,?V1
+   \   00011E   F583         MOV       DPH,A
+   \   000120   7442         MOV       A,#0x42
+   \   000122   68           XRL       A,R0
+   \   000123   700F         JNZ       ??zclController_ProcessInReadRspCmd_7
+   \   000125   12....       LCALL     ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000128                ; Setup parameters for call to function AT_Uart0_Send
+   \   000128   E0           MOVX      A,@DPTR
+   \   000129   FC           MOV       R4,A
+   \   00012A   7D00         MOV       R5,#0x0
+   \   00012C   A3           INC       DPTR
+   \   00012D   AA82         MOV       R2,DPL
+   \   00012F   AB83         MOV       R3,DPH
+   \   000131   02....       LJMP      ??zclController_ProcessInReadRspCmd_3 & 0xFFFF
+   \                     ??zclController_ProcessInReadRspCmd_7:
+   \   000134   7409         MOV       A,#0x9
+   \   000136   68           XRL       A,R0
+   \   000137   600D         JZ        ??zclController_ProcessInReadRspCmd_8
+   \   000139   7421         MOV       A,#0x21
+   \   00013B   68           XRL       A,R0
+   \   00013C   6008         JZ        ??zclController_ProcessInReadRspCmd_8
+   \   00013E   7429         MOV       A,#0x29
+   \   000140   68           XRL       A,R0
+   \   000141   6003         JZ        $+5
+   \   000143   02....       LJMP      ??zclController_ProcessInReadRspCmd_1 & 0xFFFF
+   \                     ??zclController_ProcessInReadRspCmd_8:
+   \   000146                ; Setup parameters for call to function AT_Int16toChar
+   \   000146   AC..         MOV       R4,?XSP + 0
+   \   000148   AD..         MOV       R5,?XSP + 1
+   \   00014A   12....       LCALL     ??Subroutine31_0 & 0xFFFF
+    834            }
+   \                     ??CrossCallReturnLabel_41:
+   \   00014D   12....       LCALL     ??Subroutine36_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_62:
+   \   000150   02....       LJMP      ??zclController_ProcessInReadRspCmd_2 & 0xFFFF
+    835          
+    836            return TRUE;
+   \                     ??zclController_ProcessInReadRspCmd_4:
+   \   000153                REQUIRE ?Subroutine3
+   \   000153                ; // Fall through to label ?Subroutine3
+    837          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7901         MOV       R1,#0x1
+   \   000002   7411         MOV       A,#0x11
+   \   000004   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000007                REQUIRE ??Subroutine34_0
+   \   000007                ; // Fall through to label ??Subroutine34_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL     ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_27:
+   \   000003   7A..         MOV       R2,#`?<Constant ",">` & 0xff
+   \   000005   7B..         MOV       R3,#(`?<Constant ",">` >> 8) & 0xff
+   \   000007   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   F583         MOV       DPH,A
+   \   000002                REQUIRE ??Subroutine35_0
+   \   000002                ; // Fall through to label ??Subroutine35_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine35_0:
+   \   000000   12....       LCALL     ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_56:
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003   7C01         MOV       R4,#0x1
+   \   000005   7D00         MOV       R5,#0x0
+   \   000007   7A..         MOV       R2,#`?<Constant ",">` & 0xff
+   \   000009   7B..         MOV       R3,#(`?<Constant ",">` >> 8) & 0xff
+   \   00000B   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   12....       LCALL     ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_34:
+   \   000003   75..00       MOV       ?V2,#0x0
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine27:
+   \   000000   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003                ; Setup parameters for call to function AT_Uart0_Send
+   \   000003   7C02         MOV       R4,#0x2
+   \   000005   7D00         MOV       R5,#0x0
+   \   000007   AA..         MOV       R2,?V8
+   \   000009   AB..         MOV       R3,?V9
+   \   00000B   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001                REQUIRE ??Subroutine36_0
+   \   000001                ; // Fall through to label ??Subroutine36_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine36_0:
+   \   000000   FA           MOV       R2,A
+   \   000001   A3           INC       DPTR
+   \   000002   E0           MOVX      A,@DPTR
+   \   000003   FB           MOV       R3,A
+   \   000004   12....       LCALL     `??AT_Int16toChar::?relay`; Banked call to: AT_Int16toChar
+   \   000007                ; Setup parameters for call to function AT_Uart0_Send
+   \   000007                ; Setup parameters for call to function AT_Uart0_Send
+   \   000007                ; Setup parameters for call to function AT_Uart0_Send
+   \   000007   7C04         MOV       R4,#0x4
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine24:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F9           MOV       R1,A
+   \   000002   12....       LCALL     ?Subroutine30 & 0xFFFF
+   \                     ??CrossCallReturnLabel_59:
+   \   000005   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine23:
+   \   000000   A3           INC       DPTR
+   \   000001   E0           MOVX      A,@DPTR
+   \   000002   FA           MOV       R2,A
+   \   000003   A3           INC       DPTR
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   FB           MOV       R3,A
+   \   000006   12....       LCALL     `??AT_Int16toChar::?relay`; Banked call to: AT_Int16toChar
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009   7C04         MOV       R4,#0x4
+   \   00000B   12....       LCALL     ?Subroutine29 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine29:
+   \   000000   7D00         MOV       R5,#0x0
+   \   000002   AA..         MOV       R2,?XSP + 0
+   \   000004   AB..         MOV       R3,?XSP + 1
+   \   000006   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009                ; Setup parameters for call to function AT_Uart0_Send
+   \   000009   7C01         MOV       R4,#0x1
+   \   00000B   7D00         MOV       R5,#0x0
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   EA           MOV       A,R2
+   \   000001   2417         ADD       A,#0x17
+   \   000003   F582         MOV       DPL,A
+   \   000005   E4           CLR       A
+   \   000006   22           RET
+    838          #endif // ZCL_READ
+    839          
+    840          #ifdef ZCL_WRITE
+    841          /*********************************************************************
+    842           * @fn      zclController_ProcessInWriteRspCmd
+    843           *
+    844           * @brief   Process the "Profile" Write Response Command
+    845           *
+    846           * @param   pInMsg - incoming message to process
+    847           *
+    848           * @return  none
+    849           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    850          static uint8 zclController_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+   \                     zclController_ProcessInWriteRspCmd:
+    851          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000                REQUIRE ?V12
+   \   000000                REQUIRE ?V13
+   \   000000   74EA         MOV       A,#-0x16
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 17
+   \   000005   74EF         MOV       A,#-0x11
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   EA           MOV       A,R2
+   \   00000B   FE           MOV       R6,A
+   \   00000C   EB           MOV       A,R3
+   \   00000D   FF           MOV       R7,A
+    852            zclWriteRspCmd_t *writeRspCmd;
+    853            uint8 i;
+    854          
+    855            writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+   \   00000E   12....       LCALL     ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   000011   3F           ADDC      A,R7
+   \   000012   F583         MOV       DPH,A
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   F5..         MOV       ?V10,A
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   F5..         MOV       ?V11,A
+    856            uint8 str[17];
+    857            AT_NEW_LINE();
+   \   00001B   75....       MOV       ?V8,#`?<Constant "\\r\\n">` & 0xff
+   \   00001E   75....       MOV       ?V9,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   000021                ; Setup parameters for call to function AT_Uart0_Send
+   \   000021   7C02         MOV       R4,#0x2
+   \   000023   7D00         MOV       R5,#0x0
+   \   000025   AA..         MOV       R2,?V8
+   \   000027   AB..         MOV       R3,?V9
+   \   000029   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    858            AT_RESP("----------ADDR,EP,C_ID,ST", 25);
+   \   00002C                ; Setup parameters for call to function AT_Uart0_Send
+   \   00002C   7C19         MOV       R4,#0x19
+   \   00002E   7D00         MOV       R5,#0x0
+   \   000030   7A..         MOV       R2,#`?<Constant "----------ADDR,EP,C_I...">` & 0xff
+   \   000032   7B..         MOV       R3,#(`?<Constant "----------ADDR,EP,C_I...">` >> 8) & 0xff
+   \   000034   12....       LCALL     ?Subroutine17 & 0xFFFF
+    859            AT_NEW_LINE();
+    860            for (i = 0; i < writeRspCmd->numAttr; i++)
+   \                     ??CrossCallReturnLabel_15:
+   \   000037   75....       MOV       ?V6,#`?<Constant ",">` & 0xff
+   \   00003A   75....       MOV       ?V7,#(`?<Constant ",">` >> 8) & 0xff
+   \   00003D   EE           MOV       A,R6
+   \   00003E   240A         ADD       A,#0xa
+   \   000040   F5..         MOV       ?V12,A
+   \   000042   E4           CLR       A
+   \   000043   3F           ADDC      A,R7
+   \   000044   F5..         MOV       ?V13,A
+   \   000046   02....       LJMP      ??zclController_ProcessInWriteRspCmd_0 & 0xFFFF
+    861            {
+    862              AT_RESP("WriteAttr:",10);
+    863          
+    864              //node id
+    865              if(pInMsg->srcAddr.addrMode==(afAddrMode_t)Addr16Bit){
+    866                AT_Int16toChar(pInMsg->srcAddr.addr.shortAddr,str);
+    867                AT_RESP(str,4);
+    868              }else{
+    869                AT_GetIEEEAddrStr(pInMsg->srcAddr.addr.extAddr,str);
+   \                     ??zclController_ProcessInWriteRspCmd_1:
+   \   000049                ; Setup parameters for call to function AT_GetIEEEAddrStr
+   \   000049   AA..         MOV       R2,?V12
+   \   00004B   AB..         MOV       R3,?V13
+   \   00004D   12....       LCALL     `??AT_GetIEEEAddrStr::?relay`; Banked call to: AT_GetIEEEAddrStr
+    870                AT_RESP(str,16);
+   \   000050                ; Setup parameters for call to function AT_Uart0_Send
+   \   000050   7C10         MOV       R4,#0x10
+    871              }
+   \                     ??zclController_ProcessInWriteRspCmd_2:
+   \   000052   12....       LCALL     ?Subroutine29 & 0xFFFF
+    872              AT_RESP(",",1);
+   \                     ??CrossCallReturnLabel_38:
+   \   000055   AA..         MOV       R2,?V6
+   \   000057   AB..         MOV       R3,?V7
+   \   000059   12....       LCALL     ?Subroutine19 & 0xFFFF
+    873          
+    874              //End ponit
+    875              AT_Int8toChar(pInMsg->srcAddr.endPoint,str);
+   \                     ??CrossCallReturnLabel_20:
+   \   00005C   EE           MOV       A,R6
+   \   00005D   12....       LCALL     ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   000060   3F           ADDC      A,R7
+   \   000061   F583         MOV       DPH,A
+   \   000063   12....       LCALL     ?Subroutine11 & 0xFFFF
+    876              AT_RESP(str,2);
+    877              AT_RESP(",",1);
+   \                     ??CrossCallReturnLabel_6:
+   \   000066                ; Setup parameters for call to function AT_Uart0_Send
+   \   000066   7C01         MOV       R4,#0x1
+   \   000068   7D00         MOV       R5,#0x0
+   \   00006A   AA..         MOV       R2,?V6
+   \   00006C   AB..         MOV       R3,?V7
+   \   00006E   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    878          
+    879              //Cluster ID
+    880              AT_Int16toChar(pInMsg->clusterId,str);
+   \   000071                ; Setup parameters for call to function AT_Int16toChar
+   \   000071   AC..         MOV       R4,?XSP + 0
+   \   000073   AD..         MOV       R5,?XSP + 1
+   \   000075   8E82         MOV       DPL,R6
+   \   000077   8F83         MOV       DPH,R7
+   \   000079   A3           INC       DPTR
+   \   00007A   A3           INC       DPTR
+   \   00007B   A3           INC       DPTR
+   \   00007C   A3           INC       DPTR
+   \   00007D   A3           INC       DPTR
+   \   00007E   A3           INC       DPTR
+   \   00007F   12....       LCALL     ?Subroutine8 & 0xFFFF
+    881              AT_RESP(str,4);
+    882              AT_RESP(",",1);
+    883          
+    884              //Attribute ID   Display when status != 0
+    885              if (writeRspCmd->attrList[i].status != 0) {
+   \                     ??CrossCallReturnLabel_2:
+   \   000082   E5..         MOV       A,?V2
+   \   000084   F5..         MOV       ?V0,A
+   \   000086   75F003       MOV       B,#0x3
+   \   000089   A4           MUL       AB
+   \   00008A   F8           MOV       R0,A
+   \   00008B   A9F0         MOV       R1,B
+   \   00008D   E5..         MOV       A,?V10
+   \   00008F   28           ADD       A,R0
+   \   000090   F8           MOV       R0,A
+   \   000091   E5..         MOV       A,?V11
+   \   000093   39           ADDC      A,R1
+   \   000094   F9           MOV       R1,A
+   \   000095   8882         MOV       DPL,R0
+   \   000097   F583         MOV       DPH,A
+   \   000099   A3           INC       DPTR
+   \   00009A   8582..       MOV       ?V4,DPL
+   \   00009D   8583..       MOV       ?V5,DPH
+   \   0000A0   E0           MOVX      A,@DPTR
+   \   0000A1   600B         JZ        ??CrossCallReturnLabel_3
+    886                AT_Int16toChar(writeRspCmd->attrList[i].attrID,str);
+   \   0000A3                ; Setup parameters for call to function AT_Int16toChar
+   \   0000A3   AC..         MOV       R4,?XSP + 0
+   \   0000A5   AD..         MOV       R5,?XSP + 1
+   \   0000A7   8882         MOV       DPL,R0
+   \   0000A9   8983         MOV       DPH,R1
+   \   0000AB   12....       LCALL     ?Subroutine8 & 0xFFFF
+    887                AT_RESP(str,4);
+    888                AT_RESP(",",1);
+    889              }
+    890          
+    891              //status
+    892              AT_Int8toChar(writeRspCmd->attrList[i].status,str);
+   \                     ??CrossCallReturnLabel_3:
+   \   0000AE                ; Setup parameters for call to function AT_Int8toChar
+   \   0000AE   AA..         MOV       R2,?XSP + 0
+   \   0000B0   AB..         MOV       R3,?XSP + 1
+   \   0000B2   85..82       MOV       DPL,?V4
+   \   0000B5   85..83       MOV       DPH,?V5
+   \   0000B8   12....       LCALL     ?Subroutine11 & 0xFFFF
+    893              AT_RESP(str,2);
+    894          
+    895              if(i < writeRspCmd->numAttr-1) AT_NEXT_LINE();
+   \                     ??CrossCallReturnLabel_7:
+   \   0000BB   85..82       MOV       DPL,?V10
+   \   0000BE   85..83       MOV       DPH,?V11
+   \   0000C1   E0           MOVX      A,@DPTR
+   \   0000C2   24FF         ADD       A,#-0x1
+   \   0000C4   F8           MOV       R0,A
+   \   0000C5   E4           CLR       A
+   \   0000C6   34FF         ADDC      A,#-0x1
+   \   0000C8   F9           MOV       R1,A
+   \   0000C9   C3           CLR       C
+   \   0000CA   E5..         MOV       A,?V0
+   \   0000CC   98           SUBB      A,R0
+   \   0000CD   E4           CLR       A
+   \   0000CE   99           SUBB      A,R1
+   \   0000CF   A2D2         MOV       C,0xD0 /* PSW */.2
+   \   0000D1   65D0         XRL       A,PSW
+   \   0000D3   33           RLC       A
+   \   0000D4   500B         JNC       ??zclController_ProcessInWriteRspCmd_3
+   \   0000D6                ; Setup parameters for call to function AT_Uart0_Send
+   \   0000D6   7C02         MOV       R4,#0x2
+   \   0000D8   7D00         MOV       R5,#0x0
+   \   0000DA   AA..         MOV       R2,?V8
+   \   0000DC   AB..         MOV       R3,?V9
+   \   0000DE   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \                     ??zclController_ProcessInWriteRspCmd_3:
+   \   0000E1   05..         INC       ?V2
+   \                     ??zclController_ProcessInWriteRspCmd_0:
+   \   0000E3   85..82       MOV       DPL,?V10
+   \   0000E6   85..83       MOV       DPH,?V11
+   \   0000E9   E0           MOVX      A,@DPTR
+   \   0000EA   F8           MOV       R0,A
+   \   0000EB   E5..         MOV       A,?V2
+   \   0000ED   C3           CLR       C
+   \   0000EE   98           SUBB      A,R0
+   \   0000EF   502C         JNC       ??zclController_ProcessInWriteRspCmd_4
+   \   0000F1                ; Setup parameters for call to function AT_Uart0_Send
+   \   0000F1   7C0A         MOV       R4,#0xa
+   \   0000F3   7D00         MOV       R5,#0x0
+   \   0000F5   7A..         MOV       R2,#`?<Constant "WriteAttr:">` & 0xff
+   \   0000F7   7B..         MOV       R3,#(`?<Constant "WriteAttr:">` >> 8) & 0xff
+   \   0000F9   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   0000FC   EE           MOV       A,R6
+   \   0000FD   2412         ADD       A,#0x12
+   \   0000FF   F582         MOV       DPL,A
+   \   000101   E4           CLR       A
+   \   000102   3F           ADDC      A,R7
+   \   000103   F583         MOV       DPH,A
+   \   000105   E0           MOVX      A,@DPTR
+   \   000106   6402         XRL       A,#0x2
+   \   000108   AC..         MOV       R4,?XSP + 0
+   \   00010A   AD..         MOV       R5,?XSP + 1
+   \   00010C   6003         JZ        $+5
+   \   00010E   02....       LJMP      ??zclController_ProcessInWriteRspCmd_1 & 0xFFFF
+   \   000111                ; Setup parameters for call to function AT_Int16toChar
+   \   000111   85..82       MOV       DPL,?V12
+   \   000114   85..83       MOV       DPH,?V13
+   \   000117   12....       LCALL     ?Subroutine12 & 0xFFFF
+    896            }
+   \                     ??CrossCallReturnLabel_61:
+   \   00011A   02....       LJMP      ??zclController_ProcessInWriteRspCmd_2 & 0xFFFF
+    897            AT_NEW_LINE();
+   \                     ??zclController_ProcessInWriteRspCmd_4:
+   \   00011D                ; Setup parameters for call to function AT_Uart0_Send
+   \   00011D   7C02         MOV       R4,#0x2
+   \   00011F   7D00         MOV       R5,#0x0
+   \   000121   AA..         MOV       R2,?V8
+   \   000123   AB..         MOV       R3,?V9
+   \   000125   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+    898          
+    899            return TRUE;
+   \   000128   02....       LJMP      ?Subroutine3 & 0xFFFF
+    900          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   12....       LCALL     ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_57:
+   \   000003   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   A3           INC       DPTR
+   \   000001   12....       LCALL     ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   000004   AA..         MOV       R2,?V6
+   \   000006   AB..         MOV       R3,?V7
+   \   000008   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   00000B   22           RET
+    901          #endif // ZCL_WRITE
+    902          
+    903          #ifdef ZCL_REPORT_CONFIGURING_DEVICE
+    904          /*********************************************************************
+    905           * @fn      zclController_ProcessInReadReportCfgRspCmd
+    906           *
+    907           * @brief   Process the "Profile" Read Reporting Configuration Response Command
+    908           *
+    909           * @param   pInMsg - incoming message to process
+    910           *
+    911           * @return  none
+    912           ********************************************************************/
+    913          static uint8 zclController_ProcessInReadReportCfgRspCmd( zclIncomingMsg_t *pInMsg )
+    914          {
+    915            uint16 nodeId   = pInMsg->srcAddr.addr.shortAddr;
+    916            uint8  endpoint = pInMsg->srcAddr.endPoint;
+    917            uint16 cID      = pInMsg->clusterId;
+    918            zclReadReportCfgRspCmd_t *readReportCfgRspCmd;
+    919            uint8 i;
+    920            // uint8 status;
+    921            // uint8 direction;
+    922            // uint16 attrID;
+    923            // uint8 dataType;
+    924            // uint16 minReportInt;
+    925            // uint16 maxReportInt;
+    926            // uint16 timeoutPeriod;
+    927          
+    928            readReportCfgRspCmd = (zclReadReportCfgRspCmd_t *)pInMsg->attrCmd;
+    929          
+    930            AT_NEW_LINE();
+    931            printf("READRCFGRSP:%04X,%02X,%04X,%02X", nodeId, endpoint, cID, readReportCfgRspCmd->numAttr);
+    932            for ( i = 0; i < readReportCfgRspCmd->numAttr; i++ ) {
+    933              zclReportCfgRspRec_t *reportRspRec = &(readReportCfgRspCmd->attrList[i]);
+    934              AT_NEXT_LINE();
+    935              printf("ATTR%02X:%02X,%02X,%04X", i, reportRspRec->status,
+    936                      reportRspRec->direction, reportRspRec->attrID);
+    937              if ( reportRspRec->status == ZCL_STATUS_SUCCESS ) {
+    938                if ( reportRspRec->direction == ZCL_SEND_ATTR_REPORTS ) {
+    939                  printf(",%02X,%04X,%04X,", reportRspRec->dataType,
+    940                          reportRspRec->minReportInt, reportRspRec->maxReportInt);
+    941                  if ( zclAnalogDataType( reportRspRec->dataType ) ) {
+    942                    zclController_PrintfAttrData(reportRspRec->dataType,
+    943                                                 reportRspRec->reportableChange);
+    944                  }
+    945                } else {
+    946                  printf(",%04X", reportRspRec->timeoutPeriod);
+    947                }
+    948              }
+    949            }
+    950            AT_NEXT_LINE();
+    951            AT_RESP("END\r\n", 5);
+    952            AT_NEW_LINE();
+    953          
+    954            return ( TRUE );
+    955          }
+    956          
+    957          /*********************************************************************
+    958           * @fn      zclController_ProcessInConfigReportRspCmd
+    959           *
+    960           * @brief   Process the "Profile" Configure Reporting Response Command
+    961           *
+    962           * @param   pInMsg - incoming message to process
+    963           *
+    964           * @return  none
+    965           ********************************************************************/
+    966          static uint8 zclController_ProcessInConfigReportRspCmd( zclIncomingMsg_t *pInMsg )
+    967          {
+    968            uint16 nodeId   = pInMsg->srcAddr.addr.shortAddr;
+    969            uint8  endpoint = pInMsg->srcAddr.endPoint;
+    970            uint16 cID      = pInMsg->clusterId;
+    971            zclCfgReportRspCmd_t *cfgReportRspCmd;
+    972            uint8 i;
+    973            // uint8  status;
+    974            // uint8  direction;
+    975            // uint16 attrID;
+    976          
+    977            cfgReportRspCmd = (zclCfgReportRspCmd_t *)pInMsg->attrCmd;
+    978          
+    979            AT_NEW_LINE();
+    980            printf("CFGRPTRSP:%04X,%02X,%04X", nodeId, endpoint, cID);
+    981            if (cfgReportRspCmd->numAttr == 0) {
+    982            	AT_RESP(",00", 3);
+    983            } else {
+    984          	for ( i = 0; i < cfgReportRspCmd->numAttr; i++ )
+    985            	{
+    986                printf(",%02X,%02X,%04X", cfgReportRspCmd->attrList[i].status,
+    987          	  	cfgReportRspCmd->attrList[i].direction, cfgReportRspCmd->attrList[i].attrID);
+    988              }
+    989            }
+    990            AT_NEW_LINE();
+    991          
+    992            return ( TRUE );
+    993          }
+    994          
+    995          #endif // ZCL_REPORT_CONFIGURING_DEVICE
+    996          
+    997          #ifdef ZCL_REPORT_DESTINATION_DEVICE
+    998          /*********************************************************************
+    999           * @fn      zclController_ProcessInReportCmd
+   1000           *
+   1001           * @brief   Process the "Profile" Report Command
+   1002           *
+   1003           * @param   pInMsg - incoming message to process
+   1004           *
+   1005           * @return  none
+   1006           */
+   1007          static void zclController_ProcessInReportCmd( zclIncomingMsg_t *pInMsg )
+   1008          {
+   1009            zclReportCmd_t *pInDataReport;
+   1010            uint8 i;
+   1011            uint8 str[17];
+   1012          
+   1013            pInDataReport = (zclReportCmd_t *)pInMsg->attrCmd;
+   1014          
+   1015            AT_NEW_LINE();
+   1016            AT_RESP("REPORT:", 7);
+   1017          
+   1018            // Node Address
+   1019            if (pInMsg->srcAddr.addrMode == (afAddrMode_t)Addr16Bit) {
+   1020              AT_Int16toChar(pInMsg->srcAddr.addr.shortAddr, str);
+   1021              AT_RESP(str, 4);
+   1022            } else {
+   1023              AT_GetIEEEAddrStr(pInMsg->srcAddr.addr.extAddr, str);
+   1024              AT_RESP(str, 16);
+   1025            }
+   1026            AT_RESP(",", 1);
+   1027          
+   1028            // Endpoint
+   1029            AT_Int8toChar(pInMsg->srcAddr.endPoint, str);
+   1030            AT_RESP(str, 2);
+   1031            AT_RESP(",", 1);
+   1032          
+   1033            // Cluster ID
+   1034            AT_Int16toChar(pInMsg->clusterId, str);
+   1035            AT_RESP(str, 4);
+   1036            AT_RESP(",", 1);
+   1037          
+   1038            // numAttr
+   1039            AT_Int8toChar(pInDataReport->numAttr, str);
+   1040            AT_RESP(str, 2);
+   1041            AT_NEW_LINE();
+   1042          
+   1043            for (i = 0; i < pInDataReport->numAttr; i++)
+   1044            {
+   1045              AT_RESP("RPTATTR:", 8);
+   1046          
+   1047              // Attribute ID
+   1048              AT_Int16toChar(pInDataReport->attrList[i].attrID, str);
+   1049              AT_RESP(str, 4);
+   1050              AT_RESP(",", 1);
+   1051          
+   1052              // Data type
+   1053              AT_Int8toChar(pInDataReport->attrList[i].dataType, str);
+   1054              AT_RESP(str,2);
+   1055              AT_RESP(",",1);
+   1056          
+   1057              // Attribute value
+   1058              if (pInDataReport->attrList[i].dataType == ZCL_DATATYPE_CHAR_STR) {
+   1059                AT_RESP(pInDataReport->attrList[i].attrData+1, pInDataReport->attrList[i].attrData[0]);
+   1060              } else if (pInDataReport->attrList[i].dataType == ZCL_DATATYPE_DATA16||
+   1061                         pInDataReport->attrList[i].dataType == ZCL_DATATYPE_UINT16||
+   1062                         pInDataReport->attrList[i].dataType == ZCL_DATATYPE_INT16) {
+   1063                AT_Int16toChar(*((uint16*)pInDataReport->attrList[i].attrData),str);
+   1064                AT_RESP(str, 4);
+   1065              } else {
+   1066                AT_Int8toChar((uint8)pInDataReport->attrList[i].attrData[0],str);
+   1067                AT_RESP(str,2);
+   1068              }
+   1069          
+   1070              AT_NEW_LINE();
+   1071            }
+   1072            AT_RESP("END\r\n", 5);
+   1073            AT_NEW_LINE();
+   1074          }
+   1075          #endif  // ZCL_REPORT_DESTINATION_DEVICE
+   1076          
+   1077          /*********************************************************************
+   1078           * @fn      zclController_ProcessInDefaultRspCmd
+   1079           *
+   1080           * @brief   Process the "Profile" Default Response Command
+   1081           *
+   1082           * @param   pInMsg - incoming message to process
+   1083           *
+   1084           * @return  none
+   1085           ********************************************************************/
+   1086          static uint8 zclController_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+   1087          {
+   1088            zclDefaultRspCmd_t *defaultRspCmd;
+   1089            uint16 nodeId   = pInMsg->srcAddr.addr.shortAddr;
+   1090            uint8  endpoint = pInMsg->srcAddr.endPoint;
+   1091            uint16 cID = pInMsg->clusterId;
+   1092          
+   1093            defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+   1094            AT_NEW_LINE();
+   1095            printf("DFTRSP:%04X,%02X,%04X,%02X,%02X", nodeId, endpoint, cID, defaultRspCmd->commandID,
+   1096            									defaultRspCmd->statusCode);
+   1097            AT_NEW_LINE();
+   1098          
+   1099            return ( TRUE );
+   1100          }
+   1101          
+   1102          #ifdef ZCL_DISCOVER
+   1103          /*********************************************************************
+   1104           * @fn      zclController_ProcessInDiscCmdsRspCmd
+   1105           *
+   1106           * @brief   Process the Discover Commands Response Command
+   1107           *
+   1108           * @param   pInMsg - incoming message to process
+   1109           *
+   1110           * @return  none
+   1111           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1112          static uint8 zclController_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+   \                     zclController_ProcessInDiscCmdsRspCmd:
+   1113          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   1114            zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
+   1115            uint8 i;
+   1116          
+   1117            discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
+   \   000004   12....       LCALL     ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   000007   3B           ADDC      A,R3
+   \   000008   F583         MOV       DPH,A
+   \   00000A   12....       LCALL     ?Subroutine25 & 0xFFFF
+   1118            for ( i = 0; i < discoverRspCmd->numCmd; i++ )
+   \                     ??CrossCallReturnLabel_31:
+   \   00000D   7A00         MOV       R2,#0x0
+   \   00000F   8001         SJMP      ??zclController_ProcessInDiscCmdsRspCmd_0
+   \                     ??zclController_ProcessInDiscCmdsRspCmd_1:
+   \   000011   0A           INC       R2
+   \                     ??zclController_ProcessInDiscCmdsRspCmd_0:
+   \   000012   8882         MOV       DPL,R0
+   \   000014   8983         MOV       DPH,R1
+   \   000016   A3           INC       DPTR
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   FB           MOV       R3,A
+   \   00001A   EA           MOV       A,R2
+   \   00001B   C3           CLR       C
+   \   00001C   9B           SUBB      A,R3
+   \   00001D   40F2         JC        ??zclController_ProcessInDiscCmdsRspCmd_1
+   1119            {
+   1120              // Device is notified of the result of its attribute discovery command.
+   1121            }
+   1122          
+   1123            return ( TRUE );
+   \   00001F   7901         MOV       R1,#0x1
+   \   000021   D083         POP       DPH
+   \   000023   D082         POP       DPL
+   \   000025   02....       LJMP      ?BRET
+   1124          }
+   1125          
+   1126          /*********************************************************************
+   1127           * @fn      zclController_ProcessInDiscAttrsRspCmd
+   1128           *
+   1129           * @brief   Process the "Profile" Discover Attributes Response Command
+   1130           *
+   1131           * @param   pInMsg - incoming message to process
+   1132           *
+   1133           * @return  none
+   1134           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   EA           MOV       A,R2
+   \   000001                REQUIRE ??Subroutine32_0
+   \   000001                ; // Fall through to label ??Subroutine32_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   A3           INC       DPTR
+   \   000001   A3           INC       DPTR
+   \   000002   A3           INC       DPTR
+   \   000003   A3           INC       DPTR
+   \   000004   A3           INC       DPTR
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008                REQUIRE ??Subroutine33_0
+   \   000008                ; // Fall through to label ??Subroutine33_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1135          static uint8 zclController_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+   \                     zclController_ProcessInDiscAttrsRspCmd:
+   1136          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000   74EC         MOV       A,#-0x14
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V0,R2
+   \   000007   8B..         MOV       ?V1,R3
+   1137            zclDiscoverAttrsRspCmd_t *discoverRspCmd;
+   1138            uint8 i;
+   1139            uint16 nodeId   = pInMsg->srcAddr.addr.shortAddr;
+   \   000009   8A82         MOV       DPL,R2
+   \   00000B   8B83         MOV       DPH,R3
+   \   00000D   A3           INC       DPTR
+   \   00000E   A3           INC       DPTR
+   \   00000F   12....       LCALL     ?Subroutine13 & 0xFFFF
+   1140            uint8  endpoint = pInMsg->srcAddr.endPoint;
+   \                     ??CrossCallReturnLabel_52:
+   \   000012   12....       LCALL     ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_49:
+   \   000015   35..         ADDC      A,?V1
+   \   000017   F583         MOV       DPH,A
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   F5..         MOV       ?V6,A
+   1141          
+   1142            discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
+   \   00001C   12....       LCALL     ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_26:
+   \   00001F   35..         ADDC      A,?V1
+   \   000021   F583         MOV       DPH,A
+   \   000023   E0           MOVX      A,@DPTR
+   \   000024   F5..         MOV       ?V2,A
+   \   000026   A3           INC       DPTR
+   \   000027   E0           MOVX      A,@DPTR
+   \   000028   12....       LCALL     ?Subroutine20 & 0xFFFF
+   1143            AT_NEW_LINE();
+   1144            printf("DISCATTR:%04X,%02X,%02X,%02X", nodeId, endpoint, discoverRspCmd->numAttr,
+   1145            									discoverRspCmd->discComplete); // 0-Uncompleted 1-completed
+   \                     ??CrossCallReturnLabel_22:
+   \   00002B   8582..       MOV       ?V4,DPL
+   \   00002E   8583..       MOV       ?V5,DPH
+   \   000031                ; Setup parameters for call to function printf
+   \   000031   85..82       MOV       DPL,?V2
+   \   000034   85..83       MOV       DPH,?V3
+   \   000037   12....       LCALL     ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   00003A   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00003D   85..82       MOV       DPL,?V4
+   \   000040   85..83       MOV       DPH,?V5
+   \   000043   E0           MOVX      A,@DPTR
+   \   000044   F5..         MOV       ?V10,A
+   \   000046   78..         MOV       R0,#?V10
+   \   000048   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004B   75..00       MOV       ?V7,#0x0
+   \   00004E   78..         MOV       R0,#?V6
+   \   000050   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000053   78..         MOV       R0,#?V8
+   \   000055   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000058   7A..         MOV       R2,#`?<Constant "DISCATTR:%04X,%02X,%0...">` & 0xff
+   \   00005A   7B..         MOV       R3,#(`?<Constant "DISCATTR:%04X,%02X,%0...">` >> 8) & 0xff
+   \   00005C   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   00005F   7408         MOV       A,#0x8
+   \   000061   12....       LCALL     ?DEALLOC_XSTACK8
+   1146            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+   \   000064   75..00       MOV       ?V6,#0x0
+   \   000067   8052         SJMP      ??zclController_ProcessInDiscAttrsRspCmd_0
+   1147            {
+   1148              AT_NEXT_LINE();
+   \                     ??zclController_ProcessInDiscAttrsRspCmd_1:
+   \   000069                ; Setup parameters for call to function AT_Uart0_Send
+   \   000069   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   1149              printf("CLUS:%04X,ATTR:%04X,TYPE:%02X",
+   1150                     pInMsg->clusterId,
+   1151                     discoverRspCmd->attrList[i].attrID,
+   1152                     discoverRspCmd->attrList[i].dataType);
+   \   00006C   E5..         MOV       A,?V6
+   \   00006E   75F003       MOV       B,#0x3
+   \   000071   A4           MUL       AB
+   \   000072   F8           MOV       R0,A
+   \   000073   A9F0         MOV       R1,B
+   \   000075   E5..         MOV       A,?V2
+   \   000077   28           ADD       A,R0
+   \   000078   F8           MOV       R0,A
+   \   000079   E5..         MOV       A,?V3
+   \   00007B   39           ADDC      A,R1
+   \   00007C   F9           MOV       R1,A
+   \   00007D   E8           MOV       A,R0
+   \   00007E   FA           MOV       R2,A
+   \   00007F   E9           MOV       A,R1
+   \   000080                ; Setup parameters for call to function printf
+   \   000080   8882         MOV       DPL,R0
+   \   000082   F583         MOV       DPH,A
+   \   000084   A3           INC       DPTR
+   \   000085   A3           INC       DPTR
+   \   000086   A3           INC       DPTR
+   \   000087   A3           INC       DPTR
+   \   000088   E0           MOVX      A,@DPTR
+   \   000089   F5..         MOV       ?V8,A
+   \   00008B   75..00       MOV       ?V9,#0x0
+   \   00008E   78..         MOV       R0,#?V8
+   \   000090   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000093   8A82         MOV       DPL,R2
+   \   000095   8983         MOV       DPH,R1
+   \   000097   A3           INC       DPTR
+   \   000098   A3           INC       DPTR
+   \   000099   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   00009C   85..82       MOV       DPL,?V0
+   \   00009F   85..83       MOV       DPH,?V1
+   \   0000A2   A3           INC       DPTR
+   \   0000A3   A3           INC       DPTR
+   \   0000A4   A3           INC       DPTR
+   \   0000A5   A3           INC       DPTR
+   \   0000A6   A3           INC       DPTR
+   \   0000A7   A3           INC       DPTR
+   \   0000A8   A3           INC       DPTR
+   \   0000A9   A3           INC       DPTR
+   \   0000AA   12....       LCALL     ?PUSH_XSTACK8_X_TWO
+   \   0000AD   7A..         MOV       R2,#`?<Constant "CLUS:%04X,ATTR:%04X,T...">` & 0xff
+   \   0000AF   7B..         MOV       R3,#(`?<Constant "CLUS:%04X,ATTR:%04X,T...">` >> 8) & 0xff
+   \   0000B1   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   0000B4   7406         MOV       A,#0x6
+   \   0000B6   12....       LCALL     ?DEALLOC_XSTACK8
+   1153            }
+   \   0000B9   05..         INC       ?V6
+   \                     ??zclController_ProcessInDiscAttrsRspCmd_0:
+   \   0000BB   85..82       MOV       DPL,?V4
+   \   0000BE   85..83       MOV       DPH,?V5
+   \   0000C1   E0           MOVX      A,@DPTR
+   \   0000C2   F8           MOV       R0,A
+   \   0000C3   E5..         MOV       A,?V6
+   \   0000C5   C3           CLR       C
+   \   0000C6   98           SUBB      A,R0
+   \   0000C7   7C02         MOV       R4,#0x2
+   \   0000C9   7D00         MOV       R5,#0x0
+   \   0000CB   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   0000CD   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   0000CF   4098         JC        ??zclController_ProcessInDiscAttrsRspCmd_1
+   1154            AT_NEXT_LINE();
+   \   0000D1                ; Setup parameters for call to function AT_Uart0_Send
+   \   0000D1   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   1155            AT_RESP("END\r\n", 5);
+   \   0000D4                ; Setup parameters for call to function AT_Uart0_Send
+   \   0000D4   7C05         MOV       R4,#0x5
+   \   0000D6   7D00         MOV       R5,#0x0
+   \   0000D8   7A..         MOV       R2,#`?<Constant "END\\r\\n">` & 0xff
+   \   0000DA   7B..         MOV       R3,#(`?<Constant "END\\r\\n">` >> 8) & 0xff
+   \   0000DC   12....       LCALL     ?Subroutine18 & 0xFFFF
+   1156            AT_NEW_LINE();
+   1157          
+   1158            return ( TRUE );
+   \                     ??CrossCallReturnLabel_17:
+   \   0000DF   7901         MOV       R1,#0x1
+   \   0000E1   02....       LJMP      ?Subroutine5 & 0xFFFF
+   1159          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   F5..         MOV       ?V3,A
+   \   000002                ; Setup parameters for call to function AT_Uart0_Send
+   \   000002                ; Setup parameters for call to function AT_Uart0_Send
+   \   000002   7C02         MOV       R4,#0x2
+   \   000004   7D00         MOV       R5,#0x0
+   \   000006   7A..         MOV       R2,#`?<Constant "\\r\\n">` & 0xff
+   \   000008   7B..         MOV       R3,#(`?<Constant "\\r\\n">` >> 8) & 0xff
+   \   00000A   12....       LCALL     `??AT_Uart0_Send::?relay`; Banked call to: AT_Uart0_Send
+   \   00000D                ; Setup parameters for call to function printf
+   \   00000D   85..82       MOV       DPL,?V2
+   \   000010   85..83       MOV       DPH,?V3
+   \   000013   A3           INC       DPTR
+   \   000014   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F5..         MOV       ?V10,A
+   \   000003   75..00       MOV       ?V11,#0x0
+   \   000006   78..         MOV       R0,#?V10
+   \   000008   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclController_SimpleDesc>`:
+   \   000000   64           DB 100
+   \   000001   0401         DW 260
+   \   000003   0600         DW 6
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   0000         DW 0H
+   \   000009   00           DB 0
+   \   00000A   0000         DW 0H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\n">`:
+   \   000000   0D0A00       DB "\015\012"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "REMOTE RESPONSE:">`:
+   \   000000   52454D4F     DB "REMOTE RESPONSE:"
+   \            54452052
+   \            4553504F
+   \            4E53453A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "ENABLED:">`:
+   \   000000   454E4142     DB "ENABLED:"
+   \            4C45443A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "DISABLED:">`:
+   \   000000   44495341     DB "DISABLED:"
+   \            424C4544
+   \            3A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "UNKNOWNEP ERROR">`:
+   \   000000   554E4B4E     DB "UNKNOWNEP ERROR"
+   \            4F574E45
+   \            50204552
+   \            524F5200
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "\\r\\nOK\\r\\n">`:
+   \   000000   0D0A4F4B     DB "\015\012OK\015\012"
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "---------ADDR,EP,C_ID...">`:
+   \   000000   2D2D2D2D     DB "---------ADDR,EP,C_ID,A_ID,ST,DT,DV"
+   \            2D2D2D2D
+   \            2D414444
+   \            522C4550
+   \            2C435F49
+   \            442C415F
+   \            49442C53
+   \            542C4454
+   \            2C445600
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "ReadAttr:">`:
+   \   000000   52656164     DB "ReadAttr:"
+   \            41747472
+   \            3A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant ",">`:
+   \   000000   2C00         DB ","
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "----------ADDR,EP,C_I...">`:
+   \   000000   2D2D2D2D     DB "----------ADDR,EP,C_ID,ST"
+   \            2D2D2D2D
+   \            2D2D4144
+   \            44522C45
+   \            502C435F
+   \            49442C53
+   \            5400    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WriteAttr:">`:
+   \   000000   57726974     DB "WriteAttr:"
+   \            65417474
+   \            723A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "DFTRSP:%04X,%02X,%04X...">`:
+   \   000000   44465452     DB "DFTRSP:%04X,%02X,%04X,%02X,%02X"
+   \            53503A25
+   \            3034582C
+   \            25303258
+   \            2C253034
+   \            582C2530
+   \            32582C25
+   \            30325800
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "DISCATTR:%04X,%02X,%0...">`:
+   \   000000   44495343     DB "DISCATTR:%04X,%02X,%02X,%02X"
+   \            41545452
+   \            3A253034
+   \            582C2530
+   \            32582C25
+   \            3032582C
+   \            25303258
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "CLUS:%04X,ATTR:%04X,T...">`:
+   \   000000   434C5553     DB "CLUS:%04X,ATTR:%04X,TYPE:%02X"
+   \            3A253034
+   \            582C4154
+   \            54523A25
+   \            3034582C
+   \            54595045
+   \            3A253032
+   \            5800    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "END\\r\\n">`:
+   \   000000   454E440D     DB "END\015\012"
+   \            0A00    
+   1160          
+   1161          /*********************************************************************
+   1162           * @fn      zclController_ProcessInDiscAttrsExtRspCmd
+   1163           *
+   1164           * @brief   Process the "Profile" Discover Attributes Extended Response Command
+   1165           *
+   1166           * @param   pInMsg - incoming message to process
+   1167           *
+   1168           * @return  none
+   1169           ********************************************************************/
+   1170          static uint8 zclController_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+   1171          {
+   1172            zclDiscoverAttrsExtRsp_t *discoverRspCmd;
+   1173            uint8 i;
+   1174          
+   1175            discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
+   1176            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+   1177            {
+   1178              // Device is notified of the result of its attribute discovery command.
+   1179            }
+   1180          
+   1181            return ( TRUE );
+   1182          }
+   1183          #endif // ZCL_DISCOVER
+   1184          
+   1185          /****************************************************************************
+   1186          ****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0     10   ATApp_MessageMSGCB
+        0     10   -> AT_zclCtrl_REpCtrl_req
+        0     10   -> AT_zclCtrl_REpCtrl_rsp
+        0     10   -> bdb_resetLocalAction
+      0      9   AT_Endpoint_Controller
+      1     14   AT_Endpoint_Register
+        0     14   -> osal_mem_alloc
+      1     52   AT_SendCmd
+        0     31   -> AF_DataRequest
+        0     22   -> afFindEndPointDesc
+        0     22   -> osal_mem_alloc
+        0     22   -> osal_mem_free
+        0     25   -> osal_memcpy
+      1     23   AT_SendEPCtrl
+        0     21   -> AT_SendCmd
+        0     16   -> osal_mem_alloc
+        0     16   -> osal_mem_free
+      1     37   AT_SendEPCtrl_rsp
+        0     21   -> AT_SendCmd
+        0     16   -> osal_mem_alloc
+        0     16   -> osal_mem_free
+      0      9   AT_zclController_Init
+        0      9   -> bdb_RegisterSimpleDescriptor
+        0      9   -> zcl_registerForMsg
+      0     30   AT_zclController_ProcessIncomingMsg
+        0     20   -> AT_Uart0_Send
+        0     20   -> osal_mem_free
+        0     30   -> printf
+        0     20   -> zclController_ProcessInDiscAttrsRspCmd
+        0     20   -> zclController_ProcessInDiscCmdsRspCmd
+        0     20   -> zclController_ProcessInReadRspCmd
+        0     20   -> zclController_ProcessInWriteRspCmd
+      1     26   AT_zclCtrl_REpCtrl_req
+        0     16   -> AT_SendEPCtrl_rsp
+        0     14   -> AT_UARTWriteErrMsg
+        0     14   -> osal_mem_alloc
+        0     14   -> osal_mem_free
+      0     23   AT_zclCtrl_REpCtrl_rsp
+        0     13   -> AT_Int8toChar
+        0     13   -> AT_Uart0_Send
+      0     48   zclController_ProcessInDiscAttrsRspCmd
+        0     20   -> AT_Uart0_Send
+        0     26   -> printf
+        0     28   -> printf
+      2     20   zclController_ProcessInDiscCmdsRspCmd
+      0     59   zclController_ProcessInReadRspCmd
+        0     39   -> AT_GetIEEEAddrStr
+        0     39   -> AT_Int16toChar
+        0     39   -> AT_Int8toChar
+        0     39   -> AT_Uart0_Send
+      0     59   zclController_ProcessInWriteRspCmd
+        0     39   -> AT_GetIEEEAddrStr
+        0     39   -> AT_Int16toChar
+        0     39   -> AT_Int8toChar
+        0     39   -> AT_Uart0_Send
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  ?<Constant ",">
+      26  ?<Constant "----------ADDR,EP,C_I...">
+      36  ?<Constant "---------ADDR,EP,C_ID...">
+      30  ?<Constant "CLUS:%04X,ATTR:%04X,T...">
+      32  ?<Constant "DFTRSP:%04X,%02X,%04X...">
+      10  ?<Constant "DISABLED:">
+      29  ?<Constant "DISCATTR:%04X,%02X,%0...">
+       9  ?<Constant "ENABLED:">
+       6  ?<Constant "END\r\n">
+      17  ?<Constant "REMOTE RESPONSE:">
+      10  ?<Constant "ReadAttr:">
+      16  ?<Constant "UNKNOWNEP ERROR">
+      11  ?<Constant "WriteAttr:">
+       3  ?<Constant "\r\n">
+       7  ?<Constant "\r\nOK\r\n">
+      12  ?<Initializer for zclController_SimpleDesc>
+       5  ??Subroutine31_0
+       6  ??Subroutine32_0
+       8  ??Subroutine33_0
+       5  ??Subroutine34_0
+      15  ??Subroutine35_0
+      10  ??Subroutine36_0
+       5  ?Subroutine0
+       5  ?Subroutine1
+       3  ?Subroutine10
+       4  ?Subroutine11
+       1  ?Subroutine12
+       8  ?Subroutine13
+       9  ?Subroutine14
+       9  ?Subroutine15
+      24  ?Subroutine16
+       7  ?Subroutine17
+      15  ?Subroutine18
+       8  ?Subroutine19
+       5  ?Subroutine2
+      21  ?Subroutine20
+       7  ?Subroutine21
+       1  ?Subroutine22
+      15  ?Subroutine23
+       9  ?Subroutine24
+       6  ?Subroutine25
+       9  ?Subroutine26
+      15  ?Subroutine27
+      10  ?Subroutine28
+      14  ?Subroutine29
+       7  ?Subroutine3
+      12  ?Subroutine30
+       7  ?Subroutine4
+       5  ?Subroutine5
+       2  ?Subroutine6
+      11  ?Subroutine7
+      12  ?Subroutine8
+      28  ?Subroutine9
+      61  ATApp_MessageMSGCB
+      50  AT_Endpoint_Controller
+     145  AT_Endpoint_Register
+     183  AT_SendCmd
+      71  AT_SendEPCtrl
+      73  AT_SendEPCtrl_rsp
+      25  AT_zclController_Init
+     252  AT_zclController_ProcessIncomingMsg
+     126  AT_zclCtrl_REpCtrl_req
+     161  AT_zclCtrl_REpCtrl_rsp
+       2  zclController_EP_List
+     228  zclController_ProcessInDiscAttrsRspCmd
+      40  zclController_ProcessInDiscCmdsRspCmd
+     339  zclController_ProcessInReadRspCmd
+     299  zclController_ProcessInWriteRspCmd
+      12  zclController_SimpleDesc
+       4  zclCtrl_InClusterList
+       2  zclCtrl_OutClusterList
+       1  zclCtrl_TransID
+      84  -- Other
+
+ 
+ 2 396 bytes in segment BANKED_CODE
+    84 bytes in segment BANK_RELAYS
+    12 bytes in segment XDATA_I
+    12 bytes in segment XDATA_ID
+   250 bytes in segment XDATA_ROM_C
+     3 bytes in segment XDATA_Z
+ 
+    96 bytes of CODE     memory
+   250 bytes of CONST    memory
+ 2 396 bytes of HUGECODE memory
+    15 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

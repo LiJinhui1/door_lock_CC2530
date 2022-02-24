@@ -1,0 +1,950 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               23/Feb/2022  09:35:01
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ZCL\zcl_doorlock_data.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW4182.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ZCL\zcl_doorlock_data.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\zcl_doorlock_data.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\zcl_doorlock_data.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ZCL\zcl_doorlock_data.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_doorlock_data.c
+      3            Author:         Yang Wang
+      4          
+      5            Revised:        $Date: 2014-05-12 13:14:02 -0700 (Mon, 12 May 2014) $
+      6            Revision:       $Revision: 38502 $
+      7          
+      8            Description:    Zigbee Cluster Library - sample device application.
+      9          
+     10            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          #include "ZComDef.h"
+     45          #include "OSAL.h"
+     46          #include "AF.h"
+     47          #include "ZDConfig.h"
+     48          
+     49          #include "zcl.h"
+     50          #include "zcl_general.h"
+     51          #include "zcl_closures.h"
+     52          #include "zcl_ha.h"
+     53          
+     54          #include "zcl_doorlock.h"
+     55          
+     56          /*********************************************************************
+     57           * CONSTANTS
+     58           */
+     59          
+     60          #define DOORLOCK_DEVICE_VERSION     0
+     61          #define DOORLOCK_FLAGS              0
+     62          
+     63          #define DOORLOCK_ZCLVERSION         2
+     64          #define DOORLOCK_APPVERSION         2
+     65          #define DOORLOCK_STACKVERSION       1
+     66          #define DOORLOCK_HWVERSION          1
+     67          
+     68          #define MUFC_LENTH        64
+     69          #define MODE_LENTH        64
+     70          #define DATE_LENTH        32
+     71          /*********************************************************************
+     72           * TYPEDEFS
+     73           */
+     74          
+     75          /*********************************************************************
+     76           * MACROS
+     77           */
+     78          
+     79          /*********************************************************************
+     80           * GLOBAL VARIABLES
+     81           */
+     82          
+     83          // Global attributes
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     84          const uint16 zclDoorLock_clusterRevision_all = 0x0001;
+   \                     zclDoorLock_clusterRevision_all:
+   \   000000   0100         DW 1
+     85          
+     86          // Basic Cluster
+     87          #ifdef ZCL_BASIC
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     88          const uint8 zclDoorLock_ZCLVersion = DOORLOCK_ZCLVERSION;
+   \                     zclDoorLock_ZCLVersion:
+   \   000000   02           DB 2
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     89          const uint8 zclDoorLock_APPVersion = DOORLOCK_APPVERSION;
+   \                     zclDoorLock_APPVersion:
+   \   000000   02           DB 2
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     90          const uint8 zclDoorLock_StackVersion = DOORLOCK_STACKVERSION;
+   \                     zclDoorLock_StackVersion:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     91          const uint8 zclDoorLock_HWRevision[] = { 9, 'D','L','O','C','K','0','4','A','4' };
+   \                     zclDoorLock_HWRevision:
+   \   000000   09           DB 9
+   \   000001   44           DB 68
+   \   000002   4C           DB 76
+   \   000003   4F           DB 79
+   \   000004   43           DB 67
+   \   000005   4B           DB 75
+   \   000006   30           DB 48
+   \   000007   34           DB 52
+   \   000008   41           DB 65
+   \   000009   34           DB 52
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     92          const uint8 zclDoorLock_ManufacturerName[] = { 9, 'B','a','i','y','a','T','e','c','h' };
+   \                     zclDoorLock_ManufacturerName:
+   \   000000   09           DB 9
+   \   000001   42           DB 66
+   \   000002   61           DB 97
+   \   000003   69           DB 105
+   \   000004   79           DB 121
+   \   000005   61           DB 97
+   \   000006   54           DB 84
+   \   000007   65           DB 101
+   \   000008   63           DB 99
+   \   000009   68           DB 104
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     93          const uint8 zclDoorLock_ModelId[] = { 13, 'Z', 'N', 'M', 'S', '-', 'T', 'I', '-', 'Z', 'B', '-', '1', 'A' };
+   \                     zclDoorLock_ModelId:
+   \   000000   0D           DB 13
+   \   000001   5A           DB 90
+   \   000002   4E           DB 78
+   \   000003   4D           DB 77
+   \   000004   53           DB 83
+   \   000005   2D           DB 45
+   \   000006   54           DB 84
+   \   000007   49           DB 73
+   \   000008   2D           DB 45
+   \   000009   5A           DB 90
+   \   00000A   42           DB 66
+   \   00000B   2D           DB 45
+   \   00000C   31           DB 49
+   \   00000D   41           DB 65
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     94          const uint8 zclDoorLock_DateCode[] = { 8, '2','0','2','1','0','9','2','7' };
+   \                     zclDoorLock_DateCode:
+   \   000000   08           DB 8
+   \   000001   32           DB 50
+   \   000002   30           DB 48
+   \   000003   32           DB 50
+   \   000004   31           DB 49
+   \   000005   30           DB 48
+   \   000006   39           DB 57
+   \   000007   32           DB 50
+   \   000008   37           DB 55
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     95          const uint8 zclDoorLock_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+   \                     zclDoorLock_PowerSource:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     96          const uint8 zclDoorLock_SWBuildID[] = {14, '1', '.', '4', '.', '0', '.', '2', '0', '2', '1', '0', '9', '2', '7'};
+   \                     zclDoorLock_SWBuildID:
+   \   000000   0E           DB 14
+   \   000001   31           DB 49
+   \   000002   2E           DB 46
+   \   000003   34           DB 52
+   \   000004   2E           DB 46
+   \   000005   30           DB 48
+   \   000006   2E           DB 46
+   \   000007   32           DB 50
+   \   000008   30           DB 48
+   \   000009   32           DB 50
+   \   00000A   31           DB 49
+   \   00000B   30           DB 48
+   \   00000C   39           DB 57
+   \   00000D   32           DB 50
+   \   00000E   37           DB 55
+     97          
+     98          //__root const CODE uint8 zclDoorLock_ManufacturerName_Flash[MUFC_LENTH] @ 0x7C000 = { 9, 'B','a','i','y','a','T','e','c','h' };
+     99          //__root const CODE uint8 zclDoorLock_ModelId_Flash[MODE_LENTH] @ 0x7C040 = { 13,'B','Y','-','Z','N','M','S','-','Z','B','1','-','A'};
+    100          //__root const CODE uint8 zclDoorLock_DateCode_Flash[DATE_LENTH]  @ 0x7C080 = { 16, '2','0','1','9','0','4','1','9',' ',' ',' ',' ',' ',' ',' ',' '};
+    101          //__root const CODE uint8 zclDoorLock_HWRevision_Flash @ 0x7C0A0 = DOORLOCK_HWVERSION;
+    102          #endif
+    103          
+    104          // Identify Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    105          uint16 zclDoorLock_IdentifyTime;
+   \                     zclDoorLock_IdentifyTime:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    106          
+    107          // Doorlock Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    108          uint8 zclDoorLock_LockState; 
+   \                     zclDoorLock_LockState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    109          uint8 zclDoorLock_LockType = CLOSURES_LOCK_TYPE_DEADBOLT; 
+   \                     zclDoorLock_LockType:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    110          bool zclDoorLock_ActuatorEnabled = TRUE; 
+   \                     zclDoorLock_ActuatorEnabled:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for zclDoorLock_ActuatorEnabled>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    111          bool zclDoorLock_SendPinOta = FALSE; 
+   \                     zclDoorLock_SendPinOta:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    112          bool zclDoorLock_RequirePinForRfOperation = TRUE; 
+   \                     zclDoorLock_RequirePinForRfOperation:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for zclDoorLock_RequirePinForRfO`
+   \   000001                REQUIRE __INIT_XDATA_I
+    113          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    114          uint16 zclDoorLock_KeypadOperationEventMask;
+   \                     zclDoorLock_KeypadOperationEventMask:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    115          uint16 zclDoorLock_RFOperationEventMask;
+   \                     zclDoorLock_RFOperationEventMask:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    116          uint16 zclDoorLock_ManualOperationEventMask;
+   \                     zclDoorLock_ManualOperationEventMask:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    117          uint16 zclDoorLock_RFIDOperationEventMask;
+   \                     zclDoorLock_RFIDOperationEventMask:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    118          
+    119          #if ZCL_DISCOVER
+
+   \                                 In  segment CODE_C, align 1
+    120          CONST zclCommandRec_t zclDoorLock_Cmds[] =
+   \                     zclDoorLock_Cmds:
+   \   000000   0000         DW 0
+   \   000002   00           DB 0
+   \   000003   04           DB 4
+   \   000004   0300         DW 3
+   \   000006   00           DB 0
+   \   000007   04           DB 4
+   \   000008   0300         DW 3
+   \   00000A   01           DB 1
+   \   00000B   04           DB 4
+    121          {
+    122          #ifdef ZCL_BASIC
+    123          {
+    124            ZCL_CLUSTER_ID_GEN_BASIC,
+    125            COMMAND_BASIC_RESET_FACT_DEFAULT,
+    126            CMD_DIR_SERVER_RECEIVED
+    127          }
+    128          #endif
+    129          
+    130          #ifdef ZCL_IDENTIFY
+    131            ,{
+    132              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    133              COMMAND_IDENTIFY,
+    134              CMD_DIR_SERVER_RECEIVED
+    135            },
+    136            {
+    137              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    138              COMMAND_IDENTIFY_QUERY,
+    139              CMD_DIR_SERVER_RECEIVED
+    140            }
+    141          #endif // ZCL_IDENTIFY
+    142          };
+    143          
+
+   \                                 In  segment CODE_C, align 1
+    144          CONST uint8 zclCmdsArraySize = ( sizeof(zclDoorLock_Cmds) / sizeof(zclDoorLock_Cmds[0]) );
+   \                     zclCmdsArraySize:
+   \   000000   03           DB 3
+    145          #endif // ZCL_DISCOVER
+    146          
+    147          /*********************************************************************
+    148           * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+    149           */
+
+   \                                 In  segment CODE_C, align 1
+    150          CONST zclAttrRec_t zclDoorLock_Attrs[] =
+   \                     zclDoorLock_Attrs:
+   \   000000   0000         DW 0
+   \   000002   0000         DW 0
+   \   000004   20           DB 32
+   \   000005   01           DB 1
+   \   000006   ....         DW zclDoorLock_ZCLVersion
+   \   000008   0000         DW 0
+   \   00000A   0100         DW 1
+   \   00000C   20           DB 32
+   \   00000D   01           DB 1
+   \   00000E   ....         DW zclDoorLock_APPVersion
+   \   000010   0000         DW 0
+   \   000012   0200         DW 2
+   \   000014   20           DB 32
+   \   000015   01           DB 1
+   \   000016   ....         DW zclDoorLock_StackVersion
+   \   000018   0000         DW 0
+   \   00001A   0300         DW 3
+   \   00001C   42           DB 66
+   \   00001D   01           DB 1
+   \   00001E   ....         DW zclDoorLock_HWRevision
+   \   000020   0000         DW 0
+   \   000022   0400         DW 4
+   \   000024   42           DB 66
+   \   000025   01           DB 1
+   \   000026   ....         DW zclDoorLock_ManufacturerName
+   \   000028   0000         DW 0
+   \   00002A   0500         DW 5
+   \   00002C   42           DB 66
+   \   00002D   01           DB 1
+   \   00002E   ....         DW zclDoorLock_ModelId
+   \   000030   0000         DW 0
+   \   000032   0600         DW 6
+   \   000034   42           DB 66
+   \   000035   01           DB 1
+   \   000036   ....         DW zclDoorLock_DateCode
+   \   000038   0000         DW 0
+   \   00003A   0700         DW 7
+   \   00003C   30           DB 48
+   \   00003D   01           DB 1
+   \   00003E   ....         DW zclDoorLock_PowerSource
+   \   000040   0000         DW 0
+   \   000042   0040         DW 16384
+   \   000044   42           DB 66
+   \   000045   01           DB 1
+   \   000046   ....         DW zclDoorLock_SWBuildID
+   \   000048   0000         DW 0
+   \   00004A   FDFF         DW 65533
+   \   00004C   21           DB 33
+   \   00004D   41           DB 65
+   \   00004E   ....         DW zclDoorLock_clusterRevision_all
+   \   000050   0300         DW 3
+   \   000052   0000         DW 0
+   \   000054   21           DB 33
+   \   000055   03           DB 3
+   \   000056   ....         DW zclDoorLock_IdentifyTime
+   \   000058   0300         DW 3
+   \   00005A   FDFF         DW 65533
+   \   00005C   21           DB 33
+   \   00005D   41           DB 65
+   \   00005E   ....         DW zclDoorLock_clusterRevision_all
+   \   000060   0101         DW 257
+   \   000062   0000         DW 0
+   \   000064   30           DB 48
+   \   000065   05           DB 5
+   \   000066   ....         DW zclDoorLock_LockState
+   \   000068   0101         DW 257
+   \   00006A   0100         DW 1
+   \   00006C   30           DB 48
+   \   00006D   01           DB 1
+   \   00006E   ....         DW zclDoorLock_LockType
+   \   000070   0101         DW 257
+   \   000072   0200         DW 2
+   \   000074   10           DB 16
+   \   000075   01           DB 1
+   \   000076   ....         DW zclDoorLock_ActuatorEnabled
+   \   000078   0101         DW 257
+   \   00007A   3200         DW 50
+   \   00007C   10           DB 16
+   \   00007D   01           DB 1
+   \   00007E   ....         DW zclDoorLock_SendPinOta
+   \   000080   0101         DW 257
+   \   000082   3300         DW 51
+   \   000084   10           DB 16
+   \   000085   01           DB 1
+   \   000086   ....         DW zclDoorLock_RequirePinForRfOperation
+   \   000088   0101         DW 257
+   \   00008A   4100         DW 65
+   \   00008C   19           DB 25
+   \   00008D   01           DB 1
+   \   00008E   ....         DW zclDoorLock_KeypadOperationEventMask
+   \   000090   0101         DW 257
+   \   000092   4200         DW 66
+   \   000094   19           DB 25
+   \   000095   01           DB 1
+   \   000096   ....         DW zclDoorLock_RFOperationEventMask
+   \   000098   0101         DW 257
+   \   00009A   4300         DW 67
+   \   00009C   19           DB 25
+   \   00009D   01           DB 1
+   \   00009E   ....         DW zclDoorLock_ManualOperationEventMask
+   \   0000A0   0101         DW 257
+   \   0000A2   4400         DW 68
+   \   0000A4   19           DB 25
+   \   0000A5   01           DB 1
+   \   0000A6   ....         DW zclDoorLock_RFIDOperationEventMask
+   \   0000A8   0101         DW 257
+   \   0000AA   FDFF         DW 65533
+   \   0000AC   21           DB 33
+   \   0000AD   41           DB 65
+   \   0000AE   ....         DW zclDoorLock_clusterRevision_all
+    151          {
+    152          #ifdef ZCL_BASIC
+    153            // *** General Basic Cluster Attributes ***
+    154            {
+    155              ZCL_CLUSTER_ID_GEN_BASIC,   
+    156              { // Attribute record
+    157                ATTRID_BASIC_ZCL_VERSION,       
+    158                ZCL_DATATYPE_UINT8,               
+    159                ACCESS_CONTROL_READ,             
+    160                (void *)&zclDoorLock_ZCLVersion 
+    161              }
+    162            },
+    163            {
+    164              ZCL_CLUSTER_ID_GEN_BASIC,
+    165              {  // Attribute record
+    166                ATTRID_BASIC_APP_VERSION,
+    167                ZCL_DATATYPE_UINT8,
+    168                ACCESS_CONTROL_READ,
+    169                (void *)&zclDoorLock_APPVersion
+    170              }
+    171            },
+    172            {
+    173              ZCL_CLUSTER_ID_GEN_BASIC,
+    174              { // Attribute record
+    175                ATTRID_BASIC_STACK_VERSION,
+    176                ZCL_DATATYPE_UINT8,
+    177                ACCESS_CONTROL_READ,
+    178                (void *)&zclDoorLock_StackVersion
+    179              }
+    180            },
+    181            {
+    182              ZCL_CLUSTER_ID_GEN_BASIC,
+    183              {  // Attribute record
+    184                ATTRID_BASIC_HW_VERSION,
+    185                ZCL_DATATYPE_CHAR_STR,
+    186                ACCESS_CONTROL_READ,
+    187                (void *)&zclDoorLock_HWRevision
+    188              }
+    189            },
+    190            {
+    191              ZCL_CLUSTER_ID_GEN_BASIC,
+    192              { // Attribute record
+    193                ATTRID_BASIC_MANUFACTURER_NAME,
+    194                ZCL_DATATYPE_CHAR_STR,
+    195                ACCESS_CONTROL_READ,
+    196                (void *)zclDoorLock_ManufacturerName
+    197              }
+    198            },
+    199            {
+    200              ZCL_CLUSTER_ID_GEN_BASIC,
+    201              { // Attribute record
+    202                ATTRID_BASIC_MODEL_ID,
+    203                ZCL_DATATYPE_CHAR_STR,
+    204                ACCESS_CONTROL_READ,
+    205                (void *)zclDoorLock_ModelId
+    206              }
+    207            },
+    208            {
+    209              ZCL_CLUSTER_ID_GEN_BASIC,
+    210              { // Attribute record
+    211                ATTRID_BASIC_DATE_CODE,
+    212                ZCL_DATATYPE_CHAR_STR,
+    213                ACCESS_CONTROL_READ,
+    214                (void *)zclDoorLock_DateCode
+    215              }
+    216            },
+    217            {
+    218              ZCL_CLUSTER_ID_GEN_BASIC,
+    219              { // Attribute record
+    220                ATTRID_BASIC_POWER_SOURCE,
+    221                ZCL_DATATYPE_ENUM8,
+    222                ACCESS_CONTROL_READ,
+    223                (void *)&zclDoorLock_PowerSource
+    224              }
+    225            },
+    226            {
+    227              ZCL_CLUSTER_ID_GEN_BASIC,
+    228              { // Attribute record
+    229                ATTRID_BASIC_SW_BUILD_ID,
+    230                ZCL_DATATYPE_CHAR_STR,
+    231                ACCESS_CONTROL_READ,
+    232                (void *)zclDoorLock_SWBuildID
+    233              }
+    234            },
+    235            {
+    236              ZCL_CLUSTER_ID_GEN_BASIC,
+    237              {  // Attribute record
+    238                ATTRID_CLUSTER_REVISION,
+    239                ZCL_DATATYPE_UINT16,
+    240                ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+    241                (void *)&zclDoorLock_clusterRevision_all
+    242              }
+    243            },
+    244          #endif
+    245          
+    246          #ifdef ZCL_IDENTIFY
+    247            // *** Identify Cluster Attribute ***
+    248            {
+    249              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    250              { // Attribute record
+    251                ATTRID_IDENTIFY_TIME,
+    252                ZCL_DATATYPE_UINT16,
+    253                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    254                (void *)&zclDoorLock_IdentifyTime
+    255              }
+    256            },
+    257            {
+    258              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    259              {  // Attribute record
+    260                ATTRID_CLUSTER_REVISION,
+    261                ZCL_DATATYPE_UINT16,
+    262                ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+    263                (void *)&zclDoorLock_clusterRevision_all
+    264              }
+    265            },
+    266          #endif // ZCL_IDENTIFY
+    267          
+    268          #ifdef ZCL_DOORLOCK
+    269            // *** Door Lock Cluster Attributes ***
+    270            //Basic Information Attribute Set
+    271            {
+    272              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    273              { // Attribute record
+    274                ATTRID_CLOSURES_LOCK_STATE,
+    275                ZCL_DATATYPE_ENUM8,
+    276                (ACCESS_CONTROL_READ | ACCESS_REPORTABLE),
+    277                (void *)&zclDoorLock_LockState
+    278              }
+    279            },
+    280            {
+    281              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    282              { // Attribute record
+    283                ATTRID_CLOSURES_LOCK_TYPE,
+    284                ZCL_DATATYPE_ENUM8,
+    285                ACCESS_CONTROL_READ,
+    286                (void *)&zclDoorLock_LockType
+    287              }
+    288            },
+    289            {
+    290              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    291              { // Attribute record
+    292                ATTRID_CLOSURES_ACTUATOR_ENABLED,
+    293                ZCL_DATATYPE_BOOLEAN,
+    294                ACCESS_CONTROL_READ,
+    295                (void *)&zclDoorLock_ActuatorEnabled
+    296              }
+    297            },
+    298            //User, PIN, Schedule, Log Information Attribute Set
+    299            //Operational Settings Attribute Set
+    300            //Security Settings Attribute Set
+    301            {
+    302              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    303              { // Attribute record
+    304                ATTRID_DOORLOCK_SEND_PIN_OTA,
+    305                ZCL_DATATYPE_BOOLEAN,
+    306                ACCESS_CONTROL_READ,                
+    307                (void *)&zclDoorLock_SendPinOta
+    308              }
+    309            },
+    310            {
+    311              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    312              { // Attribute record
+    313                ATTRID_DOORLOCK_REQUIRE_PIN_FOR_RF_OPERATION,
+    314                ZCL_DATATYPE_BOOLEAN,
+    315                ACCESS_CONTROL_READ,                   
+    316                (void *)&zclDoorLock_RequirePinForRfOperation
+    317              }
+    318            },
+    319            //Alarm and Event Masks Attribute Set
+    320            {
+    321              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    322              { // Attribute record
+    323                ATTRID_DOORLOCK_KEYPAD_OPERATION_EVENT_MASK,
+    324                ZCL_DATATYPE_BITMAP16,
+    325                ACCESS_CONTROL_READ,
+    326                (void *)&zclDoorLock_KeypadOperationEventMask
+    327              }
+    328            },
+    329            {
+    330              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    331              { // Attribute record
+    332                ATTRID_DOORLOCK_RF_OPERATION_EVENT_MASK,
+    333                ZCL_DATATYPE_BITMAP16,
+    334                ACCESS_CONTROL_READ,
+    335                (void *)&zclDoorLock_RFOperationEventMask
+    336              }
+    337            },
+    338            {
+    339              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    340              { // Attribute record
+    341                ATTRID_DOORLOCK_MANUAL_OPERATION_EVENT_MASK,
+    342                ZCL_DATATYPE_BITMAP16,
+    343                ACCESS_CONTROL_READ,
+    344                (void *)&zclDoorLock_ManualOperationEventMask
+    345              }
+    346            },
+    347            {
+    348              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    349              { // Attribute record
+    350                ATTRID_DOORLOCK_RFID_OPERATION_EVENT_MASK,
+    351                ZCL_DATATYPE_BITMAP16,
+    352                ACCESS_CONTROL_READ,
+    353                (void *)&zclDoorLock_RFIDOperationEventMask
+    354              }
+    355            },
+    356            //Global Attributes
+    357            {
+    358              ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    359              {  // Attribute record
+    360                ATTRID_CLUSTER_REVISION,
+    361                ZCL_DATATYPE_UINT16,
+    362                ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+    363                (void *)&zclDoorLock_clusterRevision_all
+    364              }
+    365            }
+    366          #endif // ZCL_DOORLOCK
+    367          };
+    368          
+
+   \                                 In  segment CODE_C, align 1
+    369          uint8 CONST zclDoorLock_NumAttributes = ( sizeof(zclDoorLock_Attrs) / sizeof(zclDoorLock_Attrs[0]) );
+   \                     zclDoorLock_NumAttributes:
+   \   000000   16           DB 22
+    370          
+    371          /*********************************************************************
+    372           * SIMPLE DESCRIPTOR
+    373           */
+    374          // This is the Cluster ID List and should be filled with Application
+    375          // specific cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    376          const cId_t DoorLock_InClusterList[] =
+   \                     DoorLock_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+   \   000004   0101         DW 257
+    377          {
+    378            ZCL_CLUSTER_ID_GEN_BASIC,
+    379            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    380            ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK
+    381          };
+    382          #define DOORLOCK_MAX_INCLUSTERS   (sizeof(DoorLock_InClusterList) / sizeof(DoorLock_InClusterList[0]))
+    383          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    384          SimpleDescriptionFormat_t DoorLock_SimpleDesc =
+   \                     DoorLock_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for DoorLock_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    385          {
+    386            DOORLOCK_ENDPOINT,                      //  int Endpoint;
+    387            ZCL_HA_PROFILE_ID,                      //  uint16 AppProfId[2];
+    388            ZCL_HA_DEVICEID_HOME_GATEWAY,           //  uint16 AppDeviceId[2];
+    389            DOORLOCK_DEVICE_VERSION,                //  int   AppDevVer:4;
+    390            DOORLOCK_FLAGS,                         //  int   AppFlags:4;
+    391            DOORLOCK_MAX_INCLUSTERS,                //  byte  AppNumInClusters;
+    392            (cId_t *)DoorLock_InClusterList,        //  byte *pAppInClusterList;
+    393            0,                                      //  byte  AppNumInClusters;
+    394            NULL                                    //  byte *pAppInClusterList;
+    395          };
+    396          
+    397          /*********************************************************************
+    398           * GLOBAL FUNCTIONS
+    399           */
+    400          
+    401          /*********************************************************************
+    402           * LOCAL FUNCTIONS
+    403           */
+    404          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    405          void zclDoorLock_ResetAttributesToDefaultValues(void)
+   \                     zclDoorLock_ResetAttributesToDefaultValues:
+    406          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    407          #ifdef ZCL_IDENTIFY
+    408            zclDoorLock_IdentifyTime = 0;
+   \   000004   90....       MOV       DPTR,#zclDoorLock_IdentifyTime
+   \   000007   E4           CLR       A
+   \   000008   F0           MOVX      @DPTR,A
+   \   000009   A3           INC       DPTR
+   \   00000A   F0           MOVX      @DPTR,A
+    409          #endif
+    410          
+    411            zclDoorLock_LockState = CLOSURES_LOCK_STATE_LOCKED;
+   \   00000B   90....       MOV       DPTR,#zclDoorLock_LockState
+   \   00000E   04           INC       A
+   \   00000F   F0           MOVX      @DPTR,A
+    412          
+    413            zclDoorLock_KeypadOperationEventMask = 0x0004;//0b 0000 0000 0000 0100
+   \   000010   90....       MOV       DPTR,#zclDoorLock_KeypadOperationEventMask
+   \   000013   7404         MOV       A,#0x4
+   \   000015   F0           MOVX      @DPTR,A
+   \   000016   A3           INC       DPTR
+   \   000017   E4           CLR       A
+   \   000018   F0           MOVX      @DPTR,A
+    414            zclDoorLock_RFOperationEventMask     = 0x0004;//0b 0000 0000 0000 0100
+   \   000019   90....       MOV       DPTR,#zclDoorLock_RFOperationEventMask
+   \   00001C   7404         MOV       A,#0x4
+   \   00001E   F0           MOVX      @DPTR,A
+   \   00001F   A3           INC       DPTR
+   \   000020   E4           CLR       A
+   \   000021   F0           MOVX      @DPTR,A
+    415            zclDoorLock_ManualOperationEventMask = 0x0004;//0b 0000 0000 0000 0100
+   \   000022   90....       MOV       DPTR,#zclDoorLock_ManualOperationEventMask
+   \   000025   7404         MOV       A,#0x4
+   \   000027   F0           MOVX      @DPTR,A
+   \   000028   A3           INC       DPTR
+   \   000029   E4           CLR       A
+   \   00002A   F0           MOVX      @DPTR,A
+    416            zclDoorLock_RFIDOperationEventMask   = 0x0004;//0b 0000 0000 0000 0100
+   \   00002B   90....       MOV       DPTR,#zclDoorLock_RFIDOperationEventMask
+   \   00002E   7404         MOV       A,#0x4
+   \   000030   F0           MOVX      @DPTR,A
+   \   000031   A3           INC       DPTR
+   \   000032   E4           CLR       A
+   \   000033   F0           MOVX      @DPTR,A
+    417          }
+   \   000034   D083         POP       DPH
+   \   000036   D082         POP       DPL
+   \   000038   02....       LJMP      ?BRET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclDoorLock_ActuatorEnabled>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclDoorLock_RequirePinForRfO`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for DoorLock_SimpleDesc>`:
+   \   000000   0A           DB 10
+   \   000001   0401         DW 260
+   \   000003   5000         DW 80
+   \   000005   00           DB 0
+   \   000006   03           DB 3
+   \   000007   ....         DW DoorLock_InClusterList
+   \   000009   00           DB 0
+   \   00000A   0000         DW 0H
+    418          
+    419          /****************************************************************************
+    420          ****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   zclDoorLock_ResetAttributesToDefaultValues
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?<Initializer for DoorLock_SimpleDesc>
+       1  ?<Initializer for zclDoorLock_ActuatorEnabled>
+       1  ?<Initializer for zclDoorLock_RequirePinForRfO
+       6  DoorLock_InClusterList
+      12  DoorLock_SimpleDesc
+       1  zclCmdsArraySize
+       1  zclDoorLock_APPVersion
+       1  zclDoorLock_ActuatorEnabled
+     176  zclDoorLock_Attrs
+      12  zclDoorLock_Cmds
+       9  zclDoorLock_DateCode
+      10  zclDoorLock_HWRevision
+       2  zclDoorLock_IdentifyTime
+       2  zclDoorLock_KeypadOperationEventMask
+       1  zclDoorLock_LockState
+       1  zclDoorLock_LockType
+       2  zclDoorLock_ManualOperationEventMask
+      10  zclDoorLock_ManufacturerName
+      14  zclDoorLock_ModelId
+       1  zclDoorLock_NumAttributes
+       1  zclDoorLock_PowerSource
+       2  zclDoorLock_RFIDOperationEventMask
+       2  zclDoorLock_RFOperationEventMask
+       1  zclDoorLock_RequirePinForRfOperation
+      59  zclDoorLock_ResetAttributesToDefaultValues
+      15  zclDoorLock_SWBuildID
+       1  zclDoorLock_SendPinOta
+       1  zclDoorLock_StackVersion
+       1  zclDoorLock_ZCLVersion
+       2  zclDoorLock_clusterRevision_all
+       6  -- Other
+
+ 
+  59 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+ 190 bytes in segment CODE_C
+  14 bytes in segment XDATA_I
+  14 bytes in segment XDATA_ID
+  70 bytes in segment XDATA_ROM_C
+  13 bytes in segment XDATA_Z
+ 
+ 210 bytes of CODE     memory
+  70 bytes of CONST    memory
+  59 bytes of HUGECODE memory
+  27 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

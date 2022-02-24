@@ -1,0 +1,345 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               23/Feb/2022  21:25:25
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_timer3.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW92B3.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_timer3.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\AT_timer3.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\AT_timer3.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\Controller\AT_timer3.c
+      1          /******************************************************************************
+      2            Filename:       AT_timer3.c
+      3            Author:         Jinhui Li
+      4          ******************************************************************************/
+      5          #include "AT_timer3.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc0
+   \   union <unnamed> volatile __sfr _A_IRCON
+   \                     _A_IRCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xca
+   \   unsigned char volatile __sfr T3CNT
+   \                     T3CNT:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcb
+   \   unsigned char volatile __sfr T3CTL
+   \                     T3CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcc
+   \   unsigned char volatile __sfr T3CCTL0
+   \                     T3CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcd
+   \   unsigned char volatile __sfr T3CC0
+   \                     T3CC0:
+   \   000000                DS 1
+      6          #include "hal_defs.h"
+      7          #include "AT_printf.h"
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          uint8 Tim3_ovf_count=0;
+   \                     Tim3_ovf_count:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          uint8 Tim3_7000_flag=0;
+   \                     Tim3_7000_flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     10          void AT_Timer3_Set_Clear_Start_US(uint8 us)
+   \                     AT_Timer3_Set_Clear_Start_US:
+     11          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     12          
+     13            // Set timer 3 channel 0 compare mode 
+     14            T3CCTL0 |= BV(2);
+   \   000000   43CC04       ORL       0xcc,#0x4
+     15          
+     16            // Set the overflow value
+     17            T3CC0 = us;
+   \   000003   89CD         MOV       0xcd,R1
+     18          
+     19            // Set the 8-bit counter to 0x00
+     20            T3CNT = 0x00;
+   \   000005   75CA00       MOV       0xca,#0x0
+     21          
+     22            // Set prescaler divider value, operating mode and start timer 3
+     23            //f1/32,f3/128
+     24            T3CTL |= 0xFE;
+   \   000008   E5CB         MOV       A,0xcb
+   \   00000A   A2E0         MOV       C,0xE0 /* A   */.0
+   \   00000C   E4           CLR       A
+   \   00000D   33           RLC       A
+   \   00000E   44FE         ORL       A,#0xfe
+   \   000010   F5CB         MOV       0xcb,A
+     25          
+     26            //Timer 3 interrupt flag. 
+     27            //Set to 1 when Timer 1 interrupt occurs and cleared when CPU
+     28            //vectors to the interrupt service routine
+     29              //interrupt enable
+     30            IEN0 |= BV(7);
+   \   000012   D2AF         SETB      0xa8.7
+     31            IEN1 |= BV(3);
+   \   000014   D2BB         SETB      0xb8.3
+     32            
+     33            //TIMIF &= ~BV(0);
+     34            //TIMIF &= ~BV(1);
+     35            T3IF = 0;
+   \   000016   C2C3         CLR       0xc0.3
+     36          
+     37          }
+   \   000018   02....       LJMP      ?BRET
+   \   00001B                REQUIRE T3CCTL0
+   \   00001B                REQUIRE T3CC0
+   \   00001B                REQUIRE T3CNT
+   \   00001B                REQUIRE T3CTL
+   \   00001B                REQUIRE _A_IEN0
+   \   00001B                REQUIRE _A_IEN1
+   \   00001B                REQUIRE _A_IRCON
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     38          uint8 AT_Timer3_Stop_Get(void)
+   \                     AT_Timer3_Stop_Get:
+     39          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     40            IEN1 &= ~BV(3);
+   \   000000   C2BB         CLR       0xb8.3
+     41            T3CTL &= ~BV(4);
+   \   000002   53CBEF       ANL       0xcb,#0xef
+     42          
+     43            return T3CNT;
+   \   000005   E5CA         MOV       A,0xca
+   \   000007   F9           MOV       R1,A
+   \   000008   02....       LJMP      ?BRET
+   \   00000B                REQUIRE _A_IEN1
+   \   00000B                REQUIRE T3CTL
+   \   00000B                REQUIRE T3CNT
+     44          }
+     45          
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     46          HAL_ISR_FUNCTION( tim3_ovf_Isr, T3_VECTOR )
+   \                     tim3_ovf_Isr:
+     47          {
+   \   000000   C0E0         PUSH      A
+   \   000002   74F2         MOV       A,#-0xe
+   \   000004   12....       LCALL     ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 14
+   \   000007                ; Auto size: 0
+     48            //HAL_ENTER_ISR();
+     49            IEN1 &= ~BV(3);
+   \   000007   C2BB         CLR       0xb8.3
+     50            Tim3_ovf_count++;
+   \   000009   90....       MOV       DPTR,#Tim3_ovf_count
+   \   00000C   E0           MOVX      A,@DPTR
+   \   00000D   04           INC       A
+   \   00000E   F0           MOVX      @DPTR,A
+     51              if(Tim3_ovf_count==6)
+   \   00000F   6406         XRL       A,#0x6
+   \   000011   700D         JNZ       ??tim3_ovf_Isr_0
+     52              {
+     53                printf("down");
+   \   000013                ; Setup parameters for call to function printf
+   \   000013   7A..         MOV       R2,#`?<Constant "down">` & 0xff
+   \   000015   7B..         MOV       R3,#(`?<Constant "down">` >> 8) & 0xff
+   \   000017   12....       LCALL     `??printf::?relay`; Banked call to: printf
+     54                Tim3_7000_flag=1;
+   \   00001A   90....       MOV       DPTR,#Tim3_7000_flag
+   \   00001D   7401         MOV       A,#0x1
+   \   00001F   F0           MOVX      @DPTR,A
+     55              }
+     56            
+     57            //HAL_EXIT_ISR();
+     58          }
+   \                     ??tim3_ovf_Isr_0:
+   \   000020   7F01         MOV       R7,#0x1
+   \   000022   02....       LJMP      ?INTERRUPT_LEAVE_XSP
+   \   000025                REQUIRE _A_IEN1
+
+   \                                 In  segment INTVEC, offset 0x5b, root
+   \                     `??tim3_ovf_Isr::??INTVEC 91`:
+   \   00005B   02....       LJMP       (tim3_ovf_Isr)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "down">`:
+   \   000000   646F776E     DB "down"
+   \            00      
+     59          
+     60          
+
+   Maximum stack usage in bytes:
+
+   XSTACK Function
+   ------ --------
+      0   AT_Timer3_Set_Clear_Start_US
+      0   AT_Timer3_Stop_Get
+     14   tim3_ovf_Isr
+       14   -> printf
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       5  ?<Constant "down">
+      27  AT_Timer3_Set_Clear_Start_US
+      11  AT_Timer3_Stop_Get
+       1  T3CC0
+       1  T3CCTL0
+       1  T3CNT
+       1  T3CTL
+       1  Tim3_7000_flag
+       1  Tim3_ovf_count
+       1  _A_IEN0
+       1  _A_IEN1
+       1  _A_IRCON
+      37  tim3_ovf_Isr
+       3  tim3_ovf_Isr::??INTVEC 91
+      12  -- Other
+
+ 
+ 38 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  3 bytes in segment INTVEC
+ 37 bytes in segment NEAR_CODE
+  7 bytes in segment SFR_AN
+  5 bytes in segment XDATA_ROM_C
+  2 bytes in segment XDATA_Z
+ 
+ 49 bytes of CODE     memory (+ 3 bytes shared)
+  5 bytes of CONST    memory
+  0 bytes of DATA     memory (+ 7 bytes shared)
+ 38 bytes of HUGECODE memory
+  2 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

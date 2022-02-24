@@ -1,0 +1,2583 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.30.1.6000 for 8051              23/Feb/2022  09:34:58
+// Copyright 2004-2018 IAR Systems AB.
+// PC-locked license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Components\hal\target\CC2530EB\hal_lcd.c
+//    Command line       =  
+//        -f C:\Users\Administrator\AppData\Local\Temp\EW3597.tmp
+//        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Components\hal\target\CC2530EB\hal_lcd.c
+//        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+//        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+//        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+//        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1
+//        -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+//        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+//        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+//        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+//        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+//        ISR_KEYINTERRUPT -lC
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+//        -lA
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+//        --diag_suppress Pe001,Pa010 -o
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 16 -f
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+//        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0}
+//        -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=300 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+//        -f
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+//        -I
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+//        -Ohz --require_prototypes)
+//    Locale             =  Chinese (Simplified)_CHN.936
+//    List file          =  
+//        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\hal_lcd.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_lcd
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_I
+
+        PUBLIC `??HalLcdInit::?relay`
+        FUNCTION `??HalLcdInit::?relay`,0203H
+        PUBLIC `??HalLcdWriteScreen::?relay`
+        FUNCTION `??HalLcdWriteScreen::?relay`,0203H
+        PUBLIC `??HalLcdWriteStringValue::?relay`
+        FUNCTION `??HalLcdWriteStringValue::?relay`,0203H
+        PUBLIC `??HalLcdWriteStringValueValue::?relay`
+        FUNCTION `??HalLcdWriteStringValueValue::?relay`,0203H
+        PUBLIC `??HalLcdWriteValue::?relay`
+        FUNCTION `??HalLcdWriteValue::?relay`,0203H
+        PUBLIC F16x16
+        PUBLIC F8X16
+        PUBLIC HalLcdInit
+        FUNCTION HalLcdInit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteScreen
+        FUNCTION HalLcdWriteScreen,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteStringValue
+        FUNCTION HalLcdWriteStringValue,0203H
+        ARGFRAME XSTACK, 1, STACK
+        PUBLIC HalLcdWriteStringValueValue
+        FUNCTION HalLcdWriteStringValueValue,0203H
+        ARGFRAME XSTACK, 4, STACK
+        PUBLIC HalLcdWriteValue
+        FUNCTION HalLcdWriteValue,0203H
+        ARGFRAME XSTACK, 1, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+HalLcdInit          SYMBOL "HalLcdInit"
+`??HalLcdInit::?relay` SYMBOL "?relay", HalLcdInit
+HalLcdWriteScreen   SYMBOL "HalLcdWriteScreen"
+`??HalLcdWriteScreen::?relay` SYMBOL "?relay", HalLcdWriteScreen
+HalLcdWriteStringValue SYMBOL "HalLcdWriteStringValue"
+`??HalLcdWriteStringValue::?relay` SYMBOL "?relay", HalLcdWriteStringValue
+HalLcdWriteStringValueValue SYMBOL "HalLcdWriteStringValueValue"
+`??HalLcdWriteStringValueValue::?relay` SYMBOL "?relay", HalLcdWriteStringValueValue
+HalLcdWriteValue    SYMBOL "HalLcdWriteValue"
+`??HalLcdWriteValue::?relay` SYMBOL "?relay", HalLcdWriteValue
+
+// D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Components\hal\target\CC2530EB\hal_lcd.c
+//    1 /****************************************************************************
+//    2 * Filename: hal_lcd.c
+//    3 * Author:      Andy
+//    4 * Date:        2013-01-11
+//    5 * Version:     1.0
+//    6 * Description: OLED driver
+//    7 ****************************************************************************/
+//    8 #include "hal_types.h"
+//    9 #include "hal_lcd.h"
+//   10 #include "OSAL.h"
+//   11 #include "OnBoard.h"
+//   12 #include "hal_assert.h"
+//   13 #include <string.h>
+//   14 
+//   15 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+//   16   #include "DebugTrace.h"
+//   17 #endif
+//   18 
+//   19 #define LCD_SCL P1_2       //SCLK  时钟 D0（SCLK）
+//   20 #define LCD_SDA P1_3       //SDA   D1（MOSI） 数据
+//   21 #define LCD_RST P1_7       //_RES  hardware reset   复位 
+//   22 #define LCD_DC  P0_0       //A0  H/L 命令数据选通端，H：数据，L:命令
+//   23 
+//   24 #define XLevelL            0x00
+//   25 #define XLevelH            0x10
+//   26 #define XLevel             ((XLevelH&0x0F)*16+XLevelL)
+//   27 #define Max_Column         128
+//   28 #define Max_Row            64
+//   29 #define Brightness         0xCF 
+//   30 #define X_WIDTH            128
+//   31 #define Y_WIDTH            64
+//   32 
+//   33 #define LCD_MAX_BUF        25
+//   34 #define HAL_LCD_MAX_CHARS  16   // Max number of chars on a single LCD line 
+//   35 
+//   36 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   37 const unsigned char F8X16[]=	  
+F8X16:
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 248
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 51
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 12
+        DB 6
+        DB 16
+        DB 12
+        DB 6
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 64
+        DB 192
+        DB 120
+        DB 64
+        DB 192
+        DB 120
+        DB 64
+        DB 0
+        DB 4
+        DB 63
+        DB 4
+        DB 4
+        DB 63
+        DB 4
+        DB 4
+        DB 0
+        DB 0
+        DB 112
+        DB 136
+        DB 252
+        DB 8
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 24
+        DB 32
+        DB 255
+        DB 33
+        DB 30
+        DB 0
+        DB 0
+        DB 240
+        DB 8
+        DB 240
+        DB 0
+        DB 224
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 33
+        DB 28
+        DB 3
+        DB 30
+        DB 33
+        DB 30
+        DB 0
+        DB 0
+        DB 240
+        DB 8
+        DB 136
+        DB 112
+        DB 0
+        DB 0
+        DB 0
+        DB 30
+        DB 33
+        DB 35
+        DB 36
+        DB 25
+        DB 39
+        DB 33
+        DB 16
+        DB 16
+        DB 22
+        DB 14
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 224
+        DB 24
+        DB 4
+        DB 2
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 7
+        DB 24
+        DB 32
+        DB 64
+        DB 0
+        DB 0
+        DB 2
+        DB 4
+        DB 24
+        DB 224
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 64
+        DB 32
+        DB 24
+        DB 7
+        DB 0
+        DB 0
+        DB 0
+        DB 64
+        DB 64
+        DB 128
+        DB 240
+        DB 128
+        DB 64
+        DB 64
+        DB 0
+        DB 2
+        DB 2
+        DB 1
+        DB 15
+        DB 1
+        DB 2
+        DB 2
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 1
+        DB 1
+        DB 1
+        DB 31
+        DB 1
+        DB 1
+        DB 1
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 176
+        DB 112
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 1
+        DB 1
+        DB 1
+        DB 1
+        DB 1
+        DB 1
+        DB 1
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 96
+        DB 24
+        DB 4
+        DB 0
+        DB 96
+        DB 24
+        DB 6
+        DB 1
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 224
+        DB 16
+        DB 8
+        DB 8
+        DB 16
+        DB 224
+        DB 0
+        DB 0
+        DB 15
+        DB 16
+        DB 32
+        DB 32
+        DB 16
+        DB 15
+        DB 0
+        DB 0
+        DB 16
+        DB 16
+        DB 248
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 112
+        DB 8
+        DB 8
+        DB 8
+        DB 136
+        DB 112
+        DB 0
+        DB 0
+        DB 48
+        DB 40
+        DB 36
+        DB 34
+        DB 33
+        DB 48
+        DB 0
+        DB 0
+        DB 48
+        DB 8
+        DB 136
+        DB 136
+        DB 72
+        DB 48
+        DB 0
+        DB 0
+        DB 24
+        DB 32
+        DB 32
+        DB 32
+        DB 17
+        DB 14
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 32
+        DB 16
+        DB 248
+        DB 0
+        DB 0
+        DB 0
+        DB 7
+        DB 4
+        DB 36
+        DB 36
+        DB 63
+        DB 36
+        DB 0
+        DB 0
+        DB 248
+        DB 8
+        DB 136
+        DB 136
+        DB 8
+        DB 8
+        DB 0
+        DB 0
+        DB 25
+        DB 33
+        DB 32
+        DB 32
+        DB 17
+        DB 14
+        DB 0
+        DB 0
+        DB 224
+        DB 16
+        DB 136
+        DB 136
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 15
+        DB 17
+        DB 32
+        DB 32
+        DB 17
+        DB 14
+        DB 0
+        DB 0
+        DB 56
+        DB 8
+        DB 8
+        DB 200
+        DB 56
+        DB 8
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 63
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 112
+        DB 136
+        DB 8
+        DB 8
+        DB 136
+        DB 112
+        DB 0
+        DB 0
+        DB 28
+        DB 34
+        DB 33
+        DB 33
+        DB 34
+        DB 28
+        DB 0
+        DB 0
+        DB 224
+        DB 16
+        DB 8
+        DB 8
+        DB 16
+        DB 224
+        DB 0
+        DB 0
+        DB 0
+        DB 49
+        DB 34
+        DB 34
+        DB 17
+        DB 15
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 192
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 96
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 64
+        DB 32
+        DB 16
+        DB 8
+        DB 0
+        DB 0
+        DB 1
+        DB 2
+        DB 4
+        DB 8
+        DB 16
+        DB 32
+        DB 0
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 64
+        DB 0
+        DB 4
+        DB 4
+        DB 4
+        DB 4
+        DB 4
+        DB 4
+        DB 4
+        DB 0
+        DB 0
+        DB 8
+        DB 16
+        DB 32
+        DB 64
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 16
+        DB 8
+        DB 4
+        DB 2
+        DB 1
+        DB 0
+        DB 0
+        DB 112
+        DB 72
+        DB 8
+        DB 8
+        DB 8
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 54
+        DB 1
+        DB 0
+        DB 0
+        DB 192
+        DB 48
+        DB 200
+        DB 40
+        DB 232
+        DB 16
+        DB 224
+        DB 0
+        DB 7
+        DB 24
+        DB 39
+        DB 36
+        DB 35
+        DB 20
+        DB 11
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 56
+        DB 224
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 60
+        DB 35
+        DB 2
+        DB 2
+        DB 39
+        DB 56
+        DB 32
+        DB 8
+        DB 248
+        DB 136
+        DB 136
+        DB 136
+        DB 112
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 32
+        DB 17
+        DB 14
+        DB 0
+        DB 192
+        DB 48
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 56
+        DB 0
+        DB 7
+        DB 24
+        DB 32
+        DB 32
+        DB 32
+        DB 16
+        DB 8
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 8
+        DB 8
+        DB 16
+        DB 224
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 32
+        DB 16
+        DB 15
+        DB 0
+        DB 8
+        DB 248
+        DB 136
+        DB 136
+        DB 232
+        DB 8
+        DB 16
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 35
+        DB 32
+        DB 24
+        DB 0
+        DB 8
+        DB 248
+        DB 136
+        DB 136
+        DB 232
+        DB 8
+        DB 16
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 3
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 48
+        DB 8
+        DB 8
+        DB 8
+        DB 56
+        DB 0
+        DB 0
+        DB 7
+        DB 24
+        DB 32
+        DB 32
+        DB 34
+        DB 30
+        DB 2
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 0
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 32
+        DB 63
+        DB 33
+        DB 1
+        DB 1
+        DB 33
+        DB 63
+        DB 32
+        DB 0
+        DB 8
+        DB 8
+        DB 248
+        DB 8
+        DB 8
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 8
+        DB 8
+        DB 248
+        DB 8
+        DB 8
+        DB 0
+        DB 192
+        DB 128
+        DB 128
+        DB 128
+        DB 127
+        DB 0
+        DB 0
+        DB 0
+        DB 8
+        DB 248
+        DB 136
+        DB 192
+        DB 40
+        DB 24
+        DB 8
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 1
+        DB 38
+        DB 56
+        DB 32
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 48
+        DB 0
+        DB 8
+        DB 248
+        DB 248
+        DB 0
+        DB 248
+        DB 248
+        DB 8
+        DB 0
+        DB 32
+        DB 63
+        DB 0
+        DB 63
+        DB 0
+        DB 63
+        DB 32
+        DB 0
+        DB 8
+        DB 248
+        DB 48
+        DB 192
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 7
+        DB 24
+        DB 63
+        DB 0
+        DB 224
+        DB 16
+        DB 8
+        DB 8
+        DB 8
+        DB 16
+        DB 224
+        DB 0
+        DB 15
+        DB 16
+        DB 32
+        DB 32
+        DB 32
+        DB 16
+        DB 15
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 8
+        DB 8
+        DB 8
+        DB 240
+        DB 0
+        DB 32
+        DB 63
+        DB 33
+        DB 1
+        DB 1
+        DB 1
+        DB 0
+        DB 0
+        DB 224
+        DB 16
+        DB 8
+        DB 8
+        DB 8
+        DB 16
+        DB 224
+        DB 0
+        DB 15
+        DB 24
+        DB 36
+        DB 36
+        DB 56
+        DB 80
+        DB 79
+        DB 0
+        DB 8
+        DB 248
+        DB 136
+        DB 136
+        DB 136
+        DB 136
+        DB 112
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 3
+        DB 12
+        DB 48
+        DB 32
+        DB 0
+        DB 112
+        DB 136
+        DB 8
+        DB 8
+        DB 8
+        DB 56
+        DB 0
+        DB 0
+        DB 56
+        DB 32
+        DB 33
+        DB 33
+        DB 34
+        DB 28
+        DB 0
+        DB 24
+        DB 8
+        DB 8
+        DB 248
+        DB 8
+        DB 8
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 0
+        DB 0
+        DB 8
+        DB 248
+        DB 8
+        DB 0
+        DB 31
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 31
+        DB 0
+        DB 8
+        DB 120
+        DB 136
+        DB 0
+        DB 0
+        DB 200
+        DB 56
+        DB 8
+        DB 0
+        DB 0
+        DB 7
+        DB 56
+        DB 14
+        DB 1
+        DB 0
+        DB 0
+        DB 248
+        DB 8
+        DB 0
+        DB 248
+        DB 0
+        DB 8
+        DB 248
+        DB 0
+        DB 3
+        DB 60
+        DB 7
+        DB 0
+        DB 7
+        DB 60
+        DB 3
+        DB 0
+        DB 8
+        DB 24
+        DB 104
+        DB 128
+        DB 128
+        DB 104
+        DB 24
+        DB 8
+        DB 32
+        DB 48
+        DB 44
+        DB 3
+        DB 3
+        DB 44
+        DB 48
+        DB 32
+        DB 8
+        DB 56
+        DB 200
+        DB 0
+        DB 200
+        DB 56
+        DB 8
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 8
+        DB 8
+        DB 8
+        DB 200
+        DB 56
+        DB 8
+        DB 0
+        DB 32
+        DB 56
+        DB 38
+        DB 33
+        DB 32
+        DB 32
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 2
+        DB 2
+        DB 2
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 127
+        DB 64
+        DB 64
+        DB 64
+        DB 0
+        DB 0
+        DB 12
+        DB 48
+        DB 192
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 1
+        DB 6
+        DB 56
+        DB 192
+        DB 0
+        DB 0
+        DB 2
+        DB 2
+        DB 2
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 64
+        DB 64
+        DB 64
+        DB 127
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 4
+        DB 2
+        DB 2
+        DB 2
+        DB 4
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 2
+        DB 2
+        DB 4
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 25
+        DB 36
+        DB 34
+        DB 34
+        DB 34
+        DB 63
+        DB 32
+        DB 8
+        DB 248
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 63
+        DB 17
+        DB 32
+        DB 32
+        DB 17
+        DB 14
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 14
+        DB 17
+        DB 32
+        DB 32
+        DB 32
+        DB 17
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 136
+        DB 248
+        DB 0
+        DB 0
+        DB 14
+        DB 17
+        DB 32
+        DB 32
+        DB 16
+        DB 63
+        DB 32
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 31
+        DB 34
+        DB 34
+        DB 34
+        DB 34
+        DB 19
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 240
+        DB 136
+        DB 136
+        DB 136
+        DB 24
+        DB 0
+        DB 32
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 107
+        DB 148
+        DB 148
+        DB 148
+        DB 147
+        DB 96
+        DB 0
+        DB 8
+        DB 248
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 33
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 128
+        DB 152
+        DB 152
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 152
+        DB 152
+        DB 0
+        DB 0
+        DB 0
+        DB 192
+        DB 128
+        DB 128
+        DB 128
+        DB 127
+        DB 0
+        DB 0
+        DB 8
+        DB 248
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 32
+        DB 63
+        DB 36
+        DB 2
+        DB 45
+        DB 48
+        DB 32
+        DB 0
+        DB 0
+        DB 8
+        DB 8
+        DB 248
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 32
+        DB 63
+        DB 32
+        DB 32
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 63
+        DB 32
+        DB 0
+        DB 63
+        DB 128
+        DB 128
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 33
+        DB 0
+        DB 0
+        DB 32
+        DB 63
+        DB 32
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 31
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 31
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 255
+        DB 161
+        DB 32
+        DB 32
+        DB 17
+        DB 14
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 14
+        DB 17
+        DB 32
+        DB 32
+        DB 160
+        DB 255
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 32
+        DB 32
+        DB 63
+        DB 33
+        DB 32
+        DB 0
+        DB 1
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 51
+        DB 36
+        DB 36
+        DB 36
+        DB 36
+        DB 25
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 224
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 31
+        DB 32
+        DB 32
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 31
+        DB 32
+        DB 32
+        DB 32
+        DB 16
+        DB 63
+        DB 32
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 1
+        DB 14
+        DB 48
+        DB 8
+        DB 6
+        DB 1
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 128
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 15
+        DB 48
+        DB 12
+        DB 3
+        DB 12
+        DB 48
+        DB 15
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 32
+        DB 49
+        DB 46
+        DB 14
+        DB 49
+        DB 32
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 129
+        DB 142
+        DB 112
+        DB 24
+        DB 6
+        DB 1
+        DB 0
+        DB 0
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 128
+        DB 0
+        DB 0
+        DB 33
+        DB 48
+        DB 44
+        DB 34
+        DB 33
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 124
+        DB 2
+        DB 2
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 63
+        DB 64
+        DB 64
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 255
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 255
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 2
+        DB 2
+        DB 124
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 64
+        DB 64
+        DB 63
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 6
+        DB 1
+        DB 1
+        DB 2
+        DB 2
+        DB 4
+        DB 4
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+//   38 {
+//   39   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,// 0
+//   40   0x00,0x00,0x00,0xF8,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x33,0x30,0x00,0x00,0x00,//! 1
+//   41   0x00,0x10,0x0C,0x06,0x10,0x0C,0x06,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,//" 2
+//   42   0x40,0xC0,0x78,0x40,0xC0,0x78,0x40,0x00,0x04,0x3F,0x04,0x04,0x3F,0x04,0x04,0x00,//# 3
+//   43   0x00,0x70,0x88,0xFC,0x08,0x30,0x00,0x00,0x00,0x18,0x20,0xFF,0x21,0x1E,0x00,0x00,//$ 4
+//   44   0xF0,0x08,0xF0,0x00,0xE0,0x18,0x00,0x00,0x00,0x21,0x1C,0x03,0x1E,0x21,0x1E,0x00,//% 5
+//   45   0x00,0xF0,0x08,0x88,0x70,0x00,0x00,0x00,0x1E,0x21,0x23,0x24,0x19,0x27,0x21,0x10,//& 6
+//   46   0x10,0x16,0x0E,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,//' 7
+//   47   0x00,0x00,0x00,0xE0,0x18,0x04,0x02,0x00,0x00,0x00,0x00,0x07,0x18,0x20,0x40,0x00,//( 8
+//   48   0x00,0x02,0x04,0x18,0xE0,0x00,0x00,0x00,0x00,0x40,0x20,0x18,0x07,0x00,0x00,0x00,//) 9
+//   49   0x40,0x40,0x80,0xF0,0x80,0x40,0x40,0x00,0x02,0x02,0x01,0x0F,0x01,0x02,0x02,0x00,//* 10
+//   50   0x00,0x00,0x00,0xF0,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x1F,0x01,0x01,0x01,0x00,//+ 11
+//   51   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0xB0,0x70,0x00,0x00,0x00,0x00,0x00,//, 12
+//   52   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x01,0x01,//- 13
+//   53   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x30,0x30,0x00,0x00,0x00,0x00,0x00,//. 14
+//   54   0x00,0x00,0x00,0x00,0x80,0x60,0x18,0x04,0x00,0x60,0x18,0x06,0x01,0x00,0x00,0x00,/// 15
+//   55   0x00,0xE0,0x10,0x08,0x08,0x10,0xE0,0x00,0x00,0x0F,0x10,0x20,0x20,0x10,0x0F,0x00,//0 16
+//   56   0x00,0x10,0x10,0xF8,0x00,0x00,0x00,0x00,0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,//1 17
+//   57   0x00,0x70,0x08,0x08,0x08,0x88,0x70,0x00,0x00,0x30,0x28,0x24,0x22,0x21,0x30,0x00,//2 18
+//   58   0x00,0x30,0x08,0x88,0x88,0x48,0x30,0x00,0x00,0x18,0x20,0x20,0x20,0x11,0x0E,0x00,//3 19
+//   59   0x00,0x00,0xC0,0x20,0x10,0xF8,0x00,0x00,0x00,0x07,0x04,0x24,0x24,0x3F,0x24,0x00,//4 20
+//   60   0x00,0xF8,0x08,0x88,0x88,0x08,0x08,0x00,0x00,0x19,0x21,0x20,0x20,0x11,0x0E,0x00,//5 21
+//   61   0x00,0xE0,0x10,0x88,0x88,0x18,0x00,0x00,0x00,0x0F,0x11,0x20,0x20,0x11,0x0E,0x00,//6 22
+//   62   0x00,0x38,0x08,0x08,0xC8,0x38,0x08,0x00,0x00,0x00,0x00,0x3F,0x00,0x00,0x00,0x00,//7 23
+//   63   0x00,0x70,0x88,0x08,0x08,0x88,0x70,0x00,0x00,0x1C,0x22,0x21,0x21,0x22,0x1C,0x00,//8 24
+//   64   0x00,0xE0,0x10,0x08,0x08,0x10,0xE0,0x00,0x00,0x00,0x31,0x22,0x22,0x11,0x0F,0x00,//9 25
+//   65   0x00,0x00,0x00,0xC0,0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x30,0x30,0x00,0x00,0x00,//: 26
+//   66   0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x60,0x00,0x00,0x00,0x00,//; 27
+//   67   0x00,0x00,0x80,0x40,0x20,0x10,0x08,0x00,0x00,0x01,0x02,0x04,0x08,0x10,0x20,0x00,//< 28
+//   68   0x40,0x40,0x40,0x40,0x40,0x40,0x40,0x00,0x04,0x04,0x04,0x04,0x04,0x04,0x04,0x00,//= 29
+//   69   0x00,0x08,0x10,0x20,0x40,0x80,0x00,0x00,0x00,0x20,0x10,0x08,0x04,0x02,0x01,0x00,//> 30
+//   70   0x00,0x70,0x48,0x08,0x08,0x08,0xF0,0x00,0x00,0x00,0x00,0x30,0x36,0x01,0x00,0x00,//? 31
+//   71   0xC0,0x30,0xC8,0x28,0xE8,0x10,0xE0,0x00,0x07,0x18,0x27,0x24,0x23,0x14,0x0B,0x00,//@ 32
+//   72   0x00,0x00,0xC0,0x38,0xE0,0x00,0x00,0x00,0x20,0x3C,0x23,0x02,0x02,0x27,0x38,0x20,//A 33
+//   73   0x08,0xF8,0x88,0x88,0x88,0x70,0x00,0x00,0x20,0x3F,0x20,0x20,0x20,0x11,0x0E,0x00,//B 34
+//   74   0xC0,0x30,0x08,0x08,0x08,0x08,0x38,0x00,0x07,0x18,0x20,0x20,0x20,0x10,0x08,0x00,//C 35
+//   75   0x08,0xF8,0x08,0x08,0x08,0x10,0xE0,0x00,0x20,0x3F,0x20,0x20,0x20,0x10,0x0F,0x00,//D 36
+//   76   0x08,0xF8,0x88,0x88,0xE8,0x08,0x10,0x00,0x20,0x3F,0x20,0x20,0x23,0x20,0x18,0x00,//E 37
+//   77   0x08,0xF8,0x88,0x88,0xE8,0x08,0x10,0x00,0x20,0x3F,0x20,0x00,0x03,0x00,0x00,0x00,//F 38
+//   78   0xC0,0x30,0x08,0x08,0x08,0x38,0x00,0x00,0x07,0x18,0x20,0x20,0x22,0x1E,0x02,0x00,//G 39
+//   79   0x08,0xF8,0x08,0x00,0x00,0x08,0xF8,0x08,0x20,0x3F,0x21,0x01,0x01,0x21,0x3F,0x20,//H 40
+//   80   0x00,0x08,0x08,0xF8,0x08,0x08,0x00,0x00,0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,//I 41
+//   81   0x00,0x00,0x08,0x08,0xF8,0x08,0x08,0x00,0xC0,0x80,0x80,0x80,0x7F,0x00,0x00,0x00,//J 42
+//   82   0x08,0xF8,0x88,0xC0,0x28,0x18,0x08,0x00,0x20,0x3F,0x20,0x01,0x26,0x38,0x20,0x00,//K 43
+//   83   0x08,0xF8,0x08,0x00,0x00,0x00,0x00,0x00,0x20,0x3F,0x20,0x20,0x20,0x20,0x30,0x00,//L 44
+//   84   0x08,0xF8,0xF8,0x00,0xF8,0xF8,0x08,0x00,0x20,0x3F,0x00,0x3F,0x00,0x3F,0x20,0x00,//M 45
+//   85   0x08,0xF8,0x30,0xC0,0x00,0x08,0xF8,0x08,0x20,0x3F,0x20,0x00,0x07,0x18,0x3F,0x00,//N 46
+//   86   0xE0,0x10,0x08,0x08,0x08,0x10,0xE0,0x00,0x0F,0x10,0x20,0x20,0x20,0x10,0x0F,0x00,//O 47
+//   87   0x08,0xF8,0x08,0x08,0x08,0x08,0xF0,0x00,0x20,0x3F,0x21,0x01,0x01,0x01,0x00,0x00,//P 48
+//   88   0xE0,0x10,0x08,0x08,0x08,0x10,0xE0,0x00,0x0F,0x18,0x24,0x24,0x38,0x50,0x4F,0x00,//Q 49
+//   89   0x08,0xF8,0x88,0x88,0x88,0x88,0x70,0x00,0x20,0x3F,0x20,0x00,0x03,0x0C,0x30,0x20,//R 50
+//   90   0x00,0x70,0x88,0x08,0x08,0x08,0x38,0x00,0x00,0x38,0x20,0x21,0x21,0x22,0x1C,0x00,//S 51
+//   91   0x18,0x08,0x08,0xF8,0x08,0x08,0x18,0x00,0x00,0x00,0x20,0x3F,0x20,0x00,0x00,0x00,//T 52
+//   92   0x08,0xF8,0x08,0x00,0x00,0x08,0xF8,0x08,0x00,0x1F,0x20,0x20,0x20,0x20,0x1F,0x00,//U 53
+//   93   0x08,0x78,0x88,0x00,0x00,0xC8,0x38,0x08,0x00,0x00,0x07,0x38,0x0E,0x01,0x00,0x00,//V 54
+//   94   0xF8,0x08,0x00,0xF8,0x00,0x08,0xF8,0x00,0x03,0x3C,0x07,0x00,0x07,0x3C,0x03,0x00,//W 55
+//   95   0x08,0x18,0x68,0x80,0x80,0x68,0x18,0x08,0x20,0x30,0x2C,0x03,0x03,0x2C,0x30,0x20,//X 56
+//   96   0x08,0x38,0xC8,0x00,0xC8,0x38,0x08,0x00,0x00,0x00,0x20,0x3F,0x20,0x00,0x00,0x00,//Y 57
+//   97   0x10,0x08,0x08,0x08,0xC8,0x38,0x08,0x00,0x20,0x38,0x26,0x21,0x20,0x20,0x18,0x00,//Z 58
+//   98   0x00,0x00,0x00,0xFE,0x02,0x02,0x02,0x00,0x00,0x00,0x00,0x7F,0x40,0x40,0x40,0x00,//[ 59
+//   99   0x00,0x0C,0x30,0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x06,0x38,0xC0,0x00,//\ 60
+//  100   0x00,0x02,0x02,0x02,0xFE,0x00,0x00,0x00,0x00,0x40,0x40,0x40,0x7F,0x00,0x00,0x00,//] 61
+//  101   0x00,0x00,0x04,0x02,0x02,0x02,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,//^ 62
+//  102   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x80,//_ 63
+//  103   0x00,0x02,0x02,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,//` 64
+//  104   0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,0x00,0x19,0x24,0x22,0x22,0x22,0x3F,0x20,//a 65
+//  105   0x08,0xF8,0x00,0x80,0x80,0x00,0x00,0x00,0x00,0x3F,0x11,0x20,0x20,0x11,0x0E,0x00,//b 66
+//  106   0x00,0x00,0x00,0x80,0x80,0x80,0x00,0x00,0x00,0x0E,0x11,0x20,0x20,0x20,0x11,0x00,//c 67
+//  107   0x00,0x00,0x00,0x80,0x80,0x88,0xF8,0x00,0x00,0x0E,0x11,0x20,0x20,0x10,0x3F,0x20,//d 68
+//  108   0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,0x00,0x1F,0x22,0x22,0x22,0x22,0x13,0x00,//e 69
+//  109   0x00,0x80,0x80,0xF0,0x88,0x88,0x88,0x18,0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,//f 70
+//  110   0x00,0x00,0x80,0x80,0x80,0x80,0x80,0x00,0x00,0x6B,0x94,0x94,0x94,0x93,0x60,0x00,//g 71
+//  111   0x08,0xF8,0x00,0x80,0x80,0x80,0x00,0x00,0x20,0x3F,0x21,0x00,0x00,0x20,0x3F,0x20,//h 72
+//  112   0x00,0x80,0x98,0x98,0x00,0x00,0x00,0x00,0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,//i 73
+//  113   0x00,0x00,0x00,0x80,0x98,0x98,0x00,0x00,0x00,0xC0,0x80,0x80,0x80,0x7F,0x00,0x00,//j 74
+//  114   0x08,0xF8,0x00,0x00,0x80,0x80,0x80,0x00,0x20,0x3F,0x24,0x02,0x2D,0x30,0x20,0x00,//k 75
+//  115   0x00,0x08,0x08,0xF8,0x00,0x00,0x00,0x00,0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,//l 76
+//  116   0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x00,0x20,0x3F,0x20,0x00,0x3F,0x20,0x00,0x3F,//m 77
+//  117   0x80,0x80,0x00,0x80,0x80,0x80,0x00,0x00,0x20,0x3F,0x21,0x00,0x00,0x20,0x3F,0x20,//n 78
+//  118   0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,0x00,0x1F,0x20,0x20,0x20,0x20,0x1F,0x00,//o 79
+//  119   0x80,0x80,0x00,0x80,0x80,0x00,0x00,0x00,0x80,0xFF,0xA1,0x20,0x20,0x11,0x0E,0x00,//p 80
+//  120   0x00,0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,0x0E,0x11,0x20,0x20,0xA0,0xFF,0x80,//q 81
+//  121   0x80,0x80,0x80,0x00,0x80,0x80,0x80,0x00,0x20,0x20,0x3F,0x21,0x20,0x00,0x01,0x00,//r 82
+//  122   0x00,0x00,0x80,0x80,0x80,0x80,0x80,0x00,0x00,0x33,0x24,0x24,0x24,0x24,0x19,0x00,//s 83
+//  123   0x00,0x80,0x80,0xE0,0x80,0x80,0x00,0x00,0x00,0x00,0x00,0x1F,0x20,0x20,0x00,0x00,//t 84
+//  124   0x80,0x80,0x00,0x00,0x00,0x80,0x80,0x00,0x00,0x1F,0x20,0x20,0x20,0x10,0x3F,0x20,//u 85
+//  125   0x80,0x80,0x80,0x00,0x00,0x80,0x80,0x80,0x00,0x01,0x0E,0x30,0x08,0x06,0x01,0x00,//v 86
+//  126   0x80,0x80,0x00,0x80,0x00,0x80,0x80,0x80,0x0F,0x30,0x0C,0x03,0x0C,0x30,0x0F,0x00,//w 87
+//  127   0x00,0x80,0x80,0x00,0x80,0x80,0x80,0x00,0x00,0x20,0x31,0x2E,0x0E,0x31,0x20,0x00,//x 88
+//  128   0x80,0x80,0x80,0x00,0x00,0x80,0x80,0x80,0x80,0x81,0x8E,0x70,0x18,0x06,0x01,0x00,//y 89
+//  129   0x00,0x80,0x80,0x80,0x80,0x80,0x80,0x00,0x00,0x21,0x30,0x2C,0x22,0x21,0x30,0x00,//z 90
+//  130   0x00,0x00,0x00,0x00,0x80,0x7C,0x02,0x02,0x00,0x00,0x00,0x00,0x00,0x3F,0x40,0x40,//{ 91
+//  131   0x00,0x00,0x00,0x00,0xFF,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xFF,0x00,0x00,0x00,//| 92
+//  132   0x00,0x02,0x02,0x7C,0x80,0x00,0x00,0x00,0x00,0x40,0x40,0x3F,0x00,0x00,0x00,0x00,//} 93
+//  133   0x00,0x06,0x01,0x01,0x02,0x02,0x04,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,//~ 94
+//  134 };
+//  135 
+//  136 /***************************16*16的点阵字体取模方式：共阴——列行式——逆向输出*********/
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  137 unsigned char F16x16[] = 	  	 
+F16x16:
+        DATA8
+        DS 128
+        REQUIRE `?<Initializer for F16x16>`
+        REQUIRE __INIT_XDATA_I
+//  138 {  	
+//  139 /*--  文字:  温  --*/
+//  140 /*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+//  141 0x10,0x21,0x86,0x70,0x00,0x7E,0x4A,0x4A,0x4A,0x4A,0x4A,0x7E,0x00,0x00,0x00,0x00,
+//  142 0x02,0xFE,0x01,0x40,0x7F,0x41,0x41,0x7F,0x41,0x41,0x7F,0x41,0x41,0x7F,0x40,0x00,
+//  143 
+//  144 /*--  文字:  度  --*/
+//  145 /*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+//  146 0x00,0x00,0xFC,0x04,0x24,0x24,0xFC,0xA5,0xA6,0xA4,0xFC,0x24,0x24,0x24,0x04,0x00,
+//  147 0x80,0x60,0x1F,0x80,0x80,0x42,0x46,0x2A,0x12,0x12,0x2A,0x26,0x42,0xC0,0x40,0x00,
+//  148 
+//  149 /*--  文字:  ：  --*/
+//  150 /*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+//  151 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+//  152 0x00,0x00,0x36,0x36,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+//  153 
+//  154 /*--  文字:  湿  --*/
+//  155 /*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+//  156 0x10,0x60,0x02,0xCC,0x00,0x00,0x3E,0x2A,0xAA,0x2A,0xAA,0x2A,0x3E,0x00,0x00,0x00,
+//  157 0x08,0x08,0xFE,0x01,0x40,0x42,0x4C,0x40,0x7F,0x40,0x7F,0x48,0x44,0x42,0x40,0x00,
+//  158 
+//  159 };
+//  160 
+//  161 
+//  162 #if (HAL_LCD == TRUE)
+//  163 void HalLcd_HW_Init(void);
+//  164 void HalLcd_HW_WaitUs(uint16 i);
+//  165 void HalLcd_HW_Clear(void);
+//  166 void HalLcd_HW_Control(uint8 cmd);
+//  167 void HalLcd_HW_Write(uint8 data);
+//  168 void HalLcd_HW_SetContrast(uint8 value);
+//  169 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text);
+//  170 void HalLcd_HW_WriteLine(uint8 line, const char *pText);
+//  171 
+//  172 void DelayMS(unsigned int msec);
+//  173 void LCD_DLY_ms(unsigned int ms);
+//  174 void LCD_WrDat(unsigned char dat);
+//  175 void LCD_WrCmd(unsigned char cmd);
+//  176 void LCD_Set_Pos(unsigned char x, unsigned char y);
+//  177 void LCD_Fill(unsigned char bmp_dat) ;
+//  178 void LCD_CLS(void);
+//  179 void LcdClearLine(unsigned char y, unsigned char count);
+//  180 
+//  181 void LCD_P8x16Str(unsigned char x, unsigned char y,unsigned char ch[]);
+//  182 void HalLcdDisplayPercentBar( char *title, uint8 value );
+//  183 void LCD_P16x16Ch(unsigned char x, unsigned char y, unsigned char N);
+//  184 #endif //LCD
+//  185 
+//  186 
+//  187 /**************************************************************************************************
+//  188  * @fn      HalLcdInit
+//  189  *
+//  190  * @brief   Initilize LCD Service
+//  191  *
+//  192  * @param   init - pointer to void that contains the initialized value
+//  193  *
+//  194  * @return  None
+//  195  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  196 void HalLcdInit(void)
+HalLcdInit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function HalLcdInit
+        CODE
+//  197 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  198 #if (HAL_LCD == TRUE)
+//  199   HalLcd_HW_Init();
+//  200 #endif
+//  201 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock0
+//  202 
+//  203 /**************************************************************************************************
+//  204  * @fn      HalLcdWriteValue
+//  205  *
+//  206  * @brief   Write a value to the LCD
+//  207  *
+//  208  * @param   value  - value that will be displayed
+//  209  *          radix  - 8, 10, 16
+//  210  *          option - display options
+//  211  *
+//  212  * @return  None
+//  213  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  214 void HalLcdWriteValue ( uint32 value, const uint8 radix, uint8 option)
+HalLcdWriteValue:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function HalLcdWriteValue
+        CODE
+//  215 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  216 #if (HAL_LCD == TRUE)
+//  217   uint8 buf[LCD_MAX_BUF];
+//  218 
+//  219   _ltoa( value, &buf[0], radix );
+//  220   HalLcdWriteString( (char*)buf, option );
+//  221 #endif
+//  222 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock1
+//  223 
+//  224 /**************************************************************************************************
+//  225  * @fn      HalLcdWriteScreen
+//  226  *
+//  227  * @brief   Write a value to the LCD
+//  228  *
+//  229  * @param   line1  - string that will be displayed on line 1
+//  230  *          line2  - string that will be displayed on line 2
+//  231  *
+//  232  * @return  None
+//  233  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  234 void HalLcdWriteScreen( char *line1, char *line2 )
+HalLcdWriteScreen:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function HalLcdWriteScreen
+        CODE
+//  235 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  236 #if (HAL_LCD == TRUE)
+//  237   HalLcdWriteString( line1, 1 );
+//  238   HalLcdWriteString( line2, 2 );
+//  239 #endif
+//  240 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock2
+//  241 
+//  242 /**************************************************************************************************
+//  243  * @fn      HalLcdWriteStringValue
+//  244  *
+//  245  * @brief   Write a string followed by a value to the LCD
+//  246  *
+//  247  * @param   title  - Title that will be displayed before the value
+//  248  *          value  - value
+//  249  *          format - redix
+//  250  *          line   - line number
+//  251  *
+//  252  * @return  None
+//  253  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  254 void HalLcdWriteStringValue( char *title, uint16 value, uint8 format, uint8 line )
+HalLcdWriteStringValue:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function HalLcdWriteStringValue
+        CODE
+//  255 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  256 #if (HAL_LCD == TRUE)
+//  257   uint8 tmpLen;
+//  258   uint8 buf[LCD_MAX_BUF];
+//  259   uint32 err;
+//  260 
+//  261   tmpLen = (uint8)osal_strlen( (char*)title );
+//  262   osal_memcpy( buf, title, tmpLen );
+//  263   //buf[tmpLen] = ' ';
+//  264   err = (uint32)(value);
+//  265   _ltoa( err, &buf[tmpLen], format );
+//  266   HalLcdWriteString( (char*)buf, line );		
+//  267 #endif
+//  268 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock3
+//  269 
+//  270 /**************************************************************************************************
+//  271  * @fn      HalLcdWriteStringValue
+//  272  *
+//  273  * @brief   Write a string followed by a value to the LCD
+//  274  *
+//  275  * @param   title   - Title that will be displayed before the value
+//  276  *          value1  - value #1
+//  277  *          format1 - redix of value #1
+//  278  *          value2  - value #2
+//  279  *          format2 - redix of value #2
+//  280  *          line    - line number
+//  281  *
+//  282  * @return  None
+//  283  **************************************************************************************************/
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  284 void HalLcdWriteStringValueValue( char *title, uint16 value1, uint8 format1,
+HalLcdWriteStringValueValue:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function HalLcdWriteStringValueValue
+        CODE
+//  285                                   uint16 value2, uint8 format2, uint8 line )
+//  286 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  287 
+//  288 #if (HAL_LCD == TRUE)
+//  289 
+//  290   uint8 tmpLen;
+//  291   uint8 buf[LCD_MAX_BUF];
+//  292   uint32 err;
+//  293 
+//  294   tmpLen = (uint8)osal_strlen( (char*)title );
+//  295   if ( tmpLen )
+//  296   {
+//  297     osal_memcpy( buf, title, tmpLen );
+//  298     //buf[tmpLen++] = ' ';
+//  299   }
+//  300 
+//  301   err = (uint32)(value1);
+//  302   _ltoa( err, &buf[tmpLen], format1 );
+//  303   tmpLen = (uint8)osal_strlen( (char*)buf );
+//  304 
+//  305   buf[tmpLen++] = ',';
+//  306   buf[tmpLen++] = ' ';
+//  307   err = (uint32)(value2);
+//  308   _ltoa( err, &buf[tmpLen], format2 );
+//  309 
+//  310   HalLcdWriteString( (char *)buf, line );		
+//  311 
+//  312 #endif
+//  313 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock4
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for F16x16>`:
+        DATA8
+        DB 16
+        DB 33
+        DB 134
+        DB 112
+        DB 0
+        DB 126
+        DB 74
+        DB 74
+        DB 74
+        DB 74
+        DB 74
+        DB 126
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 2
+        DB 254
+        DB 1
+        DB 64
+        DB 127
+        DB 65
+        DB 65
+        DB 127
+        DB 65
+        DB 65
+        DB 127
+        DB 65
+        DB 65
+        DB 127
+        DB 64
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 4
+        DB 36
+        DB 36
+        DB 252
+        DB 165
+        DB 166
+        DB 164
+        DB 252
+        DB 36
+        DB 36
+        DB 36
+        DB 4
+        DB 0
+        DB 128
+        DB 96
+        DB 31
+        DB 128
+        DB 128
+        DB 66
+        DB 70
+        DB 42
+        DB 18
+        DB 18
+        DB 42
+        DB 38
+        DB 66
+        DB 192
+        DB 64
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 54
+        DB 54
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 96
+        DB 2
+        DB 204
+        DB 0
+        DB 0
+        DB 62
+        DB 42
+        DB 170
+        DB 42
+        DB 170
+        DB 42
+        DB 62
+        DB 0
+        DB 0
+        DB 0
+        DB 8
+        DB 8
+        DB 254
+        DB 1
+        DB 64
+        DB 66
+        DB 76
+        DB 64
+        DB 127
+        DB 64
+        DB 127
+        DB 72
+        DB 68
+        DB 66
+        DB 64
+        DB 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdInit::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteValue::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteScreen::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteScreen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteStringValue::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteStringValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??HalLcdWriteStringValueValue::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    HalLcdWriteStringValueValue
+
+        END
+//  314 
+//  315 #if (HAL_LCD == TRUE)
+//  316 void DelayMS(unsigned int msec)
+//  317 { 
+//  318     unsigned int i,j;
+//  319     
+//  320     for (i=0; i<msec; i++)
+//  321         for (j=0; j<530; j++);
+//  322 }
+//  323 
+//  324 /*********************LCD 延时1ms************************************/
+//  325 void LCD_DLY_ms(unsigned int ms)
+//  326 {                         
+//  327     unsigned int a;
+//  328     while(ms)
+//  329     {
+//  330         a=1800;
+//  331         while(a--);
+//  332         ms--;
+//  333     }
+//  334     return;
+//  335 }
+//  336 
+//  337 /*********************LCD写数据************************************/ 
+//  338 void LCD_WrDat(unsigned char dat)     
+//  339 {
+//  340     unsigned char i=8, temp=0;
+//  341     LCD_DC=1;  
+//  342     for(i=0;i<8;i++) //发送一个八位数据 
+//  343     {
+//  344         LCD_SCL=0;  
+//  345         
+//  346         temp = dat&0x80;
+//  347         if (temp == 0)
+//  348         {
+//  349             LCD_SDA = 0;
+//  350         }
+//  351         else
+//  352         {
+//  353             LCD_SDA = 1;
+//  354         }
+//  355         LCD_SCL=1;             
+//  356         dat<<=1;    
+//  357     }
+//  358 }
+//  359 
+//  360 /*********************LCD写命令************************************/                                        
+//  361 void LCD_WrCmd(unsigned char cmd)
+//  362 {
+//  363     unsigned char i=8, temp=0;
+//  364     LCD_DC=0;
+//  365     for(i=0;i<8;i++) //发送一个八位数据 
+//  366     { 
+//  367         LCD_SCL=0; 
+//  368        
+//  369         temp = cmd&0x80;
+//  370         if (temp == 0)
+//  371         {
+//  372             LCD_SDA = 0;
+//  373         }
+//  374         else
+//  375         {
+//  376             LCD_SDA = 1;
+//  377         }
+//  378         LCD_SCL=1;
+//  379         cmd<<=1;;        
+//  380     }     
+//  381 }
+//  382 
+//  383 /*********************LCD 设置坐标************************************/
+//  384 void LCD_Set_Pos(unsigned char x, unsigned char y) 
+//  385 { 
+//  386     LCD_WrCmd(0xb0+y);
+//  387     LCD_WrCmd(((x&0xf0)>>4)|0x10);
+//  388     LCD_WrCmd((x&0x0f)|0x01); 
+//  389 } 
+//  390 
+//  391 /*********************LCD全屏************************************/
+//  392 void LCD_Fill(unsigned char bmp_dat) 
+//  393 {
+//  394     unsigned char y,x;
+//  395     for(y=0;y<8;y++)
+//  396     {
+//  397         LCD_WrCmd(0xb0+y);
+//  398         LCD_WrCmd(0x01);
+//  399         LCD_WrCmd(0x10);
+//  400         for(x=0;x<X_WIDTH;x++)
+//  401             LCD_WrDat(bmp_dat);
+//  402     }
+//  403 }
+//  404 
+//  405 /*********************LCD复位************************************/
+//  406 void LCD_CLS(void)
+//  407 {
+//  408     unsigned char y,x;    
+//  409     for(y=0;y<8;y++)
+//  410     {
+//  411         LCD_WrCmd(0xb0+y);
+//  412         LCD_WrCmd(0x01);
+//  413         LCD_WrCmd(0x10); 
+//  414         for(x=0;x<X_WIDTH;x++)
+//  415             LCD_WrDat(0);
+//  416     }
+//  417 }
+//  418 
+//  419 void LcdClearLine(unsigned char y, unsigned char count)
+//  420 {
+//  421     unsigned char x,j;	
+//  422     
+//  423     for(j=y; j<(y+count); j++)
+//  424     {
+//  425         LCD_WrCmd(0xb0+j);
+//  426         LCD_WrCmd(0x01);
+//  427         LCD_WrCmd(0x10); 
+//  428         for(x=0;x<X_WIDTH;x++)
+//  429            LCD_WrDat(0);
+//  430     }
+//  431 }
+//  432 
+//  433 void HalLcdWriteString (char *str, uint8 option)
+//  434 {
+//  435   uint8 x=0,y=0,strLen;
+//  436   uint8 lcdBuf[HAL_LCD_MAX_CHARS+1];
+//  437     
+//  438   x=0;
+//  439   y = (option-1)*2;
+//  440   strLen = (uint8)osal_strlen( (char*)str );
+//  441 
+//  442   /* Check boundries */
+//  443   if ( strLen > HAL_LCD_MAX_CHARS )
+//  444     strLen = HAL_LCD_MAX_CHARS;
+//  445 
+//  446   osal_memset(lcdBuf, 0, HAL_LCD_MAX_CHARS+1);
+//  447   osal_memcpy( lcdBuf, str, strLen );
+//  448   
+//  449   LcdClearLine(y, 2);
+//  450   LCD_P8x16Str(x, y, lcdBuf);
+//  451 }
+//  452 
+//  453 /***能描述：显示8*16一组标准ASCII字符串     显示的坐标（x,y），y为页范围0～7***/
+//  454 void LCD_P8x16Str(unsigned char x, unsigned char y,unsigned char ch[])
+//  455 {
+//  456     unsigned char c=0,i=0,j=0;
+//  457     
+//  458     while (ch[j]!='\0')
+//  459     {    
+//  460         c =ch[j]-32;
+//  461         if(x>120){
+//  462           x=0;
+//  463           y++;
+//  464         }
+//  465         LCD_Set_Pos(x,y);    
+//  466         for(i=0;i<8;i++)     
+//  467             LCD_WrDat(F8X16[c*16+i]);
+//  468         LCD_Set_Pos(x,y+1);    
+//  469         for(i=0;i<8;i++)     
+//  470             LCD_WrDat(F8X16[c*16+i+8]);  
+//  471         x+=8;
+//  472         j++;
+//  473     }
+//  474 }
+//  475 
+//  476 /*****************功能描述：显示16*16点阵  显示的坐标（x,y），y为页范围0～7****************************/
+//  477 void LCD_P16x16Ch(unsigned char x, unsigned char y, unsigned char N)
+//  478 {
+//  479     unsigned char wm=0;
+//  480     unsigned int adder=2*N;//32*N;        
+//  481     LCD_Set_Pos(x , y);
+//  482     for(wm = 0;wm < 16;wm++)               
+//  483     {
+//  484         LCD_WrDat(F16x16[adder]);    
+//  485         adder += 1;
+//  486     }      
+//  487     LCD_Set_Pos(x,y + 1); 
+//  488     for(wm = 0;wm < 16;wm++)          
+//  489     {
+//  490         LCD_WrDat(F16x16[adder]);
+//  491         adder += 1;
+//  492     }           
+//  493 }
+//  494 
+//  495 void HalLcd_HW_WaitUs(uint16 microSecs)
+//  496 {
+//  497   while(microSecs--)
+//  498   {
+//  499     /* 32 NOPs == 1 usecs */
+//  500     asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  501     asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  502   }
+//  503 }
+//  504 
+//  505 void HalLcd_HW_Init(void)
+//  506 {
+//  507     P0SEL &= 0xFE; //让P0.0为普通IO口，
+//  508     P0DIR |= 0x01; //让P0.0为为输出
+//  509 
+//  510     P1SEL &= 0x73; //让 P1.2 P1.3 P1.7为普通IO口
+//  511     P1DIR |= 0x8C; //把 P1.2 P1.3 1.7设置为输出
+//  512     
+//  513     LCD_SCL=1;
+//  514     LCD_RST=0;
+//  515     LCD_DLY_ms(50);
+//  516     LCD_RST=1;      //从上电到下面开始初始化要有足够的时间，即等待RC复位完毕   
+//  517     LCD_WrCmd(0xae);//--turn off oled panel
+//  518     LCD_WrCmd(0x00);//---set low column address
+//  519     LCD_WrCmd(0x10);//---set high column address
+//  520     LCD_WrCmd(0x40);//--set start line address  Set Mapping RAM Display Start Line (0x00~0x3F)
+//  521     LCD_WrCmd(0x81);//--set contrast control register
+//  522     LCD_WrCmd(0xcf); // Set SEG Output Current Brightness
+//  523     LCD_WrCmd(0xa1);//--Set SEG/Column Mapping     0xa0左右反置 0xa1正常
+//  524     LCD_WrCmd(0xc8);//Set COM/Row Scan Direction   0xc0上下反置 0xc8正常
+//  525     LCD_WrCmd(0xa6);//--set normal display
+//  526     LCD_WrCmd(0xa8);//--set multiplex ratio(1 to 64)
+//  527     LCD_WrCmd(0x3f);//--1/64 duty
+//  528     LCD_WrCmd(0xd3);//-set display offset    Shift Mapping RAM Counter (0x00~0x3F)
+//  529     LCD_WrCmd(0x00);//-not offset
+//  530     LCD_WrCmd(0xd5);//--set display clock divide ratio/oscillator frequency
+//  531     LCD_WrCmd(0x80);//--set divide ratio, Set Clock as 100 Frames/Sec
+//  532     LCD_WrCmd(0xd9);//--set pre-charge period
+//  533     LCD_WrCmd(0xf1);//Set Pre-Charge as 15 Clocks & Discharge as 1 Clock
+//  534     LCD_WrCmd(0xda);//--set com pins hardware configuration
+//  535     LCD_WrCmd(0x12);
+//  536     LCD_WrCmd(0xdb);//--set vcomh
+//  537     LCD_WrCmd(0x40);//Set VCOM Deselect Level
+//  538     LCD_WrCmd(0x20);//-Set Page Addressing Mode (0x00/0x01/0x02)
+//  539     LCD_WrCmd(0x02);//
+//  540     LCD_WrCmd(0x8d);//--set Charge Pump enable/disable
+//  541     LCD_WrCmd(0x14);//--set(0x10) disable
+//  542     LCD_WrCmd(0xa4);// Disable Entire Display On (0xa4/0xa5)
+//  543     LCD_WrCmd(0xa6);// Disable Inverse Display On (0xa6/a7) 
+//  544     LCD_WrCmd(0xaf);//--turn on oled panel
+//  545     LCD_Fill(0x00);  //初始清屏 
+//  546     LCD_Set_Pos(0,0); 
+//  547 }
+//  548 
+//  549 
+//  550 #endif
+// 
+//    15 bytes in segment BANKED_CODE
+//    30 bytes in segment BANK_RELAYS
+//   128 bytes in segment XDATA_I
+//   128 bytes in segment XDATA_ID
+// 1 520 bytes in segment XDATA_ROM_C
+// 
+//   158 bytes of CODE     memory
+// 1 520 bytes of CONST    memory
+//    15 bytes of HUGECODE memory
+//   128 bytes of XDATA    memory
+//
+//Errors: none
+//Warnings: none

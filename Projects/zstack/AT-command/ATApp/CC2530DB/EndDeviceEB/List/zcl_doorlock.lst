@@ -1,0 +1,1450 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               24/Feb/2022  16:36:18
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ZCL\zcl_doorlock.c
+#    Command line       =  
+#        -f C:\Users\Administrator\AppData\Local\Temp\EW3E34.tmp
+#        (D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ZCL\zcl_doorlock.c
+#        -D WDT_IN_PM1 -D ZIGBEEPRO -D INTER_PAN -D ZIGBEE_FREQ_AGILITY -D
+#        DISABLE_GREENPOWER_BASIC_PROXY -D REFLECTOR -D HAL_UART=FALSE -D
+#        HAL_LED=FALSE -D HAL_KEY=FALSE -D SECURE=1 -D TC_LINKKEY_JOIN -D
+#        NV_INIT -D NV_RESTORE -D POWER_SAVING -D NWK_AUTO_POLL -D xZTOOL_P1 -D
+#        xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D
+#        xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D xLEGACY_LCD_DEBUG -D
+#        xLCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_DISCOVER -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES
+#        -D ZCL_GROUPS -D BDB_REPORTING -D ZCL_DOORLOCK -D ZCL_DOORLOCK_EXT -D
+#        ISR_KEYINTERRUPT -lC
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        -lA
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List
+#        --diag_suppress Pe001,Pa010 -o
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=10 -DMAX_RTG_ENTRIES=15 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=300
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\ZCL\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\UserAPI\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\Source\Controller\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\ZMain\TI2530DB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\mt\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\osal\include\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\saddr\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\services\sdata\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\af\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\bdb\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\gp\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sec\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\sys\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zcl\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\
+#        -I
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\
+#        -Ohz --require_prototypes)
+#    Locale             =  Chinese (Simplified)_CHN.936
+#    List file          =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\List\zcl_doorlock.lst
+#    Object file        =  
+#        D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\CC2530DB\EndDeviceEB\Obj\zcl_doorlock.r51
+#
+###############################################################################
+
+D:\A_proj\A_Cproj\Zigbee\ZigBee-DoorLock-2021.09.27\Projects\zstack\AT-command\ATApp\Source\ZCL\zcl_doorlock.c
+      1          /*****************************************************************************
+      2            Filename:       zcl_doorlock.c
+      3            Author:         Yang Wang
+      4          
+      5            Description:    Zigbee Cluster Library - sample device application.
+      6          ******************************************************************************/
+      7          /*********************************************************************
+      8           * INCLUDES
+      9           */
+     10          #include "ZComDef.h"
+     11          #include "OSAL.h"
+     12          #include "AF.h"
+     13          #include "ZDApp.h"
+     14          #include "bdb.h"
+     15          #include "bdb_interface.h"
+     16          
+     17          #include "zcl.h"
+     18          #include "zcl_general.h"
+     19          #include "zcl_closures.h"
+     20          #include "zcl_ha.h"
+     21          
+     22          #include "AT_controller.h"
+     23          #include "AT_printf.h"
+     24          #include "zcl_doorlock.h"
+     25          
+     26          #include "onboard.h"
+     27          
+     28          /* HAL */
+     29          #include "hal_led.h"
+     30          
+     31          /* Device */
+     32          #include "AT_doorlock.h"
+     33          #include "AT_single_bus.h"
+     34          #include "AT_pwr_single_bus.h"
+     35          /*********************************************************************
+     36           * MACROS
+     37           */
+     38          
+     39          /*********************************************************************
+     40           * CONSTANTS
+     41           */
+     42          
+     43          /*********************************************************************
+     44           * TYPEDEFS
+     45           */
+     46          
+     47          /*********************************************************************
+     48           * GLOBAL VARIABLES
+     49           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     50          byte zclDoorLock_TaskID;
+   \                     zclDoorLock_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     51          
+     52          /*********************************************************************
+     53           * GLOBAL FUNCTIONS
+     54           */
+     55          
+     56          /*********************************************************************
+     57           * LOCAL VARIABLES
+     58           */
+     59          
+     60          /*********************************************************************
+     61           * LOCAL FUNCTIONS
+     62           */
+     63          static ZStatus_t zclDoorLock_Report(uint8 endpoint, uint16 clusterId, uint16 attrId, uint8 dataType, void *dataPtr);
+     64          static void zclDoorLock_BasicResetCB( void );
+     65          
+     66          // Functions to process ZCL Foundation incoming Command/Response messages
+     67          static ZStatus_t zclDoorLock_DoorLockCB ( zclIncoming_t *pInMsg, zclDoorLock_t *pInCmd );
+     68          static ZStatus_t zclDoorLock_DoorLockSetTemporaryPinCB ( zclIncoming_t *pInMsg, zclDoorLockSetTemporaryPin_t *pCmd );
+     69          
+     70          /*********************************************************************
+     71           * ZCL General Profile Callback table
+     72           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     73          static zclGeneral_AppCallbacks_t zclDoorLock_CmdCallbacks =
+   \                     zclDoorLock_CmdCallbacks:
+   \   000000                DS 24
+   \   000018                REQUIRE `?<Initializer for zclDoorLock_CmdCallbacks>`
+   \   000018                REQUIRE __INIT_XDATA_I
+     74          {
+     75            zclDoorLock_BasicResetCB,               // Basic Cluster Reset command
+     76            NULL,                                   // Identify Trigger Effect command
+     77            NULL,                                   // On/Off cluster commands
+     78            NULL,                                   // On/Off cluster enhanced command Off with Effect
+     79            NULL,                                   // On/Off cluster enhanced command On with Recall Global Scene
+     80            NULL,                                   // On/Off cluster enhanced command On with Timed Off
+     81          #ifdef ZCL_LEVEL_CTRL
+     82            NULL,                                   // Level Control Move to Level command
+     83            NULL,                                   // Level Control Move command
+     84            NULL,                                   // Level Control Step command
+     85            NULL,                                   // Level Control Stop command
+     86          #endif
+     87          #ifdef ZCL_GROUPS
+     88            NULL,                                   // Group Response commands
+     89          #endif
+     90          #ifdef ZCL_SCENES
+     91            NULL,                                  // Scene Store Request command
+     92            NULL,                                  // Scene Recall Request command
+     93            NULL,                                  // Scene Response command
+     94          #endif
+     95          #ifdef ZCL_ALARMS
+     96            NULL,                                  // Alarm (Response) commands
+     97          #endif
+     98          #ifdef SE_UK_EXT
+     99            NULL,                                  // Get Event Log command
+    100            NULL,                                  // Publish Event Log command
+    101          #endif
+    102            NULL,                                  // RSSI Location command
+    103            NULL                                   // RSSI Location Response command
+    104          };
+    105          
+    106          /*********************************************************************
+    107           * ZCL Closure cluster Callback table
+    108           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    109          static zclClosures_DoorLockAppCallbacks_t zclDoorLock_DoorLockCmdCallbacks =
+   \                     zclDoorLock_DoorLockCmdCallbacks:
+   \   000000                DS 104
+   \   000068                REQUIRE `?<Initializer for zclDoorLock_DoorLockCmdCallb`
+   \   000068                REQUIRE __INIT_XDATA_I
+    110          {
+    111            zclDoorLock_DoorLockCB,                 // Lock/Unlock/Toggle command
+    112            NULL,
+    113            NULL,                                   // Unlock With Timeout command
+    114            NULL,                                   // Get Log Record command
+    115            NULL,
+    116            NULL,
+    117            NULL,
+    118            NULL,
+    119            NULL,
+    120            NULL,
+    121            NULL,
+    122            NULL,
+    123            NULL,
+    124            NULL,
+    125            NULL,
+    126            NULL,
+    127            NULL,
+    128            NULL,
+    129            NULL,
+    130            NULL,
+    131            NULL,
+    132            NULL,
+    133            NULL,
+    134            NULL,
+    135            NULL,
+    136            zclDoorLock_DoorLockSetTemporaryPinCB,
+    137            NULL,
+    138            NULL,
+    139            NULL,
+    140            NULL,
+    141            NULL,
+    142            NULL,
+    143            NULL,
+    144            NULL,
+    145            NULL,
+    146            NULL,
+    147            NULL,
+    148            NULL,
+    149            NULL,
+    150            NULL,
+    151            NULL,
+    152            NULL,
+    153            NULL,
+    154            NULL,
+    155            NULL,
+    156            NULL,
+    157            NULL,
+    158            NULL,
+    159            NULL,
+    160            NULL,
+    161            NULL,
+    162            NULL
+    163          };
+    164          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    165          static ZStatus_t zclDoorLock_Report(uint8 endpoint, uint16 clusterId, uint16 attrId, uint8 dataType, void *dataPtr)
+   \                     zclDoorLock_Report:
+    166          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV       A,#-0x10
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV       A,#-0xc
+   \   000007   12....       LCALL     ?ALLOC_XSTACK8
+   \   00000A   89..         MOV       ?V2,R1
+   \   00000C   EA           MOV       A,R2
+   \   00000D   FE           MOV       R6,A
+   \   00000E   EB           MOV       A,R3
+   \   00000F   FF           MOV       R7,A
+   \   000010   8C..         MOV       ?V0,R4
+   \   000012   8D..         MOV       ?V1,R5
+    167            ZStatus_t result = ZFailure;
+    168          
+    169            afAddrType_t dstAddr;
+    170            dstAddr.addr.shortAddr = NWK_PAN_COORD_ADDR;
+   \   000014   85..82       MOV       DPL,?XSP + 0
+   \   000017   85..83       MOV       DPH,?XSP + 1
+   \   00001A   E4           CLR       A
+   \   00001B   F0           MOVX      @DPTR,A
+   \   00001C   A3           INC       DPTR
+   \   00001D   F0           MOVX      @DPTR,A
+    171            dstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00001E   7408         MOV       A,#0x8
+   \   000020   12....       LCALL     ?XSTACK_DISP0_8
+   \   000023   7402         MOV       A,#0x2
+   \   000025   F0           MOVX      @DPTR,A
+    172            dstAddr.endPoint = 0x64;
+   \   000026   7409         MOV       A,#0x9
+   \   000028   12....       LCALL     ?XSTACK_DISP0_8
+   \   00002B   7464         MOV       A,#0x64
+   \   00002D   F0           MOVX      @DPTR,A
+    173          
+    174            zclReportCmd_t *pReportCmd;
+    175            pReportCmd = osal_mem_alloc(sizeof(zclReportCmd_t) + (1 * sizeof(zclReport_t)));
+   \   00002E                ; Setup parameters for call to function osal_mem_alloc
+   \   00002E   7A06         MOV       R2,#0x6
+   \   000030   7B00         MOV       R3,#0x0
+   \   000032   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   000035   8A..         MOV       ?V4,R2
+   \   000037   8B..         MOV       ?V5,R3
+    176            if(pReportCmd != NULL)
+   \   000039   EA           MOV       A,R2
+   \   00003A   4B           ORL       A,R3
+   \   00003B   606F         JZ        ??zclDoorLock_Report_0
+    177            {
+    178              pReportCmd->numAttr = 1;
+   \   00003D   8A82         MOV       DPL,R2
+   \   00003F   8B83         MOV       DPH,R3
+   \   000041   7401         MOV       A,#0x1
+   \   000043   F0           MOVX      @DPTR,A
+    179          
+    180              pReportCmd->attrList[0].attrID = attrId;
+   \   000044   A3           INC       DPTR
+   \   000045   E5..         MOV       A,?V0
+   \   000047   F0           MOVX      @DPTR,A
+   \   000048   A3           INC       DPTR
+   \   000049   E5..         MOV       A,?V1
+   \   00004B   F0           MOVX      @DPTR,A
+    181              pReportCmd->attrList[0].dataType = dataType;
+   \   00004C   741C         MOV       A,#0x1c
+   \   00004E   12....       LCALL     ?XSTACK_DISP0_8
+   \   000051   E0           MOVX      A,@DPTR
+   \   000052   8A82         MOV       DPL,R2
+   \   000054   8B83         MOV       DPH,R3
+   \   000056   A3           INC       DPTR
+   \   000057   A3           INC       DPTR
+   \   000058   A3           INC       DPTR
+   \   000059   F0           MOVX      @DPTR,A
+    182              pReportCmd->attrList[0].attrData = dataPtr;
+   \   00005A   741D         MOV       A,#0x1d
+   \   00005C   12....       LCALL     ?XSTACK_DISP0_8
+   \   00005F   E0           MOVX      A,@DPTR
+   \   000060   F8           MOV       R0,A
+   \   000061   A3           INC       DPTR
+   \   000062   E0           MOVX      A,@DPTR
+   \   000063   F9           MOV       R1,A
+   \   000064   8A82         MOV       DPL,R2
+   \   000066   8B83         MOV       DPH,R3
+   \   000068   A3           INC       DPTR
+   \   000069   A3           INC       DPTR
+   \   00006A   A3           INC       DPTR
+   \   00006B   A3           INC       DPTR
+   \   00006C   E8           MOV       A,R0
+   \   00006D   F0           MOVX      @DPTR,A
+   \   00006E   A3           INC       DPTR
+   \   00006F   E9           MOV       A,R1
+   \   000070   F0           MOVX      @DPTR,A
+    183          
+    184              result = zcl_SendReportCmd( endpoint,
+    185                                          &dstAddr,
+    186                                          clusterId,
+    187                                          pReportCmd,
+    188                                          ZCL_FRAME_SERVER_CLIENT_DIR,
+    189                                          BDB_REPORTING_DISABLE_DEFAULT_RSP,
+    190                                          bdb_getZCLFrameCounter());
+   \   000071                ; Setup parameters for call to function bdb_getZCLFrameCounter
+   \   000071   12....       LCALL     `??bdb_getZCLFrameCounter::?relay`; Banked call to: bdb_getZCLFrameCounter
+   \   000074   E9           MOV       A,R1
+   \   000075                ; Setup parameters for call to function zcl_SendReportCmd
+   \   000075   F5..         MOV       ?V0,A
+   \   000077   78..         MOV       R0,#?V0
+   \   000079   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00007C   75..01       MOV       ?V0,#0x1
+   \   00007F   78..         MOV       R0,#?V0
+   \   000081   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000084   78..         MOV       R0,#?V0
+   \   000086   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000089   78..         MOV       R0,#?V4
+   \   00008B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00008E   EE           MOV       A,R6
+   \   00008F   FC           MOV       R4,A
+   \   000090   EF           MOV       A,R7
+   \   000091   FD           MOV       R5,A
+   \   000092   7405         MOV       A,#0x5
+   \   000094   12....       LCALL     ?XSTACK_DISP101_8
+   \   000097   A9..         MOV       R1,?V2
+   \   000099   12....       LCALL     `??zcl_SendReportCmd::?relay`; Banked call to: zcl_SendReportCmd
+   \   00009C   7405         MOV       A,#0x5
+   \   00009E   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000A1   E9           MOV       A,R1
+   \   0000A2   FE           MOV       R6,A
+    191          
+    192              osal_mem_free(pReportCmd);
+   \   0000A3                ; Setup parameters for call to function osal_mem_free
+   \   0000A3   AA..         MOV       R2,?V4
+   \   0000A5   AB..         MOV       R3,?V5
+   \   0000A7   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   0000AA   8002         SJMP      ??zclDoorLock_Report_1
+    193            }
+    194            else
+    195            {
+    196              result = ZMemError;
+   \                     ??zclDoorLock_Report_0:
+   \   0000AC   7E10         MOV       R6,#0x10
+    197            }
+    198          
+    199            return result;
+   \                     ??zclDoorLock_Report_1:
+   \   0000AE   EE           MOV       A,R6
+   \   0000AF   F9           MOV       R1,A
+   \   0000B0   740C         MOV       A,#0xc
+   \   0000B2   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000B5   7F08         MOV       R7,#0x8
+   \   0000B7   02....       LJMP      ?BANKED_LEAVE_XDATA
+    200          }
+    201          /*********************************************************************
+    202           * @fn          zclDoorLock_Init
+    203           *
+    204           * @brief       Initialization function for the zclGeneral layer.
+    205           *
+    206           * @param       none
+    207           *
+    208           * @return      none
+    209           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    210          void zclDoorLock_Init( byte task_id )
+   \                     zclDoorLock_Init:
+    211          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+    212            zclDoorLock_TaskID = task_id;
+   \   000006   90....       MOV       DPTR,#zclDoorLock_TaskID
+   \   000009   F0           MOVX      @DPTR,A
+    213          
+    214            // This app is part of the Home Automation Profile
+    215            bdb_RegisterSimpleDescriptor( &DoorLock_SimpleDesc );
+   \   00000A                ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+   \   00000A   7A..         MOV       R2,#DoorLock_SimpleDesc & 0xff
+   \   00000C   7B..         MOV       R3,#(DoorLock_SimpleDesc >> 8) & 0xff
+   \   00000E   12....       LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+    216          
+    217          //  // Register the ZCL endpoint control function
+    218          //  AT_Endpoint_Register(DOORLOCK_ENDPOINT, &zclDoorLock_OnOff, zclDoorLock_Enable);
+    219          
+    220            // Register the ZCL General Cluster Library callback functions
+    221            zclGeneral_RegisterCmdCallbacks( DOORLOCK_ENDPOINT, &zclDoorLock_CmdCallbacks );
+   \   000011                ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+   \   000011   7A..         MOV       R2,#zclDoorLock_CmdCallbacks & 0xff
+   \   000013   7B..         MOV       R3,#(zclDoorLock_CmdCallbacks >> 8) & 0xff
+   \   000015   790A         MOV       R1,#0xa
+   \   000017   12....       LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+    222          
+    223            // Register the application's attribute list
+    224            zclDoorLock_ResetAttributesToDefaultValues();
+   \   00001A                ; Setup parameters for call to function zclDoorLock_ResetAttributesToDefaultValues
+   \   00001A   12....       LCALL     `??zclDoorLock_ResetAttributesToDefaultValues::?`; Banked call to: zclDoorLock_ResetAttributesToDefaultValues
+    225            zcl_registerAttrList( DOORLOCK_ENDPOINT, zclDoorLock_NumAttributes, zclDoorLock_Attrs );
+   \   00001D                ; Setup parameters for call to function zcl_registerAttrList
+   \   00001D   7C..         MOV       R4,#zclDoorLock_Attrs & 0xff
+   \   00001F   7D..         MOV       R5,#(zclDoorLock_Attrs >> 8) & 0xff
+   \   000021   90....       MOV       DPTR,#zclDoorLock_NumAttributes
+   \   000024   E4           CLR       A
+   \   000025   93           MOVC      A,@A+DPTR
+   \   000026   FA           MOV       R2,A
+   \   000027   790A         MOV       R1,#0xa
+   \   000029   12....       LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+    226          
+    227            //Register the ZCL DoorLock Cluster Library callback function
+    228            zclClosures_RegisterDoorLockCmdCallbacks( DOORLOCK_ENDPOINT, &zclDoorLock_DoorLockCmdCallbacks );
+   \   00002C                ; Setup parameters for call to function zclClosures_RegisterDoorLockCmdCallbacks
+   \   00002C   7A..         MOV       R2,#zclDoorLock_DoorLockCmdCallbacks & 0xff
+   \   00002E   7B..         MOV       R3,#(zclDoorLock_DoorLockCmdCallbacks >> 8) & 0xff
+   \   000030   790A         MOV       R1,#0xa
+   \   000032   12....       LCALL     `??zclClosures_RegisterDoorLockCmdCallbacks::?re`; Banked call to: zclClosures_RegisterDoorLockCmdCallbacks
+    229          
+    230            #ifdef ZCL_DISCOVER
+    231              // Register the application's command list
+    232              zcl_registerCmdList( DOORLOCK_ENDPOINT, zclCmdsArraySize, zclDoorLock_Cmds );
+   \   000035                ; Setup parameters for call to function zcl_registerCmdList
+   \   000035   7C..         MOV       R4,#zclDoorLock_Cmds & 0xff
+   \   000037   7D..         MOV       R5,#(zclDoorLock_Cmds >> 8) & 0xff
+   \   000039   90....       MOV       DPTR,#zclCmdsArraySize
+   \   00003C   E4           CLR       A
+   \   00003D   93           MOVC      A,@A+DPTR
+   \   00003E   FA           MOV       R2,A
+   \   00003F   790A         MOV       R1,#0xa
+   \   000041   12....       LCALL     `??zcl_registerCmdList::?relay`; Banked call to: zcl_registerCmdList
+    233            #endif
+    234          
+    235            #ifdef ZCL_DIAGNOSTIC
+    236              // Register the application's callback function to read/write attribute data.
+    237              // This is only required when the attribute data format is unknown to ZCL.
+    238              zcl_registerReadWriteCB( DOORLOCK_ENDPOINT, zclDiagnostic_ReadWriteAttrCB, NULL );
+    239          
+    240              if ( zclDiagnostic_InitStats() == ZSuccess )
+    241              {
+    242                // Here the user could start the timer to save Diagnostics to NV
+    243              }
+    244            #endif
+    245          
+    246            AT_DoorLock_Init();
+   \   000044                ; Setup parameters for call to function AT_DoorLock_Init
+   \   000044   12....       LCALL     `??AT_DoorLock_Init::?relay`; Banked call to: AT_DoorLock_Init
+    247          }
+   \   000047                REQUIRE ?Subroutine0
+   \   000047                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    248          
+    249          /*********************************************************************
+    250           * @fn          zclDoorLock_event_loop
+    251           *
+    252           * @brief       Event Loop Processor for zclGeneral.
+    253           *
+    254           * @param       none
+    255           *
+    256           * @return      none
+    257           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    258          uint16 zclDoorLock_event_loop( uint8 task_id, uint16 events )
+   \                     zclDoorLock_event_loop:
+    259          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FE           MOV       R6,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FF           MOV       R7,A
+    260            afIncomingMSGPacket_t *MSGpkt;
+    261          
+    262            (void)task_id;  // Intentionally unreferenced parameter
+    263          
+    264            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL       A,#0x80
+   \   00000B   7027         JNZ       ??zclDoorLock_event_loop_0
+    265            {
+    266              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclDoorLock_TaskID )) )
+    267              {
+    268                switch ( MSGpkt->hdr.event )
+    269                {
+    270                  default:
+    271                    break;
+    272                }
+    273          
+    274                // Release the memory
+    275                osal_msg_deallocate( (uint8 *)MSGpkt );
+    276              }
+    277          
+    278              // return unprocessed events
+    279              return (events ^ SYS_EVENT_MSG);
+    280            }
+    281          
+    282            if ( events & DOORLOCK_IDENTIFY_TIMEOUT_EVT )
+   \   00000D   EA           MOV       A,R2
+   \   00000E   A2E0         MOV       C,0xE0 /* A   */.0
+   \   000010   5036         JNC       ??zclDoorLock_event_loop_1
+    283            {
+    284              if ( zclDoorLock_IdentifyTime > 0 )
+   \   000012   90....       MOV       DPTR,#zclDoorLock_IdentifyTime
+   \   000015   E0           MOVX      A,@DPTR
+   \   000016   F8           MOV       R0,A
+   \   000017   A3           INC       DPTR
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   F9           MOV       R1,A
+   \   00001A   E8           MOV       A,R0
+   \   00001B   49           ORL       A,R1
+   \   00001C   600C         JZ        ??zclDoorLock_event_loop_2
+    285                zclDoorLock_IdentifyTime--;
+   \   00001E   90....       MOV       DPTR,#zclDoorLock_IdentifyTime
+   \   000021   E0           MOVX      A,@DPTR
+   \   000022   24FF         ADD       A,#-0x1
+   \   000024   F0           MOVX      @DPTR,A
+   \   000025   A3           INC       DPTR
+   \   000026   E0           MOVX      A,@DPTR
+   \   000027   34FF         ADDC      A,#-0x1
+   \   000029   F0           MOVX      @DPTR,A
+    286              // zclDoorLock_ProcessIdentifyTimeChange(DOORLOCK_ENDPOINT);
+    287          
+    288              return ( events ^ DOORLOCK_IDENTIFY_TIMEOUT_EVT );
+   \                     ??zclDoorLock_event_loop_2:
+   \   00002A   EA           MOV       A,R2
+   \   00002B   6401         XRL       A,#0x1
+   \   00002D   FA           MOV       R2,A
+   \   00002E   02....       LJMP      ??zclDoorLock_event_loop_3 & 0xFFFF
+    289            }
+   \                     ??zclDoorLock_event_loop_4:
+   \   000031                ; Setup parameters for call to function osal_msg_deallocate
+   \   000031   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \                     ??zclDoorLock_event_loop_0:
+   \   000034                ; Setup parameters for call to function osal_msg_receive
+   \   000034   90....       MOV       DPTR,#zclDoorLock_TaskID
+   \   000037   E0           MOVX      A,@DPTR
+   \   000038   F9           MOV       R1,A
+   \   000039   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+   \   00003C   EA           MOV       A,R2
+   \   00003D   4B           ORL       A,R3
+   \   00003E   70F1         JNZ       ??zclDoorLock_event_loop_4
+   \   000040   EE           MOV       A,R6
+   \   000041   FA           MOV       R2,A
+   \   000042   EF           MOV       A,R7
+   \   000043   6480         XRL       A,#0x80
+   \   000045   02....       LJMP      ??zclDoorLock_event_loop_5 & 0xFFFF
+    290          
+    291            if ( events & DOORLOCK_REPORT_LOCK_EVT )
+   \                     ??zclDoorLock_event_loop_1:
+   \   000048   5402         ANL       A,#0x2
+   \   00004A   6042         JZ        ??zclDoorLock_event_loop_6
+    292            {
+    293              zclDoorLock_LockState = CLOSURES_LOCK_STATE_LOCKED;
+   \   00004C   90....       MOV       DPTR,#zclDoorLock_LockState
+   \   00004F   7401         MOV       A,#0x1
+   \   000051   12....       LCALL     ?Subroutine4 & 0xFFFF
+    294          
+    295            #ifdef BDB_REPORTING
+    296              ZStatus_t result = zclDoorLock_Report( DOORLOCK_ENDPOINT,
+    297                                                     ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    298                                                     ATTRID_CLOSURES_LOCK_STATE,
+    299                                                     ZCL_DATATYPE_ENUM8,
+    300                                                     (void *)&zclDoorLock_LockState);
+   \                     ??CrossCallReturnLabel_6:
+   \   000054   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000057   75..30       MOV       ?V0,#0x30
+   \   00005A   78..         MOV       R0,#?V0
+   \   00005C   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00005F   7C00         MOV       R4,#0x0
+   \   000061   7D00         MOV       R5,#0x0
+   \   000063   7A01         MOV       R2,#0x1
+   \   000065   7B01         MOV       R3,#0x1
+   \   000067   790A         MOV       R1,#0xa
+   \   000069   12....       LCALL     `??zclDoorLock_Report::?relay`; Banked call to: zclDoorLock_Report
+   \   00006C   7403         MOV       A,#0x3
+   \   00006E   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000071   E9           MOV       A,R1
+    301          
+    302              printf("AF, DOORLOCK_REPORT_LOCK_EVT: 0x%02X\r\n", result);
+   \   000072                ; Setup parameters for call to function printf
+   \   000072   F5..         MOV       ?V0,A
+   \   000074   75..00       MOV       ?V1,#0x0
+   \   000077   78..         MOV       R0,#?V0
+   \   000079   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00007C   7A..         MOV       R2,#`?<Constant "AF, DOORLOCK_REPORT_L...">` & 0xff
+   \   00007E   7B..         MOV       R3,#(`?<Constant "AF, DOORLOCK_REPORT_L...">` >> 8) & 0xff
+   \   000080   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   000083   7402         MOV       A,#0x2
+   \   000085   12....       LCALL     ?DEALLOC_XSTACK8
+    303            #endif
+    304          
+    305              return ( events ^ DOORLOCK_REPORT_LOCK_EVT );
+   \   000088   EE           MOV       A,R6
+   \   000089   6402         XRL       A,#0x2
+   \   00008B   02....       LJMP      ??zclDoorLock_event_loop_7 & 0xFFFF
+    306            }
+    307          
+    308            if ( events & DOORLOCK_REPORT_UNLOCK_EVT )
+   \                     ??zclDoorLock_event_loop_6:
+   \   00008E   EA           MOV       A,R2
+   \   00008F   5404         ANL       A,#0x4
+   \   000091   6058         JZ        ??zclDoorLock_event_loop_8
+    309            {
+    310              zclDoorLock_LockState = CLOSURES_LOCK_STATE_UNLOCKED;
+   \   000093   90....       MOV       DPTR,#zclDoorLock_LockState
+   \   000096   7402         MOV       A,#0x2
+   \   000098   12....       LCALL     ?Subroutine4 & 0xFFFF
+    311          
+    312            #ifdef BDB_REPORTING
+    313              ZStatus_t result = zclDoorLock_Report( DOORLOCK_ENDPOINT,
+    314                                                     ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    315                                                     ATTRID_CLOSURES_LOCK_STATE,
+    316                                                     ZCL_DATATYPE_ENUM8,
+    317                                                     (void *)&zclDoorLock_LockState);
+   \                     ??CrossCallReturnLabel_7:
+   \   00009B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00009E   75..30       MOV       ?V0,#0x30
+   \   0000A1   78..         MOV       R0,#?V0
+   \   0000A3   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   0000A6   7C00         MOV       R4,#0x0
+   \   0000A8   7D00         MOV       R5,#0x0
+   \   0000AA   7A01         MOV       R2,#0x1
+   \   0000AC   7B01         MOV       R3,#0x1
+   \   0000AE   790A         MOV       R1,#0xa
+   \   0000B0   12....       LCALL     `??zclDoorLock_Report::?relay`; Banked call to: zclDoorLock_Report
+   \   0000B3   7403         MOV       A,#0x3
+   \   0000B5   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000B8   E9           MOV       A,R1
+    318          
+    319              printf("AF, DOORLOCK_REPORT_UNLOCK_EVT: 0x%02X\r\n", result);
+   \   0000B9                ; Setup parameters for call to function printf
+   \   0000B9   F5..         MOV       ?V0,A
+   \   0000BB   75..00       MOV       ?V1,#0x0
+   \   0000BE   78..         MOV       R0,#?V0
+   \   0000C0   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000C3   7A..         MOV       R2,#`?<Constant "AF, DOORLOCK_REPORT_U...">` & 0xff
+   \   0000C5   7B..         MOV       R3,#(`?<Constant "AF, DOORLOCK_REPORT_U...">` >> 8) & 0xff
+   \   0000C7   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   0000CA   7402         MOV       A,#0x2
+   \   0000CC   12....       LCALL     ?DEALLOC_XSTACK8
+    320            #endif
+    321          
+    322              // report the doorlock is relocked after DOORLOCK_RELOCK_TIMEOUT (s)
+    323              osal_start_timerEx(zclDoorLock_TaskID, DOORLOCK_REPORT_LOCK_EVT, DOORLOCK_RELOCK_TIMEOUT);
+   \   0000CF                ; Setup parameters for call to function osal_start_timerEx
+   \   0000CF   90....       MOV       DPTR,#__Constant_1388
+   \   0000D2   12....       LCALL     ?PUSH_XSTACK8_X_FOUR
+   \   0000D5   7A02         MOV       R2,#0x2
+   \   0000D7   7B00         MOV       R3,#0x0
+   \   0000D9   90....       MOV       DPTR,#zclDoorLock_TaskID
+   \   0000DC   E0           MOVX      A,@DPTR
+   \   0000DD   F9           MOV       R1,A
+   \   0000DE   12....       LCALL     `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   0000E1   7404         MOV       A,#0x4
+   \   0000E3   12....       LCALL     ?DEALLOC_XSTACK8
+    324          
+    325              return ( events ^ DOORLOCK_REPORT_UNLOCK_EVT );
+   \   0000E6   EE           MOV       A,R6
+   \   0000E7   6404         XRL       A,#0x4
+   \   0000E9   806D         SJMP      ??zclDoorLock_event_loop_7
+    326            }
+    327          
+    328            if ( events & DOORLOCK_SET_DORMANT_EVT )
+   \                     ??zclDoorLock_event_loop_8:
+   \   0000EB   EA           MOV       A,R2
+   \   0000EC   5408         ANL       A,#0x8
+   \   0000EE   600E         JZ        ??zclDoorLock_event_loop_9
+    329            {
+    330              NLME_SetPollRate(DOORLOCK_POLL_RATE_DORMANT);
+   \   0000F0                ; Setup parameters for call to function NLME_SetPollRate
+   \   0000F0   90....       MOV       DPTR,#__Constant_0
+   \   0000F3   12....       LCALL     ?XLOAD_R2345
+   \   0000F6   12....       LCALL     `??NLME_SetPollRate::?relay`; Banked call to: NLME_SetPollRate
+    331          
+    332              return ( events ^ DOORLOCK_SET_DORMANT_EVT );
+   \   0000F9   EE           MOV       A,R6
+   \   0000FA   6408         XRL       A,#0x8
+   \   0000FC   805A         SJMP      ??zclDoorLock_event_loop_7
+    333            }
+    334          
+    335            if ( events & DOORLOCK_KEEP_ALIVE_EVT )
+   \                     ??zclDoorLock_event_loop_9:
+   \   0000FE   EA           MOV       A,R2
+   \   0000FF   5410         ANL       A,#0x10
+   \   000101   6041         JZ        ??zclDoorLock_event_loop_10
+    336            {
+    337            #ifdef BDB_REPORTING
+    338              ZStatus_t result = zclDoorLock_Report( DOORLOCK_ENDPOINT,
+    339                                                     ZCL_CLUSTER_ID_CLOSURES_DOOR_LOCK,
+    340                                                     ATTRID_CLOSURES_LOCK_STATE,
+    341                                                     ZCL_DATATYPE_ENUM8,
+    342                                                     (void *)&zclDoorLock_LockState);
+   \   000103                ; Setup parameters for call to function zclDoorLock_Report
+   \   000103   75....       MOV       ?V0,#zclDoorLock_LockState & 0xff
+   \   000106   75....       MOV       ?V1,#(zclDoorLock_LockState >> 8) & 0xff
+   \   000109   78..         MOV       R0,#?V0
+   \   00010B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00010E   75..30       MOV       ?V0,#0x30
+   \   000111   78..         MOV       R0,#?V0
+   \   000113   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000116   7C00         MOV       R4,#0x0
+   \   000118   7D00         MOV       R5,#0x0
+   \   00011A   7A01         MOV       R2,#0x1
+   \   00011C   7B01         MOV       R3,#0x1
+   \   00011E   790A         MOV       R1,#0xa
+   \   000120   12....       LCALL     `??zclDoorLock_Report::?relay`; Banked call to: zclDoorLock_Report
+   \   000123   7403         MOV       A,#0x3
+   \   000125   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000128   E9           MOV       A,R1
+    343          
+    344              printf("AF, DOORLOCK_KEEP_ALIVE_EVT: 0x%02X\r\n", result);
+   \   000129                ; Setup parameters for call to function printf
+   \   000129   F5..         MOV       ?V0,A
+   \   00012B   75..00       MOV       ?V1,#0x0
+   \   00012E   78..         MOV       R0,#?V0
+   \   000130   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000133   7A..         MOV       R2,#`?<Constant "AF, DOORLOCK_KEEP_ALI...">` & 0xff
+   \   000135   7B..         MOV       R3,#(`?<Constant "AF, DOORLOCK_KEEP_ALI...">` >> 8) & 0xff
+   \   000137   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   00013A   7402         MOV       A,#0x2
+   \   00013C   12....       LCALL     ?DEALLOC_XSTACK8
+    345            #endif
+    346          
+    347              return ( events ^ DOORLOCK_KEEP_ALIVE_EVT );
+   \   00013F   EE           MOV       A,R6
+   \   000140   6410         XRL       A,#0x10
+   \   000142   8014         SJMP      ??zclDoorLock_event_loop_7
+    348            }
+    349          
+    350            if ( events & DOORLOCK_HANDLE_RSP_EVT )
+   \                     ??zclDoorLock_event_loop_10:
+   \   000144   EA           MOV       A,R2
+   \   000145   5420         ANL       A,#0x20
+   \   000147   6014         JZ        ??zclDoorLock_event_loop_11
+    351            {
+    352              AT_DoorLock_Handle_Rsp(single_bus_rcv_buf, single_bus_rcv_len);
+   \   000149                ; Setup parameters for call to function AT_DoorLock_Handle_Rsp
+   \   000149   90....       MOV       DPTR,#single_bus_rcv_len
+   \   00014C   E0           MOVX      A,@DPTR
+   \   00014D   F9           MOV       R1,A
+   \   00014E   7A..         MOV       R2,#single_bus_rcv_buf & 0xff
+   \   000150   7B..         MOV       R3,#(single_bus_rcv_buf >> 8) & 0xff
+   \   000152   12....       LCALL     `??AT_DoorLock_Handle_Rsp::?relay`; Banked call to: AT_DoorLock_Handle_Rsp
+    353          
+    354              return ( events ^ DOORLOCK_HANDLE_RSP_EVT );
+   \   000155   EE           MOV       A,R6
+   \   000156   6420         XRL       A,#0x20
+   \                     ??zclDoorLock_event_loop_7:
+   \   000158   FA           MOV       R2,A
+   \   000159   EF           MOV       A,R7
+   \                     ??zclDoorLock_event_loop_5:
+   \   00015A   FB           MOV       R3,A
+   \   00015B   8004         SJMP      ??zclDoorLock_event_loop_3
+    355            }
+    356          
+    357            // Discard unknown events
+    358            return 0;
+   \                     ??zclDoorLock_event_loop_11:
+   \   00015D   7A00         MOV       R2,#0x0
+   \   00015F   7B00         MOV       R3,#0x0
+   \                     ??zclDoorLock_event_loop_3:
+   \   000161   7F02         MOV       R7,#0x2
+   \   000163   02....       LJMP      ?BANKED_LEAVE_XDATA
+    359          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001                ; Setup parameters for call to function zclDoorLock_Report
+   \   000001                ; Setup parameters for call to function zclDoorLock_Report
+   \   000001   75....       MOV       ?V0,#zclDoorLock_LockState & 0xff
+   \   000004   75....       MOV       ?V1,#(zclDoorLock_LockState >> 8) & 0xff
+   \   000007   78..         MOV       R0,#?V0
+   \   000009   22           RET
+    360          
+    361          /*********************************************************************
+    362           * @fn      zclDoorLock_BasicResetCB
+    363           *
+    364           * @brief   Callback from the ZCL General Cluster Library
+    365           *          to set all the Basic Cluster attributes to default values.
+    366           *
+    367           * @param   none
+    368           *
+    369           * @return  none
+    370           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    371          static void zclDoorLock_BasicResetCB( void )
+   \                     zclDoorLock_BasicResetCB:
+    372          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    373            /* DoorLock_TODO: remember to update this function with any
+    374               application-specific cluster attribute variables */
+    375          
+    376            zclDoorLock_ResetAttributesToDefaultValues();
+   \   000004                ; Setup parameters for call to function zclDoorLock_ResetAttributesToDefaultValues
+   \   000004   12....       LCALL     `??zclDoorLock_ResetAttributesToDefaultValues::?`; Banked call to: zclDoorLock_ResetAttributesToDefaultValues
+    377          }
+   \   000007                REQUIRE ?Subroutine1
+   \   000007                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    378          
+    379          /*********************************************************************
+    380           * @fn      zclDoorLock_Enable
+    381           *
+    382           * @brief   Enable/disale the endpoint
+    383           *
+    384           * @param   none
+    385           *
+    386           * @return  none
+    387           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    388          void zclDoorLock_Enable( bool isEnable)
+   \                     zclDoorLock_Enable:
+    389          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+    390            if (isEnable) {
+   \   000006   7003         JNZ       ??zclDoorLock_Enable_0
+    391          //    zclDoorLock_OnOffCB(COMMAND_ON);
+    392            } else {
+    393              zclDoorLock_BasicResetCB();
+   \   000008                ; Setup parameters for call to function zclDoorLock_ResetAttributesToDefaultValues
+   \   000008   12....       LCALL     `??zclDoorLock_ResetAttributesToDefaultValues::?`; Banked call to: zclDoorLock_ResetAttributesToDefaultValues
+    394            }
+    395          }
+   \                     ??zclDoorLock_Enable_0:
+   \   00000B   02....       LJMP      ?Subroutine0 & 0xFFFF
+    396          
+    397          /*********************************************************************
+    398           * @fn      zclDoorLock_DoorLockCB
+    399           *
+    400           * @brief   Callback from the ZCL General Cluster Library when
+    401           *          it received an Door Lock cluster Command for this application.
+    402           *
+    403           * @param   pInMsg - process incoming message
+    404           * @param   pInCmd - PIN/RFID code of command
+    405           *
+    406           * @return  ZStatus_t
+    407           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    408          static ZStatus_t zclDoorLock_DoorLockCB ( zclIncoming_t *pInMsg, zclDoorLock_t *pInCmd )
+   \                     zclDoorLock_DoorLockCB:
+    409          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV       A,#-0xb
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V0,R2
+   \   000007   8B..         MOV       ?V1,R3
+   \   000009   EC           MOV       A,R4
+   \   00000A   FE           MOV       R6,A
+   \   00000B   ED           MOV       A,R5
+   \   00000C   FF           MOV       R7,A
+    410            uint8 newDoorLockState;
+    411            uint8 cmd_start = CMD_START;
+    412            uint8 cmd_end = CMD_END;
+    413            uint8 cmd_locate_shutdown = CMD_LOCATE_SHUTDOWN;
+    414            
+    415            //start upload data
+    416            if (pInCmd->pPinRfidCode[5]==0x36)
+   \   00000D   8C82         MOV       DPL,R4
+   \   00000F   F583         MOV       DPH,A
+   \   000011   E0           MOVX      A,@DPTR
+   \   000012   F8           MOV       R0,A
+   \   000013   A3           INC       DPTR
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   F583         MOV       DPH,A
+   \   000017   8882         MOV       DPL,R0
+   \   000019   A3           INC       DPTR
+   \   00001A   A3           INC       DPTR
+   \   00001B   A3           INC       DPTR
+   \   00001C   A3           INC       DPTR
+   \   00001D   A3           INC       DPTR
+   \   00001E   E0           MOVX      A,@DPTR
+   \   00001F   6436         XRL       A,#0x36
+   \   000021   700C         JNZ       ??CrossCallReturnLabel_3
+    417            {
+    418              printf("start upload data");
+   \   000023                ; Setup parameters for call to function printf
+   \   000023   7A..         MOV       R2,#`?<Constant "start upload data">` & 0xff
+   \   000025   7B..         MOV       R3,#(`?<Constant "start upload data">` >> 8) & 0xff
+   \   000027   12....       LCALL     ?Subroutine2 & 0xFFFF
+    419              AT_pwr_single_bus_output();
+    420              AT_pwr_single_bus_send_byte(cmd_start);
+   \                     ??CrossCallReturnLabel_0:
+   \   00002A                ; Setup parameters for call to function AT_pwr_single_bus_send_byte
+   \   00002A   79B3         MOV       R1,#-0x4d
+   \   00002C   12....       LCALL     ?Subroutine3 & 0xFFFF
+    421              AT_pwr_single_bus_input();
+    422            }
+    423            //stop locate module power
+    424              if ((pInCmd->pPinRfidCode[0]==0x37)||(pInCmd->pPinRfidCode[5]==0x37))
+   \                     ??CrossCallReturnLabel_3:
+   \   00002F   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000032   6437         XRL       A,#0x37
+   \   000034   600A         JZ        ??zclDoorLock_DoorLockCB_0
+   \   000036   A3           INC       DPTR
+   \   000037   A3           INC       DPTR
+   \   000038   A3           INC       DPTR
+   \   000039   A3           INC       DPTR
+   \   00003A   A3           INC       DPTR
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   6437         XRL       A,#0x37
+   \   00003E   700C         JNZ       ??CrossCallReturnLabel_4
+    425            {
+    426              printf("stop locate module power");
+   \                     ??zclDoorLock_DoorLockCB_0:
+   \   000040                ; Setup parameters for call to function printf
+   \   000040   7A..         MOV       R2,#`?<Constant "stop locate module power">` & 0xff
+   \   000042   7B..         MOV       R3,#(`?<Constant "stop locate module power">` >> 8) & 0xff
+   \   000044   12....       LCALL     ?Subroutine2 & 0xFFFF
+    427              AT_pwr_single_bus_output();
+    428              AT_pwr_single_bus_send_byte(cmd_locate_shutdown);
+   \                     ??CrossCallReturnLabel_1:
+   \   000047                ; Setup parameters for call to function AT_pwr_single_bus_send_byte
+   \   000047   79B4         MOV       R1,#-0x4c
+   \   000049   12....       LCALL     ?Subroutine3 & 0xFFFF
+    429              AT_pwr_single_bus_input();
+    430            }
+    431            //stop upload data
+    432              if ((pInCmd->pPinRfidCode[0]==0x38)||(pInCmd->pPinRfidCode[5]==0x38))
+   \                     ??CrossCallReturnLabel_4:
+   \   00004C   12....       LCALL     ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   00004F   6438         XRL       A,#0x38
+   \   000051   600A         JZ        ??zclDoorLock_DoorLockCB_1
+   \   000053   A3           INC       DPTR
+   \   000054   A3           INC       DPTR
+   \   000055   A3           INC       DPTR
+   \   000056   A3           INC       DPTR
+   \   000057   A3           INC       DPTR
+   \   000058   E0           MOVX      A,@DPTR
+   \   000059   6438         XRL       A,#0x38
+   \   00005B   700C         JNZ       ??CrossCallReturnLabel_5
+    433            {
+    434              printf("stop upload data");
+   \                     ??zclDoorLock_DoorLockCB_1:
+   \   00005D                ; Setup parameters for call to function printf
+   \   00005D   7A..         MOV       R2,#`?<Constant "stop upload data">` & 0xff
+   \   00005F   7B..         MOV       R3,#(`?<Constant "stop upload data">` >> 8) & 0xff
+   \   000061   12....       LCALL     ?Subroutine2 & 0xFFFF
+    435              AT_pwr_single_bus_output();
+    436              AT_pwr_single_bus_send_byte(cmd_end);
+   \                     ??CrossCallReturnLabel_2:
+   \   000064                ; Setup parameters for call to function AT_pwr_single_bus_send_byte
+   \   000064   79B6         MOV       R1,#-0x4a
+   \   000066   12....       LCALL     ?Subroutine3 & 0xFFFF
+    437              AT_pwr_single_bus_input();
+    438            }
+    439            // judge what kind of action should be taken
+    440            if ( pInMsg->hdr.commandID == COMMAND_CLOSURES_LOCK_DOOR ) // Lock the door
+   \                     ??CrossCallReturnLabel_5:
+   \   000069   85..82       MOV       DPL,?V0
+   \   00006C   85..83       MOV       DPH,?V1
+   \   00006F   A3           INC       DPTR
+   \   000070   A3           INC       DPTR
+   \   000071   A3           INC       DPTR
+   \   000072   A3           INC       DPTR
+   \   000073   A3           INC       DPTR
+   \   000074   A3           INC       DPTR
+   \   000075   A3           INC       DPTR
+   \   000076   E0           MOVX      A,@DPTR
+   \   000077   F8           MOV       R0,A
+   \   000078   6017         JZ        ??zclDoorLock_DoorLockCB_2
+    441            {
+    442              newDoorLockState = CLOSURES_LOCK_STATE_LOCKED;
+    443            }
+    444            else if ( pInMsg->hdr.commandID == COMMAND_CLOSURES_UNLOCK_DOOR ) // Unock the door
+   \   00007A   7401         MOV       A,#0x1
+   \   00007C   68           XRL       A,R0
+   \   00007D   6008         JZ        ??zclDoorLock_DoorLockCB_3
+    445            {
+    446              newDoorLockState = CLOSURES_LOCK_STATE_UNLOCKED;
+    447            }
+    448            else // Toggle the door
+    449            {
+    450              if (zclDoorLock_LockState == CLOSURES_LOCK_STATE_LOCKED)
+   \   00007F   90....       MOV       DPTR,#zclDoorLock_LockState
+   \   000082   E0           MOVX      A,@DPTR
+   \   000083   6401         XRL       A,#0x1
+   \   000085   7005         JNZ       ??zclDoorLock_DoorLockCB_4
+    451                newDoorLockState = CLOSURES_LOCK_STATE_UNLOCKED;
+   \                     ??zclDoorLock_DoorLockCB_3:
+   \   000087   75..02       MOV       ?V2,#0x2
+   \   00008A   8008         SJMP      ??zclDoorLock_DoorLockCB_5
+    452              else if (zclDoorLock_LockState == CLOSURES_LOCK_STATE_UNLOCKED)
+   \                     ??zclDoorLock_DoorLockCB_4:
+   \   00008C   E0           MOVX      A,@DPTR
+   \   00008D   6402         XRL       A,#0x2
+   \   00008F   7003         JNZ       ??zclDoorLock_DoorLockCB_5
+    453                newDoorLockState = CLOSURES_LOCK_STATE_LOCKED;
+   \                     ??zclDoorLock_DoorLockCB_2:
+   \   000091   75..01       MOV       ?V2,#0x1
+    454            }
+    455          
+    456            if( newDoorLockState != zclDoorLock_LockState )
+   \                     ??zclDoorLock_DoorLockCB_5:
+   \   000094   90....       MOV       DPTR,#zclDoorLock_LockState
+   \   000097   E0           MOVX      A,@DPTR
+   \   000098   65..         XRL       A,?V2
+   \   00009A   601C         JZ        ??zclDoorLock_DoorLockCB_6
+    457            {
+    458              // take action
+    459              if( newDoorLockState == CLOSURES_LOCK_STATE_LOCKED )
+   \   00009C   7401         MOV       A,#0x1
+   \   00009E   65..         XRL       A,?V2
+   \   0000A0   7009         JNZ       ??zclDoorLock_DoorLockCB_7
+    460                AT_DoorLock_Lock( pInCmd ); // Lock the door
+   \   0000A2                ; Setup parameters for call to function AT_DoorLock_Lock
+   \   0000A2   EE           MOV       A,R6
+   \   0000A3   FA           MOV       R2,A
+   \   0000A4   EF           MOV       A,R7
+   \   0000A5   FB           MOV       R3,A
+   \   0000A6   12....       LCALL     `??AT_DoorLock_Lock::?relay`; Banked call to: AT_DoorLock_Lock
+   \   0000A9   800D         SJMP      ??zclDoorLock_DoorLockCB_6
+    461              else if( newDoorLockState == CLOSURES_LOCK_STATE_UNLOCKED )
+   \                     ??zclDoorLock_DoorLockCB_7:
+   \   0000AB   7402         MOV       A,#0x2
+   \   0000AD   65..         XRL       A,?V2
+   \   0000AF   7007         JNZ       ??zclDoorLock_DoorLockCB_6
+    462                AT_DoorLock_Unlock( pInCmd ); // Unlock the door
+   \   0000B1                ; Setup parameters for call to function AT_DoorLock_Unlock
+   \   0000B1   EE           MOV       A,R6
+   \   0000B2   FA           MOV       R2,A
+   \   0000B3   EF           MOV       A,R7
+   \   0000B4   FB           MOV       R3,A
+   \   0000B5   12....       LCALL     `??AT_DoorLock_Unlock::?relay`; Banked call to: AT_DoorLock_Unlock
+    463            }
+    464          
+    465            return ( ZCL_STATUS_CMD_HAS_RSP );
+   \                     ??zclDoorLock_DoorLockCB_6:
+   \   0000B8   79FF         MOV       R1,#-0x1
+   \   0000BA   7F03         MOV       R7,#0x3
+   \   0000BC   02....       LJMP      ?BANKED_LEAVE_XDATA
+    466          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   8E82         MOV       DPL,R6
+   \   000002   8F83         MOV       DPH,R7
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   F8           MOV       R0,A
+   \   000006   A3           INC       DPTR
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   8882         MOV       DPL,R0
+   \   00000A   F583         MOV       DPH,A
+   \   00000C   E0           MOVX      A,@DPTR
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL     `??AT_pwr_single_bus_send_byte::?relay`; Banked call to: AT_pwr_single_bus_send_byte
+   \   000003                ; Setup parameters for call to function AT_pwr_single_bus_input
+   \   000003                ; Setup parameters for call to function AT_pwr_single_bus_input
+   \   000003                ; Setup parameters for call to function AT_pwr_single_bus_input
+   \   000003   12....       LCALL     `??AT_pwr_single_bus_input::?relay`; Banked call to: AT_pwr_single_bus_input
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL     `??printf::?relay`; Banked call to: printf
+   \   000003                ; Setup parameters for call to function AT_pwr_single_bus_output
+   \   000003                ; Setup parameters for call to function AT_pwr_single_bus_output
+   \   000003                ; Setup parameters for call to function AT_pwr_single_bus_output
+   \   000003   12....       LCALL     `??AT_pwr_single_bus_output::?relay`; Banked call to: AT_pwr_single_bus_output
+   \   000006   22           RET
+    467          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    468          static ZStatus_t zclDoorLock_DoorLockSetTemporaryPinCB ( zclIncoming_t *pInMsg, zclDoorLockSetTemporaryPin_t *pCmd )
+   \                     zclDoorLock_DoorLockSetTemporaryPinCB:
+    469          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    470            AT_DoorLock_SetTemporaryPin_Req ( pCmd );
+   \   000004                ; Setup parameters for call to function AT_DoorLock_SetTemporaryPin_Req
+   \   000004   EC           MOV       A,R4
+   \   000005   FA           MOV       R2,A
+   \   000006   ED           MOV       A,R5
+   \   000007   FB           MOV       R3,A
+   \   000008   12....       LCALL     `??AT_DoorLock_SetTemporaryPin_Req::?relay`; Banked call to: AT_DoorLock_SetTemporaryPin_Req
+    471          
+    472            return ( ZCL_STATUS_CMD_HAS_RSP );
+   \   00000B   79FF         MOV       R1,#-0x1
+   \   00000D   02....       LJMP      ?Subroutine1 & 0xFFFF
+    473          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclDoorLock_CmdCallbacks>`:
+   \   000000   ....         DW `??zclDoorLock_BasicResetCB::?relay`
+   \   000002   0000         DW 0H
+   \   000004   0000         DW 0H
+   \   000006   0000         DW 0H
+   \   000008   0000         DW 0H
+   \   00000A   0000         DW 0H
+   \   00000C   0000         DW 0H
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+   \   000012   0000         DW 0H
+   \   000014   0000         DW 0H
+   \   000016   0000         DW 0H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclDoorLock_DoorLockCmdCallb`:
+   \   000000   ....         DW `??zclDoorLock_DoorLockCB::?relay`
+   \   000002   0000         DW 0H
+   \   000004   0000         DW 0H
+   \   000006   0000         DW 0H
+   \   000008   0000         DW 0H
+   \   00000A   0000         DW 0H
+   \   00000C   0000         DW 0H
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+   \   000012   0000         DW 0H
+   \   000014   0000         DW 0H
+   \   000016   0000         DW 0H
+   \   000018   0000         DW 0H
+   \   00001A   0000         DW 0H
+   \   00001C   0000         DW 0H
+   \   00001E   0000         DW 0H
+   \   000020   0000         DW 0H
+   \   000022   0000         DW 0H
+   \   000024   0000         DW 0H
+   \   000026   0000         DW 0H
+   \   000028   0000         DW 0H
+   \   00002A   0000         DW 0H
+   \   00002C   0000         DW 0H
+   \   00002E   0000         DW 0H
+   \   000030   0000         DW 0H
+   \   000032   ....         DW `??zclDoorLock_DoorLockSetTemporaryPinCB::?relay`
+   \   000034   0000         DW 0H
+   \   000036   0000         DW 0H
+   \   000038   0000         DW 0H
+   \   00003A   0000         DW 0H
+   \   00003C   0000         DW 0H
+   \   00003E   0000         DW 0H
+   \   000040   0000         DW 0H
+   \   000042   0000         DW 0H
+   \   000044   0000         DW 0H
+   \   000046   0000         DW 0H
+   \   000048   0000         DW 0H
+   \   00004A   0000         DW 0H
+   \   00004C   0000         DW 0H
+   \   00004E   0000         DW 0H
+   \   000050   0000         DW 0H
+   \   000052   0000         DW 0H
+   \   000054   0000         DW 0H
+   \   000056   0000         DW 0H
+   \   000058   0000         DW 0H
+   \   00005A   0000         DW 0H
+   \   00005C   0000         DW 0H
+   \   00005E   0000         DW 0H
+   \   000060   0000         DW 0H
+   \   000062   0000         DW 0H
+   \   000064   0000         DW 0H
+   \   000066   0000         DW 0H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AF, DOORLOCK_REPORT_L...">`:
+   \   000000   41462C20     DB "AF, DOORLOCK_REPORT_LOCK_EVT: 0x%02X\015\012"
+   \            444F4F52
+   \            4C4F434B
+   \            5F524550
+   \            4F52545F
+   \            4C4F434B
+   \            5F455654
+   \            3A203078
+   \            25303258
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AF, DOORLOCK_REPORT_U...">`:
+   \   000000   41462C20     DB "AF, DOORLOCK_REPORT_UNLOCK_EVT: 0x%02X\015\012"
+   \            444F4F52
+   \            4C4F434B
+   \            5F524550
+   \            4F52545F
+   \            554E4C4F
+   \            434B5F45
+   \            56543A20
+   \            30782530
+   \            32580D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AF, DOORLOCK_KEEP_ALI...">`:
+   \   000000   41462C20     DB "AF, DOORLOCK_KEEP_ALIVE_EVT: 0x%02X\015\012"
+   \            444F4F52
+   \            4C4F434B
+   \            5F4B4545
+   \            505F414C
+   \            4956455F
+   \            4556543A
+   \            20307825
+   \            3032580D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "start upload data">`:
+   \   000000   73746172     DB "start upload data"
+   \            74207570
+   \            6C6F6164
+   \            20646174
+   \            6100    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "stop locate module power">`:
+   \   000000   73746F70     DB "stop locate module power"
+   \            206C6F63
+   \            61746520
+   \            6D6F6475
+   \            6C652070
+   \            6F776572
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "stop upload data">`:
+   \   000000   73746F70     DB "stop upload data"
+   \            2075706C
+   \            6F616420
+   \            64617461
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1388:
+   \   000000   88130000     DD 5000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      2      0   zclDoorLock_BasicResetCB
+        2      0   -> zclDoorLock_ResetAttributesToDefaultValues
+      0     11   zclDoorLock_DoorLockCB
+        0     11   -> AT_DoorLock_Lock
+        0     11   -> AT_DoorLock_Unlock
+        0     11   -> AT_pwr_single_bus_input
+        0     11   -> AT_pwr_single_bus_output
+        0     11   -> AT_pwr_single_bus_send_byte
+        0     11   -> printf
+      2      0   zclDoorLock_DoorLockSetTemporaryPinCB
+        2      0   -> AT_DoorLock_SetTemporaryPin_Req
+      0      9   zclDoorLock_Enable
+        0      9   -> zclDoorLock_ResetAttributesToDefaultValues
+      0      9   zclDoorLock_Init
+        0      9   -> AT_DoorLock_Init
+        0      9   -> bdb_RegisterSimpleDescriptor
+        0      9   -> zclClosures_RegisterDoorLockCmdCallbacks
+        0      9   -> zclDoorLock_ResetAttributesToDefaultValues
+        0      9   -> zclGeneral_RegisterCmdCallbacks
+        0      9   -> zcl_registerAttrList
+        0      9   -> zcl_registerCmdList
+      1     46   zclDoorLock_Report
+        0     28   -> bdb_getZCLFrameCounter
+        0     28   -> osal_mem_alloc
+        0     28   -> osal_mem_free
+        0     33   -> zcl_SendReportCmd
+      0     14   zclDoorLock_event_loop
+        0     10   -> AT_DoorLock_Handle_Rsp
+        0     10   -> NLME_SetPollRate
+        0     10   -> osal_msg_deallocate
+        0     10   -> osal_msg_receive
+        0     14   -> osal_start_timerEx
+        0     12   -> printf
+        0     13   -> zclDoorLock_Report
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      38  ?<Constant "AF, DOORLOCK_KEEP_ALI...">
+      39  ?<Constant "AF, DOORLOCK_REPORT_L...">
+      41  ?<Constant "AF, DOORLOCK_REPORT_U...">
+      18  ?<Constant "start upload data">
+      25  ?<Constant "stop locate module power">
+      17  ?<Constant "stop upload data">
+      24  ?<Initializer for zclDoorLock_CmdCallbacks>
+     104  ?<Initializer for zclDoorLock_DoorLockCmdCallb
+       5  ?Subroutine0
+       7  ?Subroutine1
+       7  ?Subroutine2
+       7  ?Subroutine3
+      10  ?Subroutine4
+      14  ?Subroutine5
+       4  __Constant_0
+       4  __Constant_1388
+       7  zclDoorLock_BasicResetCB
+      24  zclDoorLock_CmdCallbacks
+     191  zclDoorLock_DoorLockCB
+     104  zclDoorLock_DoorLockCmdCallbacks
+      16  zclDoorLock_DoorLockSetTemporaryPinCB
+      14  zclDoorLock_Enable
+      71  zclDoorLock_Init
+     186  zclDoorLock_Report
+       1  zclDoorLock_TaskID
+     358  zclDoorLock_event_loop
+      42  -- Other
+
+ 
+ 893 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+ 128 bytes in segment XDATA_I
+ 128 bytes in segment XDATA_ID
+ 186 bytes in segment XDATA_ROM_C
+   1 byte  in segment XDATA_Z
+ 
+ 170 bytes of CODE     memory
+ 178 bytes of CONST    memory (+ 8 bytes shared)
+ 893 bytes of HUGECODE memory
+ 129 bytes of XDATA    memory
+
+Errors: none
+Warnings: none
